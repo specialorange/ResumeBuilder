@@ -233,7 +233,7 @@ nav a:hover{
 
 	#main article{
 		float:left;
-		width:70%;
+		width:75%;
 	}
 		
 	#main aside{
@@ -341,4 +341,7 @@ h4 {
 	font-weight:normal;
 	margin-left: 45px; 
 	font-size: 8px;
+}
+li {
+	font-size: 10px;
 }
