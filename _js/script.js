@@ -3,21 +3,105 @@
 */
 $(document).ready(function () {
 	//Approach Selector
-		//Check Box
-		$("#aApproach").css("display", "none");
-		//Onclick handler
-		$("#checkApproach").click(function () {
-			// If checked
-			if ($("#checkApproach").is(":checked")) {
-				//show the hidden div
-				console.log("show");
-				$(".aApproach").show();
-			} else {
-				//otherwise, hide it
-				console.log("hide");
-				$(".aApproach").hide();
-			}
-		});
+		//onclick handler
+			$("#clickApproach").on("click", function(){
+				if ($(".approach").is(":visible") ) {
+					$(".approach").hide();
+				} else {
+					$(".approach").show();
+				}
+			});
+
+	//Design Selector
+		//onclick handler
+			$("#clickDesign").on("click", function(){
+				if ($(".design").is(":visible") ) {
+					$(".design").hide();
+				} else {
+					$(".design").show();
+				}
+			});
+
+	// Expertise Selector
+		//onclick handler
+			$("#clickExpertise").on("click", function(){
+				if ($(".expertise").is(":visible") ) {
+					$(".expertise").hide();
+				} else {
+					$(".expertise").show();
+				}
+			});
+
+	// Skills Selector
+		//onclick handler
+			$("#clickSkills").on("click", function(){
+				if ($(".skills").is(":visible") ) {
+					$(".skills").hide();
+				} else {
+					$(".skills").show();
+				}
+			});
+
+	// Tools Selector
+		//onclick handler
+			$("#clickTools").on("click", function(){
+				if ($(".tools").is(":visible") ) {
+					$(".tools").hide();
+				} else {
+					$(".tools").show();
+				}
+			});
+	
+	// Compliance Selector
+		//onclick handler
+			$("#clickCompliance").on("click", function(){
+				if ($(".compliance").is(":visible") ) {
+					$(".compliance").hide();
+				} else {
+					$(".compliance").show();
+				}
+			});
+			
+	// Projects Selector
+		//onclick handler
+			$("#clickProjects").on("click", function(){
+				if ($(".projects").is(":visible") ) {
+					$(".projects").hide();
+				} else {
+					$(".projects").show();
+				}
+			});
+	
+	// Community Selector
+		//onclick handler
+			$("#clickCommunity").on("click", function(){
+				if ($(".community").is(":visible") ) {
+					$(".community").hide();
+				} else {
+					$(".community").show();
+				}
+			});
+
+	// Interests Selector
+		//onclick handler
+			$("#clickInterests").on("click", function(){
+				if ($(".interests").is(":visible") ) {
+					$(".interests").hide();
+				} else {
+					$(".interests").show();
+				}
+			});
+
+	//Test
+		//onclick handler
+			$("#clickText").on("click", function(){
+				if ($(".testText").is(":visible") ) {
+					$(".testText").hide();
+				} else {
+					$(".testText").show();
+				}
+			});
+
 	//Date Range Selector
 		//Min Year 
 		Array.min = function (array) {

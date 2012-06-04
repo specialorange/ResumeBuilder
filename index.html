@@ -46,10 +46,36 @@ function showValue(newValue)
 					<header>
 						<h1>Business Approach</h1>
 						<div class="mydiv">
-							<label>Approach</label>
-							<input type = "checkbox" id = "checkApproach" value = "approach" checked="checked" /> <!--  -->
-							<label for = "checkApproach">On/Off</label>
+							<input type="button" class="btn" value="Approach" id="clickApproach" />
 						</div>
+						<div class="mydiv">
+							<input type="button" class="btn" value="Design" id="clickDesign" />
+						</div>
+						<div class="mydiv">
+							<input type="button" class="btn" value="Expertise" id="clickExpertise" />
+						</div>
+						<div class="mydiv">
+							<input type="button" class="btn" value="Skills" id="clickSkills" />
+						</div>
+						<div class="mydiv">
+							<input type="button" class="btn" value="Tools" id="clickTools" />
+						</div>
+						<div class="mydiv">
+							<input type="button" class="btn" value="Compliance" id="clickCompliance" />
+						</div>
+						<div class="mydiv">
+							<input type="button" class="btn" value="Projects" id="clickProjects" />
+						</div>
+						<div class="mydiv">
+							<input type="button" class="btn" value="Community" id="clickCommunity" />
+						</div>
+						<div class="mydiv">
+							<input type="button" class="btn" value="Interests" id="clickInterests" />
+						</div>
+						<div class="mydiv">
+							<input type="button" class="btn" value="Tester" id="clickText" />
+						</div
+						
 					</header>
 				</article>
 
@@ -115,16 +141,15 @@ function showValue(newValue)
 					</section>
 					<section>
 						<h2>Begin Date</h2>
-	<!--TODO: value should reflect the most current year-->
-						<input type="range" id="date-range-begin-selector" value="" step="1" onchange="showValue(this.value)" />
-						<span id="range">0</span>
-
-						<input type="range" id="date-range-end-selector" value="" step="1" />
-						<span id="range">0</span>
+	<!--TODO: value should reflect the most relevant year ~2007-->
+							<input type="range" id="date-range-begin-selector" value="" step="1" onchange="showValue(this.value)" />
+							<span id="range">0</span>
 					</section>
 					<section>
 						<h2>End Date</h2>
-						<p>Selector</p>
+	<!--TODO: value should reflect the most current year-->
+							<input type="range" id="date-range-end-selector" value="" step="1" />
+							<span id="range">0</span>
 					</section>
 					<!-- <footer>
 						<h2>footer</h2>
@@ -198,27 +223,114 @@ function showValue(newValue)
 				</article>
 			</aside>
 
-			<article>
+			<div class="generatedcontent">
+			<!-- <article> -->
 				<header>
 					<h1>Generated Content</h1>
 					<p>The generated Content Goes Here!</p>
 				</header>
-				<article class="aApproach">
-					<h2>ANALYSIS</h2>
-						<h3>I use a multitude of tools and experiences that bring a comprehensive approach to evaluate systems, processes, objects, and personnel.  I achieve this through a mix of initial communication with stakeholders and departments, and use this information to develop the framework for developing scope and planning resources to exceed &lt;client/project&gt; expectations.</h3>
-					<h2>COMMUNICATION</h2>
-						<h3>I ensure that our team develops time-sensitive seminars, conferences, and meetings designed to explicate the scope and complexities of deadlines in a unified environment for clients and team members. I develop daily business interactions to maintain a positive milieu, within a prescribed common creative atmosphere, vital to the team’s success in daily challenges, ultimately to the project, company, and client.</h3>
-					<h2>BUDGETING</h2>
-						<h3>Listening to the needs of the project’s stakeholders, I tailor a solution using a top down method for providing the needs of budget conscious clients, or a ground up design for customized turnkey solutions.  These hybrid approaches are weighted towards the common voice of the client, where detail oriented solutions are applied along the common tones throughout the client’s organization.</h3>
-					<h2>TEAMWORK</h2>
-						<h3>Limiting task oriented teams to no more than 7 persons, with a wide assortment of experience and a solid rubric for life cycle development of projects enables synergistic teamwork practices and enables succinct solutions with minimal interruptions.  When a group is given full control with the understanding of full accountability, time and time again the group as a whole is able to provide the necessary decisions to achieve positive progression.</h3>
-					<h2>INTELLIGENCE</h2>
-						<h3>With diverse hobbies, experiences, contacts, and interests, I bring a special perspective to providing successful solutions, on time, and above and beyond requirements.  I owe my successes to borrowed approaches in scouting, mentorship, and previous successes where developing a strong approach to looking through a problem to see its solution has allowed me to approach situations with objective clarity.</h3>
-					<h2>ENTHUSIASM</h2>
-						<h3>Understanding the importance of the products and services needed of the end users and clients, and forming an environment, which highlights those needs, allows me to convey a quick, calm, succinct product.  There is nothing more successful than a team with a common goal and the will to accomplish that goal as their own.</h3>
-					<h2>TIME</h2>
-						<h3>I operate on a business healthy approach of meeting the requirements of the project; both personnel/clients’ and planning/execution are balanced to achieve an overall positive relationship with the client, team members, and other staff in a warm and inviting manner.</h3>
-				</article>
+				<table width="60%">
+					<tbody>
+						<tr>
+							<td width="70%">
+								<article class="approach">
+									<!-- <h1>Business Approach</h1> -->
+									<h2><b>ANALYSIS</b></h2>
+										<h3>I use a multitude of tools and experiences that bring a comprehensive approach to evaluate systems, processes, objects, and personnel.  I achieve this through a mix of initial communication with stakeholders and departments, and use this information to develop the framework for developing scope and planning resources to exceed &lt;client/project&gt; expectations.</h3>
+									<h2><b>COMMUNICATION</b></h2>
+										<h3>I ensure that our team develops time-sensitive seminars, conferences, and meetings designed to explicate the scope and complexities of deadlines in a unified environment for clients and team members. I develop daily business interactions to maintain a positive milieu, within a prescribed common creative atmosphere, vital to the team’s success in daily challenges, ultimately to the project, company, and client.</h3>
+									<h2><b>BUDGETING</b></h2>
+										<h3>Listening to the needs of the project’s stakeholders, I tailor a solution using a top down method for providing the needs of budget conscious clients, or a ground up design for customized turnkey solutions.  These hybrid approaches are weighted towards the common voice of the client, where detail oriented solutions are applied along the common tones throughout the client’s organization.</h3>
+									<h2><b>TEAMWORK</b></h2>
+										<h3>Limiting task oriented teams to no more than 7 persons, with a wide assortment of experience and a solid rubric for life cycle development of projects enables synergistic teamwork practices and enables succinct solutions with minimal interruptions.  When a group is given full control with the understanding of full accountability, time and time again the group as a whole is able to provide the necessary decisions to achieve positive progression.</h3>
+									<h2><b>INTELLIGENCE</b></h2>
+										<h3>With diverse hobbies, experiences, contacts, and interests, I bring a special perspective to providing successful solutions, on time, and above and beyond requirements.  I owe my successes to borrowed approaches in scouting, mentorship, and previous successes where developing a strong approach to looking through a problem to see its solution has allowed me to approach situations with objective clarity.</h3>
+									<h2><b>ENTHUSIASM</b></h2>
+										<h3>Understanding the importance of the products and services needed of the end users and clients, and forming an environment, which highlights those needs, allows me to convey a quick, calm, succinct product.  There is nothing more successful than a team with a common goal and the will to accomplish that goal as their own.</h3>
+									<h2><b>TIME</b></h2>
+										<h3>I operate on a business healthy approach of meeting the requirements of the project; both personnel/clients’ and planning/execution are balanced to achieve an overall positive relationship with the client, team members, and other staff in a warm and inviting manner.</h3>
+								</article>
+							</td>
+							<td width="30%">
+								<article class="design">
+									<h2 align="right"><b>DESIGN</b></h2>
+										<h3 align="right">heuristic evaluation</h3>
+										<h3 align="right">cognitive walkthrough</h3>
+										<h3 align="right">time and method engineering</h3>
+								</article>
+				
+								<article class="expertise">
+									<h2 align="right"><b>EXPERTISE</b></h2>
+										<h3 align="right">turnkey business solutions</h3>
+										<h3 align="right">systems analysis</h3>
+										<h3 align="right">change management</h3>
+										<h3 align="right">communication methodologies</h3>
+								</article>
+
+								<article class="skills">
+									<h2 align="right"><b>SKILLS</b></h2>
+										<h3 align="right">data visualization</h3>
+										<h3 align="right">workflow optimization</h3>
+										<h3 align="right">presentation</h3>
+										<h3 align="right">communication design</h3>
+										<h3 align="right">statistical analysis</h3>
+										<h3 align="right">sdlc methods</h3>
+										<h3 align="right">office suite</h3>
+								</article>
+
+								<article class="tools">
+									<h2 align="right"><b>TOOLS</b></h2>
+										<h3 align="right">smile</h3>
+										<h3 align="right">R</h3>
+										<h3 align="right">excel</h3>
+										<h3 align="right">SQL/mySQL</h3>
+								</article>
+
+								<article class="compliance">
+									<h2 align="right"><b>COMPLIANCE</b></h2>
+										<h3 align="right">ANSI</h3>
+										<h3 align="right">DOT</h3>
+										<h3 align="right">ISO</h3>
+										<h3 align="right">OSHA</h3>
+								</article>
+
+								<article class="projects">
+									<h2 align="right"><b>PROJECTS</b></h2>
+										<h3 align="right">six sigma black belt</h3>
+										<h3 align="right">javascript</h3>
+										<h3 align="right">pedagogy methods</h3>
+								</article>
+				
+								<article class="community">
+									<h2 align="right"><b>COMMUNITY</b></h2>
+										<h3 align="right">inter/national disaster relief</h3>
+										<h3 align="right">habitat for humanity</h3>
+										<h3 align="right">small group leadership</h3>
+										<h3 align="right">logistics management (NPO/NGOs)</h3>
+								</article>
+				
+								<article class="interests">
+									<h2 align="right"><b>INTERESTS</b></h2>
+										<h3 align="right">neon art bending</h3>
+										<h3 align="right">whitewater kayaking</h3>
+										<h3 align="right">large scale gourmet cooking</h3>
+										<h3 align="right">woodturning</h3>
+										<h3 align="right">hiking/camping</h3>
+								</article>
+								
+								<article class="testText">
+									<h2 align="right"><b>TEST</b></h2>
+										<h3 align="right">T</h3>
+										<h3 align="right">ST</h3>
+										<h3 align="right">EST</h3>
+										<h3 align="right">TEST</h3>
+								</article>
+								
+							</td>
+						</tr>
+					</tbody>
+				</table>
+				
 				<article class="company">
 					<h1>FedEx Ground <span class="startdate"><span class="startmonth">MAR</span> <span class="startyear">2006</span></span> - <span class="enddate"></span></h1>
 					<section>
@@ -296,14 +408,16 @@ function showValue(newValue)
 							</ul>
 					</section>
 				</article>
-			</article>
+			<!-- </article> -->
+			</div>
 			
 		</div> <!-- #main -->
 	</div> <!-- #main-container -->
 
 	<div id="footer-container">
 		<footer class="wrapper">
-			<h2>footer</h2>
+			<h2>What do you call an alligator in a vest?</h2>
+			<h2 align="right">An Investigator!</h2>
 		</footer>
 	</div>
 
