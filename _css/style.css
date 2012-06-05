@@ -363,3 +363,17 @@ button {
 	padding: 0;
 	color: white;
 }
+aside .hover {
+	cursor: pointer;
+	font-color: blue;
+	font-weight: bold;
+}
+.technical td {
+	margin: 0;  
+	font-weight:normal;
+	margin-left: 15px; 
+	font-size: 12px;
+}
+.type {
+	visibility: hidden
+}
