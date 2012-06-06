@@ -1,5 +1,8 @@
 <h1>Resume Builder</h1>
 
+<style>
+</style>
+
 <nav>
   <ul>
     <li><a href="#">User Generated</a></li>
@@ -8,7 +11,25 @@
   </ul>
 </nav>
 
-<section>
+<form>
+  <fieldset class="businessapproaches">
+    <legend>Business Approach Sections</legend>
+    <input type="checkbox" id="ba_all" name="ba_all" /><label for="ba_all">Remove Section</label>
+  </fieldset>
+  <fieldset class="snapshot">
+    <legend>Snapshot Sections</legend>
+    <input type="checkbox" id="s_all" name="s_all" /><label for="s_all">Remove Section</label>
+  </fieldset>
+  <fieldset>
+    <legend>Resume Range</legend>
+    <label for="startdate">Start Date</label>
+      <input name="startdate" type="text" />
+    <label for="enddate">End Date</label>
+      <input name="enddate" type="text" />
+  </fieldset>
+</form>
+
+<section class="businessapproaches">
   <h1>Business Approach</h1>
 
   <section>
@@ -47,7 +68,7 @@
   </section>	
 </section>
 
-<section>
+<section class="snapshot">
   <h1>Snapshot</h1>
   <section>
     <h1>Design</h1>
@@ -525,3 +546,47 @@
 </section>
 
 <footer>References available upon request.</footer>
+
+<script src="http://code.jquery.com/jquery.min.js"></script>
+
+<script>
+
+// Business Approaches
+$('section.businessapproaches section h1').each(function() {
+  var value = this.innerHTML;
+  $('<input type="checkbox" checked="checked" id="ba_'+value.toLowerCase()+'" name="ba_'+value.toLowerCase()+'"/><label for="ba_'+value.toLowerCase()+'">'+value+'</label>').appendTo($('fieldset.businessapproaches'));
+});
+$('fieldset.businessapproaches input').on('change', function() {
+  var index = $(this).prevAll('input').length - 1;
+  $('section.businessapproaches > section').eq(index).toggle();
+});
+$('fieldset.businessapproaches #ba_all').on('change', function() {
+  if (this.checked) {
+    $('section.businessapproaches').hide();
+    $(this).nextAll('input').attr('disabled','disabled');
+  } else {
+    $('section.businessapproaches').show();
+    $(this).nextAll('input').removeAttr('disabled');
+  }
+});
+
+// Snapshots
+$('section.snapshot section h1').each(function() {
+  var value = this.innerHTML;
+  $('<input type="checkbox" checked="checked" id="'+value.toLowerCase()+'" name="'+value.toLowerCase()+'"/><label for="'+value.toLowerCase()+'">'+value+'</label>').appendTo($('fieldset.snapshot'));
+});
+$('fieldset.snapshot input').on('change', function() {
+  var index = $(this).prevAll('input').length - 1;
+  $('section.snapshot > section').eq(index).toggle();
+});
+$('fieldset.snapshot #s_all').on('change', function() {
+  if (this.checked) {
+    $('section.snapshot').hide();
+    $(this).nextAll('input').attr('disabled','disabled');
+  } else {
+    $('section.snapshot').show();
+    $(this).nextAll('input').removeAttr('disabled');
+  }
+});
+
+</script>
