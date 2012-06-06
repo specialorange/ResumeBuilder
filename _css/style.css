@@ -96,7 +96,7 @@ td { vertical-align: top; color: black; }/* changed color to black*/
 	background:#f16529;
 }
 
-#title{ color:white; }
+header h1 { color:white; }
 
 ::-moz-selection { background: #f16529; color: #fff; text-shadow: none; }
 ::selection      { background: #f16529; color: #fff; text-shadow: none; }
@@ -152,7 +152,7 @@ nav a:hover{
     ALL: IE Fixes
    =============== */
 
-.ie7 #title{ padding-top:20px; }
+.ie7 header h1 { padding-top:20px; }
 
 
 /* ===== Primary Styles ========================================================
@@ -219,7 +219,7 @@ nav a:hover{
     WIDE: Menu
    ============ */
 	
-	#title{
+	header h1 {
 		float:left;
 	}
 

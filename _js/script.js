@@ -1,7 +1,5 @@
 /* Author:
 Chris Frisina - chris@specialorange.org
-TGM - Contact@thegreatmicael.com
-Nathan Hammond - Contact@nathanhammond.com
 */
 $(document).ready(function () {
 	//Approach Selector
@@ -359,3 +357,10 @@ function getCurrentDate() {
 	if (year < 2000) { year+=1900; }
 	document.write(month[date.getMonth()] + " " + date.getDate() + ", " + year);
 };
+
+function showMinValue(newValue) {
+	document.getElementById("range").innerHTML=newValue;
+}
+function showMaxValue(newValue) {
+	document.getElementById("range").innerHTML=newValue;
+}
