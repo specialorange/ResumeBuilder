@@ -49,15 +49,6 @@ $(document).ready(function () {
 					$(".tools").show();
 				}
 			});
-	// Compliance Selector
-		//onclick handler
-			$("#clickCompliance").on("click", function(){
-				if ($(".compliance").is(":visible") ) {
-					$(".compliance").hide();
-				} else {
-					$(".compliance").show();
-				}
-			});
 	// Projects Selector
 		//onclick handler
 			$("#clickProjects").on("click", function(){
@@ -143,30 +134,26 @@ $(document).ready(function () {
 			}
 	//WHAT ELEMENT SELECTOR
 		//CHRIS
-		// 	var colSelector = function (args) {
-		// 		$("#"+args.data.type).toggle();
-		// 		$("#tech-table col").each(function(){
-		// 			if 	($($(this)).text()==args.data.type) {
-		// 				$(this).toggle();
-		// 			}
-		// 		});
-		// 	};
-		// 	// $("#clickTech").click({type:"technology"},generalSelector);
-		// 	// assoc array is id:type
-		// 	var colHiders = {"#clickStart":"Start Date", "#clickEnd":"Current/End Date", "#clickElapsed":"Elapsed Time", "#clickVersion":"Version(s)", "#clickRating":"Personal Rating", "#clickProject":"Project"};
-		// for (var id in hiders) {
-		// 	$(id).click({type:colHiders[id]}, colSelector);
-		// }
-
-	//Start Selector
-		//onclick handler
-			$("#clickStart").on("click", function(){
-				if ($('#tech-table td:nth-child(3)').is(":visible") ) {
-					$('#tech-table td:nth-child(3)').hide();
-				} else {
-					$('#tech-table td:nth-child(3)').show();
+		var colSelector = function (args) {
+			var num = 0;
+			var i = 0;
+			$($("#tech-table tr")[0]).find('td').each(function(){
+				if ($(this).text() == args.data.type)
+					num=i;
+					i++;
+				});
+				if (num!=0){
+					$("#tech-table tr").each(function(){
+						var tds = $(this).find('td');
+						$(tds[num]).toggle();
+					});
 				}
-			});
+			};
+			// assoc array is id:type
+			var colHiders = {"#clickName":"Name", "#clickStart":"Start Date", "#clickEnd":"Current/End Date", "#clickElapsed":"Elapsed Time", "#clickVersion":"Version(s)", "#clickRating":"Personal Rating", "#clickProject":"Project"};
+			for (var id in colHiders) {
+				$(id).click({type:colHiders[id]}, colSelector);
+			}
 
 	//Test
 		//onclick handler
