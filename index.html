@@ -19,14 +19,16 @@
 </head>
 <body>
 <!--[if lt IE 7]><p class=chromeframe>Your browser is <em>ancient!</em> <a href="http://browsehappy.com/">Upgrade to a different browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to experience this site.</p><![endif]-->
-<script type="text/javascript">
-
-function showValue(newValue)
-{
-	document.getElementById("range").innerHTML=newValue;
-}
+<script>
+	function showMinValue(newValue)
+	{
+		document.getElementById("range").innerHTML=newValue;
+	}
+	function showMaxValue(newValue)
+	{
+		document.getElementById("range").innerHTML=newValue;
+	}
 </script>
-
 	<div id="header-container">
 		<header class="wrapper clearfix">
 			<h1 id="title">Resume Builder</h1>
@@ -46,34 +48,34 @@ function showValue(newValue)
 					<header>
 						<h1>Business Approach</h1>
 						<div class="mydiv">
-							<span id="ba1"><input type="button" class="btn" value="Approach" id="clickApproach" /></span>
-						</div>
-						<div class="mydiv">
-							<span id="ba2"><input type="button" class="btn" value="Design" id="clickDesign" /></span>
-						</div>
-						<div class="mydiv">
-							<span id="ba3"><input type="button" class="btn" value="Expertise" id="clickExpertise" /></span>
-						</div>
-						<div class="mydiv">
-							<span id="ba4"><input type="button" class="btn" value="Skills" id="clickSkills" /></span>
-						</div>
-						<div class="mydiv">
-							<span id="ba5"><input type="button" class="btn" value="Tools" id="clickTools" /></span>
-						</div>
-						<div class="mydiv">
-							<span id="ba6"><input type="button" class="btn" value="Compliance" id="clickCompliance" /></span>
-						</div>
-						<div class="mydiv">
-							<span id="ba7"><input type="button" class="btn" value="Projects" id="clickProjects" /></span>
-						</div>
-						<div class="mydiv">
-							<span id="ba8"><input type="button" class="btn" value="Community" id="clickCommunity" /></span>
-						</div>
-						<div class="mydiv">
-							<span id="ba9"><input type="button" class="btn" value="Interests" id="clickInterests" /></span>
-						</div>
-						<div class="mydiv">
-							<span id="ba10"><input type="button" class="btn" value="Tester" id="clickText" /></span>
+							<span id="ba1"><button type="button" class="button" id="clickApproach">Approach</button></span>
+						</div>                                                                                                  
+						<div class="mydiv">                                                                                     
+							<span id="ba2"><button type="button" class="button-vert" id="clickDesign">Design</button></span>
+						</div>                                                                                                  
+						<div class="mydiv">                                                                                     
+							<span id="ba3"><button type="button" class="button-vert" id="clickExpertise">Expertise</button></span>
+						</div>                                                                                                  
+						<div class="mydiv">                                                                                     
+							<span id="ba4"><button type="button" class="button-vert" id="clickSkills">Skills</button></span>
+						</div>                                                                                                  
+						<div class="mydiv">                                                                                     
+							<span id="ba5"><button type="button" class="button-vert" id="clickTools">Tools</button></span>
+						</div>                                                                                                  
+						<div class="mydiv">                                                                                     
+							<span id="ba6"><button type="button" class="button-vert" id="clickCompliance">Compliance</button></span>
+						</div>                                                                                                  
+						<div class="mydiv">                                                                                     
+							<span id="ba7"><button type="button" class="button-vert" id="clickProjects">Projects</button></span>
+						</div>                                                                                                  
+						<div class="mydiv">                                                                                     
+							<span id="ba8"><button type="button" class="button-vert" id="clickCommunity">Community</button></span>
+						</div>                                                                                                  
+						<div class="mydiv">                                                                                     
+							<span id="ba9"><button type="button" class="button-vert" id="clickInterests">Interests</button></span>
+						</div>                                                                                                  
+						<div class="mydiv">                                                                                     
+							<span id="ba10"><button type="button" class="button-vert" id="clickText">TESTER - remove top BA</button></span>
 						</div
 						
 					</header>
@@ -117,16 +119,17 @@ function showValue(newValue)
 					</header>
 					<section>
 						<div class="mydiv">
-							<span id="what1"><input type="button" class="btn" value="Technologies" id="clickTech" /></span> <span id="what2"><input type="button" class="btn" value="Compliance" id="clickComp" /></span> <span id="what3"><input type="button" class="btn" value="Certificiations" id="clickCert" /></span>
+							<span id="what1"><button type="button" class="button" id="clickTech">Technologies</button></span> <span id="what2"><button type="button" class="button" id="clickComp">Compliance</button></span> <span id="what3"><button type="button" class="button" id="clickCert">Certifications</button></span>
+							<!-- <input type="button" class="btn" value="Technologies" id="clickTech" / -->
 						</div>
 					</section>
 					<section>
-						<h3><span id="whatsel2"><input type="button" class="btn" value="Start Date" id="clickStart" /></span></h3>
-						<h3><span id="whatsel3"><input type="button" class="btn" value="Current/End Date" id="clickEnd" /></span></h3>
-						<h3><span id="whatsel4"><input type="button" class="btn" value="Elapsed" id="clickElapsed" /></span></h3>
-						<h3><span id="whatsel5"><input type="button" class="btn" value="Version(s)" id="clickVersion" /></span></h3>
-						<h3><span id="whatsel6"><input type="button" class="btn" value="Personal Rating" id="clickRating" /></span></h3>
-						<h3><span id="whatsel7"><input type="button" class="btn" value="Project" id="clickProject" /></span></h3>
+						<h3><span id="whatsel2"><button type="button" class="button-vert" id="clickStart">Start Date</button></span></h3>
+						<h3><span id="whatsel3"><button type="button" class="button-vert" id="clickEnd">Current/End Date</button></span></h3>
+						<h3><span id="whatsel4"><button type="button" class="button-vert" id="clickElapsed">Elapsed Time</button></span></h3>
+						<h3><span id="whatsel5"><button type="button" class="button-vert" id="clickVersion">Version(s)</button></span></h3>
+						<h3><span id="whatsel6"><button type="button" class="button-vert" id="clickRating">Personal Rating</button></span></h3>
+						<h3><span id="whatsel7"><button type="button" class="button-vert" id="clickProject">Project</button></span></h3>
 					</section>
 					<!-- <footer>
 						<h2>footer</h2>
@@ -147,13 +150,13 @@ function showValue(newValue)
 					<section>
 						<h2>Begin Date</h2>
 	<!--TODO: value should reflect the most relevant year ~2007-->
-							<input type="range" id="date-range-begin-selector" value="" step="1" onchange="showValue(this.value)" />
+							<input type="range" id="date-range-begin-selector" value=Array.min step="1" onchange="showMinValue(this.value)" />
 							<span id="range">0</span>
 					</section>
 					<section>
 						<h2>End Date</h2>
 	<!--TODO: value should reflect the most current year-->
-							<input type="range" id="date-range-end-selector" value="" step="1" />
+							<input type="range" id="date-range-end-selector" value=Array.max step="1" onchange="showMaxValue(this.value)"/>
 							<span id="range">0</span>
 					</section>
 					<!-- <footer>
@@ -289,7 +292,7 @@ function showValue(newValue)
 											<img align="right" src="_img/smile.png" width="66" height="18" alt="Smile">
 											<h3 align="right">R</h3>
 											<h3 align="right">excel</h3>
-											<h3 align="right">SQL/mySQL</h3>
+											<h3 align="right">textmate</h3>
 
 									</article>
 
@@ -401,7 +404,7 @@ function showValue(newValue)
 					</section>
 				</article>
 				<article class="company">
-					<h1>WinnDixie <span class="startdate"><span class="startmonth">JUN</span> <span class="startyear">2002</span></span> - <span class="enddate"><span class="endmonth">MAR</span> <span class="endyear">2006</span></span></h1>
+					<h1>WinnDixie <span class="startdate"><span class="startmonth">JUN</span> <span class="startyear">2002</span></span> - <span class="enddate"><span class="endmonth">MAR</span> <span class="endyear">2003</span></span></h1>
 					<section>
 						<h2>Grocery Manager</h2>
 					    	<ul>
@@ -418,7 +421,7 @@ function showValue(newValue)
 				</article>
 				<article class="technical">
 					<div id="technical-container">
-						<h1><span id="tech">Technologies</span> / <span id="comp">Compliance</span> / <span id="cert">Certification</span></h1>
+						<h1><span id="technology">Technologies</span> / <span id="compliance">Compliance</span> / <span id="certification">Certification</span></h1>
 						<table id="tech-table" cellspacing="0">
 							<colgroup>
 								<col>
@@ -444,7 +447,7 @@ function showValue(newValue)
 								</tr>
 								<tr>
 									<td>technology</td>
-									<td>J2EE</span></td>
+									<td>J2EE</td>
 									<td>November, 2011</td>
 									<td><span id="current"></span></td>
 									<td>TODO</td>
@@ -458,7 +461,7 @@ function showValue(newValue)
 									<td>April, 2012</td>
 									<td><span id="current"></span></td>
 									<td>TODO</td>
-									<td>?</td>
+									<td>1.8.x</td>
 									<td>1</td>
 									<td>Resume Builder</td>
 								</tr>
@@ -467,8 +470,8 @@ function showValue(newValue)
 									<td>CIP</td>
 									<td>May, 2008</td>
 									<td>August, 2011</td>
-									<td>TODO, 3 years, 4 mos</td>
-									<td>n/a</td>
+									<td>TODO</td>
+									<td></td>
 									<td>2</td>
 									<td>Protection</td>
 								</tr>
@@ -477,14 +480,238 @@ function showValue(newValue)
 									<td>Red Cross</td>
 									<td>May, 2007</td>
 									<td>April, 2013</td>
-									<td>TODO, 6 years</td>
-									<td>n/a</td>
+									<td>TODO</td>
+									<td>First Aid, CPR</td>
 									<td>3</td>
-									<td>Life Saving</td>
+									<td></td>
+								</tr>
+								<tr>
+									<td>compliance</td>
+									<td>ANSI</td>
+									<td>November, 2007</td>
+									<td>August, 2010</td>
+									<td>TODO</td>
+									<td></td>
+									<td>2</td>
+									<td></td>
+								</tr>
+								<tr>
+									<td>certification</td>
+									<td>ISO</td>
+									<td>May, 2007</td>
+									<td>August, 2010</td>
+									<td>TODO</td>
+									<td></td>
+									<td>9000, 9001</td>
+									<td></td>
+								</tr>
+								<tr>
+									<td>certification</td>
+									<td>DOT</td>
+									<td>June, 2006</td>
+									<td>April, 2013</td>
+									<td>TODO</td>
+									<td>USA, NC</td>
+									<td>3</td>
+									<td></td>
+								</tr>
+								<tr>
+									<td>compliance</td>
+									<td>OSHA</td>
+									<td>June, 2007</td>
+									<td>April, 2012</td>
+									<td>TODO</td>
+									<td>USA, NC, TN</td>
+									<td>2</td>
+									<td></td>
+								</tr>
+								<tr>
+									<td>compliance</td>
+									<td>NERC</td>
+									<td>April, 2006</td>
+									<td>April, 2012</td>
+									<td>TODO</td>
+									<td>USA, NC</td>
+									<td>2</td>
+									<td></td>
+								</tr>
+								<tr>
+									<td>certification</td>
+									<td>Leadership Principles</td>
+									<td>January, 2008</td>
+									<td></td>
+									<td>TODO</td>
+									<td></td>
+									<td>3</td>
+									<td></td>
+								</tr>
+								<tr>
+									<td>certification</td>
+									<td>Forklift</td>
+									<td>April, 2001</td>
+									<td></td>
+									<td>TODO</td>
+									<td></td>
+									<td>3</td>
+									<td></td>
+								</tr>
+								<tr>
+									<td>certification</td>
+									<td>Pallet Jack</td>
+									<td>April, 2001</td>
+									<td></td>
+									<td>TODO</td>
+									<td></td>
+									<td>3</td>
+									<td></td>
+								</tr>
+								<tr>
+									<td>certification</td>
+									<td>Tugger</td>
+									<td>April, 2006</td>
+									<td></td>
+									<td>TODO</td>
+									<td></td>
+									<td>3</td>
+									<td></td>
+								</tr>
+								<tr>
+									<td>technology</td>
+									<td>Excel</td>
+									<td>April, 1998</td>
+									<td></td>
+									<td>TODO</td>
+									<td>VBA</td>
+									<td>3</td>
+									<td>Numerous</td>
+								</tr>
+								<tr>
+									<td>technology</td>
+									<td>Microsoft suite</td>
+									<td>April, 1998</td>
+									<td></td>
+									<td>TODO</td>
+									<td></td>
+									<td>3</td>
+									<td>Numerous</td>
+								</tr>
+								<tr>
+									<td>technology</td>
+									<td>R</td>
+									<td>September, 2008</td>
+									<td></td>
+									<td>TODO</td>
+									<td>VBA</td>
+									<td>2</td>
+									<td>Statistical Analysis</td>
+								</tr>
+								<tr>
+									<td>technology</td>
+									<td>SQL</td>
+									<td>August, 2010</td>
+									<td></td>
+									<td>TODO</td>
+									<td>mySQL, server, msSQL/Sybase/tSQL</td>
+									<td>3</td>
+									<td>Numerous</td>
+								</tr>
+								<tr>
+									<td>technology</td>
+									<td>Eclipse</td>
+									<td>August, 2009</td>
+									<td></td>
+									<td>TODO</td>
+									<td>Helios and Indigo for Classic, Java, J2EE, JS</td>
+									<td>2</td>
+									<td>Numerous</td>
+								</tr>
+								<tr>
+									<td>technology</td>
+									<td>Maven</td>
+									<td>August, 2010</td>
+									<td></td>
+									<td>TODO</td>
+									<td>2, 3</td>
+									<td>2</td>
+									<td>Contractor Optimization</td>
+								</tr>
+								<tr>
+									<td>technology</td>
+									<td>XML</td>
+									<td>August, 2009</td>
+									<td></td>
+									<td>TODO</td>
+									<td>1.0, 1.1</td>
+									<td>2</td>
+									<td>Numerous</td>
+								</tr>
+								<tr>
+									<td>technology</td>
+									<td>Spring</td>
+									<td>August, 2010</td>
+									<td></td>
+									<td>TODO</td>
+									<td>2.5, 3.0, 3.1</td>
+									<td>2</td>
+									<td>Contractor Optimization</td>
+								</tr>
+								<tr>
+									<td>technology</td>
+									<td>Hibernate</td>
+									<td>August, 2010</td>
+									<td></td>
+									<td>TODO</td>
+									<td>3.x, 4.x</td>
+									<td>2</td>
+									<td>Contractor Optimization</td>
+								</tr>
+								<tr>
+									<td>technology</td>
+									<td>Tomcat</td>
+									<td>August, 2010</td>
+									<td></td>
+									<td>TODO</td>
+									<td>5.5, 6, 7</td>
+									<td>2</td>
+									<td>Numerous</td>
+								</tr>
+								<tr>
+									<td>technology</td>
+									<td>CSS</td>
+									<td>January, 1997</td>
+									<td></td>
+									<td>TODO</td>
+									<td>1, 2, 3</td>
+									<td>3</td>
+									<td>Numerous</td>
+								</tr>
+								<tr>
+									<td>technology</td>
+									<td>HTML</td>
+									<td>January, 1997</td>
+									<td></td>
+									<td>TODO</td>
+									<td>3, 4, 5</td>
+									<td>2</td>
+									<td>Numerous</td>
+								</tr>
+								<tr>
+									<td>technology</td>
+									<td>XHTML</td>
+									<td>January, 2010</td>
+									<td></td>
+									<td>TODO</td>
+									<td>1.0, 1.1, 5</td>
+									<td>2</td>
+									<td>Numerous</td>
 								</tr>
 							</tbody>
 						</table>
 					</div>
+				</article>
+				
+				<article>
+					<div class="namefont">chris frisina</div>
 				</article>
 			<!-- </article> -->
 			</div>

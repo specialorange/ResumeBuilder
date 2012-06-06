@@ -9,7 +9,7 @@ audio:not([controls]) { display: none; }
 [hidden] { display: none; }
 
 html { font-size: 100%; -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; }
-html, button, input, select, textarea { font-family: sans-serif; color: #222; }
+html, input, select, textarea { font-family: sans-serif; color: #222; }
 body { margin: 0; font-size: 1em; line-height: 1.4; }
 
 ::-moz-selection { background: #fe57a1; color: #fff; text-shadow: none; }
@@ -353,10 +353,69 @@ h4 {
 li {
 	font-size: 10px;
 }
-button {
-	background:none;
-	border:none;
-}
+.button {
+   border-top: 1px solid #ffffff;
+   background: #ff4d00;
+   background: -webkit-gradient(linear, left top, left bottom, from(#ff4d00), to(#ff4d00));
+   background: -webkit-linear-gradient(top, #ff4d00, #ff4d00);
+   background: -moz-linear-gradient(top, #ff4d00, #ff4d00);
+   background: -ms-linear-gradient(top, #ff4d00, #ff4d00);
+   background: -o-linear-gradient(top, #ff4d00, #ff4d00);
+   padding: 2px 4px;
+   -webkit-border-radius: 4px;
+   -moz-border-radius: 4px;
+   border-radius: 4px;
+   -webkit-box-shadow: rgba(0,0,0,1) 0 1px 0;
+   -moz-box-shadow: rgba(0,0,0,1) 0 1px 0;
+   box-shadow: rgba(0,0,0,1) 0 1px 0;
+   text-shadow: rgba(0,0,0,.4) 0 1px 0;
+   color: #ffffff;
+   font-size: 12px;
+   font-family: Georgia, Serif;
+   text-decoration: none;
+   vertical-align: middle;
+   }
+.button:hover {
+   border-top-color: #275700;
+   background: #275700;
+   color: #ffffff;
+   }
+.button:active {
+   border-top-color: #0000ff;
+   background: #0000ff;
+   }
+.button-vert {
+   border-top: 1px solid #ffffff;
+   background: #ff4d00;
+   background: -webkit-gradient(linear, left top, left bottom, from(#ff4d00), to(#ff4d00));
+   background: -webkit-linear-gradient(top, #ff4d00, #ff4d00);
+   background: -moz-linear-gradient(top, #ff4d00, #ff4d00);
+   background: -ms-linear-gradient(top, #ff4d00, #ff4d00);
+   background: -o-linear-gradient(top, #ff4d00, #ff4d00);
+   padding: 2px 4px;
+   -webkit-border-radius: 4px;
+   -moz-border-radius: 4px;
+   border-radius: 4px;
+   -webkit-box-shadow: rgba(0,0,0,1) 0 1px 0;
+   -moz-box-shadow: rgba(0,0,0,1) 0 1px 0;
+   box-shadow: rgba(0,0,0,1) 0 1px 0;
+   text-shadow: rgba(0,0,0,.4) 0 1px 0;
+   color: #ffffff;
+   font-size: 8px;
+   font-family: georgia, serif;
+   text-decoration: none;
+   vertical-align: middle;
+   }
+.button-vert:hover {
+   border-top-color: #275700;
+   background: #275700;
+   color: #ffffff;
+
+   }
+.button-vert:active {
+   border-top-color: #0000ff;
+   background: #0000ff;
+   }
 .btn {
 	background-color: transparent;
 	border: 0;
@@ -376,4 +435,19 @@ aside .hover {
 }
 .type {
 	visibility: hidden
+}
+@font-face {
+    font-family: 'Desyrel';
+    src: url('/Users/chrisfrisina/Documents/CP/Projects/ResumeBuilder/_css/desyrel.eot');
+    src: url('/Users/chrisfrisina/Documents/CP/Projects/ResumeBuilder/_css/desyrel.eot?#iefix') format('embedded-opentype'),
+         url('/Users/chrisfrisina/Documents/CP/Projects/ResumeBuilder/_css/desyrel.woff') format('woff'),
+         url('/Users/chrisfrisina/Documents/CP/Projects/ResumeBuilder/_css/desyrel.ttf') format('truetype'),
+         url('/Users/chrisfrisina/Documents/CP/Projects/ResumeBuilder/_css/desyrel.svg#Desyrel') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+.namefont {
+	font-family: Desyrel;
+	font-size: 50px;
 }
