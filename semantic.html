@@ -289,7 +289,7 @@
 </section>
 
 <section class="stuff">
-  <h1>Technologies / Compliance / Certification</h1>
+  <h1>Technologies / Compliance / Certifications</h1>
   <table cellspacing="0">
     <thead>
       <tr><th>Category</th>
@@ -699,6 +699,11 @@ $('section.company').each(processCompanyTime);
   keys = $.unique(keys);
   keys.sort();
   
+  var hash = {};
+  for (var i = 0; i < keys.length; i++) {
+    hash[keys[i]] = labels[i];
+  }
+  
   $.each(keys, function(i) {
     $('<input type="checkbox" checked="checked" id="stuff_'+this+'" name="stuff_'+this+'"/><label for="stuff_'+this+'">'+labels[i]+'</label>').appendTo($('fieldset.stuff'));
   });
@@ -710,6 +715,10 @@ $('section.company').each(processCompanyTime);
         $(this).parent().toggle();
       }
     });
+
+    var segments = [];
+    $('fieldset.stuff input:checked').each(function() { segments.push(hash[$(this).attr('id').replace('stuff_','')]); });
+    $('section.stuff > h1').html(segments.join(' / '));
   });
   $('fieldset.stuff #stuff_all').on('change', function() {
     if (this.checked) {
@@ -720,6 +729,9 @@ $('section.company').each(processCompanyTime);
       $(this).nextAll('input').removeAttr('disabled');
     }
   });
+  
+  $('section.stuff > h1').html($('section.stuff > h1').html().split(' / ').sort().join(' / '));
+  
 })();
 
 </script>
