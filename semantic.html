@@ -20,15 +20,17 @@
     <legend>Snapshot Sections</legend>
     <input type="checkbox" id="s_all" name="s_all" /><label for="s_all">Remove Section</label>
   </fieldset>
-  <fieldset>
-    <legend>Resume Range</legend>
+  <fieldset class="workexperience">
+    <legend>Work Experience Range</legend>
+    <input type="checkbox" id="workexperience_all" name="workexperience_all" /><label for="workexperience_all">Remove Section</label>
     <label for="startdate">Start Date</label>
       <input id="startdate" name="startdate" type="text" value="" />
     <label for="enddate">End Date</label>
       <input id="enddate" name="enddate" type="text" value="" />
   </fieldset>
-  <fieldset>
+  <fieldset class="stuff">
     <legend>Technologies / Compliance / Certification</legend>
+    <input type="checkbox" id="stuff_all" name="stuff_all" /><label for="stuff_all">Remove Section</label>
   </fieldset>
 </form>
 
@@ -589,7 +591,18 @@ $('fieldset.snapshot #s_all').on('change', function() {
   }
 });
 
-// Resume Range
+// Work Experience Range
+
+$('fieldset.workexperience #workexperience_all').on('change', function() {
+  if (this.checked) {
+    $('section.workexperience').hide();
+    $(this).nextAll('input').attr('disabled','disabled');
+  } else {
+    $('section.workexperience').show();
+    $(this).nextAll('input').removeAttr('disabled');
+  }
+});
+
 
 function compareTime(a,b) {
   a = processTime(a);
@@ -675,7 +688,38 @@ $('#enddate').on('change', function() {
 
 $('section.company').each(processCompanyTime);
 
-
 // Technologies / Compliance / Certification
-$('section.stuff > h1').html().split(' / ');
+(function() {  
+  var labels = $('section.stuff > h1').html().split(' / ');
+  labels.sort();
+  
+  var keys = [];
+  $('section.stuff table td:first-child').each(function(){ keys.push($(this).html()); });
+  keys.sort();
+  keys = $.unique(keys);
+  keys.sort();
+  
+  $.each(keys, function(i) {
+    $('<input type="checkbox" checked="checked" id="stuff_'+this+'" name="stuff_'+this+'"/><label for="stuff_'+this+'">'+labels[i]+'</label>').appendTo($('fieldset.stuff'));
+  });
+  $('fieldset.stuff input').on('change', function() {
+    $formelem = $(this);
+    var index = $(this).prevAll('input').length - 1;
+    $('section.stuff table td:first-child').each(function() {
+      if ($formelem.attr('id').replace('stuff_','') == $(this).html()) {
+        $(this).parent().toggle();
+      }
+    });
+  });
+  $('fieldset.stuff #stuff_all').on('change', function() {
+    if (this.checked) {
+      $('section.stuff').hide();
+      $(this).nextAll('input').attr('disabled','disabled');
+    } else {
+      $('section.stuff').show();
+      $(this).nextAll('input').removeAttr('disabled');
+    }
+  });
+})();
+
 </script>
