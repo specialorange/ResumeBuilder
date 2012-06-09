@@ -20,15 +20,17 @@
     <legend>Snapshot Sections</legend>
     <input type="checkbox" id="s_all" name="s_all" /><label for="s_all">Remove Section</label>
   </fieldset>
-  <fieldset>
-    <legend>Resume Range</legend>
+  <fieldset class="workexperience">
+    <legend>Work Experience Range</legend>
+    <input type="checkbox" id="workexperience_all" name="workexperience_all" /><label for="workexperience_all">Remove Section</label>
     <label for="startdate">Start Date</label>
       <input id="startdate" name="startdate" type="text" value="" />
     <label for="enddate">End Date</label>
       <input id="enddate" name="enddate" type="text" value="" />
   </fieldset>
-  <fieldset>
+  <fieldset class="stuff">
     <legend>Technologies / Compliance / Certification</legend>
+    <input type="checkbox" id="stuff_all" name="stuff_all" /><label for="stuff_all">Remove Section</label>
   </fieldset>
 </form>
 
@@ -287,7 +289,7 @@
 </section>
 
 <section class="stuff">
-  <h1>Technologies / Compliance / Certification</h1>
+  <h1>Technologies / Compliance / Certifications</h1>
   <table cellspacing="0">
     <thead>
       <tr><th>Category</th>
@@ -581,12 +583,58 @@
 <script src="http://code.jquery.com/jquery.min.js"></script>
 
 <script>
-
-// Business Approaches
+// Generation
 $('section.businessapproaches section h1').each(function() {
   var value = this.innerHTML;
   $('<input type="checkbox" checked="checked" id="ba_'+value.toLowerCase()+'" name="ba_'+value.toLowerCase()+'"/><label for="ba_'+value.toLowerCase()+'">'+value+'</label>').appendTo($('fieldset.businessapproaches'));
 });
+$('section.snapshot section h1').each(function() {
+  var value = this.innerHTML;
+  $('<input type="checkbox" checked="checked" id="'+value.toLowerCase()+'" name="'+value.toLowerCase()+'"/><label for="'+value.toLowerCase()+'">'+value+'</label>').appendTo($('fieldset.snapshot'));
+});
+
+$('section.company').each(processCompanyTime);
+
+// Initialize the start date and end date function.
+(function() {
+  var start = [];
+  var end = [];
+  $('section.position time.start').each(function(){
+    start.push($(this).attr('datetime'));
+    start.sort(compareTime);
+    $('#startdate').val(start[0]);
+  });
+  $('section.position time.end').each(function(){
+    end.push($(this).attr('datetime'));
+    end.sort(compareTime);
+    $('#enddate').val(end[end.length-1]);
+  });
+})();
+
+$('section.stuff > h1').html($('section.stuff > h1').html().split(' / ').sort().join(' / '));
+
+// Persistence
+
+var formvals = {};
+var keyval = location.search.replace('?','').split('&');
+$.each(keyval, function() {
+  var splitval = this.split('=');
+  formvals[splitval[0]] = splitval[1];
+});
+
+$.each($('form')[0].elements, function() {
+  var key = $(this).attr('name');
+  if (key && formvals[key]) {
+    $('#'+key).val(formvals[key]);
+  } else {
+    // if ($(this).attr('type') == 'checkbox') {
+    //   $('#'+key)[0].checked = false;
+    // }
+  }
+});
+
+
+// Business Approaches
 $('fieldset.businessapproaches input').on('change', function() {
   var index = $(this).prevAll('input').length - 1;
   $('section.businessapproaches > section').eq(index).toggle();
@@ -602,10 +650,6 @@ $('fieldset.businessapproaches #ba_all').on('change', function() {
 });
 
 // Snapshots
-$('section.snapshot section h1').each(function() {
-  var value = this.innerHTML;
-  $('<input type="checkbox" checked="checked" id="'+value.toLowerCase()+'" name="'+value.toLowerCase()+'"/><label for="'+value.toLowerCase()+'">'+value+'</label>').appendTo($('fieldset.snapshot'));
-});
 $('fieldset.snapshot input').on('change', function() {
   var index = $(this).prevAll('input').length - 1;
   $('section.snapshot > section').eq(index).toggle();
@@ -620,7 +664,7 @@ $('fieldset.snapshot #s_all').on('change', function() {
   }
 });
 
-// Resume Range
+// Work Experience Range
 
 function compareTime(a,b) {
   a = processTime(a);
@@ -664,6 +708,16 @@ function processCompanyTime() {
 };
 
 
+$('fieldset.workexperience #workexperience_all').on('change', function() {
+  if (this.checked) {
+    $('section.workexperience').hide();
+    $(this).nextAll('input').attr('disabled','disabled');
+  } else {
+    $('section.workexperience').show();
+    $(this).nextAll('input').removeAttr('disabled');
+  }
+});
+
 $('#startdate').on('change', function() {
   var $formelem = $(this);
   // Hide all positions that end before the specified date.
@@ -688,25 +742,49 @@ $('#enddate').on('change', function() {
   $('section.company').each(processCompanyTime);
 });
 
-// Initialize the start date and end date function.
-(function() {
-  var start = [];
-  var end = [];
-  $('section.position time.start').each(function(){
-    start.push($(this).attr('datetime'));
-    start.sort(compareTime);
-    $('#startdate').val(start[0]);
+// Technologies / Compliance / Certification
+(function() {  
+  var labels = $('section.stuff > h1').html().split(' / ');
+  labels.sort();
+  
+  var keys = [];
+  $('section.stuff table td:first-child').each(function(){ keys.push($(this).html()); });
+  keys.sort();
+  keys = $.unique(keys);
+  keys.sort();
+  
+  var hash = {};
+  for (var i = 0; i < keys.length; i++) {
+    hash[keys[i]] = labels[i];
+  }
+  
+  $.each(keys, function(i) {
+    $('<input type="checkbox" checked="checked" id="stuff_'+this+'" name="stuff_'+this+'"/><label for="stuff_'+this+'">'+labels[i]+'</label>').appendTo($('fieldset.stuff'));
   });
-  $('section.position time.end').each(function(){
-    end.push($(this).attr('datetime'));
-    end.sort(compareTime);
-    $('#enddate').val(end[end.length-1]);
+
+  $('fieldset.stuff input').on('change', function() {
+    $formelem = $(this);
+    var index = $(this).prevAll('input').length - 1;
+    $('section.stuff table td:first-child').each(function() {
+      if ($formelem.attr('id').replace('stuff_','') == $(this).html()) {
+        $(this).parent().toggle();
+      }
+    });
+
+    var segments = [];
+    $('fieldset.stuff input:checked').each(function() { segments.push(hash[$(this).attr('id').replace('stuff_','')]); });
+    $('section.stuff > h1').html(segments.join(' / '));
+  });
+  $('fieldset.stuff #stuff_all').on('change', function() {
+    if (this.checked) {
+      $('section.stuff').hide();
+      $(this).nextAll('input').attr('disabled','disabled');
+    } else {
+      $('section.stuff').show();
+      $(this).nextAll('input').removeAttr('disabled');
+    }
   });
 })();
 
-$('section.company').each(processCompanyTime);
 
-
-// Technologies / Compliance / Certification
-$('section.stuff > h1').html().split(' / ');
 </script>
