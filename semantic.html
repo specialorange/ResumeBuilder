@@ -908,7 +908,10 @@ $('#enddate').on('change', function() {
 		$('fieldset.techtable input.column[type=checkbox]').on('change', function() {
 			var index = $(this).prevAll('input.column').length+2;
 			console.log(index);
-			$('fieldset.techtable' #col'+index').toggle()
+//			$('fieldset.techtable' #col'+index').toggle()
+			$('fieldset.techtable #col' + index).toggle();
+//			$('#col' + index).toggle();
+//			$('fieldset.techtable #col' + index).toggle();
 //			($('#col'+index).toggle());
 		});
 	
