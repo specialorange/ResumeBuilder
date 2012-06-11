@@ -316,15 +316,15 @@
 		<section class="techtable">
 			<h1>Technologies / Compliance / Certifications</h1>
 			<table cellspacing="0">
-				<!-- <colgroup>
-					<col id=0>
-					<col id=1>
-					<col id=2>
-					<col id=3>
-					<col id=4>
-					<col id=5>
-					<col id=6>
-				</colgroup> -->
+				<colgroup>
+					<col id="col0">
+					<col id="col1">
+					<col id="col2">
+					<col id="col3">
+					<col id="col4">
+					<col id="col5">
+					<col id="col6">
+				</colgroup>
 				<thead>
 					<tr>
 						<th>Category</th>
@@ -524,7 +524,6 @@
 						<td>August, 2010</td>
 						<td></td>
 						<td></td>
-						<td>2.5, 3.0, 3.1</td>
 						<td>2</td>
 					</tr>
 					<tr>
@@ -820,7 +819,7 @@ $('#enddate').on('change', function() {
 //fill in blank end dates with Today's date
 
 
-	$('section.techtable td:nth-child(4)').each(function() {
+	$('section.techtable td:nth-child(5)').each(function() {
 		if ($(this).is(':empty')) {
 			$(this).append(getCurrentDate());
 		};
@@ -855,7 +854,7 @@ $('#enddate').on('change', function() {
 		}
 	};
 	//calculate the elapsed based on start and end date
-	$('section.techtable td:nth-child(5)').each(function() {
+	$('section.techtable td:nth-child(6)').each(function() {
 		$(this).append(convertToElapsed(elapsedMonths($(this).prev().prev().html(),$(this).prev().html())));
 	})
 
@@ -869,7 +868,7 @@ $('#enddate').on('change', function() {
 		$('section.techtable table td:first-child').each(function(){ keys.push($(this).html()); });
 		keys.sort();
 		keys = $.unique(keys);
-		// keys.sort();   .unique sorts already
+		keys.sort();
 
 		//¿¿ asign the label to the key and assign to hash??
 		var hash = {};
@@ -886,7 +885,7 @@ $('#enddate').on('change', function() {
 		$('section.techtable table th').each(function(){
 			cols.push($(this).html());
 		});
-		cols.splice(0,1);
+		cols.splice(0,2);
 		$.each(cols, function(i) {
 			$('<input type="checkbox" checked="checked" id="ttcols'+this+'" name="ttcol_'+this+'" class="column"/><label for="ttcol_'+this+'">'+cols[i]+'</label>').appendTo($('fieldset.techtable'));
 		});
@@ -906,14 +905,12 @@ $('#enddate').on('change', function() {
 			$('section.techtable > h1').html(segments.join(' / '));
 		});
 	//Column Button Hider
-		// $('fieldset.techtable input.column[type=checkbox]').on('change', function() {
-		// 	$formelem = $(this);
-		// 	var index = $(this).prevAll('input').length - 1;
-		// 	$('section.techtable table td:first-child').each(function() {
-		// 		if ($formelem.attr('id').replace('techtable_','') == $(this).html()) {
-		// 			$(this).parent().toggle();
-		// 		}
-		// 	});
+		$('fieldset.techtable input.column[type=checkbox]').on('change', function() {
+			var index = $(this).prevAll('input.column').length+2;
+			console.log(index);
+			$('fieldset.techtable' #col'+index').toggle()
+//			($('#col'+index).toggle());
+		});
 	
 	//Hide all of techtable
 		$('fieldset.techtable #techtable_all').on('change', function() {
