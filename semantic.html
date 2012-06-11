@@ -49,9 +49,9 @@
 			</fieldset>
 			<fieldset class="techtable">
 				<legend>Technologies / Compliance / Certification</legend>
-				<input type="checkbox" id="techtable_all" name="techtable_all" />
+				<input type="checkbox" id="techtable_all" name="techtable_all"/>
 					<label for="techtable_all">Remove Table</label>
-				<br><input type="checkbox" id="ttcol_all" name="ttcol_all" />
+				<br><input type="checkbox" id="ttcol_all" name="ttcol_all"/>
 					<label for="ttcol_all">Remove columns</label>
 			</fieldset>
 		</form>
@@ -316,14 +316,23 @@
 		<section class="techtable">
 			<h1>Technologies / Compliance / Certifications</h1>
 			<table cellspacing="0">
+				<!-- <colgroup>
+					<col id=0>
+					<col id=1>
+					<col id=2>
+					<col id=3>
+					<col id=4>
+					<col id=5>
+					<col id=6>
+				</colgroup> -->
 				<thead>
 					<tr>
 						<th>Category</th>
 						<th>Skill</th>
+						<th>Version(s)</th>
 						<th>Start Date</th>
 						<th>End Date</th>
 						<th>Elapsed Time</th>
-						<th>Version(s)</th>
 						<th>Expertise Rating</th>
 					</tr>
 				</thead>
@@ -331,89 +340,89 @@
 					<tr>
 						<td>Technology</td>
 						<td>J2EE</td>
+						<td>1.5, 1.6, 1.7</td>
 						<td>November, 2011</td>
 						<td></td>
 						<td></td>
-						<td>1.5, 1.6, 1.7</td>
 						<td>2</td>
 					</tr>
 					<tr>
 						<td>Technology</td>
 						<td>JS</td>
+						<td>N/A</td>
 						<td>April, 2012</td>
 						<td></td>
 						<td></td>
-						<td>N/A</td>
 						<td>1</td>
 					</tr>
 					<tr>
 						<td>Compliance</td>
 						<td>CIP</td>
+						<td></td>
 						<td>May, 2008</td>
 						<td>August, 2011</td>
-						<td></td>
 						<td></td>
 						<td>2</td>
 					</tr>
 					<tr>
 						<td>Certification</td>
 						<td>Red Cross</td>
+						<td>First Aid, CPR</td>
 						<td>May, 2007</td>
 						<td>April, 2013</td>
 						<td></td>
-						<td>First Aid, CPR</td>
 						<td>3</td>
 					</tr>
 					<tr>
 						<td>Compliance</td>
 						<td>ANSI</td>
+						<td></td>
 						<td>November, 2007</td>
 						<td>August, 2010</td>
-						<td></td>
 						<td></td>
 						<td>2</td>
 					</tr>
 					<tr>
 						<td>Certification</td>
 						<td>ISO</td>
+						<td>9000, 9001</td>
 						<td>May, 2007</td>
 						<td>August, 2010</td>
 						<td></td>
-						<td>9000, 9001</td>
 						<td>2</td>
 					</tr>
 					<tr>
 						<td>Certification</td>
 						<td>DOT</td>
+						<td>USA, NC</td>
 						<td>June, 2006</td>
 						<td>April, 2013</td>
 						<td></td>
-						<td>USA, NC</td>
 						<td>3</td>
 					</tr>
 					<tr>
 						<td>Compliance</td>
 						<td>OSHA</td>
+						<td>USA, NC, TN</td>
 						<td>June, 2007</td>
 						<td>April, 2012</td>
 						<td></td>
-						<td>USA, NC, TN</td>
 						<td>2</td>
 					</tr>
 					<tr>
 						<td>Compliance</td>
 						<td>NERC</td>
+						<td>USA, NC</td>
 						<td>April, 2006</td>
 						<td>April, 2012</td>
 						<td></td>
-						<td>USA, NC</td>
 						<td>2</td>
 					</tr>
 					<tr>
 						<td>Certification</td>
 						<td>Leadership Principles</td>
-						<td>January, 2008</td>
 						<td></td>
+						<td>January, 2008</td>
 						<td></td>
 						<td></td>
 						<td>3</td>
@@ -421,8 +430,8 @@
 					<tr>
 						<td>Certification</td>
 						<td>Forklift</td>
-						<td>April, 2001</td>
 						<td></td>
+						<td>April, 2001</td>
 						<td></td>
 						<td></td>
 						<td>3</td>
@@ -430,8 +439,8 @@
 					<tr>
 						<td>Certification</td>
 						<td>Pallet Jack</td>
-						<td>April, 2001</td>
 						<td></td>
+						<td>April, 2001</td>
 						<td></td>
 						<td></td>
 						<td>3</td>
@@ -439,8 +448,8 @@
 					<tr>
 						<td>Certification</td>
 						<td>Tugger</td>
-						<td>April, 2006</td>
 						<td></td>
+						<td>April, 2006</td>
 						<td></td>
 						<td></td>
 						<td>3</td>
@@ -448,17 +457,17 @@
 					<tr>
 						<td>Technology</td>
 						<td>Excel</td>
+						<td>VBA</td>
 						<td>April, 1998</td>
 						<td></td>
 						<td></td>
-						<td>VBA</td>
 						<td>3</td>
 					</tr>
 					<tr>
 						<td>Technology</td>
 						<td>Microsoft suite</td>
-						<td>April, 1998</td>
 						<td></td>
+						<td>April, 1998</td>
 						<td></td>
 						<td></td>
 						<td>3</td>
@@ -466,51 +475,52 @@
 					<tr>
 						<td>Technology</td>
 						<td>R</td>
+						<td>2.x</td>
 						<td>September, 2008</td>
 						<td></td>
 						<td></td>
-						<td>2.x</td>
 						<td>2</td>
 					</tr>
 					<tr>
 						<td>Technology</td>
 						<td>SQL</td>
+						<td>mySQL, server, msSQL/Sybase/tSQL</td>
 						<td>August, 2010</td>
 						<td></td>
 						<td></td>
-						<td>mySQL, server, msSQL/Sybase/tSQL</td>
 						<td>3</td>
 					</tr>
 					<tr>
 						<td>Technology</td>
 						<td>Eclipse</td>
+						<td>Helios and Indigo for Classic, Java, J2EE, JS</td>
 						<td>August, 2009</td>
 						<td></td>
 						<td></td>
-						<td>Helios and Indigo for Classic, Java, J2EE, JS</td>
 						<td>2</td>
 					</tr>
 					<tr>
 						<td>Technology</td>
 						<td>Maven</td>
+						<td>2, 3</td>
 						<td>August, 2010</td>
 						<td></td>
 						<td></td>
-						<td>2, 3</td>
 						<td>2</td>
 					</tr>
 					<tr>
 						<td>Technology</td>
 						<td>XML</td>
+						<td>1.0, 1.1</td>
 						<td>August, 2009</td>
 						<td></td>
 						<td></td>
-						<td>1.0, 1.1</td>
 						<td>2</td>
 					</tr>
 					<tr>
 						<td>Technology</td>
 						<td>Spring</td>
+						<td>2.5, 3.0, 3.1</td>
 						<td>August, 2010</td>
 						<td></td>
 						<td></td>
@@ -520,35 +530,35 @@
 					<tr>
 						<td>Technology</td>
 						<td>Hibernate</td>
+						<td>3.x, 4.x</td>
 						<td>August, 2010</td>
 						<td></td>
 						<td></td>
-						<td>3.x, 4.x</td>
 						<td>2</td>
 					</tr>
 					<tr>
 						<td>Technology</td>
 						<td>Tomcat</td>
+						<td>5.5, 6, 7</td>
 						<td>August, 2010</td>
 						<td></td>
 						<td></td>
-						<td>5.5, 6, 7</td>
 						<td>2</td>
 					</tr>
 					<tr>
 						<td>Technology</td>
 						<td>CSS</td>
-						<td>January, 1997</td>
 						<td></td>
+						<td>January, 1997</td>
 						<td></td>
 						<td></td>
 						<td>3</td>
 					</tr>
 					<tr>
 						<td>Technology</td>
-						<td>HTML(5)</td>
+						<td>HTML</td>
+						<td>HTML5</td>
 						<td>January, 1997</td>
-						<td></td>
 						<td></td>
 						<td></td>
 						<td>2</td>
@@ -556,8 +566,8 @@
 					<tr>
 						<td>Technology</td>
 						<td>XHTML</td>
-						<td>January, 2010</td>
 						<td></td>
+						<td>January, 2010</td>
 						<td></td>
 						<td></td>
 						<td>2</td>
@@ -565,22 +575,23 @@
 					<tr>
 						<td>Technology</td>
 						<td>SCADA</td>
+						<td>Distributed, Networked</td>
 						<td>January, 2007</td>
 						<td></td>
 						<td></td>
-						<td>Distributed, Networked</td>
 						<td>2</td>
 					</tr>
 					<tr>
 						<td>Technology</td>
 						<td>Python</td>
-						<td>April, 2010</td>
 						<td></td>
+						<td>April, 2010</td>
 						<td></td>
 						<td></td>
 						<td>2</td>
 					</tr>
-				</tbody>  </table>
+				</tbody>
+			</table>
 		</section>
 
 		<section class="academicexperience">
@@ -624,6 +635,8 @@ $('section.snapshot section h1').each(function() {
 });
 
 $('section.company').each(processCompanyTime);
+
+
 
 // Initialize the start date and end date function.
 (function() {
@@ -846,89 +859,73 @@ $('#enddate').on('change', function() {
 		$(this).append(convertToElapsed(elapsedMonths($(this).prev().prev().html(),$(this).prev().html())));
 	})
 
-  var labels = $('section.techtable > h1').html().split(' / ');
-  labels.sort();
-  
-  var keys = [];
-  $('section.techtable table td:first-child').each(function(){ keys.push($(this).html()); });
-  keys.sort();
-  keys = $.unique(keys);
-  keys.sort();
-  
-  var hash = {};
-  for (var i = 0; i < keys.length; i++) {
-    hash[keys[i]] = labels[i];
-  }
-  
-  $.each(keys, function(i) {
-    $('<input type="checkbox" checked="checked" id="techtable_'+this+'" name="techtable_'+this+'"/><label for="techtable_'+this+'">'+labels[i]+'</label>').appendTo($('fieldset.techtable'));
-  });
+	//Row Button generator
+		//grab the names T/C/C from section h1 and sort
+		var labels = $('section.techtable > h1').html().split(' / ');
+		labels.sort();
+		
+		//grab each first td child of techtable
+		var keys = [];
+		$('section.techtable table td:first-child').each(function(){ keys.push($(this).html()); });
+		keys.sort();
+		keys = $.unique(keys);
+		// keys.sort();   .unique sorts already
 
-	//column generator
-	var cols = [];
-	$('section.techtable table th').each(function(){
-		cols.push($(this).html());
-	});
-	console.log(cols);
-  $.each(cols, function(i) {
-    $('<input type="checkbox" checked="checked" id="ttcols'+this+'" name="ttcol_'+this+'"/><label for="ttcol_'+this+'">'+labels[i]+'</label>').appendTo($('fieldset.ttcol'));
-  });
+		//¿¿ asign the label to the key and assign to hash??
+		var hash = {};
+		for (var i = 0; i < keys.length; i++) {
+		  hash[keys[i]] = labels[i];
+		}
+
+		$.each(keys, function(i) {
+		$('<input type="checkbox" checked="checked" id="techtable_'+this+'" name="techtable_'+this+'" class="row"/><label for="techtable_'+this+'">'+labels[i]+'</label>').appendTo($("fieldset.techtable > label").first());
+		});
+
+	//column button generator
+		var cols = [];
+		$('section.techtable table th').each(function(){
+			cols.push($(this).html());
+		});
+		cols.splice(0,1);
+		$.each(cols, function(i) {
+			$('<input type="checkbox" checked="checked" id="ttcols'+this+'" name="ttcol_'+this+'" class="column"/><label for="ttcol_'+this+'">'+cols[i]+'</label>').appendTo($('fieldset.techtable'));
+		});
+
+	//Row Button Hider
+		$('fieldset.techtable input.row[type=checkbox]').on('change', function() {
+			$formelem = $(this);
+			var index = $(this).prevAll('input').length - 1;
+			$('section.techtable table td:first-child').each(function() {
+				if ($formelem.attr('id').replace('techtable_','') == $(this).html()) {
+					$(this).parent().toggle();
+				}
+			});
+		//handles the /s between T/C/C
+			var segments = [];
+			$('fieldset.techtable input.row:checked').each(function() { segments.push(hash[$(this).attr('id').replace('techtable_','')]); });
+			$('section.techtable > h1').html(segments.join(' / '));
+		});
+	//Column Button Hider
+		// $('fieldset.techtable input.column[type=checkbox]').on('change', function() {
+		// 	$formelem = $(this);
+		// 	var index = $(this).prevAll('input').length - 1;
+		// 	$('section.techtable table td:first-child').each(function() {
+		// 		if ($formelem.attr('id').replace('techtable_','') == $(this).html()) {
+		// 			$(this).parent().toggle();
+		// 		}
+		// 	});
 	
-
-  $('fieldset.techtable input').on('change', function() {
-    $formelem = $(this);
-    var index = $(this).prevAll('input').length - 1;
-    $('section.techtable table td:first-child').each(function() {
-      if ($formelem.attr('id').replace('techtable_','') == $(this).html()) {
-        $(this).parent().toggle();
-      }
-    });
-
-    var segments = [];
-    $('fieldset.techtable input:checked').each(function() { segments.push(hash[$(this).attr('id').replace('techtable_','')]); });
-    $('section.techtable > h1').html(segments.join(' / '));
-  });
-  $('fieldset.techtable #techtable_all').on('change', function() {
-    if (this.checked) {
-      $('section.techtable').hide();
-      $(this).nextAll('input').attr('disabled','disabled');
-    } else {
-      $('section.techtable').show();
-      $(this).nextAll('input').removeAttr('disabled');
-    }
-  });
+	//Hide all of techtable
+		$('fieldset.techtable #techtable_all').on('change', function() {
+			if (this.checked) {
+				$('section.techtable').hide();
+				$(this).nextAll('input').attr('disabled','disabled');
+			} else {
+				$('section.techtable').show();
+				$(this).nextAll('input').removeAttr('disabled');
+			}
+		});
 })();
 
 
-
-
-//Date Pickers
-	// // //Start
-	// 	$(function() {
-	// 	    $('fieldset.startdate.startdate-picker').datepicker( {
-	// 	        changeMonth: true,
-	// 	        changeYear: true,
-	// 	        showButtonPanel: true,
-	// 	        dateFormat: 'MM yy',
-	// 	        onClose: function(dateText, inst) { 
-	// 	            var month = $("#ui-datepicker-div .ui-datepicker-month :selected").val();
-	// 	            var year = $("#ui-datepicker-div .ui-datepicker-year :selected").val();
-	// 	            $(this).datepicker('setDate', new Date(year, month, 1));
-	// 	        }
-	// 	    });
-	// 	});​
-	//End
-	// 	$(function() {
-	// 	    $('.date-picker').datepicker( {
-	// 	        changeMonth: true,
-	// 	        changeYear: true,
-	// 	        showButtonPanel: true,
-	// 	        dateFormat: 'MM yy',
-	// 	        onClose: function(dateText, inst) { 
-	// 	            var month = $("#ui-datepicker-div .ui-datepicker-month :selected").val();
-	// 	            var year = $("#ui-datepicker-div .ui-datepicker-year :selected").val();
-	// 	            $(this).datepicker('setDate', new Date(year, month, 1));
-	// 	        }
-	// 	    });
-	// 	});​
 </script>
