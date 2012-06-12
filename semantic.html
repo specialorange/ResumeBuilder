@@ -26,7 +26,7 @@
 				<input type="checkbox" id="ba_all" name="ba_all" /><label for="ba_all">Toggle Business Approach	</label>
 			</fieldset>
 			<fieldset class="snapshot"><legend>Snapshot Sections</legend>
-				<input type="checkbox" id="s_all" name="s_all" /><label for="s_all">Toggle Snapshot</label>
+				<input type="checkbox" id="ss_all" name="ss_all" /><label for="ss_all">Toggle Snapshot</label>
 			</fieldset>
 			<fieldset class="workexperience"><legend>Work Experience Range</legend>
 				<input type="checkbox" id="workexperience_all" name="workexperience_all" />
@@ -316,7 +316,7 @@
 					<tr>
 						<td>Technology</td>
 						<td>JS</td>
-						<td>N/A</td>
+						<td></td>
 						<td>April, 2012</td>
 						<td></td>
 						<td></td>
@@ -560,7 +560,7 @@
 			</table>
 		</section>
 
-		<section class="academicexperience"><h1>Academic Experience</h1>
+		<section class="academic"><h1>Academic Experience</h1>
 			
 			<section class="school"><h1>University of North Carolina at Charlotte</h1>
 				
@@ -580,6 +580,17 @@
 					</ul>
 				</section>
 			</section>
+			<section class="school"><h1>Central Piedmont Community College</h1>
+				
+				<section class="Degree"><h1>Post-Graduate programs</h1>
+					<time class="start" datetime=""></time>
+					<time class="end" datetime=""></time>
+					<p>I utilize one of the best community colleges in the US to further my education in interdisciplinary areas.</p>
+					<ul>
+						<li>Six Sigma Black Belt Certification - 2012</li>
+					</ul>
+				</section>
+			</section>
 		</section>
 
 		<footer>What do you call an Alligator in a vest?                          An Investigator!</footer>
@@ -595,6 +606,10 @@
 	$('section.snapshot section h1').each(function () {
 		var value = this.innerHTML;
 		$('<input type="checkbox" checked="checked" id="' + value.toLowerCase() + '" name="' + value.toLowerCase() + '"/><label for="' + value.toLowerCase() + '">' + value + '</label>').appendTo($('fieldset.snapshot'));
+	});
+	$('section.academic section.school > h1').each(function () {
+		var value = this.innerHTML;
+		$('<input type="checkbox" checked="checked" id="' + value.toLowerCase() + '" name="' + value.toLowerCase() + '"/><label for="' + value.toLowerCase() + '">' + value + '</label>').appendTo($('fieldset.academic'));
 	});
 	$('section.company').each(processCompanyTime);
 // Initialize the start date and end date function.
@@ -664,7 +679,7 @@
 			$('section.snapshot > section').eq(index).toggle();
 		});
 	//hide SS completely
-		$('fieldset.snapshot #s_all').on('change', function () {
+		$('fieldset.snapshot #ss_all').on('change', function () {
 			if (this.checked) {
 				$('section.snapshot').hide();
 				$(this).nextAll('input').attr('disabled', 'disabled');
@@ -762,7 +777,7 @@
 				};
 			});	
 		//fill in blank elapsed time
-			var monthNames = [ "January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December" ]
+			var monthNames = [ "january", "february", "march", "april", "may", "june", "july", "august", "september", "october", "november", "december" ]
 			var monthNumber = {}
 			for (var i=0; i<monthNames.length; ++i) {
 				monthNumber[monthNames[i]] = i;
@@ -782,17 +797,34 @@
 				var m = elapsed%12;
 				var y = Math.floor(elapsed/12);
 				if (y == 0) {
-					return (m + " months");
-				} else {
-					if (m == 0) {
-						return (y + " years");
+					if(m == 0) {
+						return ("");
+					} else if(m == 1) {
+						return (m + " month");
+					} else {
+						return (m + " months");
 					}
-					return (y + " years & " + m + " months");
+				} else if(y == 1) {
+					if(m == 0) {
+						return (y + " year");
+					} else if(m == 1) {
+						return (y + " year " + m + " month");
+					} else {
+						return (y + " year " + m + " months");
+					}
+				} else {
+					if(m == 0) {
+						return (y + " years");
+					} else if(m == 1) {
+						return (y + " years " + m + " month");
+					} else {
+						return (y + " years " + m + " months");
+					}
 				}
 			};
 		//calculate the elapsed based on start and end date
 			$('section.techtable td:nth-child(6)').each(function() {
-				$(this).append(convertToElapsed(elapsedMonths($(this).prev().prev().html(),$(this).prev().html())));
+				$(this).append(convertToElapsed(elapsedMonths($(this).prev().prev().html().toLowerCase(),$(this).prev().html().toLowerCase())));
 			})
 		//Row Button generator
 			//grab the names T/C/C from section h1 and sort
@@ -857,4 +889,20 @@
 			});
 	})();
 
+//Academic
+	//individual SS elements toggle buttons
+		$('fieldset.academic input').on('change', function () {
+			var index = $(this).prevAll('input').length - 1;
+			$('section.academic > section').eq(index).toggle();
+		});
+	//hide SS completely
+		$('fieldset.academic #academic_all').on('change', function () {
+			if (this.checked) {
+				$('section.academic').hide();
+				$(this).nextAll('input').attr('disabled', 'disabled');
+			} else {
+				$('section.academic').show();
+				$(this).nextAll('input').removeAttr('disabled');
+			}
+		});
 </script>
