@@ -4,11 +4,12 @@
 		<meta http-equiv="Content-type" content="text/html; charset=utf-8">
 		<title>Resume Builder</title>
 		<link rel="stylesheet" href="_css/semanticcss.css">
-		<link rel="stylesheet" href="_css/tableSortBlue.css">
+		<link rel="stylesheet" href="_css/tableSort.css">
     </head>
 	<body>
 		<script src="http://code.jquery.com/jquery.min.js"></script>
 		<script type="text/javascript" src="_js/libs/jquery.tablesorter.min.js"></script>
+		<script src="_js/libs/pdfobject.js" type="text/javascript"></script>
 		<div id="header-container">
 			<header class="wrapper clearfix">
 				<h1>Resume Builder</h1>
@@ -21,7 +22,8 @@
 				</nav>
 			</header>
 		</div>
-		<h1>Resume Builder</h1>
+
+		<h1>Generated Content</h1>
 
 		<form>
 			<fieldset class="businessapproaches"><legend>Business Approach Sections</legend>
@@ -278,6 +280,39 @@
 					<time class="end" datetime="2000-12">DEC 2000</time>
 					<ul>
 						<li>Bag</li>
+					</ul>
+				</section>
+			</section>
+		</section>
+
+		<section class="academic"><h1>Academic Experience</h1>
+			
+			<section class="school"><h1>University of North Carolina at Charlotte</h1>
+				
+				<section class="Degree"><h1>Gendered Communication with a focus on the Female Voice</h1>
+					<time class="start" datetime="2003-08">AUG 2003</time>
+					<time class="end" datetime="2007-12">Dec 2007</time>
+					<p>I pursued this specific track of Communication Studies to study the gender biased elements within human interactions.</p>
+					<ul>
+						<li>National South Eastern Women's Studies Association(SEWSA) invitational speaker on self researched topic surrounding gender neutral non-hegemonic communication - 2008</li>
+						<li>Habitat for Humanity Build Lead</li>
+						<li>Disaster Response Lead Coordinator
+							<ul>
+								<li>Katrina - 10+ visits within 3 years</li>
+								<li>Rita - 1 Visit</li>
+							</ul>
+						</li>
+					</ul>
+				</section>
+			</section>
+			<section class="school"><h1>Central Piedmont Community College</h1>
+				
+				<section class="Degree"><h1>Post-Graduate programs</h1>
+					<time class="start" datetime=""></time>
+					<time class="end" datetime=""></time>
+					<p>I utilize one of the best community colleges in the US to further my education in interdisciplinary areas.</p>
+					<ul>
+						<li>Six Sigma Black Belt Certification - 2012</li>
 					</ul>
 				</section>
 			</section>
@@ -562,44 +597,33 @@
 			</table>
 		</section>
 
-		<section class="academic"><h1>Academic Experience</h1>
-			
-			<section class="school"><h1>University of North Carolina at Charlotte</h1>
-				
-				<section class="Degree"><h1>Gendered Communication with a focus on the Female Voice</h1>
-					<time class="start" datetime="2003-08">AUG 2003</time>
-					<time class="end" datetime="2007-12">Dec 2007</time>
-					<p>I pursued this specific track of Communication Studies to study the gender biased elements within human interactions.</p>
-					<ul>
-						<li>National South Eastern Women's Studies Association(SEWSA) invitational speaker on self researched topic surrounding gender neutral non-hegemonic communication - 2008</li>
-						<li>Habitat for Humanity Build Lead</li>
-						<li>Disaster Response Lead Coordinator
-							<ul>
-								<li>Katrina - 10+ visits within 3 years</li>
-								<li>Rita - 1 Visit</li>
-							</ul>
-						</li>
-					</ul>
-				</section>
-			</section>
-			<section class="school"><h1>Central Piedmont Community College</h1>
-				
-				<section class="Degree"><h1>Post-Graduate programs</h1>
-					<time class="start" datetime=""></time>
-					<time class="end" datetime=""></time>
-					<p>I utilize one of the best community colleges in the US to further my education in interdisciplinary areas.</p>
-					<ul>
-						<li>Six Sigma Black Belt Certification - 2012</li>
-					</ul>
-				</section>
-			</section>
-		</section>
-
-		<footer>What do you call an Alligator in a vest?                          An Investigator!</footer>
+		<footer>
+			<h1>What do you call an Alligator in a vest?                          An Investigator!</h1>
+			<h2>Hat tip to you all, in no particular order</h2>
+			<ul>
+				<li><a href="http://jsfiddle.net/">JSFIDDLE</a></li>
+				<li><a href="http://stackoverflow.com/">StackOverflow</a></li>
+				<li>Jan Goyvaert @ <a href="http://www.regular-expressions.info/">Regular-Expressions</a></li>
+			</ul>
+		</footer>
 	</body>
 </html>
 
 <script>
+
+var myPDF = new PDFObject({
+  url: "sample.pdf",
+  id: "myPDF",
+  width: "500px",
+  height: "300px",
+  pdfOpenParams: {
+    navpanes: 1,
+    statusbar: 0,
+    view: "FitH",
+    pagemode: "thumbs"
+  }
+}).embed("mydiv");
+
 // Generation
 	$('section.businessapproaches section h1').each(function () {
 		var value = this.innerHTML;
@@ -890,7 +914,90 @@
 				}
 			});
 	})();
+	//Table Sorter dateSorter
+		$.tablesorter.addParser({
+			// set a unique id
+			id: 'dateSorter',
+			is: function(s) {
+				// return false so this parser is not auto detected
+				return false;
+			},
+			format: function(s) {
+				// format your data for normalization
+				// return s.toLowerCase().replace(/good/,2).replace(/medium/,1).replace(/bad/,0);
+				for (var i = 0 ; i < s.length ; i++) {
+					var parts = [];
+					var order = [];
+					parts.push(s.toLowerCase().replace(/january/,0).replace(/february/,1).replace(/march/,2).replace(/april/,3).replace(/may/,4).replace(/june/,5).replace(/july/,6).replace(/august/,7).replace(/september/,8).replace(/october/,9).replace(/november/,10).replace(/december/,11).split(/\s*,\s*/));
+					order.push(parseInt(parts[0][0])+(parseInt(parts[0][1])*12));
+					return order;
+				};
+				s = order;
+				return s;
+			},
+			// set type, either numeric or text
+			type: 'numeric'
+		});
+	//Table Sorter elapsedSorter
+		$.tablesorter.addParser({
+			// set a unique id
+			id: 'elapsedSorter',
+			is: function(s) {
+				// return false so this parser is not auto detected
+				return false;
+			},
+			format: function(s) {
+				
+				// $('.techtable td:nth-child(6)').each(function(){
+				// 	// console.log($(this));
+				// 	var that = $(this).text();
+				// 	var myRegexp = /([\d]+) ([\w]+)(([\d]+) ([\w]+))/;
+				// 	var match = myRegexp.exec($(this).text());
+				// 	if (typeof match[3] == 'undefined') {match.length = 3;};
+				// 	console.log(match);
+				// });
 
+				var myRegexp = /([\d]+) ([\w]+)(?: ([\d]+) ([\w]+))?/;
+				var match = myRegexp.exec(s);
+				var order = [];
+				// console.log(match[]);
+				if (typeof match[3] == 'undefined') {match.length = 3;};
+				// 1 element case:
+					// month
+					if (match.length = 3) {
+						if (match[2][0] == "m") {
+							order.push(match[1]);
+						}
+					// year
+						if (match[2][0] == "y") {
+							order.push(match[1]*12);
+						}
+				// both elements
+					} else {
+						order.push(match[1]*12 + match[3]);
+					}
+				s = order;
+				return s;
+			},
+			// set type, either numeric or text
+			type: 'numeric'
+		});
+	//Table Sorter parsers Identification
+		$(".techtable table").tablesorter({
+			headers: {
+			3: {
+			sorter:'dateSorter'
+			},
+			4: {
+			sorter:'dateSorter'
+			}
+			,
+			5: {
+			sorter:'elapsedSorter'
+			}
+			}
+		}); 
+		$(".techtable table").addClass("tablesorter");
 //Academic
 	//individual SS elements toggle buttons
 		$('fieldset.academic input').on('change', function () {
@@ -907,8 +1014,5 @@
 				$(this).nextAll('input').removeAttr('disabled');
 			}
 		});
-	$(document).ready(function() { 
-        $(".techtable table").tablesorter(); 
-        $(".techtable table").addClass("tablesorter");
-    }); 
+
 </script>
