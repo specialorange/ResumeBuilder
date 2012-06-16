@@ -5,6 +5,8 @@
 		<title>Resume Builder</title>
 		<link rel="stylesheet" href="_css/semanticcss.css">
 		<link rel="stylesheet" href="_css/tableSort.css">
+		<link rel="stylesheet" href="_css/redmond/jquery-ui-1.7.1.custom.css" type="text/css" />
+		<link rel="Stylesheet" href="_css/ui.slider.extras.css" type="text/css" />
     </head>
 	<body>
 		<script src="http://code.jquery.com/jquery.min.js"></script>
@@ -12,8 +14,6 @@
 		<!-- // <script type="text/javascript" src="_js/libs/jquery-1.3.2.min.js"></script>
 		// <script type="text/javascript" src="_js/libs/jquery-ui-1.7.1.custom.min.js"></script>
 		// <script type="text/javascript" src="_js/libs/selectToUISlider.jQuery.js"></script> -->
-		<link rel="stylesheet" href="_css/redmond/jquery-ui-1.7.1.custom.css" type="text/css" />
-		<link rel="Stylesheet" href="_css/ui.slider.extras.css" type="text/css" />
 		<div id="header-container">
 			<header class="wrapper clearfix">
 				<h1>Resume Builder</h1>
@@ -28,757 +28,767 @@
 		</div>
 
 		<h1>Generated Content</h1>
+		<a href="javascript:var%20i=0;if(document.styleSheets.length>0){cs=!document.styleSheets[0].disabled; 
+			for(i=0;i<document.styleSheets.length;i++) 
+				%20document.styleSheets[i].disabled=cs;}; 
+				void(cs=true);">Toggle stylesheet</a>
+		<div id="main-container">
+			<div id="main" class="wrapper clearfix">
+				<aside>
+					<form>
+						<fieldset class="businessapproaches"><legend>Business Approach Sections</legend>
+							<input type="checkbox" id="ba_all" name="ba_all" /><label for="ba_all">Toggle Business Approach	</label>
+						</fieldset>
+						<fieldset class="snapshot"><legend>Snapshot Sections</legend>
+							<input type="checkbox" id="ss_all" name="ss_all" /><label for="ss_all">Toggle Snapshot</label>
+						</fieldset>
+						<fieldset class="workexperience"><legend>Work Experience Range</legend>
+							<input type="checkbox" id="workexperience_all" name="workexperience_all" />
+							<label for="workexperience_all">Toggle Work Experience</label>
+						<!-- <label for="startdate">Start Date</label>
+						    <input name="startdate" id="startdate" type="text" value="" class="startdate-picker" /> -->
 
-		<form>
-			<fieldset class="businessapproaches"><legend>Business Approach Sections</legend>
-				<input type="checkbox" id="ba_all" name="ba_all" /><label for="ba_all">Toggle Business Approach	</label>
-			</fieldset>
-			<fieldset class="snapshot"><legend>Snapshot Sections</legend>
-				<input type="checkbox" id="ss_all" name="ss_all" /><label for="ss_all">Toggle Snapshot</label>
-			</fieldset>
-			<fieldset class="workexperience"><legend>Work Experience Range</legend>
-				<input type="checkbox" id="workexperience_all" name="workexperience_all" />
-				<label for="workexperience_all">Toggle Work Experience</label>
-			<!-- <label for="startdate">Start Date</label>
-			    <input name="startdate" id="startdate" type="text" value="" class="startdate-picker" /> -->
+							<!-- <label for="enddate">End Date</label>
+						    <input name="enddate" id="enddate" type="text" value="" class="enddate-picker" /> -->
+							<label for="startdate">Start Date</label>
+							<input id="startdate" name="startdate" type="text" value="" />
+							<label for="enddate">End Date</label>
+							<input id="enddate" name="enddate" type="text" value="" />
+						</fieldset>
+					 	<fieldset class="ds"><legend>Work Selector</legend> 
+							<label for="valueAA" class="dsl">From:</label>
+							<select name="valueAA" id="valueAA">
+								<optgroup label="2003">
+									<option value="01/03">Jan 03</option>
+									<option value="02/03">Feb 03</option>
+									<option value="03/03">Mar 03</option>
+									<option value="03/03">Apr 03</option>
+									<option value="03/03">May 03</option>
+									<option value="06/03">Jun 03</option>
+									<option value="07/03">Jul 03</option>
+									<option value="08/03" selected="selected">Aug 03</option>
+									<option value="09/03">Sep 03</option>
+									<option value="10/03">Oct 03</option>
+									<option value="11/03">Nov 03</option>
+									<option value="12/03">Dec 03</option>
+								</optgroup>
+								<optgroup label="2004">
+									<option value="01/04">Jan 04</option>
+									<option value="02/04">Feb 04</option>
+									<option value="03/04">Mar 04</option>
+									<option value="04/04">Apr 04</option>
+									<option value="04/04">May 04</option>
+									<option value="06/04">Jun 04</option>
+									<option value="07/04">Jul 04</option>
+									<option value="08/04">Aug 04</option>
+									<option value="09/04">Sep 04</option>
+									<option value="10/04">Oct 04</option>
+									<option value="11/04">Nov 04</option>
+									<option value="12/04">Dec 04</option>
+								</optgroup>
+								<optgroup label="2005">
+									<option value="01/05">Jan 05</option>
+									<option value="02/05">Feb 05</option>
+									<option value="03/05">Mar 05</option>
+									<option value="04/05">Apr 05</option>
+									<option value="05/05">May 05</option>
+									<option value="06/05">Jun 05</option>
+									<option value="07/05">Jul 05</option>
+									<option value="08/05">Aug 05</option>
+									<option value="09/05">Sep 05</option>
+									<option value="10/05">Oct 05</option>
+									<option value="11/05">Nov 05</option>
+									<option value="12/05">Dec 05</option>
+								</optgroup>
+								<optgroup label="2006">
+									<option value="01/06">Jan 06</option>
+									<option value="02/06">Feb 06</option>
+									<option value="03/06">Mar 06</option>
+									<option value="04/06">Apr 06</option>
+									<option value="06/06">May 06</option>
+									<option value="06/06">Jun 06</option>
+									<option value="07/06">Jul 06</option>
+									<option value="08/06">Aug 06</option>
+									<option value="09/06">Sep 06</option>
+									<option value="10/06">Oct 06</option>
+									<option value="11/06">Nov 06</option>
+									<option value="12/06">Dec 06</option>
+								</optgroup>
+								<optgroup label="2007">
+									<option value="01/07">Jan 07</option>
+									<option value="02/07">Feb 07</option>
+									<option value="03/07">Mar 07</option>
+									<option value="04/07">Apr 07</option>
+									<option value="07/07">May 07</option>
+									<option value="07/07">Jun 07</option>
+									<option value="07/07">Jul 07</option>
+									<option value="08/07">Aug 07</option>
+									<option value="09/07">Sep 07</option>
+									<option value="10/07">Oct 07</option>
+									<option value="11/07">Nov 07</option>
+									<option value="12/07">Dec 07</option>
+								</optgroup>
+								<optgroup label="2008">
+									<option value="01/08">Jan 08</option>
+									<option value="02/08">Feb 08</option>
+									<option value="03/08">Mar 08</option>
+									<option value="04/08">Apr 08</option>
+									<option value="08/08">May 08</option>
+									<option value="08/08">Jun 08</option>
+									<option value="08/08">Jul 08</option>
+									<option value="08/08">Aug 08</option>
+									<option value="09/08">Sep 08</option>
+									<option value="10/08">Oct 08</option>
+									<option value="11/08">Nov 08</option>
+									<option value="12/08">Dec 08</option>
+								</optgroup>
+							</select>
 
-				<!-- <label for="enddate">End Date</label>
-			    <input name="enddate" id="enddate" type="text" value="" class="enddate-picker" /> -->
-				<label for="startdate">Start Date</label>
-				<input id="startdate" name="startdate" type="text" value="" />
-				<label for="enddate">End Date</label>
-				<input id="enddate" name="enddate" type="text" value="" />
-			</fieldset>
-		 	<fieldset class="ds"><legend>Work Selector</legend> 
-				<label for="valueAA" class="dsl">From:</label>
-				<select name="valueAA" id="valueAA">
-					<optgroup label="2003">
-						<option value="01/03">Jan 03</option>
-						<option value="02/03">Feb 03</option>
-						<option value="03/03">Mar 03</option>
-						<option value="03/03">Apr 03</option>
-						<option value="03/03">May 03</option>
-						<option value="06/03">Jun 03</option>
-						<option value="07/03">Jul 03</option>
-						<option value="08/03" selected="selected">Aug 03</option>
-						<option value="09/03">Sep 03</option>
-						<option value="10/03">Oct 03</option>
-						<option value="11/03">Nov 03</option>
-						<option value="12/03">Dec 03</option>
-					</optgroup>
-					<optgroup label="2004">
-						<option value="01/04">Jan 04</option>
-						<option value="02/04">Feb 04</option>
-						<option value="03/04">Mar 04</option>
-						<option value="04/04">Apr 04</option>
-						<option value="04/04">May 04</option>
-						<option value="06/04">Jun 04</option>
-						<option value="07/04">Jul 04</option>
-						<option value="08/04">Aug 04</option>
-						<option value="09/04">Sep 04</option>
-						<option value="10/04">Oct 04</option>
-						<option value="11/04">Nov 04</option>
-						<option value="12/04">Dec 04</option>
-					</optgroup>
-					<optgroup label="2005">
-						<option value="01/05">Jan 05</option>
-						<option value="02/05">Feb 05</option>
-						<option value="03/05">Mar 05</option>
-						<option value="04/05">Apr 05</option>
-						<option value="05/05">May 05</option>
-						<option value="06/05">Jun 05</option>
-						<option value="07/05">Jul 05</option>
-						<option value="08/05">Aug 05</option>
-						<option value="09/05">Sep 05</option>
-						<option value="10/05">Oct 05</option>
-						<option value="11/05">Nov 05</option>
-						<option value="12/05">Dec 05</option>
-					</optgroup>
-					<optgroup label="2006">
-						<option value="01/06">Jan 06</option>
-						<option value="02/06">Feb 06</option>
-						<option value="03/06">Mar 06</option>
-						<option value="04/06">Apr 06</option>
-						<option value="06/06">May 06</option>
-						<option value="06/06">Jun 06</option>
-						<option value="07/06">Jul 06</option>
-						<option value="08/06">Aug 06</option>
-						<option value="09/06">Sep 06</option>
-						<option value="10/06">Oct 06</option>
-						<option value="11/06">Nov 06</option>
-						<option value="12/06">Dec 06</option>
-					</optgroup>
-					<optgroup label="2007">
-						<option value="01/07">Jan 07</option>
-						<option value="02/07">Feb 07</option>
-						<option value="03/07">Mar 07</option>
-						<option value="04/07">Apr 07</option>
-						<option value="07/07">May 07</option>
-						<option value="07/07">Jun 07</option>
-						<option value="07/07">Jul 07</option>
-						<option value="08/07">Aug 07</option>
-						<option value="09/07">Sep 07</option>
-						<option value="10/07">Oct 07</option>
-						<option value="11/07">Nov 07</option>
-						<option value="12/07">Dec 07</option>
-					</optgroup>
-					<optgroup label="2008">
-						<option value="01/08">Jan 08</option>
-						<option value="02/08">Feb 08</option>
-						<option value="03/08">Mar 08</option>
-						<option value="04/08">Apr 08</option>
-						<option value="08/08">May 08</option>
-						<option value="08/08">Jun 08</option>
-						<option value="08/08">Jul 08</option>
-						<option value="08/08">Aug 08</option>
-						<option value="09/08">Sep 08</option>
-						<option value="10/08">Oct 08</option>
-						<option value="11/08">Nov 08</option>
-						<option value="12/08">Dec 08</option>
-					</optgroup>
-				</select>
-
-				<label for="valueBB" class="dsl">To:</label>
-				<select name="valueBB" id="valueBB">
-					<optgroup label="2003">
-						<option value="01/03">Jan 03</option>
-						<option value="02/03">Feb 03</option>
-						<option value="03/03">Mar 03</option>
-						<option value="03/03">Apr 03</option>
-						<option value="03/03">May 03</option>
-						<option value="06/03">Jun 03</option>
-						<option value="07/03">Jul 03</option>
-						<option value="08/03">Aug 03</option>
-						<option value="09/03">Sep 03</option>
-						<option value="10/03">Oct 03</option>
-						<option value="11/03">Nov 03</option>
-						<option value="12/03">Dec 03</option>
-					</optgroup>
-					<optgroup label="2004">
-						<option value="01/04">Jan 04</option>
-						<option value="02/04">Feb 04</option>
-						<option value="03/04">Mar 04</option>
-						<option value="04/04">Apr 04</option>
-						<option value="04/04">May 04</option>
-						<option value="06/04">Jun 04</option>
-						<option value="07/04">Jul 04</option>
-						<option value="08/04">Aug 04</option>
-						<option value="09/04">Sep 04</option>
-						<option value="10/04">Oct 04</option>
-						<option value="11/04">Nov 04</option>
-						<option value="12/04">Dec 04</option>
-					</optgroup>
-					<optgroup label="2005">
-						<option value="01/05">Jan 05</option>
-						<option value="02/05">Feb 05</option>
-						<option value="03/05">Mar 05</option>
-						<option value="04/05">Apr 05</option>
-						<option value="05/05">May 05</option>
-						<option value="06/05">Jun 05</option>
-						<option value="07/05">Jul 05</option>
-						<option value="08/05">Aug 05</option>
-						<option value="09/05">Sep 05</option>
-						<option value="10/05">Oct 05</option>
-						<option value="11/05">Nov 05</option>
-						<option value="12/05">Dec 05</option>
-					</optgroup>
-					<optgroup label="2006">
-						<option value="01/06">Jan 06</option>
-						<option value="02/06">Feb 06</option>
-						<option value="03/06">Mar 06</option>
-						<option value="04/06">Apr 06</option>
-						<option value="06/06">May 06</option>
-						<option value="06/06">Jun 06</option>
-						<option value="07/06">Jul 06</option>
-						<option value="08/06">Aug 06</option>
-						<option value="09/06">Sep 06</option>
-						<option value="10/06">Oct 06</option>
-						<option value="11/06">Nov 06</option>
-						<option value="12/06">Dec 06</option>
-					</optgroup>
-					<optgroup label="2007">
-						<option value="01/07">Jan 07</option>
-						<option value="02/07">Feb 07</option>
-						<option value="03/07">Mar 07</option>
-						<option value="04/07">Apr 07</option>
-						<option value="07/07">May 07</option>
-						<option value="07/07">Jun 07</option>
-						<option value="07/07">Jul 07</option>
-						<option value="08/07" selected="selected">Aug 07</option>
-						<option value="09/07">Sep 07</option>
-						<option value="10/07">Oct 07</option>
-						<option value="11/07">Nov 07</option>
-						<option value="12/07">Dec 07</option>
-					</optgroup>
-					<optgroup label="2008">
-						<option value="01/08">Jan 08</option>
-						<option value="02/08">Feb 08</option>
-						<option value="03/08">Mar 08</option>
-						<option value="04/08">Apr 08</option>
-						<option value="08/08">May 08</option>
-						<option value="08/08">Jun 08</option>
-						<option value="08/08">Jul 08</option>
-						<option value="08/08">Aug 08</option>
-						<option value="09/08">Sep 08</option>
-						<option value="10/08">Oct 08</option>
-						<option value="11/08">Nov 08</option>
-						<option value="12/08">Dec 08</option>
-					</optgroup>
-				</select>
-			</fieldset>
+							<label for="valueBB" class="dsl">To:</label>
+							<select name="valueBB" id="valueBB">
+								<optgroup label="2003">
+									<option value="01/03">Jan 03</option>
+									<option value="02/03">Feb 03</option>
+									<option value="03/03">Mar 03</option>
+									<option value="03/03">Apr 03</option>
+									<option value="03/03">May 03</option>
+									<option value="06/03">Jun 03</option>
+									<option value="07/03">Jul 03</option>
+									<option value="08/03">Aug 03</option>
+									<option value="09/03">Sep 03</option>
+									<option value="10/03">Oct 03</option>
+									<option value="11/03">Nov 03</option>
+									<option value="12/03">Dec 03</option>
+								</optgroup>
+								<optgroup label="2004">
+									<option value="01/04">Jan 04</option>
+									<option value="02/04">Feb 04</option>
+									<option value="03/04">Mar 04</option>
+									<option value="04/04">Apr 04</option>
+									<option value="04/04">May 04</option>
+									<option value="06/04">Jun 04</option>
+									<option value="07/04">Jul 04</option>
+									<option value="08/04">Aug 04</option>
+									<option value="09/04">Sep 04</option>
+									<option value="10/04">Oct 04</option>
+									<option value="11/04">Nov 04</option>
+									<option value="12/04">Dec 04</option>
+								</optgroup>
+								<optgroup label="2005">
+									<option value="01/05">Jan 05</option>
+									<option value="02/05">Feb 05</option>
+									<option value="03/05">Mar 05</option>
+									<option value="04/05">Apr 05</option>
+									<option value="05/05">May 05</option>
+									<option value="06/05">Jun 05</option>
+									<option value="07/05">Jul 05</option>
+									<option value="08/05">Aug 05</option>
+									<option value="09/05">Sep 05</option>
+									<option value="10/05">Oct 05</option>
+									<option value="11/05">Nov 05</option>
+									<option value="12/05">Dec 05</option>
+								</optgroup>
+								<optgroup label="2006">
+									<option value="01/06">Jan 06</option>
+									<option value="02/06">Feb 06</option>
+									<option value="03/06">Mar 06</option>
+									<option value="04/06">Apr 06</option>
+									<option value="06/06">May 06</option>
+									<option value="06/06">Jun 06</option>
+									<option value="07/06">Jul 06</option>
+									<option value="08/06">Aug 06</option>
+									<option value="09/06">Sep 06</option>
+									<option value="10/06">Oct 06</option>
+									<option value="11/06">Nov 06</option>
+									<option value="12/06">Dec 06</option>
+								</optgroup>
+								<optgroup label="2007">
+									<option value="01/07">Jan 07</option>
+									<option value="02/07">Feb 07</option>
+									<option value="03/07">Mar 07</option>
+									<option value="04/07">Apr 07</option>
+									<option value="07/07">May 07</option>
+									<option value="07/07">Jun 07</option>
+									<option value="07/07">Jul 07</option>
+									<option value="08/07" selected="selected">Aug 07</option>
+									<option value="09/07">Sep 07</option>
+									<option value="10/07">Oct 07</option>
+									<option value="11/07">Nov 07</option>
+									<option value="12/07">Dec 07</option>
+								</optgroup>
+								<optgroup label="2008">
+									<option value="01/08">Jan 08</option>
+									<option value="02/08">Feb 08</option>
+									<option value="03/08">Mar 08</option>
+									<option value="04/08">Apr 08</option>
+									<option value="08/08">May 08</option>
+									<option value="08/08">Jun 08</option>
+									<option value="08/08">Jul 08</option>
+									<option value="08/08">Aug 08</option>
+									<option value="09/08">Sep 08</option>
+									<option value="10/08">Oct 08</option>
+									<option value="11/08">Nov 08</option>
+									<option value="12/08">Dec 08</option>
+								</optgroup>
+							</select>
+						</fieldset>
 		
-			<fieldset class="academic"><legend>Academic</legend>
-				<input type="checkbox" id="academic_all" name="academic_all" />
-				<label for="academic_all">Toggle Academic</label>
-			</fieldset>
-			<fieldset class="techtable"><legend>Technologies / Compliance / Certification</legend>
-				<input type="checkbox" id="techtable_all" name="techtable_all"/>
-				<label for="techtable_all">Remove Table</label>
-				<br>
-				<input type="checkbox" id="ttcol_all" name="ttcol_all"/>
-				<label for="ttcol_all">Remove columns</label>
-			</fieldset>
-		</form>
+						<fieldset class="academic"><legend>Academic</legend>
+							<input type="checkbox" id="academic_all" name="academic_all" />
+							<label for="academic_all">Toggle Academic</label>
+						</fieldset>
+						<fieldset class="techtable"><legend>Technologies / Compliance / Certification</legend>
+							<input type="checkbox" id="techtable_all" name="techtable_all"/>
+							<label for="techtable_all">Remove Table</label>
+							<br>
+						</fieldset>
+					</form>
+				</aside>
 
-		<section class="businessapproaches"><h1>Business Approach</h1>
-			<section><h1>Analysis</h1>
-					<p>I use a multitude of tools and experiences that bring a comprehensive approach to evaluate systems, processes, objects, and personnel. I achieve this through a mix of initial communication with stakeholders and departments, and use this information to develop the framework for developing scope and planning resources to exceed client or project expectations.</p>
-			</section>
-			<section><h1>Communication</h1>
-				<p>I ensure that our team develops time-sensitive seminars, conferences, and meetings designed to explicate the scope and complexities of deadlines in a unified environment for clients and team members. I develop daily business interactions to maintain a positive milieu, within a prescribed common creative atmosphere, vital to the team’s success in daily challenges, ultimately to the project, company, and client.</p>
-			</section>
-			<section><h1>Budgeting</h1>
-				<p>Listening to the needs of the project’s stakeholders, I tailor a solution using a top down method for providing the needs of budget conscious clients, or a ground up design for customized turnkey solutions. These hybrid approaches are weighted towards the common voice of the client, where detail oriented solutions are applied along the common tones throughout the client’s organization.</p>
-			</section>
-			<section><h1>Teamwork</h1>
-				<p>Limiting task oriented teams to no more than 7 persons, with a wide assortment of experience and a solid rubric for life cycle development of projects enables synergistic teamwork practices and enables succinct solutions with minimal interruptions. When a group is given full control with the understanding of full accountability, time and time again the group as a whole is able to provide the necessary decisions to achieve positive progression.</p>
-			</section>
-			<section><h1>Intelligence</h1>
-				<p>With diverse hobbies, experiences, contacts, and interests, I bring a special perspective to providing successful solutions, on time, and above and beyond requirements. I owe my successes to borrowed approaches in scouting, mentorship, and previous successes where developing a strong approach to looking through a problem to see its solution has allowed me to approach situations with objective clarity.</p>
-			</section>
-			<section><h1>Enthusiasm</h1>
-				<p>Understanding the importance of the products and services needed of the end users and clients, and forming an environment, which highlights those needs, allows me to convey a quick, calm, succinct product. There is nothing more successful than a team with a common goal and the will to accomplish that goal as their own.</p>
-			</section>
-			<section><h1>Time</h1>
-				<p>I operate on a business healthy approach of meeting the requirements of the project; both personnel/clients’ and planning/execution are balanced to achieve an overall positive relationship with the client, team members, and other staff in a warm and inviting manner.</p>
-			</section>	
-		</section>
+				<div class="generatedcontent">
+					<section class="businessapproaches"><h1>Business Approach</h1>
+						<section><h1>Analysis</h1>
+								<p>I use a multitude of tools and experiences that bring a comprehensive approach to evaluate systems, processes, objects, and personnel. I achieve this through a mix of initial communication with stakeholders and departments, and use this information to develop the framework for developing scope and planning resources to exceed client or project expectations.</p>
+						</section>
+						<section><h1>Communication</h1>
+							<p>I ensure that our team develops time-sensitive seminars, conferences, and meetings designed to explicate the scope and complexities of deadlines in a unified environment for clients and team members. I develop daily business interactions to maintain a positive milieu, within a prescribed common creative atmosphere, vital to the team’s success in daily challenges, ultimately to the project, company, and client.</p>
+						</section>
+						<section><h1>Budgeting</h1>
+							<p>Listening to the needs of the project’s stakeholders, I tailor a solution using a top down method for providing the needs of budget conscious clients, or a ground up design for customized turnkey solutions. These hybrid approaches are weighted towards the common voice of the client, where detail oriented solutions are applied along the common tones throughout the client’s organization.</p>
+						</section>
+						<section><h1>Teamwork</h1>
+							<p>Limiting task oriented teams to no more than 7 persons, with a wide assortment of experience and a solid rubric for life cycle development of projects enables synergistic teamwork practices and enables succinct solutions with minimal interruptions. When a group is given full control with the understanding of full accountability, time and time again the group as a whole is able to provide the necessary decisions to achieve positive progression.</p>
+						</section>
+						<section><h1>Intelligence</h1>
+							<p>With diverse hobbies, experiences, contacts, and interests, I bring a special perspective to providing successful solutions, on time, and above and beyond requirements. I owe my successes to borrowed approaches in scouting, mentorship, and previous successes where developing a strong approach to looking through a problem to see its solution has allowed me to approach situations with objective clarity.</p>
+						</section>
+						<section><h1>Enthusiasm</h1>
+							<p>Understanding the importance of the products and services needed of the end users and clients, and forming an environment, which highlights those needs, allows me to convey a quick, calm, succinct product. There is nothing more successful than a team with a common goal and the will to accomplish that goal as their own.</p>
+						</section>
+						<section><h1>Time</h1>
+							<p>I operate on a business healthy approach of meeting the requirements of the project; both personnel/clients’ and planning/execution are balanced to achieve an overall positive relationship with the client, team members, and other staff in a warm and inviting manner.</p>
+						</section>	
+					</section>
 
-		<section class="snapshot"><h1>Snapshot</h1>
-			<section><h1>Design</h1>
-				<ul>
-					<li>heuristic evaluation</li>
-					<li>cognitive walkthrough</li>
-					<li>time and method engineering</li>
-				</ul>
-			</section>
-			<section><h1>Expertise</h1>
-				<ul>
-					<li>turnkey business solutions</li>
-					<li>systems analysis</li>
-					<li>change management</li>
-					<li>communication methodologies</li>
-				</ul>
-			</section>
-			<section><h1>Skills</h1>
-				<ul>
-					<li>data visualization</li>
-					<li>workflow optimization</li>
-					<li>presentation</li>
-					<li>communication design</li>
-					<li>statistical analysis</li>
-					<li>sdlc methods</li>
-					<li>office suite</li>
-				</ul>
-			</section>
-			<section><h1>Tools</h1>
-				<ul>
-					<li><img src="_img/smile.png" width="60" height="16" alt="Smile" /></li>
-					<li>R</li>
-					<li>excel</li>
-					<li>codingbat</li>
-					<li>stackexchange</li>
-					<li>textmate</li>
-				</ul>
-			</section>
-			<section><h1>Projects</h1>
-				<ul>
-					<li>six sigma black belt</li>
-					<li>javascript</li>
-					<li>pedagogy methods</li>
-				</ul>
-			</section>
-			<section><h1>Community</h1>
-				<ul>
-					<li>inter/national disaster relief</li>
-					<li>habitat for humanity</li>
-					<li>small group leadership</li>
-					<li>logistics mgmt (NPO/NGOs)</li>
-				</ul>
-			</section>
-			<section><h1>Interests</h1>
-				<ul>
-					<li>neon art bending</li>
-					<li>whitewater kayaking</li>
-					<li>large scale gourmet cooking</li>
-					<li>woodturning</li>
-					<li>hiking/camping</li>
-				</ul>
-			</section>
-		</section>
-
-		<section class="workexperience"><h1>Work Experience</h1>
-			<section class="company"><h1>FedEx Ground</h1>
-				<section class="position"><h1>Contractor Corporate Liaison - IT Development Projects</h1>
-					<time class="start" datetime="2010-07">JUL 2010</time>
-					<time class="end" datetime="2012-06">CURRENT</time>
-					<p>After a massive business realignment resulting from the economy crash, IT resources available to independent delivery contractors were significantly reduced.   I presented and developed an elective application that would allow the contractors to provide business analytics that provide daily performance feedback, as well as trending analysis that identifies areas of opportunity as well as high performing metrics, available to each contractor and their employees.</p>
-					<ul>
-						<li>Contractor Optimization
+					<section class="snapshot"><h1>Snapshot</h1>
+						<section><h1>Design</h1>
 							<ul>
-								<li>J2EE development analyzing business models to highlight revenue opportunity (mySQL, JSF/myFaces, Spring, Hibernate, Tomcat, Maven, XML, and X/HTML, with Git versioning) in a traditional Waterfall developing environment comprised solely of myself, end to end in Eclipse</li>
-								<li>Customized data reporting and data entry of PDF, email (SMTP), XML, and CVS into single comprehensive queryable presentations (Sikuli)</li>
-								<li>Basic data verification and session/transaction steps within program to cleanse and prevent rogue data from entering database</li>
-								<li>Database design with Business level logic for security management of CRUD user and data history retention </li>
-								<li>Chose J2EE and associated technologies and self taught to account for 50 requirements including scaling and future support of program</li>
-								<li>Self started business opportunity for business analytics for incumbent raw data for shared success roles by contractors and corporation</li>
+								<li>heuristic evaluation</li>
+								<li>cognitive walkthrough</li>
+								<li>time and method engineering</li>
 							</ul>
-						</li>
-						<li>Vehicle Rental standardization
+						</section>
+						<section><h1>Expertise</h1>
 							<ul>
-								<li>JS</li>
-								<li>JQuery</li>
-								<li>HTML5</li>
+								<li>turnkey business solutions</li>
+								<li>systems analysis</li>
+								<li>change management</li>
+								<li>communication methodologies</li>
 							</ul>
-						</li>
-					</ul>
-				</section>	
-				
-				<section class="position"><h1>Vision Implementation Manager</h1>
-					<time class="start" datetime="2010-02">FEB 2010</time>
-					<time class="end" datetime="2011-12">DEC 2011</time>
-					<p>Vision, a live GIS/GPS aided GUI dispatch system to aid package handlers load packages correctly on Contractor vehicles based on daily utilizations and thresholds, was 5 years behind a releasable product, and closing in on 500M cost, originally, and incorrectly scoped as 40M.   I took over a seven person team of engineers and outsourced developer teams comprised of 120 developers, to restructure the reporting, deliverables release schedule, and testing in an Agile inspired environment.  Focusing on releasing working deliverables to the field enabled for a more comprehensive testing environment that enabled faster feedback, and eliminated the finger pointing for previous ill-informed decision making.  A full release to 15 terminals was achieved in 8 months, affecting 25% of the daily package volume of the company.  A two year rollout was designed, and the first year achieved 70% of company package volume.</p>
-					<ul>
-						<li>Train terminal management and employees on new processes, follow up with previous terminals, and prepare new rollouts</li>
-						<li>Engineer new technologies while communicating between field, programmers, and corporate to exceed deadlines</li>
-						<li>Project Manager for 10 terminals with a proprietary sorting technology, while exceeding process standards, increasing staffing, and reducing task oriented processes, effecting 11% of daily package volume in the company, all on or ahead of a 10 month schedule</li>
-						<li>HR SQL
+						</section>
+						<section><h1>Skills</h1>
 							<ul>
-								<li>Identify an SQL security hole in an outsourced employee information database, affecting +30% of FedEx Operations, saving +20M in liability</li>
+								<li>data visualization</li>
+								<li>workflow optimization</li>
+								<li>presentation</li>
+								<li>communication design</li>
+								<li>statistical analysis</li>
+								<li>sdlc methods</li>
+								<li>office suite</li>
 							</ul>
-						</li>
-						<li>Restructure vendor IT infrastructure to streamline reporting, feedback, and decrease downtime by implementing self-efficacy processes</li>
-						<li>Manage budget of employees (7 direct), interact with external customers and vendors to plan and execute projects on time</li>
-						<li>Vision
+						</section>
+						<section><h1>Tools</h1>
 							<ul>
-								<li>Job Aids</li>
-								<li>Training</li>
-								<li>GUI/UX Design</li>
+								<li><img src="_img/smile.png" width="60" height="16" alt="Smile" /></li>
+								<li>R</li>
+								<li>excel</li>
+								<li>codingbat</li>
+								<li>stackexchange</li>
+								<li>textmate</li>
 							</ul>
-						</li>
-					</ul>
-				</section>
-				
-				<section class="position"><h1>Southern Divisional Preload Quality Initiative Manager 2</h1>
-					<time class="start" datetime="2009-02">FEB 2009</time>
-					<time class="end" datetime="2010-01">JAN 2010</time>
-					<p>With the southeast US as my geographical area, I lead a team of two that identified struggling terminals and worked with the local management team to identify root problems, retraining of best practices, develop short term solutions, and used teleconferencing for long term follow up.  Our Division went from a reactive focus to preventative measures within 6 months, exceeding all other divisions in 4 of every 5 metrics.  Our team had an 87% success rate of management improvement, and we suggested individual Performance Improvement Plans to upper management for followup with extremely low performers.</p>
-					<ul>
-						<li>Retrain terminal management and employees on current processes and improve on new opportunities</li>
-						<li>SCADA process improvements using to reduce specific redundant or legacy workflows of hourly workers by 50%, totaling a 5% increase across all productivity</li>
-						<li>Support 116 terminals with 20+ different personal visits resulting in streamlined adjustments with $10K savings each</li>
-						<li>FAST Team Manager - Peak Season 2009</li>
-					</ul>
-				</section>
-				
-				<section class="position"><h1>Dock Service Manager 3</h1>
-					<time class="start" datetime="2007-01">JAN 2007</time>
-					<time class="end" datetime="2009-01">JAN 2009</time>
-					<ul>
-						<li>Encompass all aspects of customer service to ensure proper delivery of the customers' package(s)</li>
-						<li>Developed streamlined applications for inventory and daily workflows enabling users to visualize current and potential issues in real time</li>
-						<li>Sortation Charts
+						</section>
+						<section><h1>Projects</h1>
 							<ul>
-								<li>Melissa Data incorporation in Excel with color coding and van attribute listing</li>
+								<li>six sigma black belt</li>
+								<li>javascript</li>
+								<li>pedagogy methods</li>
 							</ul>
-						</li>
-					</ul>
-				</section>
-
-				<section class="position"><h1>P/T Service Manager</h1>
-					<time class="start" datetime="2006-06">JUL 2006</time>
-					<time class="end" datetime="2006-12">DEC 2006</time>
-					<ul>
-						<li>Manage 15 Package Handlers in daily operations</li>
-						<li>Load Optimizations
+						</section>
+						<section><h1>Community</h1>
 							<ul>
-								<li>Using time studies to improve productivity</li>
+								<li>inter/national disaster relief</li>
+								<li>habitat for humanity</li>
+								<li>small group leadership</li>
+								<li>logistics mgmt (NPO/NGOs)</li>
 							</ul>
-						</li>
-					</ul>
-				</section>
-				
-				<section class="position"><h1>P/T Package Handler</h1>
-					<time class="start" datetime="2006-03">MAR 2006</time>
-					<time class="end" datetime="2006-05">MAY 2006</time>
-					<ul>
-						<li>Load Packages</li>
-					</ul>
-				</section>	
-			</section>
+						</section>
+						<section><h1>Interests</h1>
+							<ul>
+								<li>neon art bending</li>
+								<li>whitewater kayaking</li>
+								<li>large scale gourmet cooking</li>
+								<li>woodturning</li>
+								<li>hiking/camping</li>
+							</ul>
+						</section>
+					</section>
 
-			<section class="company"><h1>Harris Teeter</h1>
-
-				<section class="position"><h1>Grocery Manager</h1>
-					<time class="start" datetime="2003-12">DEC 2003</time>
-					<time class="end" datetime="2006-03">MAR 2006</time>
-					<ul>
-						<li>Lead a team of six clerks to ensure proper ordering, stocking, rotation, and appearance of the Grocery Department with a $15M+ inventory</li>
-						<li>Manage three adjacent stores and retrain employees on the proper procedures, methodologies, and system processes</li>
-					</ul>
-				</section>
-				
-				<section class="position"><h1>Customer Service Clerk</h1>
-					<time class="start" datetime="2002-06">JUN 2002</time>
-					<time class="end" datetime="2003-11">NOV 2003</time>
-					<ul>
-						<li>Assist a team of 10+ associates on the front line while ensuring the customers' needs/wants are met and exceeded</li>
-					</ul>
-				</section>
-			</section>
-
-			<section class="company"><h1>Winn-Dixie</h1>
-
-				<section class="position"><h1>Cashier</h1>
-					<time class="start" datetime="2001-01">JAN 2001</time>
-					<time class="end" datetime="2002-06">JUN 2002</time>
-					<ul>
-						<li>Cash</li>
-					</ul>
-				</section>
-
-				<section class="position"><h1>Bagger</h1>
-					<time class="start" datetime="2000-11">NOV 2000</time>
-					<time class="end" datetime="2000-12">DEC 2000</time>
-					<ul>
-						<li>Bag</li>
-					</ul>
-				</section>
-			</section>
-		</section>
-
-		<section class="academic"><h1>Academic Experience</h1>
+					<section class="workexperience"><h1>Work Experience</h1>
+						<section class="company"><h1>FedEx Ground</h1>
+							<section class="position"><h1>Contractor Corporate Liaison - IT Development Projects</h1>
+								<time class="start" datetime="2010-07">JUL 2010</time>
+								<time class="end" datetime="2012-06">CURRENT</time>
+								<p>After a massive business realignment resulting from the economy crash, IT resources available to independent delivery contractors were significantly reduced.   I presented and developed an elective application that would allow the contractors to provide business analytics that provide daily performance feedback, as well as trending analysis that identifies areas of opportunity as well as high performing metrics, available to each contractor and their employees.</p>
+								<ul>
+									<li>Contractor Optimization
+										<ul>
+											<li>J2EE development analyzing business models to highlight revenue opportunity (mySQL, JSF/myFaces, Spring, Hibernate, Tomcat, Maven, XML, and X/HTML, with Git versioning) in a traditional Waterfall developing environment comprised solely of myself, end to end in Eclipse</li>
+											<li>Customized data reporting and data entry of PDF, email (SMTP), XML, and CVS into single comprehensive queryable presentations (Sikuli)</li>
+											<li>Basic data verification and session/transaction steps within program to cleanse and prevent rogue data from entering database</li>
+											<li>Database design with Business level logic for security management of CRUD user and data history retention </li>
+											<li>Chose J2EE and associated technologies and self taught to account for 50 requirements including scaling and future support of program</li>
+											<li>Self started business opportunity for business analytics for incumbent raw data for shared success roles by contractors and corporation</li>
+										</ul>
+									</li>
+									<li>Vehicle Rental standardization
+										<ul>
+											<li>JS</li>
+											<li>JQuery</li>
+											<li>HTML5</li>
+										</ul>
+									</li>
+								</ul>
+							</section>	
 			
-			<section class="school"><h1>University of North Carolina at Charlotte</h1>
-				
-				<section class="Degree"><h1>Gendered Communication with a focus on the Female Voice</h1>
-					<time class="start" datetime="2003-08">AUG 2003</time>
-					<time class="end" datetime="2007-12">Dec 2007</time>
-					<p>I pursued this specific track of Communication Studies to study the gender biased elements within human interactions.</p>
-					<ul>
-						<li>National South Eastern Women's Studies Association(SEWSA) invitational speaker on self researched topic surrounding gender neutral non-hegemonic communication - 2008</li>
-						<li>Habitat for Humanity Build Lead</li>
-						<li>Disaster Response Lead Coordinator
-							<ul>
-								<li>Katrina - 10+ visits within 3 years</li>
-								<li>Rita - 1 Visit</li>
-							</ul>
-						</li>
-					</ul>
-				</section>
-			</section>
-			<section class="school"><h1>Central Piedmont Community College</h1>
-				
-				<section class="Degree"><h1>Post-Graduate programs</h1>
-					<time class="start" datetime=""></time>
-					<time class="end" datetime=""></time>
-					<p>I utilize one of the best community colleges in the US to further my education in interdisciplinary areas.</p>
-					<ul>
-						<li>Six Sigma Black Belt Certification - 2012</li>
-					</ul>
-				</section>
-			</section>
-		</section>
+							<section class="position"><h1>Vision Implementation Manager</h1>
+								<time class="start" datetime="2010-02">FEB 2010</time>
+								<time class="end" datetime="2011-12">DEC 2011</time>
+								<p>Vision, a live GIS/GPS aided GUI dispatch system to aid package handlers load packages correctly on Contractor vehicles based on daily utilizations and thresholds, was 5 years behind a releasable product, and closing in on 500M cost, originally, and incorrectly scoped as 40M.   I took over a seven person team of engineers and outsourced developer teams comprised of 120 developers, to restructure the reporting, deliverables release schedule, and testing in an Agile inspired environment.  Focusing on releasing working deliverables to the field enabled for a more comprehensive testing environment that enabled faster feedback, and eliminated the finger pointing for previous ill-informed decision making.  A full release to 15 terminals was achieved in 8 months, affecting 25% of the daily package volume of the company.  A two year rollout was designed, and the first year achieved 70% of company package volume.</p>
+								<ul>
+									<li>Train terminal management and employees on new processes, follow up with previous terminals, and prepare new rollouts</li>
+									<li>Engineer new technologies while communicating between field, programmers, and corporate to exceed deadlines</li>
+									<li>Project Manager for 10 terminals with a proprietary sorting technology, while exceeding process standards, increasing staffing, and reducing task oriented processes, effecting 11% of daily package volume in the company, all on or ahead of a 10 month schedule</li>
+									<li>HR SQL
+										<ul>
+											<li>Identify an SQL security hole in an outsourced employee information database, affecting +30% of FedEx Operations, saving +20M in liability</li>
+										</ul>
+									</li>
+									<li>Restructure vendor IT infrastructure to streamline reporting, feedback, and decrease downtime by implementing self-efficacy processes</li>
+									<li>Manage budget of employees (7 direct), interact with external customers and vendors to plan and execute projects on time</li>
+									<li>Vision
+										<ul>
+											<li>Job Aids</li>
+											<li>Training</li>
+											<li>GUI/UX Design</li>
+										</ul>
+									</li>
+								</ul>
+							</section>
+			
+							<section class="position"><h1>Southern Divisional Preload Quality Initiative Manager 2</h1>
+								<time class="start" datetime="2009-02">FEB 2009</time>
+								<time class="end" datetime="2010-01">JAN 2010</time>
+								<p>With the southeast US as my geographical area, I lead a team of two that identified struggling terminals and worked with the local management team to identify root problems, retraining of best practices, develop short term solutions, and used teleconferencing for long term follow up.  Our Division went from a reactive focus to preventative measures within 6 months, exceeding all other divisions in 4 of every 5 metrics.  Our team had an 87% success rate of management improvement, and we suggested individual Performance Improvement Plans to upper management for followup with extremely low performers.</p>
+								<ul>
+									<li>Retrain terminal management and employees on current processes and improve on new opportunities</li>
+									<li>SCADA process improvements using to reduce specific redundant or legacy workflows of hourly workers by 50%, totaling a 5% increase across all productivity</li>
+									<li>Support 116 terminals with 20+ different personal visits resulting in streamlined adjustments with $10K savings each</li>
+									<li>FAST Team Manager - Peak Season 2009</li>
+								</ul>
+							</section>
+			
+							<section class="position"><h1>Dock Service Manager 3</h1>
+								<time class="start" datetime="2007-01">JAN 2007</time>
+								<time class="end" datetime="2009-01">JAN 2009</time>
+								<ul>
+									<li>Encompass all aspects of customer service to ensure proper delivery of the customers' package(s)</li>
+									<li>Developed streamlined applications for inventory and daily workflows enabling users to visualize current and potential issues in real time</li>
+									<li>Sortation Charts
+										<ul>
+											<li>Melissa Data incorporation in Excel with color coding and van attribute listing</li>
+										</ul>
+									</li>
+								</ul>
+							</section>
 
-		<section class="techtable"><h1>Technologies / Compliance / Certifications</h1>
-			<table cellspacing="0">
-				<colgroup>
-					<col id="col0">
-					<col id="col1">
-					<col id="col2">
-					<col id="col3">
-					<col id="col4">
-					<col id="col5">
-					<col id="col6">
-				</colgroup>
-				<thead>
-					<tr>
-						<th>Category</th>
-						<th>Skill</th>
-						<th>Version(s)</th>
-						<th>Start Date</th>
-						<th>End Date</th>
-						<th>Elapsed Time</th>
-						<th>Expertise Rating</th>
-					</tr>
-				</thead>
-				<tbody>
-					<tr>
-						<td>Technology</td>
-						<td>J2EE</td>
-						<td>1.5, 1.6, 1.7</td>
-						<td>November, 2011</td>
-						<td></td>
-						<td></td>
-						<td>2</td>
-					</tr>
-					<tr>
-						<td>Technology</td>
-						<td>JS</td>
-						<td></td>
-						<td>April, 2012</td>
-						<td></td>
-						<td></td>
-						<td>1</td>
-					</tr>
-					<tr>
-						<td>Compliance</td>
-						<td>CIP</td>
-						<td></td>
-						<td>May, 2008</td>
-						<td>August, 2011</td>
-						<td></td>
-						<td>2</td>
-					</tr>
-					<tr>
-						<td>Certification</td>
-						<td>Red Cross</td>
-						<td>First Aid, CPR</td>
-						<td>May, 2007</td>
-						<td>April, 2013</td>
-						<td></td>
-						<td>3</td>
-					</tr>
-					<tr>
-						<td>Compliance</td>
-						<td>ANSI</td>
-						<td></td>
-						<td>November, 2007</td>
-						<td>August, 2010</td>
-						<td></td>
-						<td>2</td>
-					</tr>
-					<tr>
-						<td>Certification</td>
-						<td>ISO</td>
-						<td>9000, 9001</td>
-						<td>May, 2007</td>
-						<td>August, 2010</td>
-						<td></td>
-						<td>2</td>
-					</tr>
-					<tr>
-						<td>Certification</td>
-						<td>DOT</td>
-						<td>USA, NC</td>
-						<td>June, 2006</td>
-						<td>April, 2013</td>
-						<td></td>
-						<td>3</td>
-					</tr>
-					<tr>
-						<td>Compliance</td>
-						<td>OSHA</td>
-						<td>USA, NC, TN</td>
-						<td>June, 2007</td>
-						<td>April, 2012</td>
-						<td></td>
-						<td>2</td>
-					</tr>
-					<tr>
-						<td>Compliance</td>
-						<td>NERC</td>
-						<td>USA, NC</td>
-						<td>April, 2006</td>
-						<td>April, 2012</td>
-						<td></td>
-						<td>2</td>
-					</tr>
-					<tr>
-						<td>Certification</td>
-						<td>Leadership Principles</td>
-						<td></td>
-						<td>January, 2008</td>
-						<td></td>
-						<td></td>
-						<td>3</td>
-					</tr>
-					<tr>
-						<td>Certification</td>
-						<td>Forklift</td>
-						<td></td>
-						<td>April, 2001</td>
-						<td></td>
-						<td></td>
-						<td>3</td>
-					</tr>
-					<tr>
-						<td>Certification</td>
-						<td>Pallet Jack</td>
-						<td></td>
-						<td>April, 2001</td>
-						<td></td>
-						<td></td>
-						<td>3</td>
-					</tr>
-					<tr>
-						<td>Certification</td>
-						<td>Tugger</td>
-						<td></td>
-						<td>April, 2006</td>
-						<td></td>
-						<td></td>
-						<td>3</td>
-					</tr>
-					<tr>
-						<td>Technology</td>
-						<td>Excel</td>
-						<td>VBA</td>
-						<td>April, 1998</td>
-						<td></td>
-						<td></td>
-						<td>3</td>
-					</tr>
-					<tr>
-						<td>Technology</td>
-						<td>Microsoft suite</td>
-						<td></td>
-						<td>April, 1998</td>
-						<td></td>
-						<td></td>
-						<td>3</td>
-					</tr>
-					<tr>
-						<td>Technology</td>
-						<td>R</td>
-						<td>2.x</td>
-						<td>September, 2008</td>
-						<td></td>
-						<td></td>
-						<td>2</td>
-					</tr>
-					<tr>
-						<td>Technology</td>
-						<td>SQL</td>
-						<td>mySQL, server, msSQL/Sybase/tSQL</td>
-						<td>August, 2010</td>
-						<td></td>
-						<td></td>
-						<td>3</td>
-					</tr>
-					<tr>
-						<td>Technology</td>
-						<td>Eclipse</td>
-						<td>Helios and Indigo for Classic, Java, J2EE, JS</td>
-						<td>August, 2009</td>
-						<td></td>
-						<td></td>
-						<td>2</td>
-					</tr>
-					<tr>
-						<td>Technology</td>
-						<td>Maven</td>
-						<td>2, 3</td>
-						<td>August, 2010</td>
-						<td></td>
-						<td></td>
-						<td>2</td>
-					</tr>
-					<tr>
-						<td>Technology</td>
-						<td>XML</td>
-						<td>1.0, 1.1</td>
-						<td>August, 2009</td>
-						<td></td>
-						<td></td>
-						<td>2</td>
-					</tr>
-					<tr>
-						<td>Technology</td>
-						<td>Spring</td>
-						<td>2.5, 3.0, 3.1</td>
-						<td>August, 2010</td>
-						<td></td>
-						<td></td>
-						<td>2</td>
-					</tr>
-					<tr>
-						<td>Technology</td>
-						<td>Hibernate</td>
-						<td>3.x, 4.x</td>
-						<td>August, 2010</td>
-						<td></td>
-						<td></td>
-						<td>2</td>
-					</tr>
-					<tr>
-						<td>Technology</td>
-						<td>Tomcat</td>
-						<td>5.5, 6, 7</td>
-						<td>August, 2010</td>
-						<td></td>
-						<td></td>
-						<td>2</td>
-					</tr>
-					<tr>
-						<td>Technology</td>
-						<td>CSS</td>
-						<td></td>
-						<td>January, 1997</td>
-						<td></td>
-						<td></td>
-						<td>3</td>
-					</tr>
-					<tr>
-						<td>Technology</td>
-						<td>HTML</td>
-						<td>HTML5</td>
-						<td>January, 1997</td>
-						<td></td>
-						<td></td>
-						<td>2</td>
-					</tr>
-					<tr>
-						<td>Technology</td>
-						<td>XHTML</td>
-						<td></td>
-						<td>January, 2010</td>
-						<td></td>
-						<td></td>
-						<td>2</td>
-					</tr>
-					<tr>
-						<td>Technology</td>
-						<td>SCADA</td>
-						<td>Distributed, Networked</td>
-						<td>January, 2007</td>
-						<td></td>
-						<td></td>
-						<td>2</td>
-					</tr>
-					<tr>
-						<td>Technology</td>
-						<td>Python</td>
-						<td></td>
-						<td>April, 2010</td>
-						<td></td>
-						<td></td>
-						<td>2</td>
-					</tr>
-				</tbody>
-			</table>
-		</section>
+							<section class="position"><h1>P/T Service Manager</h1>
+								<time class="start" datetime="2006-06">JUL 2006</time>
+								<time class="end" datetime="2006-12">DEC 2006</time>
+								<ul>
+									<li>Manage 15 Package Handlers in daily operations</li>
+									<li>Load Optimizations
+										<ul>
+											<li>Using time studies to improve productivity</li>
+										</ul>
+									</li>
+								</ul>
+							</section>
+			
+							<section class="position"><h1>P/T Package Handler</h1>
+								<time class="start" datetime="2006-03">MAR 2006</time>
+								<time class="end" datetime="2006-05">MAY 2006</time>
+								<ul>
+									<li>Load Packages</li>
+								</ul>
+							</section>	
+						</section>
 
+						<section class="company"><h1>Harris Teeter</h1>
+
+							<section class="position"><h1>Grocery Manager</h1>
+								<time class="start" datetime="2003-12">DEC 2003</time>
+								<time class="end" datetime="2006-03">MAR 2006</time>
+								<ul>
+									<li>Lead a team of six clerks to ensure proper ordering, stocking, rotation, and appearance of the Grocery Department with a $15M+ inventory</li>
+									<li>Manage three adjacent stores and retrain employees on the proper procedures, methodologies, and system processes</li>
+								</ul>
+							</section>
+			
+							<section class="position"><h1>Customer Service Clerk</h1>
+								<time class="start" datetime="2002-06">JUN 2002</time>
+								<time class="end" datetime="2003-11">NOV 2003</time>
+								<ul>
+									<li>Assist a team of 10+ associates on the front line while ensuring the customers' needs/wants are met and exceeded</li>
+								</ul>
+							</section>
+						</section>
+
+						<section class="company"><h1>Winn-Dixie</h1>
+
+							<section class="position"><h1>Cashier</h1>
+								<time class="start" datetime="2001-01">JAN 2001</time>
+								<time class="end" datetime="2002-06">JUN 2002</time>
+								<ul>
+									<li>Cash</li>
+								</ul>
+							</section>
+
+							<section class="position"><h1>Bagger</h1>
+								<time class="start" datetime="2000-11">NOV 2000</time>
+								<time class="end" datetime="2000-12">DEC 2000</time>
+								<ul>
+									<li>Bag</li>
+								</ul>
+							</section>
+						</section>
+					</section>
+
+					<section class="academic"><h1>Academic Experience</h1>
+		
+						<section class="school"><h1>University of North Carolina at Charlotte</h1>
+			
+							<section class="Degree"><h1>Gendered Communication with a focus on the Female Voice</h1>
+								<time class="start" datetime="2003-08">AUG 2003</time>
+								<time class="end" datetime="2007-12">DEC 2007</time>
+								<p>I pursued this specific track of Communication Studies to study the gender biased elements within social interactions.</p>
+								<ul>
+									<li>National South Eastern Women's Studies Association(SEWSA) invitational speaker on self researched topic surrounding gender neutral non-hegemonic communication - 2008</li>
+									<li>Habitat for Humanity Build Lead</li>
+									<li>Disaster Response Lead Coordinator
+										<ul>
+											<li>Katrina - 10+ visits within 3 years</li>
+											<li>Rita - 1 Visit</li>
+										</ul>
+									</li>
+								</ul>
+							</section>
+						</section>
+						<section class="school"><h1>Central Piedmont Community College</h1>
+			
+							<section class="Degree"><h1>Post-Graduate programs</h1>
+								<time class="start" datetime=""></time>
+								<time class="end" datetime=""></time>
+								<p>I utilize one of the best community colleges in the US to further my education in interdisciplinary areas.</p>
+								<ul>
+									<li>Six Sigma Black Belt Certification - 2012</li>
+									<li>Culinary Approaches - 2011</li>
+								</ul>
+							</section>
+						</section>
+					</section>
+
+					<section class="techtable"><h1>Technologies / Compliance / Certifications</h1>
+						<table cellspacing="0">
+							<colgroup>
+								<col id="col0">
+								<col id="col1">
+								<col id="col2">
+								<col id="col3">
+								<col id="col4">
+								<col id="col5">
+								<col id="col6">
+							</colgroup>
+							<thead>
+								<tr>
+									<th>Category</th>
+									<th>Skill</th>
+									<th>Version(s)</th>
+									<th>Start Date</th>
+									<th>End Date</th>
+									<th>Elapsed Time</th>
+									<th>Expertise Rating</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td>Technology</td>
+									<td>J2EE</td>
+									<td>1.5, 1.6, 1.7</td>
+									<td>November, 2011</td>
+									<td></td>
+									<td></td>
+									<td>2</td>
+								</tr>
+								<tr>
+									<td>Technology</td>
+									<td>JS</td>
+									<td></td>
+									<td>April, 2012</td>
+									<td></td>
+									<td></td>
+									<td>1</td>
+								</tr>
+								<tr>
+									<td>Compliance</td>
+									<td>CIP</td>
+									<td></td>
+									<td>May, 2008</td>
+									<td>August, 2011</td>
+									<td></td>
+									<td>2</td>
+								</tr>
+								<tr>
+									<td>Certification</td>
+									<td>Red Cross</td>
+									<td>First Aid, CPR</td>
+									<td>May, 2007</td>
+									<td>April, 2013</td>
+									<td></td>
+									<td>3</td>
+								</tr>
+								<tr>
+									<td>Compliance</td>
+									<td>ANSI</td>
+									<td></td>
+									<td>November, 2007</td>
+									<td>August, 2010</td>
+									<td></td>
+									<td>2</td>
+								</tr>
+								<tr>
+									<td>Certification</td>
+									<td>ISO</td>
+									<td>9000, 9001</td>
+									<td>May, 2007</td>
+									<td>August, 2010</td>
+									<td></td>
+									<td>2</td>
+								</tr>
+								<tr>
+									<td>Certification</td>
+									<td>DOT</td>
+									<td>USA, NC</td>
+									<td>June, 2006</td>
+									<td>April, 2013</td>
+									<td></td>
+									<td>3</td>
+								</tr>
+								<tr>
+									<td>Compliance</td>
+									<td>OSHA</td>
+									<td>USA, NC, TN</td>
+									<td>June, 2007</td>
+									<td>April, 2012</td>
+									<td></td>
+									<td>2</td>
+								</tr>
+								<tr>
+									<td>Compliance</td>
+									<td>NERC</td>
+									<td>USA, NC</td>
+									<td>April, 2006</td>
+									<td>April, 2012</td>
+									<td></td>
+									<td>2</td>
+								</tr>
+								<tr>
+									<td>Certification</td>
+									<td>Leadership Principles</td>
+									<td></td>
+									<td>January, 2008</td>
+									<td></td>
+									<td></td>
+									<td>3</td>
+								</tr>
+								<tr>
+									<td>Certification</td>
+									<td>Forklift</td>
+									<td></td>
+									<td>April, 2001</td>
+									<td></td>
+									<td></td>
+									<td>3</td>
+								</tr>
+								<tr>
+									<td>Certification</td>
+									<td>Pallet Jack</td>
+									<td></td>
+									<td>April, 2001</td>
+									<td></td>
+									<td></td>
+									<td>3</td>
+								</tr>
+								<tr>
+									<td>Certification</td>
+									<td>Tugger</td>
+									<td></td>
+									<td>April, 2006</td>
+									<td></td>
+									<td></td>
+									<td>3</td>
+								</tr>
+								<tr>
+									<td>Technology</td>
+									<td>Excel</td>
+									<td>VBA</td>
+									<td>April, 1998</td>
+									<td></td>
+									<td></td>
+									<td>3</td>
+								</tr>
+								<tr>
+									<td>Technology</td>
+									<td>Microsoft suite</td>
+									<td></td>
+									<td>April, 1998</td>
+									<td></td>
+									<td></td>
+									<td>3</td>
+								</tr>
+								<tr>
+									<td>Technology</td>
+									<td>R</td>
+									<td>2.x</td>
+									<td>September, 2008</td>
+									<td></td>
+									<td></td>
+									<td>2</td>
+								</tr>
+								<tr>
+									<td>Technology</td>
+									<td>SQL</td>
+									<td>mySQL, server, msSQL/Sybase/tSQL</td>
+									<td>August, 2010</td>
+									<td></td>
+									<td></td>
+									<td>3</td>
+								</tr>
+								<tr>
+									<td>Technology</td>
+									<td>Eclipse</td>
+									<td>Helios and Indigo for Classic, Java, J2EE, JS</td>
+									<td>August, 2009</td>
+									<td></td>
+									<td></td>
+									<td>2</td>
+								</tr>
+								<tr>
+									<td>Technology</td>
+									<td>Maven</td>
+									<td>2, 3</td>
+									<td>August, 2010</td>
+									<td></td>
+									<td></td>
+									<td>2</td>
+								</tr>
+								<tr>
+									<td>Technology</td>
+									<td>XML</td>
+									<td>1.0, 1.1</td>
+									<td>August, 2009</td>
+									<td></td>
+									<td></td>
+									<td>2</td>
+								</tr>
+								<tr>
+									<td>Technology</td>
+									<td>Spring</td>
+									<td>2.5, 3.0, 3.1</td>
+									<td>August, 2010</td>
+									<td></td>
+									<td></td>
+									<td>2</td>
+								</tr>
+								<tr>
+									<td>Technology</td>
+									<td>Hibernate</td>
+									<td>3.x, 4.x</td>
+									<td>August, 2010</td>
+									<td></td>
+									<td></td>
+									<td>2</td>
+								</tr>
+								<tr>
+									<td>Technology</td>
+									<td>Tomcat</td>
+									<td>5.5, 6, 7</td>
+									<td>August, 2010</td>
+									<td></td>
+									<td></td>
+									<td>2</td>
+								</tr>
+								<tr>
+									<td>Technology</td>
+									<td>CSS</td>
+									<td></td>
+									<td>January, 1997</td>
+									<td></td>
+									<td></td>
+									<td>3</td>
+								</tr>
+								<tr>
+									<td>Technology</td>
+									<td>HTML</td>
+									<td>HTML5</td>
+									<td>January, 1997</td>
+									<td></td>
+									<td></td>
+									<td>2</td>
+								</tr>
+								<tr>
+									<td>Technology</td>
+									<td>XHTML</td>
+									<td></td>
+									<td>January, 2010</td>
+									<td></td>
+									<td></td>
+									<td>2</td>
+								</tr>
+								<tr>
+									<td>Technology</td>
+									<td>SCADA</td>
+									<td>Distributed, Networked</td>
+									<td>January, 2007</td>
+									<td></td>
+									<td></td>
+									<td>2</td>
+								</tr>
+								<tr>
+									<td>Technology</td>
+									<td>Python</td>
+									<td></td>
+									<td>April, 2010</td>
+									<td></td>
+									<td></td>
+									<td>2</td>
+								</tr>
+							</tbody>
+						</table>
+					</section>
+				</div>
+			</div>
+		</div>
+				
 		<footer>
 			<h1>What do you call an Alligator in a vest?                          An Investigator!</h1>
 			<h2>Hat tip to you all, in no particular order</h2>
@@ -917,9 +927,14 @@
 			}
 			start.sort(compareTime);
 			end.sort(compareTime);
-		// Dynamically set company level start and end time.
+		//  	ally set company level start and end time.
 			$(this).find('>h1').after($('time.end[datetime=' + end[end.length - 1] + ']').clone());
 			$(this).find('>h1').after($('time.start[datetime=' + start[0] + ']').clone());
+			//Add a Hyphen between dates
+				$('section.workexperience >section>time.start').each(function(){
+					var inner = this.innerHTML + " - ";
+					this.innerHTML = inner;
+					});
 		};
 	//Hide Work experience completely
 		$('fieldset.workexperience #workexperience_all').on('change', function () {
@@ -1049,7 +1064,7 @@
 			});
 			cols.splice(0,2);
 			$.each(cols, function(i) {
-				$('<input type="checkbox" checked="checked" id="ttcols'+this+'" name="ttcol_'+this+'" class="column"/><label for="ttcol_'+this+'">'+cols[i]+'</label>').appendTo($('fieldset.techtable'));
+				$('<input type="checkbox" checked="checked" id="ttcols'+this+'" name="ttcol_'+this+'" class="column"/><label for="ttcol_'+this+'">'+cols[i]+'</label>').appendTo($('fieldset.techtable').last());
 			});
 		//Row Button Hider
 			$('fieldset.techtable input.row[type=checkbox]').on('change', function() {
@@ -1141,6 +1156,7 @@
 			// set type, either numeric or text
 			type: 'numeric'
 		});
+		console.log("Hello Jack");
 	//Table Sorter parsers Identification
 		$(".techtable table").tablesorter({
 			headers: {

@@ -2,6 +2,8 @@
 /* slider widget */
 .ui-slider  {
 	text-decoration: none !important;
+	clear: both;
+	top: 5em;}
 }
 .ui-slider .ui-slider-handle  {
 	overflow: visible !important;
