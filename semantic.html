@@ -32,220 +32,221 @@
 			for(i=0;i<document.styleSheets.length;i++) 
 				%20document.styleSheets[i].disabled=cs;}; 
 				void(cs=true);">Toggle stylesheet</a>
-		<div id="main-container">
-			<div id="main" class="wrapper clearfix">
-				<aside>
-					<form>
-						<fieldset class="businessapproaches"><legend>Business Approach Sections</legend>
-							<input type="checkbox" id="ba_all" name="ba_all" /><label for="ba_all">Toggle Business Approach	</label>
-						</fieldset>
-						<fieldset class="snapshot"><legend>Snapshot Sections</legend>
-							<input type="checkbox" id="ss_all" name="ss_all" /><label for="ss_all">Toggle Snapshot</label>
-						</fieldset>
-						<fieldset class="workexperience"><legend>Work Experience Range</legend>
-							<input type="checkbox" id="workexperience_all" name="workexperience_all" />
-							<label for="workexperience_all">Toggle Work Experience</label>
-						<!-- <label for="startdate">Start Date</label>
-						    <input name="startdate" id="startdate" type="text" value="" class="startdate-picker" /> -->
+		<div id="main-container" class="wrapper">
+			<div id="main" >
+				<div class="block aside">
+					<aside>
+						<form class="form">
+							<fieldset class="businessapproaches"><legend>Business Approach Sections</legend>
+								<input type="checkbox" id="ba_all" name="ba_all" /><label for="ba_all">Toggle Business Approach</label><br>
+							</fieldset>
+							<fieldset class="snapshot"><legend>Snapshot Sections</legend>
+								<input type="checkbox" id="ss_all" name="ss_all" /><label for="ss_all">Toggle Snapshot</label><br>
+							</fieldset>
+							<fieldset class="workexperience"><legend>Work Experience Range</legend>
+								<input type="checkbox" id="workexperience_all" name="workexperience_all" />
+								<label for="workexperience_all">Toggle Work Experience</label><br>
+							<!-- <label for="startdate">Start Date</label>
+							    <input name="startdate" id="startdate" type="text" value="" class="startdate-picker" /> -->
 
-							<!-- <label for="enddate">End Date</label>
-						    <input name="enddate" id="enddate" type="text" value="" class="enddate-picker" /> -->
-							<label for="startdate">Start Date</label>
-							<input id="startdate" name="startdate" type="text" value="" />
-							<label for="enddate">End Date</label>
-							<input id="enddate" name="enddate" type="text" value="" />
-						</fieldset>
-					 	<fieldset class="ds"><legend>Work Selector</legend> 
-							<label for="valueAA" class="dsl">From:</label>
-							<select name="valueAA" id="valueAA">
-								<optgroup label="2003">
-									<option value="01/03">Jan 03</option>
-									<option value="02/03">Feb 03</option>
-									<option value="03/03">Mar 03</option>
-									<option value="03/03">Apr 03</option>
-									<option value="03/03">May 03</option>
-									<option value="06/03">Jun 03</option>
-									<option value="07/03">Jul 03</option>
-									<option value="08/03" selected="selected">Aug 03</option>
-									<option value="09/03">Sep 03</option>
-									<option value="10/03">Oct 03</option>
-									<option value="11/03">Nov 03</option>
-									<option value="12/03">Dec 03</option>
-								</optgroup>
-								<optgroup label="2004">
-									<option value="01/04">Jan 04</option>
-									<option value="02/04">Feb 04</option>
-									<option value="03/04">Mar 04</option>
-									<option value="04/04">Apr 04</option>
-									<option value="04/04">May 04</option>
-									<option value="06/04">Jun 04</option>
-									<option value="07/04">Jul 04</option>
-									<option value="08/04">Aug 04</option>
-									<option value="09/04">Sep 04</option>
-									<option value="10/04">Oct 04</option>
-									<option value="11/04">Nov 04</option>
-									<option value="12/04">Dec 04</option>
-								</optgroup>
-								<optgroup label="2005">
-									<option value="01/05">Jan 05</option>
-									<option value="02/05">Feb 05</option>
-									<option value="03/05">Mar 05</option>
-									<option value="04/05">Apr 05</option>
-									<option value="05/05">May 05</option>
-									<option value="06/05">Jun 05</option>
-									<option value="07/05">Jul 05</option>
-									<option value="08/05">Aug 05</option>
-									<option value="09/05">Sep 05</option>
-									<option value="10/05">Oct 05</option>
-									<option value="11/05">Nov 05</option>
-									<option value="12/05">Dec 05</option>
-								</optgroup>
-								<optgroup label="2006">
-									<option value="01/06">Jan 06</option>
-									<option value="02/06">Feb 06</option>
-									<option value="03/06">Mar 06</option>
-									<option value="04/06">Apr 06</option>
-									<option value="06/06">May 06</option>
-									<option value="06/06">Jun 06</option>
-									<option value="07/06">Jul 06</option>
-									<option value="08/06">Aug 06</option>
-									<option value="09/06">Sep 06</option>
-									<option value="10/06">Oct 06</option>
-									<option value="11/06">Nov 06</option>
-									<option value="12/06">Dec 06</option>
-								</optgroup>
-								<optgroup label="2007">
-									<option value="01/07">Jan 07</option>
-									<option value="02/07">Feb 07</option>
-									<option value="03/07">Mar 07</option>
-									<option value="04/07">Apr 07</option>
-									<option value="07/07">May 07</option>
-									<option value="07/07">Jun 07</option>
-									<option value="07/07">Jul 07</option>
-									<option value="08/07">Aug 07</option>
-									<option value="09/07">Sep 07</option>
-									<option value="10/07">Oct 07</option>
-									<option value="11/07">Nov 07</option>
-									<option value="12/07">Dec 07</option>
-								</optgroup>
-								<optgroup label="2008">
-									<option value="01/08">Jan 08</option>
-									<option value="02/08">Feb 08</option>
-									<option value="03/08">Mar 08</option>
-									<option value="04/08">Apr 08</option>
-									<option value="08/08">May 08</option>
-									<option value="08/08">Jun 08</option>
-									<option value="08/08">Jul 08</option>
-									<option value="08/08">Aug 08</option>
-									<option value="09/08">Sep 08</option>
-									<option value="10/08">Oct 08</option>
-									<option value="11/08">Nov 08</option>
-									<option value="12/08">Dec 08</option>
-								</optgroup>
-							</select>
+								<!-- <label for="enddate">End Date</label>
+							    <input name="enddate" id="enddate" type="text" value="" class="enddate-picker" /> -->
+								<label for="startdate">Start Date</label>
+								<input id="startdate" name="startdate" type="text" value="" />
+								<label for="enddate">End Date</label>
+								<input id="enddate" name="enddate" type="text" value="" />
+							</fieldset>
+						 	<fieldset class="ds"><legend>Work Selector</legend><br> 
+								<label for="valueAA" class="dsl">From:</label>
+								<select name="valueAA" id="valueAA">
+									<optgroup label="2003">
+										<option value="01/03">Jan 03</option>
+										<option value="02/03">Feb 03</option>
+										<option value="03/03">Mar 03</option>
+										<option value="03/03">Apr 03</option>
+										<option value="03/03">May 03</option>
+										<option value="06/03">Jun 03</option>
+										<option value="07/03">Jul 03</option>
+										<option value="08/03" selected="selected">Aug 03</option>
+										<option value="09/03">Sep 03</option>
+										<option value="10/03">Oct 03</option>
+										<option value="11/03">Nov 03</option>
+										<option value="12/03">Dec 03</option>
+									</optgroup>
+									<optgroup label="2004">
+										<option value="01/04">Jan 04</option>
+										<option value="02/04">Feb 04</option>
+										<option value="03/04">Mar 04</option>
+										<option value="04/04">Apr 04</option>
+										<option value="04/04">May 04</option>
+										<option value="06/04">Jun 04</option>
+										<option value="07/04">Jul 04</option>
+										<option value="08/04">Aug 04</option>
+										<option value="09/04">Sep 04</option>
+										<option value="10/04">Oct 04</option>
+										<option value="11/04">Nov 04</option>
+										<option value="12/04">Dec 04</option>
+									</optgroup>
+									<optgroup label="2005">
+										<option value="01/05">Jan 05</option>
+										<option value="02/05">Feb 05</option>
+										<option value="03/05">Mar 05</option>
+										<option value="04/05">Apr 05</option>
+										<option value="05/05">May 05</option>
+										<option value="06/05">Jun 05</option>
+										<option value="07/05">Jul 05</option>
+										<option value="08/05">Aug 05</option>
+										<option value="09/05">Sep 05</option>
+										<option value="10/05">Oct 05</option>
+										<option value="11/05">Nov 05</option>
+										<option value="12/05">Dec 05</option>
+									</optgroup>
+									<optgroup label="2006">
+										<option value="01/06">Jan 06</option>
+										<option value="02/06">Feb 06</option>
+										<option value="03/06">Mar 06</option>
+										<option value="04/06">Apr 06</option>
+										<option value="06/06">May 06</option>
+										<option value="06/06">Jun 06</option>
+										<option value="07/06">Jul 06</option>
+										<option value="08/06">Aug 06</option>
+										<option value="09/06">Sep 06</option>
+										<option value="10/06">Oct 06</option>
+										<option value="11/06">Nov 06</option>
+										<option value="12/06">Dec 06</option>
+									</optgroup>
+									<optgroup label="2007">
+										<option value="01/07">Jan 07</option>
+										<option value="02/07">Feb 07</option>
+										<option value="03/07">Mar 07</option>
+										<option value="04/07">Apr 07</option>
+										<option value="07/07">May 07</option>
+										<option value="07/07">Jun 07</option>
+										<option value="07/07">Jul 07</option>
+										<option value="08/07">Aug 07</option>
+										<option value="09/07">Sep 07</option>
+										<option value="10/07">Oct 07</option>
+										<option value="11/07">Nov 07</option>
+										<option value="12/07">Dec 07</option>
+									</optgroup>
+									<optgroup label="2008">
+										<option value="01/08">Jan 08</option>
+										<option value="02/08">Feb 08</option>
+										<option value="03/08">Mar 08</option>
+										<option value="04/08">Apr 08</option>
+										<option value="08/08">May 08</option>
+										<option value="08/08">Jun 08</option>
+										<option value="08/08">Jul 08</option>
+										<option value="08/08">Aug 08</option>
+										<option value="09/08">Sep 08</option>
+										<option value="10/08">Oct 08</option>
+										<option value="11/08">Nov 08</option>
+										<option value="12/08">Dec 08</option>
+									</optgroup>
+								</select>
 
-							<label for="valueBB" class="dsl">To:</label>
-							<select name="valueBB" id="valueBB">
-								<optgroup label="2003">
-									<option value="01/03">Jan 03</option>
-									<option value="02/03">Feb 03</option>
-									<option value="03/03">Mar 03</option>
-									<option value="03/03">Apr 03</option>
-									<option value="03/03">May 03</option>
-									<option value="06/03">Jun 03</option>
-									<option value="07/03">Jul 03</option>
-									<option value="08/03">Aug 03</option>
-									<option value="09/03">Sep 03</option>
-									<option value="10/03">Oct 03</option>
-									<option value="11/03">Nov 03</option>
-									<option value="12/03">Dec 03</option>
-								</optgroup>
-								<optgroup label="2004">
-									<option value="01/04">Jan 04</option>
-									<option value="02/04">Feb 04</option>
-									<option value="03/04">Mar 04</option>
-									<option value="04/04">Apr 04</option>
-									<option value="04/04">May 04</option>
-									<option value="06/04">Jun 04</option>
-									<option value="07/04">Jul 04</option>
-									<option value="08/04">Aug 04</option>
-									<option value="09/04">Sep 04</option>
-									<option value="10/04">Oct 04</option>
-									<option value="11/04">Nov 04</option>
-									<option value="12/04">Dec 04</option>
-								</optgroup>
-								<optgroup label="2005">
-									<option value="01/05">Jan 05</option>
-									<option value="02/05">Feb 05</option>
-									<option value="03/05">Mar 05</option>
-									<option value="04/05">Apr 05</option>
-									<option value="05/05">May 05</option>
-									<option value="06/05">Jun 05</option>
-									<option value="07/05">Jul 05</option>
-									<option value="08/05">Aug 05</option>
-									<option value="09/05">Sep 05</option>
-									<option value="10/05">Oct 05</option>
-									<option value="11/05">Nov 05</option>
-									<option value="12/05">Dec 05</option>
-								</optgroup>
-								<optgroup label="2006">
-									<option value="01/06">Jan 06</option>
-									<option value="02/06">Feb 06</option>
-									<option value="03/06">Mar 06</option>
-									<option value="04/06">Apr 06</option>
-									<option value="06/06">May 06</option>
-									<option value="06/06">Jun 06</option>
-									<option value="07/06">Jul 06</option>
-									<option value="08/06">Aug 06</option>
-									<option value="09/06">Sep 06</option>
-									<option value="10/06">Oct 06</option>
-									<option value="11/06">Nov 06</option>
-									<option value="12/06">Dec 06</option>
-								</optgroup>
-								<optgroup label="2007">
-									<option value="01/07">Jan 07</option>
-									<option value="02/07">Feb 07</option>
-									<option value="03/07">Mar 07</option>
-									<option value="04/07">Apr 07</option>
-									<option value="07/07">May 07</option>
-									<option value="07/07">Jun 07</option>
-									<option value="07/07">Jul 07</option>
-									<option value="08/07" selected="selected">Aug 07</option>
-									<option value="09/07">Sep 07</option>
-									<option value="10/07">Oct 07</option>
-									<option value="11/07">Nov 07</option>
-									<option value="12/07">Dec 07</option>
-								</optgroup>
-								<optgroup label="2008">
-									<option value="01/08">Jan 08</option>
-									<option value="02/08">Feb 08</option>
-									<option value="03/08">Mar 08</option>
-									<option value="04/08">Apr 08</option>
-									<option value="08/08">May 08</option>
-									<option value="08/08">Jun 08</option>
-									<option value="08/08">Jul 08</option>
-									<option value="08/08">Aug 08</option>
-									<option value="09/08">Sep 08</option>
-									<option value="10/08">Oct 08</option>
-									<option value="11/08">Nov 08</option>
-									<option value="12/08">Dec 08</option>
-								</optgroup>
-							</select>
-						</fieldset>
+								<label for="valueBB" class="dsl">To:</label>
+								<select name="valueBB" id="valueBB">
+									<optgroup label="2003">
+										<option value="01/03">Jan 03</option>
+										<option value="02/03">Feb 03</option>
+										<option value="03/03">Mar 03</option>
+										<option value="03/03">Apr 03</option>
+										<option value="03/03">May 03</option>
+										<option value="06/03">Jun 03</option>
+										<option value="07/03">Jul 03</option>
+										<option value="08/03">Aug 03</option>
+										<option value="09/03">Sep 03</option>
+										<option value="10/03">Oct 03</option>
+										<option value="11/03">Nov 03</option>
+										<option value="12/03">Dec 03</option>
+									</optgroup>
+									<optgroup label="2004">
+										<option value="01/04">Jan 04</option>
+										<option value="02/04">Feb 04</option>
+										<option value="03/04">Mar 04</option>
+										<option value="04/04">Apr 04</option>
+										<option value="04/04">May 04</option>
+										<option value="06/04">Jun 04</option>
+										<option value="07/04">Jul 04</option>
+										<option value="08/04">Aug 04</option>
+										<option value="09/04">Sep 04</option>
+										<option value="10/04">Oct 04</option>
+										<option value="11/04">Nov 04</option>
+										<option value="12/04">Dec 04</option>
+									</optgroup>
+									<optgroup label="2005">
+										<option value="01/05">Jan 05</option>
+										<option value="02/05">Feb 05</option>
+										<option value="03/05">Mar 05</option>
+										<option value="04/05">Apr 05</option>
+										<option value="05/05">May 05</option>
+										<option value="06/05">Jun 05</option>
+										<option value="07/05">Jul 05</option>
+										<option value="08/05">Aug 05</option>
+										<option value="09/05">Sep 05</option>
+										<option value="10/05">Oct 05</option>
+										<option value="11/05">Nov 05</option>
+										<option value="12/05">Dec 05</option>
+									</optgroup>
+									<optgroup label="2006">
+										<option value="01/06">Jan 06</option>
+										<option value="02/06">Feb 06</option>
+										<option value="03/06">Mar 06</option>
+										<option value="04/06">Apr 06</option>
+										<option value="06/06">May 06</option>
+										<option value="06/06">Jun 06</option>
+										<option value="07/06">Jul 06</option>
+										<option value="08/06">Aug 06</option>
+										<option value="09/06">Sep 06</option>
+										<option value="10/06">Oct 06</option>
+										<option value="11/06">Nov 06</option>
+										<option value="12/06">Dec 06</option>
+									</optgroup>
+									<optgroup label="2007">
+										<option value="01/07">Jan 07</option>
+										<option value="02/07">Feb 07</option>
+										<option value="03/07">Mar 07</option>
+										<option value="04/07">Apr 07</option>
+										<option value="07/07">May 07</option>
+										<option value="07/07">Jun 07</option>
+										<option value="07/07">Jul 07</option>
+										<option value="08/07" selected="selected">Aug 07</option>
+										<option value="09/07">Sep 07</option>
+										<option value="10/07">Oct 07</option>
+										<option value="11/07">Nov 07</option>
+										<option value="12/07">Dec 07</option>
+									</optgroup>
+									<optgroup label="2008">
+										<option value="01/08">Jan 08</option>
+										<option value="02/08">Feb 08</option>
+										<option value="03/08">Mar 08</option>
+										<option value="04/08">Apr 08</option>
+										<option value="08/08">May 08</option>
+										<option value="08/08">Jun 08</option>
+										<option value="08/08">Jul 08</option>
+										<option value="08/08">Aug 08</option>
+										<option value="09/08">Sep 08</option>
+										<option value="10/08">Oct 08</option>
+										<option value="11/08">Nov 08</option>
+										<option value="12/08">Dec 08</option>
+									</optgroup>
+								</select>
+							</fieldset>
 		
-						<fieldset class="academic"><legend>Academic</legend>
-							<input type="checkbox" id="academic_all" name="academic_all" />
-							<label for="academic_all">Toggle Academic</label>
-						</fieldset>
-						<fieldset class="techtable"><legend>Technologies / Compliance / Certification</legend>
-							<input type="checkbox" id="techtable_all" name="techtable_all"/>
-							<label for="techtable_all">Remove Table</label>
-							<br>
-						</fieldset>
-					</form>
-				</aside>
+							<fieldset class="academic"><legend>Academic</legend>
+								<input type="checkbox" id="academic_all" name="academic_all" />
+								<label for="academic_all">Toggle Academic</label><br>
+							</fieldset>
+							<fieldset class="techtable"><legend>Technologies / Compliance / Certification</legend>
+								<input type="checkbox" id="techtable_all" name="techtable_all"/>
+								<label for="techtable_all">Remove Table</label><br>
+							</fieldset>
+						</form>
+					</aside>
+				</div>
 
-				<div class="generatedcontent">
+				<div class="block gc">
 					<section class="businessapproaches"><h1>Business Approach</h1>
 						<section><h1>Analysis</h1>
 								<p>I use a multitude of tools and experiences that bring a comprehensive approach to evaluate systems, processes, objects, and personnel. I achieve this through a mix of initial communication with stakeholders and departments, and use this information to develop the framework for developing scope and planning resources to exceed client or project expectations.</p>
@@ -799,24 +800,34 @@
 			</ul>
 		</footer>
 	</body>
+	<!-- Web2PDF Converter Button BEGIN -->
+	<script type="text/javascript">
+	var
+	pdfbuttonlabel="Save page as PDF"
+	</script>
+	<script src="http://www.web2pdfconvert.com/pdfbutton2.js" id="Web2PDF" type="text/javascript"></script>
+	<!-- Web2PDF Converter Button END -->
+
 </html>
 
 
 
 <script>
 
+
+
 // Generation
 	$('section.businessapproaches section h1').each(function () {
 		var value = this.innerHTML;
-		$('<input type="checkbox" checked="checked" id="ba_' + value.toLowerCase() + '" name="ba_' + value.toLowerCase() + '"/><label for="ba_' + value.toLowerCase() + '">' + value + '</label>').appendTo($('fieldset.businessapproaches'));
+		$('<input type="checkbox" checked="checked" id="ba_' + value.toLowerCase() + '" name="ba_' + value.toLowerCase() + '"/><label for="ba_' + value.toLowerCase() + '">' + value + '</label>' + '<br>	').appendTo($('fieldset.businessapproaches'));
 	});
 	$('section.snapshot section h1').each(function () {
 		var value = this.innerHTML;
-		$('<input type="checkbox" checked="checked" id="' + value.toLowerCase() + '" name="' + value.toLowerCase() + '"/><label for="' + value.toLowerCase() + '">' + value + '</label>').appendTo($('fieldset.snapshot'));
+		$('<input type="checkbox" checked="checked" id="' + value.toLowerCase() + '" name="' + value.toLowerCase() + '"/><label for="' + value.toLowerCase() + '">' + value + '</label>' + '<br>	').appendTo($('fieldset.snapshot'));
 	});
 	$('section.academic section.school > h1').each(function () {
 		var value = this.innerHTML;
-		$('<input type="checkbox" checked="checked" id="' + value.toLowerCase() + '" name="' + value.toLowerCase() + '"/><label for="' + value.toLowerCase() + '">' + value + '</label>').appendTo($('fieldset.academic'));
+		$('<input type="checkbox" checked="checked" id="' + value.toLowerCase() + '" name="' + value.toLowerCase() + '"/><label for="' + value.toLowerCase() + '">' + value + '</label>' + '<br>	').appendTo($('fieldset.academic'));
 	});
 	$('section.company').each(processCompanyTime);
 // Initialize the start date and end date function.
@@ -841,6 +852,15 @@
 
 //sort Techtable name alphabetically
 	$('section.techtable > h1').html($('section.techtable > h1').html().split(' / ').sort().join(' / '));
+
+//Stateful change of checkbox text
+	$(function() {
+	    $(".checkbox").each(function () {
+			$(this).change(function() {
+				console.log("Changed");
+				});
+		});
+	});
 
 // Persistence
 //¿¿??
@@ -1055,7 +1075,7 @@
 				}
 			//Row Button Generator
 				$.each(keys, function(i) {
-				$('<input type="checkbox" checked="checked" id="techtable_'+this+'" name="techtable_'+this+'" class="row"/><label for="techtable_'+this+'">'+labels[i]+'</label>').appendTo($("fieldset.techtable > label").first());
+				$('<input type="checkbox" checked="checked" id="techtable_'+this+'" name="techtable_'+this+'" class="row"/><label for="techtable_'+this+'">'+labels[i]+' '+'</label>').appendTo($("fieldset.techtable"));
 				});
 		//column button generator
 			var cols = [];
@@ -1064,7 +1084,7 @@
 			});
 			cols.splice(0,2);
 			$.each(cols, function(i) {
-				$('<input type="checkbox" checked="checked" id="ttcols'+this+'" name="ttcol_'+this+'" class="column"/><label for="ttcol_'+this+'">'+cols[i]+'</label>').appendTo($('fieldset.techtable').last());
+					$('<input type="checkbox" checked="checked" id="ttcols'+this+'" name="ttcol_'+this+'" class="column"/><label for="ttcol_'+this+'">'+cols[i]+'</label>' + '<br>').appendTo($('fieldset.techtable'));
 			});
 		//Row Button Hider
 			$('fieldset.techtable input.row[type=checkbox]').on('change', function() {
@@ -1156,7 +1176,6 @@
 			// set type, either numeric or text
 			type: 'numeric'
 		});
-		console.log("Hello Jack");
 	//Table Sorter parsers Identification
 		$(".techtable table").tablesorter({
 			headers: {
