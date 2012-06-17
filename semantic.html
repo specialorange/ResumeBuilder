@@ -36,6 +36,11 @@
 			<div id="main" >
 				<div class="block aside">
 					<aside>
+						
+						<div class="nui">
+							
+						</div>
+						
 						<form class="form">
 							<fieldset class="businessapproaches"><legend>Business Approach Sections</legend>
 								<input type="checkbox" id="ba_all" name="ba_all" /><label for="ba_all">Toggle Business Approach</label><br>
@@ -817,19 +822,20 @@
 
 
 // Generation
-	$('section.businessapproaches section h1').each(function () {
-		var value = this.innerHTML;
-		$('<input type="checkbox" checked="checked" id="ba_' + value.toLowerCase() + '" name="ba_' + value.toLowerCase() + '"/><label for="ba_' + value.toLowerCase() + '">' + value + '</label>' + '<br>	').appendTo($('fieldset.businessapproaches'));
-	});
-	$('section.snapshot section h1').each(function () {
-		var value = this.innerHTML;
-		$('<input type="checkbox" checked="checked" id="' + value.toLowerCase() + '" name="' + value.toLowerCase() + '"/><label for="' + value.toLowerCase() + '">' + value + '</label>' + '<br>	').appendTo($('fieldset.snapshot'));
-	});
-	$('section.academic section.school > h1').each(function () {
-		var value = this.innerHTML;
-		$('<input type="checkbox" checked="checked" id="' + value.toLowerCase() + '" name="' + value.toLowerCase() + '"/><label for="' + value.toLowerCase() + '">' + value + '</label>' + '<br>	').appendTo($('fieldset.academic'));
-	});
-	$('section.company').each(processCompanyTime);
+	//SideBar
+		$('section.businessapproaches section h1').each(function () {
+			var value = this.innerHTML;
+			$('<input type="checkbox" checked="checked" id="ba_' + value.toLowerCase() + '" name="ba_' + value.toLowerCase() + '"/><label for="ba_' + value.toLowerCase() + '">' + value + '</label>' + '<br>	').appendTo($('fieldset.businessapproaches'));
+		});
+		$('section.snapshot section h1').each(function () {
+			var value = this.innerHTML;
+			$('<input type="checkbox" checked="checked" id="' + value.toLowerCase() + '" name="' + value.toLowerCase() + '"/><label for="' + value.toLowerCase() + '">' + value + '</label>' + '<br>	').appendTo($('fieldset.snapshot'));
+		});
+		$('section.academic section.school > h1').each(function () {
+			var value = this.innerHTML;
+			$('<input type="checkbox" checked="checked" id="' + value.toLowerCase() + '" name="' + value.toLowerCase() + '"/><label for="' + value.toLowerCase() + '">' + value + '</label>' + '<br>	').appendTo($('fieldset.academic'));
+		});
+		$('section.company').each(processCompanyTime);
 // Initialize the start date and end date function.
 	(function () {
 		var start = [];
