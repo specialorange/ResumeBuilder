@@ -12,7 +12,7 @@
 		<script src="http://code.jquery.com/jquery.min.js"></script>
 		<script type="text/javascript" src="_js/libs/jquery.tablesorter.min.js"></script>
 		<script type="text/javascript" src="_js/libs/jquery-ui-1.7.1.custom.min.js"></script>
-		<script type="text/javascript" src="_js/libs/selectToUISlider.jQuery.js"></script> -->
+		<script type="text/javascript" src="_js/libs/selectToUISlider.jQuery.js"></script>
 		<div id="header-container">
 			<header class="wrapper clearfix">
 				<h1>Resume Builder</h1>
@@ -45,16 +45,12 @@
 								<label for="ba_all">Business Approach</label><br>
 							</fieldset>
 							<fieldset class="snapshot">
-								<input type="checkbox" id="ss_all" name="ss_all" /><label for="ss_all">Snapshot</label><br>
+								<input type="checkbox" id="ss_all" name="ss_all" />
+								<label for="ss_all">Snapshot</label><br>
 							</fieldset>
 							<fieldset class="workexperience">
 								<input type="checkbox" id="workexperience_all" name="workexperience_all" />
 								<label for="workexperience_all">Work Experience</label><br>
-								<!-- <label for="startdate">Start Date</label>
-							    <input name="startdate" id="startdate" type="text" value="" class="startdate-picker" /> -->
-
-								<!-- <label for="enddate">End Date</label>
-							    <input name="enddate" id="enddate" type="text" value="" class="enddate-picker" /> -->
 								<label for="startdate">Start Date</label>
 								<input id="startdate" name="startdate" type="text" value="" />
 								<label for="enddate">End Date</label>
@@ -236,15 +232,15 @@
 										<option value="12/08">Dec 08</option>
 									</optgroup>
 								</select>
-							</fieldset>
+							</fieldset><br><br><br>
 		
-							<fieldset class="academic"><legend>Academic</legend>
+							<fieldset class="academic">
 								<input type="checkbox" id="academic_all" name="academic_all" />
-								<label for="academic_all">Toggle Academic</label><br>
+								<label for="academic_all">Academic</label><br>
 							</fieldset>
-							<fieldset class="techtable"><legend>Technologies / Compliance / Certification</legend>
+							<fieldset class="techtable">
 								<input type="checkbox" id="techtable_all" name="techtable_all"/>
-								<label for="techtable_all">Remove Table</label><br>
+								<label for="techtable_all">Technologies / Compliance / Certification</label><br>
 							</fieldset>
 						</form>
 					</aside>
@@ -304,12 +300,12 @@
 						</section>
 						<section><h1>Tools</h1>
 							<ul>
-								<li><img src="_img/smile.png" width="60" height="16" alt="Smile" /></li>
-								<li>R</li>
-								<li>excel</li>
-								<li>codingbat</li>
-								<li>stackexchange</li>
-								<li>textmate</li>
+								<li><a href="http://bit.ly/KfLf14" target="_blank"><img align="left" src="_img/smile.png" width="66" height="18" alt="Smile"></a></li>
+								<li><a href="http://www.r-project.org/" target="_blank">R</a></li>
+								<li><a href="http://office.microsoft.com/en-us/excel/" target="_blank">excel</a></li>
+								<li><a href="http://codingbat.com/" target="_blank">codingbat</a></li>
+								<li><a href="http://stackexchange.com/" target="_blank">stackexchange</a></li>
+								<li><a href="http://macromates.com/" target="_blank">textmate</a></li>
 							</ul>
 						</section>
 						<section><h1>Projects</h1>
@@ -868,7 +864,7 @@
 	})();
 
 // //sort Techtable name alphabetically
-	// $('section.techtable > h1').html($('section.techtable > h1').html().split(' / ').sort().join(' / '));
+	$('section.techtable > label').html($('section.techtable > label').html().split(' / ').sort().join(' / '));
 
 //Stateful change of checkbox text
 	$(function() {
@@ -1079,6 +1075,53 @@
 			$('section.company').each(processCompanyTime);
 		});
 
+//Academic
+	//hide initially
+			$('fieldset.academic label').hide();
+	//individual BA elements Toggle Buttons
+		//Currently on, turning Off
+			$('.block > .academic > section > input').on('change', function () {
+				if (this.checked) {
+				} else {
+					var index = $(this).closest('section').prevAll('section').length;
+					$('.block > .academic > section').eq(index).hide();
+					$('fieldset.academic > label').eq(index+1).show();
+					$('fieldset.academic > input').eq(index+1).prop('checked' , true);
+				}
+			});
+		//Currently off, turning On
+			$('fieldset.academic > input').on('change', function () {
+				if (this.checked) {
+				} else {
+					var index = $(this).prevAll('input').length;
+					$('.block > .academic > section').eq(index-1).show();
+					$('.block > .academic > section > input').eq(index-1).prop('checked' , true);
+					$('fieldset.academic > label').eq(index).hide();
+				}
+			});
+	//Toggle A completely
+		//Currently on, turning Off
+			$('.block > .academic input:first').on('change', function () {
+				if (this.checked) {
+				} else {
+					$('.block > .academic').hide();
+					$(this).nextAll('input').attr('disabled', 'disabled');
+					$('fieldset.academic label:first').show();
+					$('fieldset.academic #academic_all').prop('checked' , false);
+				}
+				});
+		//Currently off, turning On
+			$('fieldset.academic #academic_all').on('change', function () {
+				if (this.checked) {
+					$('.block > .academic').show();
+					$('.block > .academic input:first').prop('checked' , true);
+					$(this).nextAll('input').removeAttr('disabled');
+					$('fieldset.academic label:first').hide();
+				} else {				
+				}
+			});
+
+
 // Technologies / Compliance / Certification
 	(function TCC() {  
 		//TODO, make this function global
@@ -1147,9 +1190,9 @@
 				$(this).append(convertToElapsed(elapsedMonths($(this).prev().prev().html().toLowerCase(),$(this).prev().html().toLowerCase())));
 			})
 		//Row Button generator
-			// //grab the names T/C/C from section h1 and sort
-			// 	var labels = $('section.techtable > h1').html().split(' / ');
-			// 	labels.sort();		
+			// //grab the names T/C/C 'label' and sort
+				var labels = $('section.techtable > label').html().split(' / ');
+				labels.sort();
 			//grab each first td child of techtable
 				var keys = [];
 				$('section.techtable table td:first-child').each(function(){ keys.push($(this).html()); });
@@ -1157,14 +1200,14 @@
 				keys = $.unique(keys);
 				keys.sort();
 			// //¿¿ asign the label to the key and assign to hash??
-			// 	var hash = {};
-			// 	for (var i = 0; i < keys.length; i++) {
-			// 	  hash[keys[i]] = labels[i];
-			// 	}
-			// //Row Button Generator
-			// 	$.each(keys, function(i) {
-			// 	$('<input type="checkbox" checked="checked" id="techtable_'+this+'" name="techtable_'+this+'" class="row"/><label for="techtable_'+this+'">'+labels[i]+' '+'</label>').appendTo($("fieldset.techtable"));
-			// 	});
+				var hash = {};
+				for (var i = 0; i < keys.length; i++) {
+				  hash[keys[i]] = labels[i];
+				}
+			//Row Button Generator
+				$.each(keys, function(i) {
+				$('<input type="checkbox" checked="checked" id="techtable_'+this+'" name="techtable_'+this+'" class="row"/><label for="techtable_'+this+'">'+labels[i]+' '+'</label>'+'<br>').appendTo($("fieldset.techtable"));
+				});
 		//column button generator
 			var cols = [];
 			$('section.techtable table th').each(function(){
@@ -1172,7 +1215,7 @@
 			});
 			cols.splice(0,2);
 			$.each(cols, function(i) {
-					$('<input type="checkbox" checked="checked" id="ttcols'+this+'" name="ttcol_'+this+'" class="column"/><label for="ttcol_'+this+'">'+cols[i]+'</label>' + '<br>').appendTo($('fieldset.techtable'));
+					$('<input type="checkbox" checked="checked" id="ttcol_'+this+'" name="ttcol_'+this+'" class="column"/><label for="ttcol_'+this+'">'+cols[i]+'</label>' + '<br>').appendTo($('fieldset.techtable'));
 			});
 		//Row Button Hider
 			$('fieldset.techtable input.row[type=checkbox]').on('change', function() {
@@ -1186,10 +1229,11 @@
 			//handles the /s between T/C/C
 				var segments = [];
 				$('fieldset.techtable input.row:checked').each(function() { segments.push(hash[$(this).attr('id').replace('techtable_','')]); });
-				$('section.techtable > h1').html(segments.join(' / '));
+				$('section.techtable > label').html(segments.join(' / '));
 			});
 		//Column Button Hider
 			$('fieldset.techtable input.column[type=checkbox]').on('change', function() {
+				console.log("got it");
 				var index = $(this).prevAll('input.column').length+2;
 				console.log(index);
 				$('colgroup').parent('table').find("td,th").filter(":nth-child(" + (index+1) + ")").toggle();
@@ -1218,7 +1262,6 @@
 			},
 			format: function(s) {
 				// format your data for normalization
-				// return s.toLowerCase().replace(/good/,2).replace(/medium/,1).replace(/bad/,0);
 				for (var i = 0 ; i < s.length ; i++) {
 					var parts = [];
 					var order = [];
@@ -1280,22 +1323,9 @@
 			}
 		}); 
 		$(".techtable table").addClass("tablesorter");
-//Academic
-	//individual SS elements toggle buttons
-		$('fieldset.academic input').on('change', function () {
-			var index = $(this).prevAll('input').length - 1;
-			$('section.academic > section').eq(index).toggle();
-		});
-	//hide SS completely
-		$('fieldset.academic #academic_all').on('change', function () {
-			if (this.checked) {
-				$('section.academic').hide();
-				$(this).nextAll('input').attr('disabled', 'disabled');
-			} else {
-				$('section.academic').show();
-				$(this).nextAll('input').removeAttr('disabled');
-			}
-		});
+
+
+
 
 		$(function(){
 			$('.ds #valueAA, .ds #valueBB').selectToUISlider({
