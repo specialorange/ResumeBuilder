@@ -42,8 +42,8 @@
 						</div>
 						
 						<form class="form">
-							<fieldset class="businessapproaches"><legend>Business Approach Sections</legend>
-								<input type="checkbox" id="ba_all" name="ba_all" /><label for="ba_all">Toggle Business Approach</label><br>
+							<fieldset class="businessapproaches">
+								<input type="checkbox" id="ba_all" name="ba_all" /><label for="ba_all">Business Approach</label><br>
 							</fieldset>
 							<fieldset class="snapshot"><legend>Snapshot Sections</legend>
 								<input type="checkbox" id="ss_all" name="ss_all" /><label for="ss_all">Toggle Snapshot</label><br>
@@ -805,14 +805,6 @@
 			</ul>
 		</footer>
 	</body>
-	<!-- Web2PDF Converter Button BEGIN -->
-	<script type="text/javascript">
-	var
-	pdfbuttonlabel="Save page as PDF"
-	</script>
-	<script src="http://www.web2pdfconvert.com/pdfbutton2.js" id="Web2PDF" type="text/javascript"></script>
-	<!-- Web2PDF Converter Button END -->
-
 </html>
 
 
@@ -822,10 +814,11 @@
 
 
 // Generation
+
 	//SideBar
 		$('section.businessapproaches section h1').each(function () {
 			var value = this.innerHTML;
-			$('<input type="checkbox" checked="checked" id="ba_' + value.toLowerCase() + '" name="ba_' + value.toLowerCase() + '"/><label for="ba_' + value.toLowerCase() + '">' + value + '</label>' + '<br>	').appendTo($('fieldset.businessapproaches'));
+			$('<input type="checkbox" id="ba_' + value.toLowerCase() + '" name="ba_' + value.toLowerCase() + '"/><label for="ba_' + value.toLowerCase() + '">' + value + '</label>' + '<br>	').appendTo($('fieldset.businessapproaches'));
 		});
 		$('section.snapshot section h1').each(function () {
 			var value = this.innerHTML;
@@ -836,6 +829,27 @@
 			$('<input type="checkbox" checked="checked" id="' + value.toLowerCase() + '" name="' + value.toLowerCase() + '"/><label for="' + value.toLowerCase() + '">' + value + '</label>' + '<br>	').appendTo($('fieldset.academic'));
 		});
 		$('section.company').each(processCompanyTime);
+	
+	//NUI
+		//main headers
+		$('.block > section > h1').each(function () {
+			var value = this.innerHTML;
+			$(this).replaceWith($('<input type="checkbox" checked="checked" id="header_' + value.toLowerCase() + '" name="header_' + value.toLowerCase() + '"/><label for="header_' + value.toLowerCase() + '">' + value + '</label>' + '<br>	'));
+		});
+
+		$('section.businessapproaches section h1').each(function () {
+			var value = this.innerHTML;
+			$(this).replaceWith($('<input type="checkbox" checked="checked" id="ba_' + value.toLowerCase() + '" name="ba_' + value.toLowerCase() + '"/><label for="ba_' + value.toLowerCase() + '">' + value + '</label>' + '<br>	'));
+		});
+		$('section.snapshot section h1').each(function () {
+			var value = this.innerHTML;
+			$(this).replaceWith($('<input type="checkbox" checked="checked" id="ss_' + value.toLowerCase() + '" name="ss_' + value.toLowerCase() + '"/><label for="ss_' + value.toLowerCase() + '">' + value + '</label>' + '<br>	'));
+		});
+		$('section.academic section h1').each(function () {
+			var value = this.innerHTML;
+			$(this).replaceWith($('<input type="checkbox" checked="checked" id="a_' + value.toLowerCase() + '" name="a_' + value.toLowerCase() + '"/><label for="a_' + value.toLowerCase() + '">' + value + '</label>' + '<br>	'));
+		});
+	
 // Initialize the start date and end date function.
 	(function () {
 		var start = [];
@@ -856,13 +870,13 @@
 		});
 	})();
 
-//sort Techtable name alphabetically
-	$('section.techtable > h1').html($('section.techtable > h1').html().split(' / ').sort().join(' / '));
+// //sort Techtable name alphabetically
+// 	$('section.techtable > h1').html($('section.techtable > h1').html().split(' / ').sort().join(' / '));
 
 //Stateful change of checkbox text
 	$(function() {
 	    $(".checkbox").each(function () {
-			$(this).change(function() {
+			$(this).on('change', function () {
 				console.log("Changed");
 				});
 		});
@@ -889,21 +903,60 @@
 	});
 
 // Business Approaches
+	//hide initially
+			$('fieldset.businessapproaches label').hide();
+		// $('fieldset.businessapproaches > section > input').each( function () {$(this).hide()});
 	//individual BA elements Toggle Buttons
-		$('fieldset.businessapproaches input').on('change', function () {
-			var index = $(this).prevAll('input').length - 1;
-			$('section.businessapproaches > section').eq(index).toggle();
-		});
-	//hide BA completely
-		$('fieldset.businessapproaches #ba_all').on('change', function () {
-			if (this.checked) {
-				$('section.businessapproaches').hide();
-				$(this).nextAll('input').attr('disabled', 'disabled');
-			} else {
-				$('section.businessapproaches').show();
-				$(this).nextAll('input').removeAttr('disabled');
-			}
-		});
+		//Currently on, turning Off
+			$('.block > .businessapproaches > section > input').on('change', function () {
+				if (this.checked) {
+				} else {
+					var index = $(this).prevAll('section').length;
+					$('.block > .businessapproaches > section').eq(index).hide();
+					$('fieldset.businessapproaches > label').eq(index+1).show();
+					$('fieldset.businessapproaches > input').eq(index+1).prop('checked' , false);
+					console.log("off")
+					console.log("left index: " + index);
+					console.log($('.block > .businessapproaches > section').eq(index));
+					console.log($('fieldset.businessapproaches > label').eq(index+1));
+				}
+			});
+		//Currently off, turning On
+			$('fieldset.businessapproaches > input').on('change', function () {
+				if (this.checked) {
+				} else {
+					var index = $(this).prevAll('section').length+1;
+					$('.block > .businessapproaches > section').eq(index-1).show();
+					$('.block > .businessapproaches > input').eq(index-1).prop('checked' , false);
+					$('fieldset.businessapproaches > label').eq(index).hide();
+					console.log("on")
+					console.log("right index: " + index);
+					console.log($('.block > .businessapproaches > section').eq(index-1));
+					console.log($('fieldset.businessapproaches > label').eq(index));
+				}
+			});
+	//Toggle BA completely
+		//Currently on, turning Off
+			$('.block > .businessapproaches input:first').on('change', function () {
+				if (this.checked) {
+				} else {
+					$('.block > .businessapproaches').hide();
+					$(this).nextAll('input').attr('disabled', 'disabled');
+					$('fieldset.businessapproaches label:first').show();
+					$('fieldset.businessapproaches #ba_all').prop('checked' , false);
+				}
+				});
+		//Currently off, turning On
+			$('fieldset.businessapproaches #ba_all').on('change', function () {
+				if (this.checked) {
+					$('.block > .businessapproaches').show();
+					$('.block > .businessapproaches input:first').prop('checked' , true);
+					$(this).nextAll('input').removeAttr('disabled');
+					$('fieldset.businessapproaches label:first').hide();
+				} else {				
+				}
+			});
+
 
 // Snapshots
 	//individual SS elements toggle buttons
@@ -1065,24 +1118,24 @@
 				$(this).append(convertToElapsed(elapsedMonths($(this).prev().prev().html().toLowerCase(),$(this).prev().html().toLowerCase())));
 			})
 		//Row Button generator
-			//grab the names T/C/C from section h1 and sort
-				var labels = $('section.techtable > h1').html().split(' / ');
-				labels.sort();		
+			// //grab the names T/C/C from section h1 and sort
+			// 	var labels = $('section.techtable > h1').html().split(' / ');
+			// 	labels.sort();		
 			//grab each first td child of techtable
 				var keys = [];
 				$('section.techtable table td:first-child').each(function(){ keys.push($(this).html()); });
 				keys.sort();
 				keys = $.unique(keys);
 				keys.sort();
-			//¿¿ asign the label to the key and assign to hash??
-				var hash = {};
-				for (var i = 0; i < keys.length; i++) {
-				  hash[keys[i]] = labels[i];
-				}
-			//Row Button Generator
-				$.each(keys, function(i) {
-				$('<input type="checkbox" checked="checked" id="techtable_'+this+'" name="techtable_'+this+'" class="row"/><label for="techtable_'+this+'">'+labels[i]+' '+'</label>').appendTo($("fieldset.techtable"));
-				});
+			// //¿¿ asign the label to the key and assign to hash??
+			// 	var hash = {};
+			// 	for (var i = 0; i < keys.length; i++) {
+			// 	  hash[keys[i]] = labels[i];
+			// 	}
+			// //Row Button Generator
+			// 	$.each(keys, function(i) {
+			// 	$('<input type="checkbox" checked="checked" id="techtable_'+this+'" name="techtable_'+this+'" class="row"/><label for="techtable_'+this+'">'+labels[i]+' '+'</label>').appendTo($("fieldset.techtable"));
+			// 	});
 		//column button generator
 			var cols = [];
 			$('section.techtable table th').each(function(){
