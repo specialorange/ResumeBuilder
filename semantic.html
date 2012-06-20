@@ -475,7 +475,7 @@
 		
 						<section class="school"><h1>University of North Carolina at Charlotte</h1>
 			
-							<section class="Degree"><h1>Gendered Communication with a focus on the Female Voice</h1>
+							<section class="degree"><h1>Gendered Communication with a focus on the Female Voice</h1>
 								<time class="start" datetime="2003-08">AUG 2003</time>
 								<time class="end" datetime="2007-12">DEC 2007</time>
 								<p>I pursued this specific track of Communication Studies to study the gender biased elements within social interactions.</p>
@@ -493,7 +493,7 @@
 						</section>
 						<section class="school"><h1>Central Piedmont Community College</h1>
 			
-							<section class="Degree"><h1>Post-Graduate programs</h1>
+							<section class="degree"><h1>Post-Graduate programs</h1>
 								<time class="start" datetime=""></time>
 								<time class="end" datetime=""></time>
 								<p>I utilize one of the best community colleges in the US to further my education in interdisciplinary areas.</p>
@@ -826,7 +826,6 @@
 			var value = this.innerHTML;
 			$(this).replaceWith($('<input type="checkbox" checked="checked" id="header_' + value.toLowerCase() + '" name="header_' + value.toLowerCase() + '"/><label for="header_' + value.toLowerCase() + '">' + value + '</label>' + '<br>	'));
 		});
-
 		$('section.businessapproaches section h1').each(function () {
 			var value = this.innerHTML;
 			$(this).replaceWith($('<input type="checkbox" checked="checked" id="nba_' + value.toLowerCase() + '" name="nba_' + value.toLowerCase() + '"/><label for="nba_' + value.toLowerCase() + '">' + value + '</label>' + '<br>	'));
@@ -835,7 +834,7 @@
 			var value = this.innerHTML;
 			$(this).replaceWith($('<input type="checkbox" checked="checked" id="nss_' + value.toLowerCase() + '" name="nss_' + value.toLowerCase() + '"/><label for="nss_' + value.toLowerCase() + '">' + value + '</label>' + '<br>	'));
 		});
-		$('section.academic section h1').each(function () {
+		$('section.academic section.school > h1').each(function () {
 			var value = this.innerHTML;
 			$(this).replaceWith($('<input type="checkbox" checked="checked" id="na_' + value.toLowerCase() + '" name="na_' + value.toLowerCase() + '"/><label for="na_' + value.toLowerCase() + '">' + value + '</label>' + '<br>	'));
 		});
@@ -895,7 +894,9 @@
 // Business Approaches
 	//hide initially
 			$('fieldset.businessapproaches label').hide();
-			$('fieldset.businessapproaches label').attr('disabled', 'disabled');
+			$('fieldset.businessapproaches label').each(function () {
+				$(this).attr('disabled', 'disabled');				
+			})
 	//individual BA elements Toggle Buttons
 		//Currently on, turning Off
 			$('.block > .businessapproaches > section > input').on('change', function () {
