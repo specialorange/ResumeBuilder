@@ -13,6 +13,9 @@
 		<script type="text/javascript" src="_js/libs/jquery.tablesorter.min.js"></script>
 		<script type="text/javascript" src="_js/libs/jquery-ui-1.7.1.custom.min.js"></script>
 		<script type="text/javascript" src="_js/libs/selectToUISlider.jQuery.js"></script>
+		<!-- <script type="application/x-javascript" src="_js/libs/jquery.tablesorter.min.js"></script>
+		<script type="application/x-javascript" src="_js/libs/jquery-ui-1.7.1.custom.min.js"></script>
+		<script type="application/x-javascript" src="_js/libs/selectToUISlider.jQuery.js"></script> -->
 		<div id="header-container">
 			<header class="wrapper clearfix">
 				<h1>Resume Builder</h1>
@@ -1014,6 +1017,8 @@
 			});
 			if (start.length == 0 && end.length == 0) {
 				$(this).hide();
+			} else {
+				$(this).show();
 			}
 			start.sort(compareTime);
 			end.sort(compareTime);
@@ -1056,6 +1061,8 @@
 			$('section.position time.start').each(function () {
 				if (compareTime($(this).attr('datetime'), $formelem.val()) <= 0) {
 					$(this).parent().hide();
+				} else {
+					$(this).parent().show();
 				}
 			});
 			$('section.company > time').remove();
@@ -1066,8 +1073,10 @@
 			var $formelem = $(this);
 			// Hide all positions that start after the specified date.
 			$('section.position time.end').each(function () {
-				if (compareTime($(this).attr('datetime'), $formelem.val()) >= 0) {
+				if (compareTime($(this).attr('datetime'), $formelem.val()) > 0) {
 					$(this).parent().hide();
+				} else {
+					$(this).parent().show();
 				}
 			});
 			$('section.company > time').remove();
