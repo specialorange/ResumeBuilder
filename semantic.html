@@ -1019,11 +1019,11 @@
 		//Dynamically set company level start and end time.
 			$(this).find('>h1').after($('time.end[datetime=' + end[end.length - 1] + ']').clone());
 			$(this).find('>h1').after($('time.start[datetime=' + start[0] + ']').clone());
-			//Add a Hyphen between dates
-				$('section.workexperience >section>time.start').each(function(){
-					var inner = this.innerHTML + " - ";
-					this.innerHTML = inner;
-					});
+			// //Add a Hyphen between dates
+			// 	$('section.workexperience >section>time.start').each(function(){
+			// 		var inner = this.innerHTML + " - ";
+			// 		this.innerHTML = inner;
+			// 		});
 		};
 	//Toggle WE completely
 		//hide initially
