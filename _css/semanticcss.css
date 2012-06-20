@@ -102,7 +102,34 @@ header h1 { color:white; }
 ::-moz-selection { background: #f16529; color: #fff; text-shadow: none; }
 ::selection      { background: #f16529; color: #fff; text-shadow: none; }
 
-
+/* =============================================================================
+   Print Styles
+   ========================================================================== */
+ 
+@media print {
+  * { background: transparent !important; color: black !important; box-shadow:none !important; text-shadow: none !important; filter:none !important; -ms-filter: none !important; } 
+/* Black prints faster: h5bp.com/s */
+	a, a:visited { text-decoration: underline; }
+/*  a[href]:after { content: " (" attr(href) ")"; }
+*/ 
+	abbr[title]:after { content: " (" attr(title) ")"; }
+	.ir a:after, a[href^="javascript:"]:after, a[href^="#"]:after { content: ""; }  /* Don't show links for images, or javascript/internal links */
+	pre, blockquote { border: 1px solid #999; page-break-inside: avoid; }
+	thead { display: table-header-group; } /* h5bp.com/t */
+	tr, img { page-break-inside: avoid; }
+	img { max-width: 100% !important; }
+	@page { margin: 0.5cm; }
+	p, h2, h3 { orphans: 3; widows: 3; }
+	h2, h3 { page-break-after: avoid; }
+	table { border-collapse: collapse; border-spacing: 0; font-color: black; }
+	td { vertical-align: top; color: black; }/* changed color to black*/
+	#header-container {display:none}
+	.footer {display:none}
+	.commentWrapper {display:none}
+	.gc {
+		width: 100%;
+	}
+}
 
 /*chris's crap*/
 
@@ -131,29 +158,32 @@ select {margin-right: 1em; float: left;}
 .aside {
 	font-size: 11px;
 }
-.fp .businessapproaches {
-	width: 75%;
-	float: left;
+.gc .businessapproaches {
+	width: 74%;
+	display: inline-block;
+	vertical-align: top;
 }
-.fp .snapshot {
+
+.gc .snapshot {
 	width: 25%;
-	float: left;
+	display: inline-block;
 	text-align: right;
+	vertical-align: top;
 }
-.fp .workexperience {
-	float: left;
+
+.gc .workexperience {
+	width:100%;
+}
+.gc .academic {
+	display: inline-block;
+	vertical-align: top;
 	clear:left;
 	width:100%;
 	margin:0
 }
-.fp .academic {
-	float: left;
-	clear:left;
-	width:100%;
-	margin:0
-}
-.fp .techtable {
-	float: left;
+.gc .techtable {
+	display: inline-block;
+	vertical-align: top;
 	clear:left;
 	width:100%;
 	margin:0
