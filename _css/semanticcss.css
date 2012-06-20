@@ -16,7 +16,7 @@ body { margin: 0; font-size: 1em; line-height: 1.4; }
 ::selection { background: #fe57a1; color: #fff; text-shadow: none; }
 
 a { color: black; text-decoration: none;  }
-a:visited { color: black dotted; text-decoration: none; border-bottom: 2px green dotted; }
+a:visited { color: black; text-decoration: none; border-bottom: 2px green dotted; }
 a:hover { color: #06e; }
 a:focus { outline: thin dotted; }
 a:hover, a:active { outline: 0; }
@@ -118,7 +118,7 @@ label.dsl {font-weight: normal; float: left; margin-right: .5em; font-size: 1.1e
 select {margin-right: 1em; float: left;}
 
 .block {
-    display: inline-block;
+    display: block;
     padding: 5px 5px 5px;
     margin: 5px 5px;
 }
@@ -129,35 +129,26 @@ select {margin-right: 1em; float: left;}
 	border: 1px solid #F16529;
 }
 .aside {
-	width: 25%;
-	float: right;
 	font-size: 11px;
 }
-aside h1 {
-	margin: 1px; 
-	font-size: 14px;
+
+#commentWrapper {
+	float: right;
 }
-aside p {
-	margin: 1px; 
-	margin-left: 50px;
-	font-size: 8px;
+
+#comment {
+	float: right;
+	top: 0;
+	/* Can include margins in the sliding effect here */
 }
-aside h2 {
-	margin: 1px; 
-	margin-left: 25px; 
-	font-size: 12px;
+
+#comment.fixed {
+	position: fixed;
+	top: 0;
 }
-aside h3 {
-	margin: 1px; 
-	margin-left: 25px;
-	font-size: 10px;
-}
-aside ol {
-	margin: 1px; 
-	font-size: 14px;
-}
+
 #main aside article {
-	float:left;
+	float:right;
 	width:25%;
 }
 p {
@@ -262,15 +253,6 @@ aside .hover {
 	cursor: pointer;
 	font-color: blue;
 	font-weight: bold;
-}
-.technical td {
-	margin: 0;  
-	font-weight:normal;
-	margin-left: 15px; 
-	font-size: 12px;
-}
-.type {
-	visibility: hidden
 }
 
 @font-face {
