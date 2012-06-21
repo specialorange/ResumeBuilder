@@ -967,9 +967,9 @@
 // Abstract
 	//hide initially
 		$('fieldset.abstract label').hide();
-	//individual SS elements Toggle Buttons
+		//individual abstract elements Toggle Buttons
 		//Currently on, turning Off
-			$('.block > .abstract > section > input').on('change', function () {
+			$('.block > .nabstract > section > input').on('change', function () {
 				if (this.checked) {
 				} else {
 					var index = $(this).closest('section').prevAll('section').length;
@@ -979,7 +979,7 @@
 				}
 			});
 		//Currently off, turning On
-			$('fieldset.abstract > input').on('change', function () {
+			$('fieldset.nabstract > input').on('change', function () {
 				if (this.checked) {
 				} else {
 					var index = $(this).prevAll('input').length;
@@ -988,7 +988,7 @@
 					$('fieldset.abstract > label').eq(index).hide("slow");
 				}
 			});
-	//Toggle SS completely
+	//Toggle abstract completely
 		//Currently on, turning Off
 			$('.block > .abstract input:first').on('change', function () {
 				if (this.checked) {
@@ -1120,12 +1120,7 @@
 			if ($(this).hasClass('jobtype') && ($(this).attr("name")!="")) {
 				$('.'+$(this).attr("name")).toggle("slow");
 				//Change color to white to show hidden
-					// $('label[for=$(this)]').toggleClass("hidden");
 					$('label[for="'+ $(this).attr('id') +'"]').toggleClass("hidden");
-					// $(this).toggleClass("hidden");
-				
-					// var $this = $(this).attr("label");
-					// $('label[$this]').toggleClass("hidden");
 			} else {
 			
 			}
