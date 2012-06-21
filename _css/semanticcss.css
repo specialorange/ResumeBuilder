@@ -202,6 +202,7 @@ select {margin-right: 1em; float: left;}
 #comment.fixed {
 	position: fixed;
 	top: 0;
+   right: 0;
 }
 
 #main aside article {
