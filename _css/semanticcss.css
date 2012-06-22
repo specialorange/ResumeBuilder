@@ -190,6 +190,14 @@ select {margin-right: 1em; float: left;}
 	display: inline-block;
 	vertical-align: top;
 }
+.gcheader{
+	font-size: 35px;
+	color: #E44D26;
+}
+.gcsubheader{
+	font-size: 20px;
+	color: #E44D26;
+}
 .gc .abstract {
 	width: 25%;
 	display: inline-block;
@@ -227,32 +235,32 @@ select {margin-right: 1em; float: left;}
 }
 p {
 	margin: 1px; 
-	margin-left: 50px;
+	margin-left: 25px;
 }
 h1 {
 	margin: 0; 
-	font-size: 14px;
+/*	font-size: 14px;*/
 }
 h2 {
 	margin: 0;  
 	font-weight:normal;
 	margin-left: 15px; 
-	font-size: 12px;
+/*	font-size: 12px;*/
 }
 h3 {
 	margin: 0; 
 	font-weight:normal;
 	margin-left: 30px; 
-	font-size: 10px;
+/*	font-size: 10px;*/
 }
 h4 {
 	margin: 0; 
 	font-weight:normal;
 	margin-left: 45px; 
-	font-size: 8px;
+/*	font-size: 8px;*/
 }
 li {
-	font-size: 10px;
+/*	font-size: 10px;*/
 }
 .button {
    border-top: 1px solid #ffffff;

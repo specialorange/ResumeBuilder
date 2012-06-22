@@ -848,19 +848,19 @@
 		//main headers (all but the skillstable)
 		$('.block > section > h1:not(:has("span.skillstablevisibility"))').each(function () {
 			var value = this.innerHTML;
-			$(this).replaceWith($('<input type="checkbox" checked="checked" id="header_' + value.toLowerCase() + '" name="header_' + value.toLowerCase() + '"/><label for="header_' + value.toLowerCase() + '">' + value + '</label>' + '<br>	'));
+			$(this).replaceWith($('<input type="checkbox" checked="checked" id="header_' + value.toLowerCase() + '" name="header_' + value.toLowerCase() + '"/><label for="header_' + value.toLowerCase() + '" class="gcheader">' + value + '</label>' + '<br>	'));
 		});
 		$('section.businessapproaches section h1').each(function () {
 			var value = this.innerHTML;
-			$(this).replaceWith($('<input type="checkbox" checked="checked" id="nba_' + value.toLowerCase() + '" name="nba_' + value.toLowerCase() + '"/><label for="nba_' + value.toLowerCase() + '">' + value + '</label>' + '<br>	'));
+			$(this).replaceWith($('<input type="checkbox" checked="checked" id="nba_' + value.toLowerCase() + '" name="nba_' + value.toLowerCase() + '"/><label for="nba_' + value.toLowerCase() + '" class="gcsubheader">' + value + '</label>' + '<br>	'));
 		});
 		$('section.abstract section h1').each(function () {
 			var value = this.innerHTML;
-			$(this).replaceWith($('<input type="checkbox" checked="checked" id="nabstract_' + value.toLowerCase() + '" name="nabstract_' + value.toLowerCase() + '"/><label for="nabstract_' + value.toLowerCase() + '">' + value + '</label>' + '<br>	'));
+			$(this).replaceWith($('<input type="checkbox" checked="checked" id="nabstract_' + value.toLowerCase() + '" name="nabstract_' + value.toLowerCase() + '"/><label for="nabstract_' + value.toLowerCase() + '" class="gcsubheader">' + value + '</label>' + '<br>	'));
 		});
 		$('section.academic section.school > h1').each(function () {
 			var value = this.innerHTML;
-			$(this).replaceWith($('<input type="checkbox" checked="checked" id="na_' + value.toLowerCase() + '" name="na_' + value.toLowerCase() + '"/><label for="na_' + value.toLowerCase() + '">' + value + '</label>' + '<br>	'));
+			$(this).replaceWith($('<input type="checkbox" checked="checked" id="na_' + value.toLowerCase() + '" name="na_' + value.toLowerCase() + '"/><label for="na_' + value.toLowerCase() + '" class="gcsubheader">' + value + '</label>' + '<br>	'));
 		});
 	
 // Initialize the start date and end date function.
@@ -1177,7 +1177,6 @@
 				}
 			});
 
-
 // Skills Table
 	(function TCC() {  
 		//TODO, make this function global
@@ -1249,7 +1248,6 @@
 			// //grab the names T/C/C 'label' and sort
 				var labels = $('section.skillstable .skillstablevisibility').html().split(' / ');
 				labels.sort();
-				// console.log(labels);
 			//grab each first td child of skillstable
 				var keys = [];
 				$('section.skillstable table td:first-child').each(function(){ keys.push($(this).html()); });
@@ -1261,10 +1259,8 @@
 				for (var i = 0; i < keys.length; i++) {
 				  hash[keys[i]] = labels[i];
 				}
-				console.log(hash);
 			//Row Button Generator
 				$.each(keys, function(i) {
-					// console.log(keys);
 				$('<input type="checkbox" checked="checked" id="skillstable_'+this+'" name="skillstable_'+this+'" class="row"/><label for="skillstable_'+this+'">'+this+' '+'</label>').appendTo($("fieldset.skillstable"));
 				});
 				// separate rows from columns
