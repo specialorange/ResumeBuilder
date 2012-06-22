@@ -36,9 +36,9 @@
 									<input type="checkbox" id="ba_all" name="ba_all" />
 									<label for="ba_all">Business Approach</label><br>
 								</fieldset>
-								<fieldset class="snapshot">
-									<input type="checkbox" id="ss_all" name="ss_all" />
-									<label for="ss_all">Snapshot</label><br>
+								<fieldset class="abstract">
+									<input type="checkbox" id="abstract_all" name="abstract_all" />
+									<label for="abstract_all">Abstract</label><br>
 								</fieldset>
 								<fieldset class="workexperience">
 									<input type="checkbox" id="workexperience_all" name="workexperience_all" />
@@ -265,7 +265,7 @@
 						</section>	
 					</section>
 
-					<section class="snapshot"><h1>Snapshot</h1>
+					<section class="abstract"><h1>Abstract</h1>
 						<section><h1>Design</h1>
 							<ul>
 								<li>heuristic evaluation</li>
@@ -800,10 +800,10 @@
 				var value = this.innerHTML;
 				$('<input type="checkbox" id="ba_' + value.toLowerCase() + '" name="ba_' + value.toLowerCase() + '"/><label for="ba_' + value.toLowerCase() + '">' + value + '</label>' + '<br>	').appendTo($('fieldset.businessapproaches'));
 			});
-		//Snapshot sidebar elements
-			$('section.snapshot section h1').each(function () {
+		//Abstract sidebar elements
+			$('section.abstract section h1').each(function () {
 				var value = this.innerHTML;
-				$('<input type="checkbox" id="ss_' + value.toLowerCase() + '" name="ss_' + value.toLowerCase() + '"/><label for="ss_' + value.toLowerCase() + '">' + value + '</label>' + '<br>	').appendTo($('fieldset.snapshot'));
+				$('<input type="checkbox" id="abstract_' + value.toLowerCase() + '" name="abstract_' + value.toLowerCase() + '"/><label for="abstract_' + value.toLowerCase() + '">' + value + '</label>' + '<br>	').appendTo($('fieldset.abstract'));
 			});
 		//Academic section sidebar elements
 			$('section.academic section.school > h1').each(function () {
@@ -844,7 +844,7 @@
 		//generate the company start and end dates
 			$('section.company').each(processCompanyTime);
 	
-	//NUI
+	//NUI (GC SIDE)
 		//main headers
 		$('.block > section > h1').each(function () {
 			var value = this.innerHTML;
@@ -854,9 +854,9 @@
 			var value = this.innerHTML;
 			$(this).replaceWith($('<input type="checkbox" checked="checked" id="nba_' + value.toLowerCase() + '" name="nba_' + value.toLowerCase() + '"/><label for="nba_' + value.toLowerCase() + '">' + value + '</label>' + '<br>	'));
 		});
-		$('section.snapshot section h1').each(function () {
+		$('section.abstract section h1').each(function () {
 			var value = this.innerHTML;
-			$(this).replaceWith($('<input type="checkbox" checked="checked" id="nss_' + value.toLowerCase() + '" name="nss_' + value.toLowerCase() + '"/><label for="nss_' + value.toLowerCase() + '">' + value + '</label>' + '<br>	'));
+			$(this).replaceWith($('<input type="checkbox" checked="checked" id="nabstract_' + value.toLowerCase() + '" name="nabstract_' + value.toLowerCase() + '"/><label for="nabstract_' + value.toLowerCase() + '">' + value + '</label>' + '<br>	'));
 		});
 		$('section.academic section.school > h1').each(function () {
 			var value = this.innerHTML;
@@ -952,7 +952,7 @@
 					$('fieldset.businessapproaches label:first').show("slow");
 					$('fieldset.businessapproaches #ba_all').prop('checked' , false);
 				}
-				});
+			});
 		//Currently off, turning On
 			$('fieldset.businessapproaches #ba_all').on('change', function () {
 				if (this.checked) {
@@ -964,49 +964,49 @@
 				}
 			});
 
-// Snapshots
+// Abstract
 	//hide initially
-		$('fieldset.snapshot label').hide();
-	//individual SS elements Toggle Buttons
+		$('fieldset.abstract label').hide();
+	//individual Abstract elements Toggle Buttons
 		//Currently on, turning Off
-			$('.block > .snapshot > section > input').on('change', function () {
+			$('.block > .abstract > section > input').on('change', function () {
 				if (this.checked) {
 				} else {
 					var index = $(this).closest('section').prevAll('section').length;
-					$('.block > .snapshot > section').eq(index).hide("slow");
-					$('fieldset.snapshot > label').eq(index+1).show("slow");
-					$('fieldset.snapshot > input').eq(index+1).prop('checked' , true);
+					$('.block > .abstract > section').eq(index).hide("slow");
+					$('fieldset.abstract > label').eq(index+1).show("slow");
+					$('fieldset.abstract > input').eq(index+1).prop('checked' , true);
 				}
 			});
 		//Currently off, turning On
-			$('fieldset.snapshot > input').on('change', function () {
+			$('fieldset.abstract > input').on('change', function () {
 				if (this.checked) {
 				} else {
 					var index = $(this).prevAll('input').length;
-					$('.block > .snapshot > section').eq(index-1).show("slow");
-					$('.block > .snapshot > section > input').eq(index-1).prop('checked' , true);
-					$('fieldset.snapshot > label').eq(index).hide("slow");
+					$('.block > .abstract > section').eq(index-1).show("slow");
+					$('.block > .abstract > section > input').eq(index-1).prop('checked' , true);
+					$('fieldset.abstract > label').eq(index).hide("slow");
 				}
 			});
-	//Toggle SS completely
+	//Toggle Abstract completely
 		//Currently on, turning Off
-			$('.block > .snapshot input:first').on('change', function () {
+			$('.block > .abstract input:first').on('change', function () {
 				if (this.checked) {
 				} else {
-					$('.block > .snapshot').hide("slow");
+					$('.block > .abstract').hide("slow");
 					$(this).nextAll('input').attr('disabled', 'disabled');
-					$('fieldset.snapshot label:first').show("slow");
-					$('fieldset.snapshot #ss_all').prop('checked' , false);
+					$('fieldset.abstract label:first').show("slow");
+					$('fieldset.abstract #abstract_all').prop('checked' , false);
 					$('.block > .businessapproaches').css('width', '100%');
 				}
 				});
 		//Currently off, turning On
-			$('fieldset.snapshot #ss_all').on('change', function () {
+			$('fieldset.abstract #abstract_all').on('change', function () {
 				if (this.checked) {
-					$('.block > .snapshot').show("slow");
-					$('.block > .snapshot input:first').prop('checked' , true);
+					$('.block > .abstract').show("slow");
+					$('.block > .abstract input:first').prop('checked' , true);
 					$(this).nextAll('input').removeAttr('disabled');
-					$('fieldset.snapshot label:first').hide("slow");
+					$('fieldset.abstract label:first').hide("slow");
 					$('.block > .businessapproaches').css('width', '74%');
 				} else {				
 				}
