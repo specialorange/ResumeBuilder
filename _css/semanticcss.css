@@ -171,6 +171,13 @@ select {margin-right: 1em; float: left;}
 	color: white;
 }
 .aside .abstract{
+<<<<<<< HEAD
+=======
+	font-size: 11px;
+	color: white;
+}
+.aside .academic{
+>>>>>>> nui2
 	font-size: 11px;
 	color: white;
 }

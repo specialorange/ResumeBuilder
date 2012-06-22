@@ -856,7 +856,11 @@
 		});
 		$('section.abstract section h1').each(function () {
 			var value = this.innerHTML;
+<<<<<<< HEAD
+			$(this).replaceWith($('<input type="checkbox" checked="checked" id="nabstract_' + value.toLowerCase() + '" name="nabstract_' + value.toLowerCase() + '"/><label for="nabastract_' + value.toLowerCase() + '">' + value + '</label>' + '<br>	'));
+=======
 			$(this).replaceWith($('<input type="checkbox" checked="checked" id="nabstract_' + value.toLowerCase() + '" name="nabstract_' + value.toLowerCase() + '"/><label for="nabstract_' + value.toLowerCase() + '">' + value + '</label>' + '<br>	'));
+>>>>>>> nui2
 		});
 		$('section.academic section.school > h1').each(function () {
 			var value = this.innerHTML;
@@ -967,9 +971,15 @@
 // Abstract
 	//hide initially
 		$('fieldset.abstract label').hide();
+<<<<<<< HEAD
+		//individual abstract elements Toggle Buttons
+		//Currently on, turning Off
+			$('.block > .nabstract > section > input').on('change', function () {
+=======
 	//individual Abstract elements Toggle Buttons
 		//Currently on, turning Off
 			$('.block > .abstract > section > input').on('change', function () {
+>>>>>>> nui2
 				if (this.checked) {
 				} else {
 					var index = $(this).closest('section').prevAll('section').length;
@@ -979,7 +989,11 @@
 				}
 			});
 		//Currently off, turning On
+<<<<<<< HEAD
+			$('fieldset.nabstract > input').on('change', function () {
+=======
 			$('fieldset.abstract > input').on('change', function () {
+>>>>>>> nui2
 				if (this.checked) {
 				} else {
 					var index = $(this).prevAll('input').length;
@@ -988,7 +1002,11 @@
 					$('fieldset.abstract > label').eq(index).hide("slow");
 				}
 			});
+<<<<<<< HEAD
+	//Toggle abstract completely
+=======
 	//Toggle Abstract completely
+>>>>>>> nui2
 		//Currently on, turning Off
 			$('.block > .abstract input:first').on('change', function () {
 				if (this.checked) {
@@ -1120,12 +1138,7 @@
 			if ($(this).hasClass('jobtype') && ($(this).attr("name")!="")) {
 				$('.'+$(this).attr("name")).toggle("slow");
 				//Change color to white to show hidden
-					// $('label[for=$(this)]').toggleClass("hidden");
 					$('label[for="'+ $(this).attr('id') +'"]').toggleClass("hidden");
-					// $(this).toggleClass("hidden");
-				
-					// var $this = $(this).attr("label");
-					// $('label[$this]').toggleClass("hidden");
 			} else {
 			
 			}
