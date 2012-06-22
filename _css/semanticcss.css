@@ -205,11 +205,16 @@ select {margin-right: 1em; float: left;}
 	vertical-align: top;
 	float: right;
 }
+.gc .skillstable a {
+	text-decoration:underline;
+/*	color: green;*/
+}
 .gc .workexperience ol {
 	margin:0;
 	padding: 0 0 0 40px;
 	list-style-type: circle;
-}.gc .workexperience ul {
+}
+.gc .workexperience ul {
 	margin:0;
 	padding: 0 0 0 40px;
 	list-style-type: square;
