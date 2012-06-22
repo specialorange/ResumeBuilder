@@ -3,7 +3,13 @@
    ========================================================================== */
 
 article, aside, details, figcaption, figure, footer, hgroup, nav, section { display: block; }
-header { display: block; width: 100%; }
+header { 
+	display: block;
+	width: 100%;
+	box-shadow: 2px 4px 20px #e44d26;
+	-moz-box-shadow: 2px 4px 20px #e44d26;
+	-webkit-box-shadow: 2px 4px 20px #e44d26;
+}
 audio, canvas, video { display: inline-block; *display: inline; *zoom: 1; }
 audio:not([controls]) { display: none; }
 [hidden] { display: none; }
@@ -88,9 +94,13 @@ td { vertical-align: top; color: black; }/* changed color to black*/
     ALL: Orange Theme
    =================== */
 
-#header-container{ border-bottom: 20px solid #e44d26; }
+#header-container{ margin-bottom: .5cm;}
 #footer-container{ border-top:    20px solid #e44d26; }
-#main aside      { border-top:    20px solid #e44d26; }
+#main aside      {
+	box-shadow: 2px 4px 20px #e44d26;
+	-moz-box-shadow: 2px 4px 20px #e44d26;
+	-webkit-box-shadow: 2px 4px 20px #e44d26;
+}
 
 #header-container,
 #footer-container,
