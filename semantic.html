@@ -230,9 +230,9 @@
 									<input type="checkbox" id="academic_all" name="academic_all" />
 									<label for="academic_all">Academic</label><br>
 								</fieldset>
-								<fieldset class="techtable">
-									<input type="checkbox" id="techtable_all" name="techtable_all"/>
-									<label for="techtable_all">Technologies / Compliance / Certification</label><br>
+								<fieldset class="skillstable">
+									<input type="checkbox" id="skillstable_all" name="skillstable_all"/>
+									<label for="skillstable_all">Skills Table</label><br>
 								</fieldset>
 							</form>
 						</aside>
@@ -500,7 +500,7 @@
 						</section>
 					</section>
 
-					<section class="techtable"><h1>Technologies / Compliance / Certifications</h1>
+					<section class="skillstable"><h1>Skills Table : <span class="skillstablevisibility">Certifications / Compliance / Technologies</span></h1>
 						<table cellspacing="0">
 							<colgroup>
 								<col id="col0">
@@ -845,8 +845,8 @@
 			$('section.company').each(processCompanyTime);
 	
 	//NUI (GC SIDE)
-		//main headers
-		$('.block > section > h1').each(function () {
+		//main headers (all but the skillstable)
+		$('.block > section > h1:not(:has("span.skillstablevisibility"))').each(function () {
 			var value = this.innerHTML;
 			$(this).replaceWith($('<input type="checkbox" checked="checked" id="header_' + value.toLowerCase() + '" name="header_' + value.toLowerCase() + '"/><label for="header_' + value.toLowerCase() + '">' + value + '</label>' + '<br>	'));
 		});
@@ -883,8 +883,8 @@
 		});
 	})();
 
-// //sort Techtable name alphabetically
-	$('section.techtable > label').html($('section.techtable > label').html().split(' / ').sort().join(' / '));
+// //sort skillstable name alphabetically
+	// $('section.skillstable .skillstablevisibility').html($('section.skillstable .skillstablevisibility').html().split(' / ').sort().join(' / '));
 
 //Stateful change of checkbox text
 	$(function() {
@@ -1178,7 +1178,7 @@
 			});
 
 
-// Technologies / Compliance / Certification
+// Skills Table
 	(function TCC() {  
 		//TODO, make this function global
 		//Today's Date
@@ -1190,7 +1190,7 @@
 				return m[d.getMonth()] + ", " + y;	
 			};
 		//fill in blank end dates with Today's date
-			$('section.techtable td:nth-child(5)').each(function() {
+			$('section.skillstable td:nth-child(5)').each(function() {
 				if ($(this).is(':empty')) {
 					$(this).append(getCurrentDate());
 				};
@@ -1242,16 +1242,17 @@
 				}
 			};
 		//calculate the elapsed based on start and end date
-			$('section.techtable td:nth-child(6)').each(function() {
+			$('section.skillstable td:nth-child(6)').each(function() {
 				$(this).append(convertToElapsed(elapsedMonths($(this).prev().prev().html().toLowerCase(),$(this).prev().html().toLowerCase())));
 			})
 		//Row Button generator
 			// //grab the names T/C/C 'label' and sort
-				var labels = $('section.techtable > label').html().split(' / ');
+				var labels = $('section.skillstable .skillstablevisibility').html().split(' / ');
 				labels.sort();
-			//grab each first td child of techtable
+				// console.log(labels);
+			//grab each first td child of skillstable
 				var keys = [];
-				$('section.techtable table td:first-child').each(function(){ keys.push($(this).html()); });
+				$('section.skillstable table td:first-child').each(function(){ keys.push($(this).html()); });
 				keys.sort();
 				keys = $.unique(keys);
 				keys.sort();
@@ -1260,53 +1261,61 @@
 				for (var i = 0; i < keys.length; i++) {
 				  hash[keys[i]] = labels[i];
 				}
+				console.log(hash);
 			//Row Button Generator
 				$.each(keys, function(i) {
-				$('<input type="checkbox" checked="checked" id="techtable_'+this+'" name="techtable_'+this+'" class="row"/><label for="techtable_'+this+'">'+labels[i]+'     '+'</label>').appendTo($("fieldset.techtable"));
+					// console.log(keys);
+				$('<input type="checkbox" checked="checked" id="skillstable_'+this+'" name="skillstable_'+this+'" class="row"/><label for="skillstable_'+this+'">'+this+' '+'</label>').appendTo($("fieldset.skillstable"));
 				});
-				// separate rows from column
-					$('<br>').appendTo($('label[for="'+ $("fieldset.techtable .row:last").attr('id') +'"]'));
+				// separate rows from columns
+					$('<br>').appendTo($('label[for="'+ $("fieldset.skillstable .row:last").attr('id') +'"]'));
 		//column button generator
 			var cols = [];
-			$('section.techtable table th').each(function(){
+			$('section.skillstable table th').each(function(){
 				cols.push($(this).html());
 			});
 			cols.splice(0,2);
 			$.each(cols, function(i) {
-					$('<input type="checkbox" checked="checked" id="ttcol_'+this+'" name="ttcol_'+this+'" class="column"/><label for="ttcol_'+this+'">'+cols[i]+'</label>' + '<br>').appendTo($('fieldset.techtable'));
+					$('<input type="checkbox" checked="checked" id="ttcol_'+this+'" name="ttcol_'+this+'" class="column"/><label for="ttcol_'+this+'">'+cols[i]+'</label>' + '<br>').appendTo($('fieldset.skillstable'));
 			});
 		//Row Button Hider
-			$('fieldset.techtable input.row[type=checkbox]').on('change', function() {
+			$('fieldset.skillstable input.row[type=checkbox]').on('change', function() {
 				//change clicked buttons to white
-					$('label[for="'+ $(this).attr('id') +'"]').toggleClass("hidden");$formelem = $(this);
+					$('label[for="'+ $(this).attr('id') +'"]').toggleClass("hidden");
+				$formelem = $(this);
 				var index = $(this).prevAll('input').length - 1;
-				$('section.techtable table td:first-child').each(function() {
-					if ($formelem.attr('id').replace('techtable_','') == $(this).html()) {
+				$('section.skillstable table td:first-child').each(function() {
+					if ($formelem.attr('id').replace('skillstable_','') == $(this).html()) {
 						$(this).parent().toggle();
 					}
 				});
-			//handles the /s between T/C/C
+			//handles the /s between T/C/C of the gc SkillsTable name 
 				var segments = [];
-				$('fieldset.techtable input.row:checked').each(function() { segments.push(hash[$(this).attr('id').replace('techtable_','')]); });
-				$('section.techtable > label').html(segments.join(' / '));
+				$('fieldset.skillstable input.row:checked').each(function() {
+					segments.push(hash[$(this).attr('id').replace('skillstable_','')]);
+				});
+				console.log(segments);
+				$('section.skillstable .skillstablevisibility').html(segments.join(' / '));
 			});
 		//Column Button Hider
-			$('fieldset.techtable input.column[type=checkbox]').on('change', function() {
+			$('fieldset.skillstable input.column[type=checkbox]').on('change', function() {
 				var index = $(this).prevAll('input.column').length+2;
 				$('colgroup').parent('table').find("td,th").filter(":nth-child(" + (index+1) + ")").toggle();
 				//change clicked buttons to white
 					$('label[for="'+ $(this).attr('id') +'"]').toggleClass("hidden");
 			});
 		//Permanently hide the Category Column
-			$('section.techtable th:nth-child(1)').hide();
-			$('section.techtable td:nth-child(1)').hide();
-		//Hide all of techtable with button
-			$('fieldset.techtable #techtable_all').on('change', function() {
+			$('section.skillstable th:nth-child(1)').hide();
+			$('section.skillstable td:nth-child(1)').hide();
+		//Hide all of skillstable with button
+			$('fieldset.skillstable #skillstable_all').on('change', function() {
+				//Toggle text to white
+					$('label[for="'+ $(this).attr('id') +'"]').toggleClass("hidden");
 				if (this.checked) {
-					$('section.techtable').hide("slow");
+					$('section.skillstable').hide("slow");
 					$(this).nextAll('input').attr('disabled','disabled');
 				} else {
-					$('section.techtable').show("slow");
+					$('section.skillstable').show("slow");
 					$(this).nextAll('input').removeAttr('disabled');
 				}
 			});
@@ -1367,7 +1376,7 @@
 			type: 'numeric'
 		});
 	//Table Sorter parsers Identification
-		$(".techtable table").tablesorter({
+		$(".skillstable table").tablesorter({
 			headers: {
 			3: {
 			sorter:'dateSorter'
@@ -1381,7 +1390,7 @@
 			}
 			}
 		}); 
-		$(".techtable table").addClass("tablesorter");
+		$(".skillstable table").addClass("tablesorter");
 
 
 		$(function(){
