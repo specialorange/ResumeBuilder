@@ -989,7 +989,6 @@
 					var width = ((1/(7-hidden))*100);
 					$('.oneseven').css("width", (width) + "%");
 					var index = $(this).closest('section').prevAll('section').length;
-					console.log(index);
 					$('.block > .abstract > .superseven > section').eq(index).hide();  //removed "slow" because of rendering
 					$('fieldset.abstract > div > label').eq(index).show("slow");
 					$('fieldset.abstract > div > input').eq(index).prop('checked' , true);
@@ -1004,10 +1003,7 @@
 					var hidden = ($('.block > .abstract > .superseven > section > :hidden').length - .98);
 					var width = ((1/(7-hidden))*100);
 					$('.oneseven').css("width", (width) + '%');
-					console.log(this);
-					console.log(($(this).prevAll()));
 					var index = $(this).prevAll().length-2;
-					console.log(index);
 					$('fieldset.abstract > div > label').eq(index).hide("slow");
 					$('.block > .abstract > .superseven > section').eq(index).show();  //removed "slow" because of rendering
 					$('.block > .abstract > .superseven > section > .oneseven > input').eq(index).prop('checked' , true);
@@ -1063,18 +1059,18 @@
 				} else {
 					var index = $(this).closest('section').prevAll('section').length;
 					$('.block > .businessapproaches > section').eq(index).hide("slow");
-					$('fieldset.businessapproaches > label').eq(index+1).show("slow");
-					$('fieldset.businessapproaches > input').eq(index+1).prop('checked' , true);
+					$('fieldset.businessapproaches > div > label').eq(index).show("slow");
+					$('fieldset.businessapproaches > div > input').eq(index).prop('checked' , true);
 				}
 			});
 		//Currently off, turning On
-			$('fieldset.businessapproaches > input').on('change', function () {
+			$('fieldset.businessapproaches > div').on('change', function () {
 				if (this.checked) {
 				} else {
-					var index = $(this).prevAll('input').length;
-					$('.block > .businessapproaches > section').eq(index-1).show("slow");
-					$('.block > .businessapproaches > section > input').eq(index-1).prop('checked' , true);
-					$('fieldset.businessapproaches > label').eq(index).hide("slow");
+					var index = $(this).prevAll().length-2;
+					$('fieldset.businessapproaches > div > label').eq(index).hide("slow");
+					$('.block > .businessapproaches > section').eq(index).show("slow");
+					$('.block > .businessapproaches > section > input').eq(index).prop('checked' , true);
 				}
 			});
 	//Toggle BA completely
@@ -1086,6 +1082,10 @@
 					$(this).nextAll('input').attr('disabled', 'disabled');
 					$('fieldset.businessapproaches label:first').show("slow");
 					$('fieldset.businessapproaches #ba_all').prop('checked' , false);
+					$('fieldset.businessapproaches > div > input:checked').each(function(){
+						// $(this).prop('label').hide();
+						$('label[for="'+ $(this).attr('id') +'"]').hide();
+					});
 				}
 			});
 		//Currently off, turning On
@@ -1095,6 +1095,10 @@
 					$('.block > .businessapproaches input:first').prop('checked' , true);
 					$(this).nextAll('input').removeAttr('disabled');
 					$('fieldset.businessapproaches label:first').hide("slow");
+					$('fieldset.businessapproaches > div > input:checked').each(function(){
+						// $(this).prop('label').hide();
+						$('label[for="'+ $(this).attr('id') +'"]').show();
+					});
 				} else {				
 				}
 			});
