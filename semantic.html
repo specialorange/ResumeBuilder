@@ -7,15 +7,16 @@
 		<link rel="stylesheet" href="_css/tableSort.css">
 		<link rel="stylesheet" href="_css/redmond/jquery-ui-1.7.1.custom.css" type="text/css" />
 		<link rel="Stylesheet" href="_css/ui.slider.extras.css" type="text/css" />
-    </head>
+		<!-- <link rel="stylesheet" href="_css/bootstrap.min.css"> -->
+		<!-- <link rel="stylesheet" href="_css/bootstrap-responsive.min.css"> -->
+		<!-- <link rel="stylesheet" href="_css/style.css"> -->
+	</head>
 	<body>
 		<script src="http://code.jquery.com/jquery.min.js"></script>
+		<script type="text/javascript" src="_js/libs/modernizr-2.5.3-respond-1.1.0.min.js"></script>
 		<script type="text/javascript" src="_js/libs/jquery.tablesorter.min.js"></script>
 		<script type="text/javascript" src="_js/libs/jquery-ui-1.7.1.custom.min.js"></script>
 		<script type="text/javascript" src="_js/libs/selectToUISlider.jQuery.js"></script>
-		<!-- <script type="application/x-javascript" src="_js/libs/jquery.tablesorter.min.js"></script>
-		<script type="application/x-javascript" src="_js/libs/jquery-ui-1.7.1.custom.min.js"></script>
-		<script type="application/x-javascript" src="_js/libs/selectToUISlider.jQuery.js"></script> -->
 		<div id="header-container">
 			<header class="wrapper clearfix">
 				<h1>Chris Frisina</h1>
@@ -32,214 +33,315 @@
 					<div class="block aside" id ="comment">
 						<aside>
 							<form class="form">
-								<fieldset class="businessapproaches">
-									<input type="checkbox" id="ba_all" name="ba_all" />
-									<label for="ba_all">Business Approach</label><br>
-								</fieldset>
-								<fieldset class="abstract">
-									<input type="checkbox" id="abstract_all" name="abstract_all" />
-									<label for="abstract_all">Abstract</label><br>
-								</fieldset>
-								<fieldset class="workexperience">
-									<input type="checkbox" id="workexperience_all" name="workexperience_all" />
-									<label for="workexperience_all">Work Experience</label><br>
-									<label for="startdate">Start Date</label>
-									<input id="startdate" name="startdate" type="text" value="" />
-									<label for="enddate">End Date</label>
-									<input id="enddate" name="enddate" type="text" value="" /><br>
-								</fieldset>
-							 	<fieldset class="ds"><legend>Work Selector</legend><br> 
-									<label for="valueAA" class="dsl">From:</label>
-									<select name="valueAA" id="valueAA">
-										<optgroup label="2003">
-											<option value="01/03">Jan 03</option>
-											<option value="02/03">Feb 03</option>
-											<option value="03/03">Mar 03</option>
-											<option value="03/03">Apr 03</option>
-											<option value="03/03">May 03</option>
-											<option value="06/03">Jun 03</option>
-											<option value="07/03">Jul 03</option>
-											<option value="08/03" selected="selected">Aug 03</option>
-											<option value="09/03">Sep 03</option>
-											<option value="10/03">Oct 03</option>
-											<option value="11/03">Nov 03</option>
-											<option value="12/03">Dec 03</option>
-										</optgroup>
-										<optgroup label="2004">
-											<option value="01/04">Jan 04</option>
-											<option value="02/04">Feb 04</option>
-											<option value="03/04">Mar 04</option>
-											<option value="04/04">Apr 04</option>
-											<option value="04/04">May 04</option>
-											<option value="06/04">Jun 04</option>
-											<option value="07/04">Jul 04</option>
-											<option value="08/04">Aug 04</option>
-											<option value="09/04">Sep 04</option>
-											<option value="10/04">Oct 04</option>
-											<option value="11/04">Nov 04</option>
-											<option value="12/04">Dec 04</option>
-										</optgroup>
-										<optgroup label="2005">
-											<option value="01/05">Jan 05</option>
-											<option value="02/05">Feb 05</option>
-											<option value="03/05">Mar 05</option>
-											<option value="04/05">Apr 05</option>
-											<option value="05/05">May 05</option>
-											<option value="06/05">Jun 05</option>
-											<option value="07/05">Jul 05</option>
-											<option value="08/05">Aug 05</option>
-											<option value="09/05">Sep 05</option>
-											<option value="10/05">Oct 05</option>
-											<option value="11/05">Nov 05</option>
-											<option value="12/05">Dec 05</option>
-										</optgroup>
-										<optgroup label="2006">
-											<option value="01/06">Jan 06</option>
-											<option value="02/06">Feb 06</option>
-											<option value="03/06">Mar 06</option>
-											<option value="04/06">Apr 06</option>
-											<option value="06/06">May 06</option>
-											<option value="06/06">Jun 06</option>
-											<option value="07/06">Jul 06</option>
-											<option value="08/06">Aug 06</option>
-											<option value="09/06">Sep 06</option>
-											<option value="10/06">Oct 06</option>
-											<option value="11/06">Nov 06</option>
-											<option value="12/06">Dec 06</option>
-										</optgroup>
-										<optgroup label="2007">
-											<option value="01/07">Jan 07</option>
-											<option value="02/07">Feb 07</option>
-											<option value="03/07">Mar 07</option>
-											<option value="04/07">Apr 07</option>
-											<option value="07/07">May 07</option>
-											<option value="07/07">Jun 07</option>
-											<option value="07/07">Jul 07</option>
-											<option value="08/07">Aug 07</option>
-											<option value="09/07">Sep 07</option>
-											<option value="10/07">Oct 07</option>
-											<option value="11/07">Nov 07</option>
-											<option value="12/07">Dec 07</option>
-										</optgroup>
-										<optgroup label="2008">
-											<option value="01/08">Jan 08</option>
-											<option value="02/08">Feb 08</option>
-											<option value="03/08">Mar 08</option>
-											<option value="04/08">Apr 08</option>
-											<option value="08/08">May 08</option>
-											<option value="08/08">Jun 08</option>
-											<option value="08/08">Jul 08</option>
-											<option value="08/08">Aug 08</option>
-											<option value="09/08">Sep 08</option>
-											<option value="10/08">Oct 08</option>
-											<option value="11/08">Nov 08</option>
-											<option value="12/08">Dec 08</option>
-										</optgroup>
-									</select>
+								<div class="abstract">
+									<fieldset class="abstract">
+										<input type="checkbox" id="abstract_all" name="abstract_all" />
+										<label for="abstract_all">Abstract</label>
+									</fieldset>
+								</div>
+								<div class="businessapproaches">
+									<fieldset class="businessapproaches">
+										<input type="checkbox" id="ba_all" name="ba_all" />
+										<label for="ba_all">Business Approach</label>
+									</fieldset>
+								</div>
+								<div class="workexperience">
+									<fieldset class="workexperience">
+										<input type="checkbox" id="workexperience_all" name="workexperience_all" />
+										<label for="workexperience_all">Work Experience</label><br>
+										<label for="startdate">Start Date</label>
+										<input id="startdate" name="startdate" type="text" value="" />
+										<label for="enddate">End Date</label>
+										<input id="enddate" name="enddate" type="text" value="" /><br>
+									</fieldset>
+								</div>
+								<div class="ds">
+								 	<fieldset class="ds"><legend>Work Range Selector</legend><br> 
+										<label for="valueAA" class="dsl">From:</label>
+										<select name="valueAA" id="valueAA">
+											<optgroup label="2003">
+												<option value="01/03">Jan 03</option>
+												<option value="02/03">Feb 03</option>
+												<option value="03/03">Mar 03</option>
+												<option value="03/03">Apr 03</option>
+												<option value="03/03">May 03</option>
+												<option value="06/03">Jun 03</option>
+												<option value="07/03">Jul 03</option>
+												<option value="08/03" selected="selected">Aug 03</option>
+												<option value="09/03">Sep 03</option>
+												<option value="10/03">Oct 03</option>
+												<option value="11/03">Nov 03</option>
+												<option value="12/03">Dec 03</option>
+											</optgroup>
+											<optgroup label="2004">
+												<option value="01/04">Jan 04</option>
+												<option value="02/04">Feb 04</option>
+												<option value="03/04">Mar 04</option>
+												<option value="04/04">Apr 04</option>
+												<option value="04/04">May 04</option>
+												<option value="06/04">Jun 04</option>
+												<option value="07/04">Jul 04</option>
+												<option value="08/04">Aug 04</option>
+												<option value="09/04">Sep 04</option>
+												<option value="10/04">Oct 04</option>
+												<option value="11/04">Nov 04</option>
+												<option value="12/04">Dec 04</option>
+											</optgroup>
+											<optgroup label="2005">
+												<option value="01/05">Jan 05</option>
+												<option value="02/05">Feb 05</option>
+												<option value="03/05">Mar 05</option>
+												<option value="04/05">Apr 05</option>
+												<option value="05/05">May 05</option>
+												<option value="06/05">Jun 05</option>
+												<option value="07/05">Jul 05</option>
+												<option value="08/05">Aug 05</option>
+												<option value="09/05">Sep 05</option>
+												<option value="10/05">Oct 05</option>
+												<option value="11/05">Nov 05</option>
+												<option value="12/05">Dec 05</option>
+											</optgroup>
+											<optgroup label="2006">
+												<option value="01/06">Jan 06</option>
+												<option value="02/06">Feb 06</option>
+												<option value="03/06">Mar 06</option>
+												<option value="04/06">Apr 06</option>
+												<option value="06/06">May 06</option>
+												<option value="06/06">Jun 06</option>
+												<option value="07/06">Jul 06</option>
+												<option value="08/06">Aug 06</option>
+												<option value="09/06">Sep 06</option>
+												<option value="10/06">Oct 06</option>
+												<option value="11/06">Nov 06</option>
+												<option value="12/06">Dec 06</option>
+											</optgroup>
+											<optgroup label="2007">
+												<option value="01/07">Jan 07</option>
+												<option value="02/07">Feb 07</option>
+												<option value="03/07">Mar 07</option>
+												<option value="04/07">Apr 07</option>
+												<option value="07/07">May 07</option>
+												<option value="07/07">Jun 07</option>
+												<option value="07/07">Jul 07</option>
+												<option value="08/07">Aug 07</option>
+												<option value="09/07">Sep 07</option>
+												<option value="10/07">Oct 07</option>
+												<option value="11/07">Nov 07</option>
+												<option value="12/07">Dec 07</option>
+											</optgroup>
+											<optgroup label="2008">
+												<option value="01/08">Jan 08</option>
+												<option value="02/08">Feb 08</option>
+												<option value="03/08">Mar 08</option>
+												<option value="04/08">Apr 08</option>
+												<option value="08/08">May 08</option>
+												<option value="08/08">Jun 08</option>
+												<option value="08/08">Jul 08</option>
+												<option value="08/08">Aug 08</option>
+												<option value="09/08">Sep 08</option>
+												<option value="10/08">Oct 08</option>
+												<option value="11/08">Nov 08</option>
+												<option value="12/08">Dec 08</option>
+											</optgroup>
+										</select>
 
-									<label for="valueBB" class="dsl">To:</label>
-									<select name="valueBB" id="valueBB">
-										<optgroup label="2003">
-											<option value="01/03">Jan 03</option>
-											<option value="02/03">Feb 03</option>
-											<option value="03/03">Mar 03</option>
-											<option value="03/03">Apr 03</option>
-											<option value="03/03">May 03</option>
-											<option value="06/03">Jun 03</option>
-											<option value="07/03">Jul 03</option>
-											<option value="08/03">Aug 03</option>
-											<option value="09/03">Sep 03</option>
-											<option value="10/03">Oct 03</option>
-											<option value="11/03">Nov 03</option>
-											<option value="12/03">Dec 03</option>
-										</optgroup>
-										<optgroup label="2004">
-											<option value="01/04">Jan 04</option>
-											<option value="02/04">Feb 04</option>
-											<option value="03/04">Mar 04</option>
-											<option value="04/04">Apr 04</option>
-											<option value="04/04">May 04</option>
-											<option value="06/04">Jun 04</option>
-											<option value="07/04">Jul 04</option>
-											<option value="08/04">Aug 04</option>
-											<option value="09/04">Sep 04</option>
-											<option value="10/04">Oct 04</option>
-											<option value="11/04">Nov 04</option>
-											<option value="12/04">Dec 04</option>
-										</optgroup>
-										<optgroup label="2005">
-											<option value="01/05">Jan 05</option>
-											<option value="02/05">Feb 05</option>
-											<option value="03/05">Mar 05</option>
-											<option value="04/05">Apr 05</option>
-											<option value="05/05">May 05</option>
-											<option value="06/05">Jun 05</option>
-											<option value="07/05">Jul 05</option>
-											<option value="08/05">Aug 05</option>
-											<option value="09/05">Sep 05</option>
-											<option value="10/05">Oct 05</option>
-											<option value="11/05">Nov 05</option>
-											<option value="12/05">Dec 05</option>
-										</optgroup>
-										<optgroup label="2006">
-											<option value="01/06">Jan 06</option>
-											<option value="02/06">Feb 06</option>
-											<option value="03/06">Mar 06</option>
-											<option value="04/06">Apr 06</option>
-											<option value="06/06">May 06</option>
-											<option value="06/06">Jun 06</option>
-											<option value="07/06">Jul 06</option>
-											<option value="08/06">Aug 06</option>
-											<option value="09/06">Sep 06</option>
-											<option value="10/06">Oct 06</option>
-											<option value="11/06">Nov 06</option>
-											<option value="12/06">Dec 06</option>
-										</optgroup>
-										<optgroup label="2007">
-											<option value="01/07">Jan 07</option>
-											<option value="02/07">Feb 07</option>
-											<option value="03/07">Mar 07</option>
-											<option value="04/07">Apr 07</option>
-											<option value="07/07">May 07</option>
-											<option value="07/07">Jun 07</option>
-											<option value="07/07">Jul 07</option>
-											<option value="08/07" selected="selected">Aug 07</option>
-											<option value="09/07">Sep 07</option>
-											<option value="10/07">Oct 07</option>
-											<option value="11/07">Nov 07</option>
-											<option value="12/07">Dec 07</option>
-										</optgroup>
-										<optgroup label="2008">
-											<option value="01/08">Jan 08</option>
-											<option value="02/08">Feb 08</option>
-											<option value="03/08">Mar 08</option>
-											<option value="04/08">Apr 08</option>
-											<option value="08/08">May 08</option>
-											<option value="08/08">Jun 08</option>
-											<option value="08/08">Jul 08</option>
-											<option value="08/08">Aug 08</option>
-											<option value="09/08">Sep 08</option>
-											<option value="10/08">Oct 08</option>
-											<option value="11/08">Nov 08</option>
-											<option value="12/08">Dec 08</option>
-										</optgroup>
-									</select>
-								</fieldset><br><br><br>
-		
-								<fieldset class="academic">
-									<input type="checkbox" id="academic_all" name="academic_all" />
-									<label for="academic_all">Academic</label><br>
-								</fieldset>
-								<fieldset class="skillstable">
-									<input type="checkbox" id="skillstable_all" name="skillstable_all"/>
-									<label for="skillstable_all">Skills Table</label><br>
-								</fieldset>
+										<label for="valueBB" class="dsl">To:</label>
+										<select name="valueBB" id="valueBB">
+											<optgroup label="2003">
+												<option value="01/03">Jan 03</option>
+												<option value="02/03">Feb 03</option>
+												<option value="03/03">Mar 03</option>
+												<option value="03/03">Apr 03</option>
+												<option value="03/03">May 03</option>
+												<option value="06/03">Jun 03</option>
+												<option value="07/03">Jul 03</option>
+												<option value="08/03">Aug 03</option>
+												<option value="09/03">Sep 03</option>
+												<option value="10/03">Oct 03</option>
+												<option value="11/03">Nov 03</option>
+												<option value="12/03">Dec 03</option>
+											</optgroup>
+											<optgroup label="2004">
+												<option value="01/04">Jan 04</option>
+												<option value="02/04">Feb 04</option>
+												<option value="03/04">Mar 04</option>
+												<option value="04/04">Apr 04</option>
+												<option value="04/04">May 04</option>
+												<option value="06/04">Jun 04</option>
+												<option value="07/04">Jul 04</option>
+												<option value="08/04">Aug 04</option>
+												<option value="09/04">Sep 04</option>
+												<option value="10/04">Oct 04</option>
+												<option value="11/04">Nov 04</option>
+												<option value="12/04">Dec 04</option>
+											</optgroup>
+											<optgroup label="2005">
+												<option value="01/05">Jan 05</option>
+												<option value="02/05">Feb 05</option>
+												<option value="03/05">Mar 05</option>
+												<option value="04/05">Apr 05</option>
+												<option value="05/05">May 05</option>
+												<option value="06/05">Jun 05</option>
+												<option value="07/05">Jul 05</option>
+												<option value="08/05">Aug 05</option>
+												<option value="09/05">Sep 05</option>
+												<option value="10/05">Oct 05</option>
+												<option value="11/05">Nov 05</option>
+												<option value="12/05">Dec 05</option>
+											</optgroup>
+											<optgroup label="2006">
+												<option value="01/06">Jan 06</option>
+												<option value="02/06">Feb 06</option>
+												<option value="03/06">Mar 06</option>
+												<option value="04/06">Apr 06</option>
+												<option value="06/06">May 06</option>
+												<option value="06/06">Jun 06</option>
+												<option value="07/06">Jul 06</option>
+												<option value="08/06">Aug 06</option>
+												<option value="09/06">Sep 06</option>
+												<option value="10/06">Oct 06</option>
+												<option value="11/06">Nov 06</option>
+												<option value="12/06">Dec 06</option>
+											</optgroup>
+											<optgroup label="2007">
+												<option value="01/07">Jan 07</option>
+												<option value="02/07">Feb 07</option>
+												<option value="03/07">Mar 07</option>
+												<option value="04/07">Apr 07</option>
+												<option value="07/07">May 07</option>
+												<option value="07/07">Jun 07</option>
+												<option value="07/07">Jul 07</option>
+												<option value="08/07" selected="selected">Aug 07</option>
+												<option value="09/07">Sep 07</option>
+												<option value="10/07">Oct 07</option>
+												<option value="11/07">Nov 07</option>
+												<option value="12/07">Dec 07</option>
+											</optgroup>
+											<optgroup label="2008">
+												<option value="01/08">Jan 08</option>
+												<option value="02/08">Feb 08</option>
+												<option value="03/08">Mar 08</option>
+												<option value="04/08">Apr 08</option>
+												<option value="08/08">May 08</option>
+												<option value="08/08">Jun 08</option>
+												<option value="08/08">Jul 08</option>
+												<option value="08/08">Aug 08</option>
+												<option value="09/08">Sep 08</option>
+												<option value="10/08">Oct 08</option>
+												<option value="11/08">Nov 08</option>
+												<option value="12/08">Dec 08</option>
+											</optgroup>
+										</select>
+									</fieldset><br><br><br>
+								</div>
+								<div class="academic">
+									<fieldset class="academic">
+										<input type="checkbox" id="academic_all" name="academic_all" />
+										<label for="academic_all">Academic</label><br>
+									</fieldset>
+								</div>
+								<div class="skillstable">
+									<fieldset class="skillstable">
+										<input type="checkbox" id="skillstable_all" name="skillstable_all"/>
+										<label for="skillstable_all">Skills Table</label><br>
+									</fieldset>
+								</div>
+								<div class="Community">
+									<fieldset class="community">
+										<input type="checkbox" id="community_all" name="community_all"/>
+										<label for="community_all">Community</label><br>
+									</fieldset>
+								</div>
 							</form>
 						</aside>
 					</div>
 				</div>
 
 				<div class="block gc" id="gc">
+					<section class="abstract"><h1>Abstract</h1>
+						<div class="superseven">
+							<section>
+								<div class="oneseven">
+									<h1>Design</h1>
+									<ul>
+										<li>heuristic evaluation</li>
+										<li>cognitive walkthrough</li>
+										<li>time and method engineering</li>
+									</ul>
+								</div>
+							</section>
+							<section>
+								<div class="oneseven">
+									<h1>Expertise</h1>
+									<ul>
+										<li>turnkey business solutions</li>
+										<li>systems analysis</li>
+										<li>change management</li>
+										<li>communication methodologies</li>
+									</ul>
+								</div>
+							</section>
+							<section>
+								<div class="oneseven">
+									<h1>Skills</h1>
+									<ul>
+										<li>data visualization</li>
+										<li>workflow optimization</li>
+										<li>presentation</li>
+										<li>communication design</li>
+										<li>statistical analysis</li>
+										<li>sdlc methods</li>
+									</ul>
+								</div>
+							</section>
+							<section>
+								<div class="oneseven">
+									<h1>Tools</h1>
+									<ul>
+										<li><a href="http://specialorange.org/2012/07/10/smiles/" target="_blank"><span style="font-size:20px"> ☺</span></a></li>
+										<li><a href="http://www.r-project.org/" target="_blank">R</a></li>
+										<li><a href="http://office.microsoft.com/en-us/excel/" target="_blank">excel</a></li>
+										<li><a href="http://codingbat.com/" target="_blank">codingbat</a></li>
+										<li><a href="http://stackexchange.com/" target="_blank">stackexchange</a></li>
+										<li><a href="http://macromates.com/" target="_blank">textmate</a></li>
+									</ul>
+								</div>
+							</section>
+							<section>
+								<div class="oneseven">
+									<h1>Projects</h1>
+									<ul>
+										<li>six sigma black belt</li>
+										<li>javascript</li>
+										<li>pedagogy methods</li>
+									</ul>
+								</div>
+							</section>
+							<section>
+								<div class="oneseven">
+									<h1>Community</h1>
+									<ul>
+										<li>inter/national disaster relief</li>
+										<li>habitat for humanity</li>
+										<li>small group leadership</li>
+										<li>logistics mgmt (NPO/NGOs)</li>
+									</ul>
+								</div>
+							</section>
+							<section>
+								<div class="oneseven">
+									<h1>Interests</h1>
+									<ul>
+										<li><a href="http://specialorange.org/2012/07/09/neon-gallery/" target="_blank">neon art bending</a></li>
+										<li><a href="http://specialorange.org/2012/07/09/whitewater-kayaking/" target="_blank">whitewater kayaking</a></li>
+										<li><a href="http://specialorange.org/category/recipes/" target="_blank">large scale gourmet cooking</a></li>
+										<li><a href="http://specialorange.org/2010/12/07/neon-cross-no-not-neon-trees/" target="_blank">woodturning</a></li>
+										<li>hiking/camping</li>
+									</ul>
+								</div>
+							</section>
+						</div>
+					</section>
 
 					<section class="businessapproaches"><h1>Business Approach</h1>
 						<section><h1>Analysis</h1>
@@ -252,7 +354,7 @@
 							<p>Listening to the needs of the project’s stakeholders, I tailor a solution using a top down method for providing the needs of budget conscious clients, or a ground up design for customized turnkey solutions. These hybrid approaches are weighted towards the common voice of the client, where detail oriented solutions are applied along the common tones throughout the client’s organization.</p>
 						</section>
 						<section><h1>Teamwork</h1>
-							<p>Limiting task oriented teams to no more than 7 persons, with a wide assortment of experience and a solid rubric for life cycle development of projects enables synergistic teamwork practices and enables succinct solutions with minimal interruptions. When a group is given full control with the understanding of full accountability, time and time again the group as a whole is able to provide the necessary decisions to achieve positive progression.</p>
+							<p>Organizing teams to a preferable size of 7 persons, with a wide assortment of experience and a solid rubric for life cycle development of projects, enables synergistic teamwork practices and enables succinct solutions with minimal interruptions. When a group is given full control with the understanding of full accountability, time and time again the group as a whole is able to provide the necessary decisions to achieve positive progression.</p>
 						</section>
 						<section><h1>Intelligence</h1>
 							<p>With diverse hobbies, experiences, contacts, and interests, I bring a special perspective to providing successful solutions, on time, and above and beyond requirements. I owe my successes to borrowed approaches in scouting, mentorship, and previous successes where developing a strong approach to looking through a problem to see its solution has allowed me to approach situations with objective clarity.</p>
@@ -265,84 +367,21 @@
 						</section>	
 					</section>
 
-					<section class="abstract"><h1>Abstract</h1>
-						<section><h1>Design</h1>
-							<ul>
-								<li>heuristic evaluation</li>
-								<li>cognitive walkthrough</li>
-								<li>time and method engineering</li>
-							</ul>
-						</section>
-						<section><h1>Expertise</h1>
-							<ul>
-								<li>turnkey business solutions</li>
-								<li>systems analysis</li>
-								<li>change management</li>
-								<li>communication methodologies</li>
-							</ul>
-						</section>
-						<section><h1>Skills</h1>
-							<ul>
-								<li>data visualization</li>
-								<li>workflow optimization</li>
-								<li>presentation</li>
-								<li>communication design</li>
-								<li>statistical analysis</li>
-								<li>sdlc methods</li>
-								<li>office suite</li>
-							</ul>
-						</section>
-						<section><h1>Tools</h1>
-							<ul>
-								<li><span style="font-size:20px"> ☺</span></li>
-								<li><a href="http://www.r-project.org/" target="_blank">R</a></li>
-								<li><a href="http://office.microsoft.com/en-us/excel/" target="_blank">excel</a></li>
-								<li><a href="http://codingbat.com/" target="_blank">codingbat</a></li>
-								<li><a href="http://stackexchange.com/" target="_blank">stackexchange</a></li>
-								<li><a href="http://macromates.com/" target="_blank">textmate</a></li>
-							</ul>
-						</section>
-						<section><h1>Projects</h1>
-							<ul>
-								<li>six sigma black belt</li>
-								<li>javascript</li>
-								<li>pedagogy methods</li>
-							</ul>
-						</section>
-						<section><h1>Community</h1>
-							<ul>
-								<li>inter/national disaster relief</li>
-								<li>habitat for humanity</li>
-								<li>small group leadership</li>
-								<li>logistics mgmt (NPO/NGOs)</li>
-							</ul>
-						</section>
-						<section><h1>Interests</h1>
-							<ul>
-								<li>neon art bending</li>
-								<li>whitewater kayaking</li>
-								<li>large scale gourmet cooking</li>
-								<li>woodturning</li>
-								<li>hiking/camping</li>
-							</ul>
-						</section>
-					</section>
-
 					<section class="workexperience"><h1>Work Experience</h1>
 						<section class="company"><h1>FedEx Ground</h1>
 							<section class="position"><h1>Contractor Corporate Liaison - IT Development Projects</h1>
 								<time class="start" datetime="2010-07">Jul 2010</time>
-								<time class="end" datetime="2012-06">CURRENT</time>
+								<time class="end" datetime=""></time>
 								<p>After a massive business realignment resulting from the economy crash, IT resources available to independent delivery contractors were significantly reduced.   I presented and developed an elective application that would allow the contractors to provide business analytics that provide daily performance feedback, as well as trending analysis that identifies areas of opportunity as well as high performing metrics, available to each contractor and their employees.</p>
 								<ul>
-									<li class="dev">Contractor Optimization
+									<li class="dev ocm cs pm">Contractor Optimization
 										<ul>
 											<li class="dev">J2EE development analyzing business models to highlight revenue opportunity (mySQL, JSF/myFaces, Spring, Hibernate, Tomcat, Maven, XML, and X/HTML, with Git versioning) in a traditional Waterfall developing environment comprised solely of myself, end to end in Eclipse</li>
 											<li class="dev">Customized data reporting and data entry of PDF, email (SMTP), XML, and CVS into single comprehensive queryable presentations (Sikuli)</li>
 											<li class="dev">Basic data verification and session/transaction steps within program to cleanse and prevent rogue data from entering database</li>
 											<li class="dev">Database design with Business level logic for security management of CRUD user and data history retention</li>
 											<li class="dev">Chose J2EE and associated technologies and self taught to account for 50 requirements including scaling and future support of program</li>
-											<li class="ocm cs pm">Hold recurring contractor meetings to discuss functionality, discuss best practices, and requirement listing.</li>
+											<li class="ocm cs pm">Hold recurring contractor meetings to discuss functionality, best practices, and requirement listing.</li>
 										</ul>
 									</li>
 									<li class="dev pm ocm cs">Vehicle Rental standardization
@@ -500,7 +539,7 @@
 						</section>
 					</section>
 
-					<section class="skillstable"><h1>Skills Table : <span class="skillstablevisibility">Certifications / Compliance / Technologies</span></h1>
+					<section class="skillstable"><h1>Skills Table : <span class="skillstablevisibility">Certifications | Compliance | Technologies</span></h1>
 						<table cellspacing="0">
 							<colgroup>
 								<col id="col0">
@@ -615,27 +654,9 @@
 								</tr>
 								<tr>
 									<td>Certification</td>
-									<td>Forklift</td>
+									<td>Forklift / Pallet Jack</td>
 									<td></td>
 									<td>April, 2001</td>
-									<td></td>
-									<td></td>
-									<td>3</td>
-								</tr>
-								<tr>
-									<td>Certification</td>
-									<td>Pallet Jack</td>
-									<td></td>
-									<td>April, 2001</td>
-									<td></td>
-									<td></td>
-									<td>3</td>
-								</tr>
-								<tr>
-									<td>Certification</td>
-									<td>Tugger</td>
-									<td></td>
-									<td>April, 2006</td>
 									<td></td>
 									<td></td>
 									<td>3</td>
@@ -778,33 +799,75 @@
 							</tbody>
 						</table>
 					</section>
+
+					<section class="community"><h1>Community</h1>
+
+						<section class="org"><h1>Habitat For Humanity</h1>
+							<section class="event"><h1>Builder</h1>
+								<time class="start" datetime="2001-02">Feb 2001</time>
+								<time class="end" datetime="2003-04">Apr 2003</time>
+								<time class="once" datetime=""></time>
+								<p>I pursued this specific track of Communication Studies to study the gender biased elements within social interactions.</p>
+								<ul>
+									<li>National South Eastern Women's Studies Association(SEWSA) invitational speaker on self researched topic surrounding gender neutral non-hegemonic communication - 2008</li>
+									<li>Habitat for Humanity Build Lead</li>
+									<li>Disaster Response Lead Coordinator
+										<ul>
+											<li>Katrina - 10+ visits within 3 years</li>
+											<li>Rita - 1 Visit</li>
+										</ul>
+									</li>
+								</ul>
+							</section>
+						</section>
+
+						<section class="org"><h1>Scouts</h1>
+							<section class="event"><h1>NESA</h1>
+								<time class="start" datetime="2005-06">Jun 2005</time>
+								<time class="end" datetime="2007-08">Aug 2007</time>
+								<time class="once" datetime=""></time>
+								<p>I utilize one of the best community colleges in the US to further my education in interdisciplinary areas.</p>
+								<ul>
+									<li>Six Sigma Black Belt Certification - 2012</li>
+									<li>Culinary Approaches - 2011</li>
+									<li>Car Mechanics - 2007</li>
+									<li>Masonry - 2006</li>
+									<li>Math - 2003</li>
+									<li>Music - 2002</li>
+								</ul>
+							</section>
+						</section>
+					</section>
 				</div>
 			</div>
 		</div>
 				
 		<footer class="footer">
-			<p>Specific references available upon request</p>
+			<!-- <div> -->
+				<p>
+					<span style="float:left">Specific references available upon request</span>
+					<span style="float:right">For comprehensive information on this resume, please view this post</span>
+				</p>
+			<!-- </div> -->
 		</footer>
 	</body>
 </html>
-
-
 
 <script>
  
 // Generation
 
 	//SideBar
-		// Business Approach sideBar elements
-			$('section.businessapproaches section h1').each(function () {
-				var value = this.innerHTML;
-				$('<input type="checkbox" id="ba_' + value.toLowerCase() + '" name="ba_' + value.toLowerCase() + '"/><label for="ba_' + value.toLowerCase() + '">' + value + '</label>' + '<br>	').appendTo($('fieldset.businessapproaches'));
-			});
 		//Abstract sidebar elements
 			$('section.abstract section h1').each(function () {
 				var value = this.innerHTML;
-				$('<input type="checkbox" id="abstract_' + value.toLowerCase() + '" name="abstract_' + value.toLowerCase() + '"/><label for="abstract_' + value.toLowerCase() + '">' + value + '</label>' + '<br>	').appendTo($('fieldset.abstract'));
-			});
+				// $('<input type="checkbox" id="abstract_' + value.toLowerCase() + '" name="abstract_' + value.toLowerCase() + '"/><label for="abstract_' + value.toLowerCase() + '">' + value + '</label>').appendTo($('fieldset.abstract'));
+				$('<div class="' + value.toLowerCase() + '"><input type="checkbox" id="abstract_' + value.toLowerCase() + '" name="abstract_' + value.toLowerCase() + '"/><label for="abstract_' + value.toLowerCase() + '">' + value + '</label>' + '</div>').appendTo($('fieldset.abstract'));			});
+		// Business Approach sideBar elements
+			$('section.businessapproaches section h1').each(function () {
+				var value = this.innerHTML;
+				// $('<input type="checkbox" id="ba_' + value.toLowerCase() + '" name="ba_' + value.toLowerCase() + '"/><label for="ba_' + value.toLowerCase() + '">' + value + '</label>').appendTo($('fieldset.businessapproaches'));
+				$('<div class="' + value.toLowerCase() + '"><input type="checkbox" id="ba_' + value.toLowerCase() + '" name="ba_' + value.toLowerCase() + '"/><label for="ba_' + value.toLowerCase() + '">' + value + '</label>' + '</div>').appendTo($('fieldset.businessapproaches'));			});
 		//Academic section sidebar elements
 			$('section.academic section.school > h1').each(function () {
 				var value = this.innerHTML;
@@ -817,7 +880,7 @@
 							"cs" : "Customer Service",
 							"dev" : "Developer",
 							"eng" : "Engineer",
-							"mgr" : "Manager",
+							"mgr" : "Management",
 							"ocm" : "Organizational Change Management" };
 				var lis = [];
 				$('.workexperience li').each(function() {
@@ -841,8 +904,6 @@
 					$('<input type="checkbox" class="jobtype" id="wejt_' + value.toLowerCase() + '" name="' + value.toLowerCase() + '"/><label for="wejt_' + value.toLowerCase() + '">' + name + '</label>' + '<br>	').appendTo($('fieldset.workexperience'));
 				}
 			})();		
-		//generate the company start and end dates
-			$('section.company').each(processCompanyTime);
 	
 	//NUI (GC SIDE)
 		//main headers (all but the skillstable)
@@ -850,13 +911,13 @@
 			var value = this.innerHTML;
 			$(this).replaceWith($('<input type="checkbox" checked="checked" id="header_' + value.toLowerCase() + '" name="header_' + value.toLowerCase() + '"/><label for="header_' + value.toLowerCase() + '" class="gcheader">' + value + '</label>' + '<br>	'));
 		});
-		$('section.businessapproaches section h1').each(function () {
-			var value = this.innerHTML;
-			$(this).replaceWith($('<input type="checkbox" checked="checked" id="nba_' + value.toLowerCase() + '" name="nba_' + value.toLowerCase() + '"/><label for="nba_' + value.toLowerCase() + '" class="gcsubheader">' + value + '</label>' + '<br>	'));
-		});
 		$('section.abstract section h1').each(function () {
 			var value = this.innerHTML;
 			$(this).replaceWith($('<input type="checkbox" checked="checked" id="nabstract_' + value.toLowerCase() + '" name="nabstract_' + value.toLowerCase() + '"/><label for="nabstract_' + value.toLowerCase() + '" class="gcsubheader">' + value + '</label>' + '<br>	'));
+		});
+		$('section.businessapproaches section h1').each(function () {
+			var value = this.innerHTML;
+			$(this).replaceWith($('<input type="checkbox" checked="checked" id="nba_' + value.toLowerCase() + '" name="nba_' + value.toLowerCase() + '"/><label for="nba_' + value.toLowerCase() + '" class="gcsubheader">' + value + '</label>' + '<br>	'));
 		});
 		$('section.academic section.school > h1').each(function () {
 			var value = this.innerHTML;
@@ -914,7 +975,81 @@
 			// }
 		}
 	});
-
+// Abstract
+	//hide initially
+		$('fieldset.abstract label').hide();
+	//individual Abstract elements Toggle Buttons
+		//Currently on, turning Off
+			$('.block > .abstract > .superseven > section > .oneseven > input').on('change', function () {
+				var hidden = 0;
+				var width = ((1/(7-hidden))*100);
+				if (this.checked) {
+				} else {
+					var hidden = ($('.block > .abstract > .superseven > section > :hidden').length + .98);
+					var width = ((1/(7-hidden))*100);
+					$('.oneseven').css("width", (width) + "%");
+					var index = $(this).closest('section').prevAll('section').length;
+					console.log(index);
+					$('.block > .abstract > .superseven > section').eq(index).hide();  //removed "slow" because of rendering
+					$('fieldset.abstract > div > label').eq(index).show("slow");
+					$('fieldset.abstract > div > input').eq(index).prop('checked' , true);
+				}
+			});
+		//Currently off, turning On
+			$('fieldset.abstract > div').on('change', function () {
+				var hidden = 0;
+				var width = ((1/(7-hidden))*100);
+				if (this.checked) {
+				} else {
+					var hidden = ($('.block > .abstract > .superseven > section > :hidden').length - .98);
+					var width = ((1/(7-hidden))*100);
+					$('.oneseven').css("width", (width) + '%');
+					console.log(this);
+					console.log(($(this).prevAll()));
+					var index = $(this).prevAll().length-2;
+					console.log(index);
+					$('fieldset.abstract > div > label').eq(index).hide("slow");
+					$('.block > .abstract > .superseven > section').eq(index).show();  //removed "slow" because of rendering
+					$('.block > .abstract > .superseven > section > .oneseven > input').eq(index).prop('checked' , true);
+				}
+			});
+	//Toggle Abstract completely
+		//Currently on, turning Off
+			$('.block > .abstract input:first').on('change', function () {
+				if (this.checked) {
+				} else {
+					$('.block > .abstract').hide("slow");
+					$(this).nextAll('input').attr('disabled', 'disabled');
+					$('fieldset.abstract label:first').show("slow");
+					$('fieldset.abstract #abstract_all').prop('checked' , false);
+					$('.block > .businessapproaches').css('width', '100%');
+					$('fieldset.abstract > div > input:checked').each(function(){
+						// $(this).prop('label').hide();
+						$('label[for="'+ $(this).attr('id') +'"]').hide();
+					});
+				}
+				});
+		//Currently off, turning On
+			$('fieldset.abstract #abstract_all').on('change', function () {
+				if (this.checked) {
+					$('.block > .abstract').show("slow");
+					$('.block > .abstract input:first').prop('checked' , true);
+					$(this).nextAll('input').removeAttr('disabled');
+					$('fieldset.abstract label:first').hide("slow");
+					$('.block > .businessapproaches').css('width', '74%');
+					$('fieldset.abstract > div > input:checked').each(function(){
+						// $(this).prop('label').hide();
+						$('label[for="'+ $(this).attr('id') +'"]').show();
+					});
+				} else {				
+				}
+			});
+	//Define widths of sections
+		// (function defineWidth() {  		
+		// 	$('.block > .abstract > .superseven > section > .oneseven').each(function () {
+		// 			$(this).css("width", (($('.block > .abstract > .superseven > section > :hidden').length)/7) + '%');	
+		// 	});
+		// }();
 // Business Approaches
 	//hide initially
 			$('fieldset.businessapproaches label').hide();
@@ -964,56 +1099,30 @@
 				}
 			});
 
-// Abstract
-	//hide initially
-		$('fieldset.abstract label').hide();
-	//individual Abstract elements Toggle Buttons
-		//Currently on, turning Off
-			$('.block > .abstract > section > input').on('change', function () {
-				if (this.checked) {
-				} else {
-					var index = $(this).closest('section').prevAll('section').length;
-					$('.block > .abstract > section').eq(index).hide("slow");
-					$('fieldset.abstract > label').eq(index+1).show("slow");
-					$('fieldset.abstract > input').eq(index+1).prop('checked' , true);
-				}
-			});
-		//Currently off, turning On
-			$('fieldset.abstract > input').on('change', function () {
-				if (this.checked) {
-				} else {
-					var index = $(this).prevAll('input').length;
-					$('.block > .abstract > section').eq(index-1).show("slow");
-					$('.block > .abstract > section > input').eq(index-1).prop('checked' , true);
-					$('fieldset.abstract > label').eq(index).hide("slow");
-				}
-			});
-	//Toggle Abstract completely
-		//Currently on, turning Off
-			$('.block > .abstract input:first').on('change', function () {
-				if (this.checked) {
-				} else {
-					$('.block > .abstract').hide("slow");
-					$(this).nextAll('input').attr('disabled', 'disabled');
-					$('fieldset.abstract label:first').show("slow");
-					$('fieldset.abstract #abstract_all').prop('checked' , false);
-					$('.block > .businessapproaches').css('width', '100%');
-				}
-				});
-		//Currently off, turning On
-			$('fieldset.abstract #abstract_all').on('change', function () {
-				if (this.checked) {
-					$('.block > .abstract').show("slow");
-					$('.block > .abstract input:first').prop('checked' , true);
-					$(this).nextAll('input').removeAttr('disabled');
-					$('fieldset.abstract label:first').hide("slow");
-					$('.block > .businessapproaches').css('width', '74%');
-				} else {				
-				}
-			});
-
-// Work Experience Range
+// Work Experience
 	//functions
+		function getCurrentDate() {
+			var d = new Date();
+			var m = new Array(7);
+			var y = d.getFullYear();
+			m[0] = "January"; m[1] = "February"; m[2] = "March"; m[3] = "April"; m[4] = "May"; m[5] = "June"; m[6] = "July"; m[7] = "August"; m[8] = "September"; m[9] = "October"; m[10] = "November"; m[11] = "December";
+			return m[d.getMonth()] + " " + y;	
+		};
+		function currentDateYMFormat(){
+			var d = new Date();
+			var m = new Array(7);
+			var y = d.getFullYear();
+			m[0] = "01"; m[1] = "02"; m[2] = "03"; m[3] = "04"; m[4] = "05"; m[5] = "06"; m[6] = "07"; m[7] = "08"; m[8] = "09"; m[9] = "10"; m[10] = "11"; m[11] = "12";
+			return y + '-' + m[d.getMonth()];
+		};
+		$('.workexperience .company .position > time.end').each(function(){
+			if (!($(this).attr('datetime'))){
+				$(this).attr('datetime', currentDateYMFormat());
+				$(this).html('Current');
+			}
+		});
+		//generate the company start and end dates
+			$('.workexperience section.company').each(processCompanyTime);
 		function pad(number) {
 			var width = 2;
 			var str = '' + number;
@@ -1054,39 +1163,44 @@
 			start.sort(compareTime);
 			end.sort(compareTime);
 		//Dynamically set company level start and end time.
-			$(this).find('>h1').after($('time.end[datetime=' + end[end.length - 1] + ']').clone());
-			$(this).find('>h1').after($('time.start[datetime=' + start[0] + ']').clone());
-			// //Add a Hyphen between dates
-			// 	$('section.workexperience >section>time.start').each(function(){
-			// 		var inner = this.innerHTML + " - ";
-			// 		this.innerHTML = inner;
-			// 		});
+			$(this).find('>h1').after($('.workexperience time.end[datetime=' + end[end.length - 1] + ']').clone());
+			$(this).find('>h1').after($('.workexperience time.start[datetime=' + start[0] + ']').clone());
 		};
+	//Add a Hyphen between dates
+		$('section.workexperience >section>time.start').each(function(){
+			$(this).html($(this).html() + ' - ');
+		});
+		$('section.workexperience >section>section>time.start').each(function(){
+			$(this).html($(this).html() + ' - ');
+		});
+	//Set position level end time if current
+		$('workexperience.company.position')
 	//Toggle WE completely
 		//hide initially
-				$('fieldset.workexperience label:nth-child(2)').hide();
-				$('fieldset.workexperience label:nth-child(4)').hide();
-				$('fieldset.workexperience label:nth-child(6)').hide();
-			//Currently on, turning Off
-				$('.block > .workexperience input:first').on('change', function () {
-					if (this.checked) {
-					} else {
-						$('.block > .workexperience').hide("slow");
-						$(this).nextAll('input').attr('disabled', 'disabled');
-						$('fieldset.workexperience label:first').show("slow");
-						$('fieldset.workexperience #workexperience_all').prop('checked' , false);
-					}
-					});
-			//Currently off, turning On
-				$('fieldset.workexperience #workexperience_all').on('change', function () {
-					if (this.checked) {
-						$('.block > .workexperience').show("slow");
-						$('.block > .workexperience input:first').prop('checked' , true);
-						$(this).nextAll('input').removeAttr('disabled');
-						$('fieldset.workexperience label:first').hide("slow");
-					} else {				
-					}
+			$('fieldset.workexperience label:nth-child(2)').hide();
+		//Change header to white, so when it shows, it looks like it's hidden
+			$("label[for='workexperience_all']").css('color', 'white');
+		//Currently on, turning Off
+			$('.block > .workexperience input:first').on('change', function () {
+				if (this.checked) {
+				} else {
+					$('.block > .workexperience').hide("slow");
+					$(this).nextAll('input').attr('disabled', 'disabled');
+					$('fieldset.workexperience label:first').show("slow");
+					$('fieldset.workexperience #workexperience_all').prop('checked' , false);
+					
+				}
 				});
+		//Currently off, turning On
+			$('fieldset.workexperience #workexperience_all').on('change', function () {
+				if (this.checked) {
+					$('.block > .workexperience').show("slow");
+					$('.block > .workexperience input:first').prop('checked' , true);
+					$(this).nextAll('input').removeAttr('disabled');
+					$('fieldset.workexperience label:first').hide("slow");
+				} else {				
+				}
+			});
 	//start selector functionality
 		$('#startdate').on('change', function () {
 			var $formelem = $(this);
@@ -1117,20 +1231,17 @@
 		});
 	// Job Type Button
 		$('fieldset.workexperience input').on('change', function() {
-			if ($(this).hasClass('jobtype') && ($(this).attr("name")!="")) {
-				$('.'+$(this).attr("name")).toggle("slow");
-				//Change color to white to show hidden
-					// $('label[for=$(this)]').toggleClass("hidden");
-					$('label[for="'+ $(this).attr('id') +'"]').toggleClass("hidden");
-					// $(this).toggleClass("hidden");
-				
-					// var $this = $(this).attr("label");
-					// $('label[$this]').toggleClass("hidden");
-			} else {
-			
+		    var notSelectedList = $('fieldset.workexperience .jobtype:not(:checked)').map(function() {
+		        return '.' + $(this).attr('name');
+		    }).get().join(',');
+		    $('.workexperience li').each(function() {
+		        $(this).toggle($(this).is(notSelectedList));
+		    });
+			//Change color to white to show hidden
+			if ($(this).attr('id') != 'workexperience_all') {
+				$('label[for="'+ $(this).attr('id') +'"]').toggleClass("hidden");
 			}
 		});
-
 //Academic
 	//hide initially
 			$('fieldset.academic label').hide();
@@ -1246,7 +1357,7 @@
 			})
 		//Row Button generator
 			// //grab the names T/C/C 'label' and sort
-				var labels = $('section.skillstable .skillstablevisibility').html().split(' / ');
+				var labels = $('section.skillstable .skillstablevisibility').html().split(' | ');
 				labels.sort();
 			//grab each first td child of skillstable
 				var keys = [];
@@ -1285,13 +1396,13 @@
 						$(this).parent().toggle();
 					}
 				});
-			//handles the /s between T/C/C of the gc SkillsTable name 
+			//handles the |s between T|C|C of the gc SkillsTable name 
 				var segments = [];
 				$('fieldset.skillstable input.row:checked').each(function() {
 					segments.push(hash[$(this).attr('id').replace('skillstable_','')]);
 				});
 				console.log(segments);
-				$('section.skillstable .skillstablevisibility').html(segments.join(' / '));
+				$('section.skillstable .skillstablevisibility').html(segments.join(' | '));
 			});
 		//Column Button Hider
 			$('fieldset.skillstable input.column[type=checkbox]').on('change', function() {
