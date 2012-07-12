@@ -176,6 +176,19 @@ select {margin-right: 1em; float: left;}
 	float:right;
 /*	width:25%;
 */}
+#startdate {
+    width: 50%;
+}
+#enddate {
+    width: 50%;
+}
+.jobtype {
+	display: block;
+	padding-left: 10px;
+}
+.formElems {
+	padding-left: 10px;	
+}
 .aside {
 	display: block;
 	font-size: 11px;
@@ -187,28 +200,41 @@ select {margin-right: 1em; float: left;}
 	font-size: 11px;
 	display: block;
 	clear: left;
-	color: white;}
+}
 .aside .businessapproaches{
 	font-size: 11px;
-	color: white;
 }
 .aside .academic{
 	font-size: 11px;
-	color: black;
 }
 .form .workexperience{
 	font-size: 11px;
 	color: black;
+}
+.form {
+	padding: 5px;
+}
+.formHeader {
+	font-size: 15px;
+	font-weight: bold
+}
+.row {
+	padding-left: 10px;
+	font-weight: bold;
+}
+.column {
+	padding-left: 10px;
+}
+.workdates {
+	display:inline-block;
+	width: 45%;
+	padding-left: 10px;
 }
 #workexperience_all{
 	font-size: 11px;
 	color: white;
 }
 .aside .skillstable{
-	font-size: 11px;
-	color: black;
-}
-.aside .community{
 	font-size: 11px;
 	color: black;
 }
@@ -226,9 +252,11 @@ select {margin-right: 1em; float: left;}
 	display: inline-block;
 	float: left;
 	width: 14.285714%;
+/*	clear: right;*/
 }
 .oneseven ul {
-	padding: 5px;
+	margin-left: 10px;
+	text-indent: -10px;
 }
 .gc .abstract {
 }
@@ -254,10 +282,6 @@ select {margin-right: 1em; float: left;}
 .gc .skillstable {
 	display: inline-block;
 	width: 100%;
-/*	clear: left;*/
-}
-.gc .skillstable a {
-/*	text-decoration:underline;*/
 }
 #commentWrapper {
 	float: right;

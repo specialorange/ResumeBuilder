@@ -16,7 +16,7 @@
 		<script type="text/javascript" src="_js/libs/modernizr-2.5.3-respond-1.1.0.min.js"></script>
 		<script type="text/javascript" src="_js/libs/jquery.tablesorter.min.js"></script>
 		<script type="text/javascript" src="_js/libs/jquery-ui-1.7.1.custom.min.js"></script>
-		<script type="text/javascript" src="_js/libs/selectToUISlider.jQuery.js"></script>
+<!--		<script type="text/javascript" src="_js/libs/selectToUISlider.jQuery.js"></script> -->
 		<div id="header-container">
 			<header class="wrapper clearfix">
 				<h1>Chris Frisina</h1>
@@ -36,26 +36,26 @@
 								<div class="abstract">
 									<fieldset class="abstract">
 										<input type="checkbox" id="abstract_all" name="abstract_all" />
-										<label for="abstract_all">Abstract</label>
+										<label for="abstract_all" class="formHeader">Abstract</label>
 									</fieldset>
 								</div>
 								<div class="businessapproaches">
 									<fieldset class="businessapproaches">
 										<input type="checkbox" id="ba_all" name="ba_all" />
-										<label for="ba_all">Business Approach</label>
+										<label for="ba_all" class="formHeader">Business Approach</label>
 									</fieldset>
 								</div>
 								<div class="workexperience">
 									<fieldset class="workexperience">
-										<input type="checkbox" id="workexperience_all" name="workexperience_all" />
-										<label for="workexperience_all">Work Experience</label><br>
-										<label for="startdate">Start Date</label>
-										<input id="startdate" name="startdate" type="text" value="" />
-										<label for="enddate">End Date</label>
-										<input id="enddate" name="enddate" type="text" value="" /><br>
+										<div>
+											<input type="checkbox" id="workexperience_all" name="workexperience_all" />
+											<label for="workexperience_all" class="formHeader">Work Experience</label>
+										</div>
+										<div class="workdates"><label for="startdate" style="width:45%">Start Date </label><input id="startdate" name="startdate" type="text" value="" /></div>
+										<div class="workdates"><label for="enddate" style="width:45%">End Date   </label><input id="enddate" name="enddate" type="text" value="" /><br></div>
 									</fieldset>
 								</div>
-								<div class="ds">
+								<!-- <div class="ds">
 								 	<fieldset class="ds"><legend>Work Range Selector</legend><br> 
 										<label for="valueAA" class="dsl">From:</label>
 										<select name="valueAA" id="valueAA">
@@ -233,23 +233,23 @@
 											</optgroup>
 										</select>
 									</fieldset><br><br><br>
-								</div>
+								</div> -->
 								<div class="academic">
 									<fieldset class="academic">
 										<input type="checkbox" id="academic_all" name="academic_all" />
-										<label for="academic_all">Academic</label><br>
+										<label for="academic_all" class="formHeader">Academic</label>
 									</fieldset>
 								</div>
 								<div class="skillstable">
 									<fieldset class="skillstable">
 										<input type="checkbox" id="skillstable_all" name="skillstable_all"/>
-										<label for="skillstable_all">Skills Table</label><br>
+										<label for="skillstable_all" class="formHeader">Skills Table</label><br>
 									</fieldset>
 								</div>
-								<div class="Community">
+								<div class="community">
 									<fieldset class="community">
 										<input type="checkbox" id="community_all" name="community_all"/>
-										<label for="community_all">Community</label><br>
+										<label for="community_all" class="formHeader">Community</label><br>
 									</fieldset>
 								</div>
 							</form>
@@ -298,7 +298,7 @@
 								<div class="oneseven">
 									<h1>Tools</h1>
 									<ul>
-										<li><a href="http://specialorange.org/2012/07/10/smiles/" target="_blank"><span style="font-size:20px"> ☺</span></a></li>
+										<li><a href="http://specialorange.org/2012/07/10/smiles/" title="Me, Smiling" target="_blank"><span style="font-size:20px"> ☺</span></a></li>
 										<li><a href="http://www.r-project.org/" target="_blank">R</a></li>
 										<li><a href="http://office.microsoft.com/en-us/excel/" target="_blank">excel</a></li>
 										<li><a href="http://codingbat.com/" target="_blank">codingbat</a></li>
@@ -862,16 +862,21 @@
 			$('section.abstract section h1').each(function () {
 				var value = this.innerHTML;
 				// $('<input type="checkbox" id="abstract_' + value.toLowerCase() + '" name="abstract_' + value.toLowerCase() + '"/><label for="abstract_' + value.toLowerCase() + '">' + value + '</label>').appendTo($('fieldset.abstract'));
-				$('<div class="' + value.toLowerCase() + '"><input type="checkbox" id="abstract_' + value.toLowerCase() + '" name="abstract_' + value.toLowerCase() + '"/><label for="abstract_' + value.toLowerCase() + '">' + value + '</label>' + '</div>').appendTo($('fieldset.abstract'));			});
+				$('<div class="' + value.toLowerCase() + '"><input type="checkbox" id="abstract_' + value.toLowerCase() + '" name="abstract_' + value.toLowerCase() + '"/><label for="abstract_' + value.toLowerCase() + '" class="formElems">' + value + '</label>' + '</div>').appendTo($('fieldset.abstract'));			});
 		// Business Approach sideBar elements
 			$('section.businessapproaches section h1').each(function () {
 				var value = this.innerHTML;
 				// $('<input type="checkbox" id="ba_' + value.toLowerCase() + '" name="ba_' + value.toLowerCase() + '"/><label for="ba_' + value.toLowerCase() + '">' + value + '</label>').appendTo($('fieldset.businessapproaches'));
-				$('<div class="' + value.toLowerCase() + '"><input type="checkbox" id="ba_' + value.toLowerCase() + '" name="ba_' + value.toLowerCase() + '"/><label for="ba_' + value.toLowerCase() + '">' + value + '</label>' + '</div>').appendTo($('fieldset.businessapproaches'));			});
+				$('<div class="' + value.toLowerCase() + '"><input type="checkbox" id="ba_' + value.toLowerCase() + '" name="ba_' + value.toLowerCase() + '"/><label for="ba_' + value.toLowerCase() + '" class="formElems">' + value + '</label>' + '</div>').appendTo($('fieldset.businessapproaches'));			});
 		//Academic section sidebar elements
 			$('section.academic section.school > h1').each(function () {
 				var value = this.innerHTML;
-				$('<input type="checkbox" id="a_' + value.toLowerCase() + '" name="a_' + value.toLowerCase() + '"/><label for="a_' + value.toLowerCase() + '">' + value + '</label>' + '<br>	').appendTo($('fieldset.academic'));
+				$('<div class="' + value.toLowerCase() + '"><input type="checkbox" id="a_' + value.toLowerCase() + '" name="a_' + value.toLowerCase() + '"/><label for="a_' + value.toLowerCase() + '">' + value + '</label>' + '</div>').appendTo($('fieldset.academic'));
+			});
+		//Community section sidebar elements
+			$('section.community section.org > h1').each(function () {
+				var value = this.innerHTML;
+				$('<div class="' + value.toLowerCase() + '"><input type="checkbox" id="c_' + value.toLowerCase() + '" name="c_' + value.toLowerCase() + '"/><label for="c	_' + value.toLowerCase() + '">' + value + '</label>' + '</div>').appendTo($('fieldset.community'));
 			});
 		//Find all <li> class types, and make a button
 			(function li() {
@@ -884,7 +889,7 @@
 							"ocm" : "Organizational Change Management" };
 				var lis = [];
 				$('.workexperience li').each(function() {
-					var liCN = $(this).attr('class');
+					var liCN = $(this).attr('class'); //li Class Name
 					var temp = [];
 					temp = liCN.split(' ');
 					for (var i = 0 ; i < temp.length ; i++) {
@@ -901,12 +906,13 @@
 				for (var i = 0; i < jobtypes.length; i++) {
 					var value = jobtypes[i];
 					var name = jtaa[value];
-					$('<input type="checkbox" class="jobtype" id="wejt_' + value.toLowerCase() + '" name="' + value.toLowerCase() + '"/><label for="wejt_' + value.toLowerCase() + '">' + name + '</label>' + '<br>	').appendTo($('fieldset.workexperience'));
+					$('<input type="checkbox" class="jobtype" id="wejt_' + value.toLowerCase() + '" name="' + value.toLowerCase() + '"/><label for="wejt_' + value.toLowerCase() + '" class="jobtype">' + name + '<br></label>').appendTo($('fieldset.workexperience'));
+					// $('<div class="' + value.toLowerCase() + '"><input type="checkbox" class="jobtype" id="wejt_' + value.toLowerCase() + '" name="' + value.toLowerCase() + '"/><label for="wejt_' + value.toLowerCase() + '">' + name + '</label>' + '</div>').appendTo($('fieldset.workexperience'));
 				}
-			})();		
-	
+			})();
+
 	//NUI (GC SIDE)
-		//main headers (all but the skillstable)
+		//main headers (all but the skillstable and workexperience)
 		$('.block > section > h1:not(:has("span.skillstablevisibility"))').each(function () {
 			var value = this.innerHTML;
 			$(this).replaceWith($('<input type="checkbox" checked="checked" id="header_' + value.toLowerCase() + '" name="header_' + value.toLowerCase() + '"/><label for="header_' + value.toLowerCase() + '" class="gcheader">' + value + '</label>' + '<br>	'));
@@ -922,6 +928,10 @@
 		$('section.academic section.school > h1').each(function () {
 			var value = this.innerHTML;
 			$(this).replaceWith($('<input type="checkbox" checked="checked" id="na_' + value.toLowerCase() + '" name="na_' + value.toLowerCase() + '"/><label for="na_' + value.toLowerCase() + '" class="gcsubheader">' + value + '</label>' + '<br>	'));
+		});
+		$('section.community section.org > h1').each(function () {
+			var value = this.innerHTML;
+			$(this).replaceWith($('<input type="checkbox" checked="checked" id="nc_' + value.toLowerCase() + '" name="nc_' + value.toLowerCase() + '"/><label for="nc_' + value.toLowerCase() + '" class="gcsubheader">' + value + '</label>' + '<br>	'));
 		});
 	
 // Initialize the start date and end date function.
@@ -976,23 +986,45 @@
 		}
 	});
 // Abstract
-	//hide initially
-		$('fieldset.abstract label').hide();
+	//hide all but title initially
+		$('fieldset.abstract label:not(:first)').hide();
 	//individual Abstract elements Toggle Buttons
 		//Currently on, turning Off
 			$('.block > .abstract > .superseven > section > .oneseven > input').on('change', function () {
-				var hidden = 0;
-				var width = ((1/(7-hidden))*100);
-				if (this.checked) {
-				} else {
-					var hidden = ($('.block > .abstract > .superseven > section > :hidden').length + .98);
+					var hidden = 0;
 					var width = ((1/(7-hidden))*100);
-					$('.oneseven').css("width", (width) + "%");
-					var index = $(this).closest('section').prevAll('section').length;
-					$('.block > .abstract > .superseven > section').eq(index).hide();  //removed "slow" because of rendering
-					$('fieldset.abstract > div > label').eq(index).show("slow");
-					$('fieldset.abstract > div > input').eq(index).prop('checked' , true);
-				}
+					if (this.checked) {
+					} else {
+						var index = $(this).closest('section').prevAll('section').length;
+						console.log($('fieldset.abstract > div > input:checkbox:checked').length+1);
+						//If ALL Elements are turned off
+						if (($('fieldset.abstract > div > input:checkbox:checked').length+1) == 7){
+							console.log('Success!')
+							$('.block > .abstract > .superseven > section').eq(index).hide();  //removed "slow" because of rendering
+							$('fieldset.abstract > div > input').each(function(){
+								$(this).prop('checked' , false);
+							});
+							$('fieldset.abstract > div > label').each(function(){
+								$(this).hide("slow");
+							});
+							$('.block > .abstract').hide("slow");
+							$('fieldset.abstract label:first').toggleClass('hidden');
+							$('.block > .abstract > .superseven > section input').each(function(){
+								$(this).prop('checked' , true);
+							});
+						} else {
+						//GC Side
+							var hidden = ($('.block > .abstract > .superseven > section > :hidden').length + .98);
+							var width = ((1/(7-hidden))*100);
+							$('.oneseven').css("width", (width) + "%");
+							$('.block > .abstract > .superseven > section').eq(index).hide();  //removed "slow" because of rendering
+							$('.block > .abstract > .superseven > section').eq(index).prop('checked' , false);
+						//Right Side
+							$('fieldset.abstract > div > label').eq(index).show("slow");
+							$('fieldset.abstract > div > label').eq(index).toggleClass('hidden');
+							$('fieldset.abstract > div > input').eq(index).prop('checked' , true);
+						}
+					}
 			});
 		//Currently off, turning On
 			$('fieldset.abstract > div').on('change', function () {
@@ -1000,67 +1032,78 @@
 				var width = ((1/(7-hidden))*100);
 				if (this.checked) {
 				} else {
-					var hidden = ($('.block > .abstract > .superseven > section > :hidden').length - .98);
-					var width = ((1/(7-hidden))*100);
-					$('.oneseven').css("width", (width) + '%');
 					var index = $(this).prevAll().length-2;
-					$('fieldset.abstract > div > label').eq(index).hide("slow");
-					$('.block > .abstract > .superseven > section').eq(index).show();  //removed "slow" because of rendering
-					$('.block > .abstract > .superseven > section > .oneseven > input').eq(index).prop('checked' , true);
+					//GC Side
+						var hidden = ($('.block > .abstract > .superseven > section > :hidden').length - .98);
+						var width = ((1/(7-hidden))*100);
+						$('.oneseven').css("width", (width) + '%');
+						$('.block > .abstract > .superseven > section').eq(index).show();  //removed "slow" because of rendering
+						$('.block > .abstract > .superseven > section > .oneseven > input').eq(index).prop('checked' , true);
+					//Right Side
+						$('fieldset.abstract > div > label').eq(index).hide("slow");
+						$('fieldset.abstract > div > label').eq(index).toggleClass('hidden');
+						$('fieldset.abstract > div > input').eq(index).prop('checked' , false);
 				}
-			});
+			});			
 	//Toggle Abstract completely
 		//Currently on, turning Off
 			$('.block > .abstract input:first').on('change', function () {
 				if (this.checked) {
 				} else {
-					$('.block > .abstract').hide("slow");
-					$(this).nextAll('input').attr('disabled', 'disabled');
-					$('fieldset.abstract label:first').show("slow");
-					$('fieldset.abstract #abstract_all').prop('checked' , false);
-					$('.block > .businessapproaches').css('width', '100%');
-					$('fieldset.abstract > div > input:checked').each(function(){
-						// $(this).prop('label').hide();
-						$('label[for="'+ $(this).attr('id') +'"]').hide();
-					});
+					//GC Side
+						$('.block > .abstract').hide("slow");
+						$(this).nextAll('input').attr('disabled', 'disabled');
+					//Right Side
+						$('fieldset.abstract label:first').toggleClass('hidden');
+						$('fieldset.abstract #abstract_all').prop('checked' , false);
+						$('fieldset.abstract > div > input:checked').each(function(){
+							$('label[for="'+ $(this).attr('id') +'"]').hide("slow");
+						});
 				}
 				});
 		//Currently off, turning On
 			$('fieldset.abstract #abstract_all').on('change', function () {
 				if (this.checked) {
-					$('.block > .abstract').show("slow");
-					$('.block > .abstract input:first').prop('checked' , true);
-					$(this).nextAll('input').removeAttr('disabled');
-					$('fieldset.abstract label:first').hide("slow");
-					$('.block > .businessapproaches').css('width', '74%');
-					$('fieldset.abstract > div > input:checked').each(function(){
-						// $(this).prop('label').hide();
-						$('label[for="'+ $(this).attr('id') +'"]').show();
-					});
-				} else {				
+					//If all elements were hidden to hide Abstract section completely
+					if(!$('.block > .abstract').is(':visible')) {
+						$('fieldset.abstract #abstract_all').prop('checked' , false);
+						$('.superseven ').children().show();
+						var width = ((1/7)*100);
+						$('.superseven ').find('div').css("width", width + '%')
+						$('fieldset.abstract > div > label').each(function() {
+							$(this).removeClass('hidden');
+						})
+					}
+					//Left Side
+						$('.block > .abstract').show("slow");
+						$('.block > .abstract input:first').prop('checked' , true);
+					//Right Side
+						$(this).nextAll('input').removeAttr('disabled');
+						$('fieldset.abstract label:first').toggleClass('hidden');
+						$('fieldset.abstract > div > input:checked').each(function(){
+							$('label[for="'+ $(this).attr('id') +'"]').show("slow");
+						});
+				} else {                
 				}
 			});
-	//Define widths of sections
-		// (function defineWidth() {  		
-		// 	$('.block > .abstract > .superseven > section > .oneseven').each(function () {
-		// 			$(this).css("width", (($('.block > .abstract > .superseven > section > :hidden').length)/7) + '%');	
-		// 	});
-		// }();
 // Business Approaches
 	//hide initially
-			$('fieldset.businessapproaches label').hide();
-			$('fieldset.businessapproaches label').each(function () {
-				$(this).attr('disabled', 'disabled');				
-			})
+		$('fieldset.businessapproaches label:not(:first)').hide();
+		$('fieldset.businessapproaches label').each(function () {
+			$(this).attr('disabled', 'disabled');				
+		});
 	//individual BA elements Toggle Buttons
 		//Currently on, turning Off
 			$('.block > .businessapproaches > section > input').on('change', function () {
 				if (this.checked) {
 				} else {
 					var index = $(this).closest('section').prevAll('section').length;
-					$('.block > .businessapproaches > section').eq(index).hide("slow");
-					$('fieldset.businessapproaches > div > label').eq(index).show("slow");
-					$('fieldset.businessapproaches > div > input').eq(index).prop('checked' , true);
+					//GC Side
+						$('.block > .businessapproaches > section').eq(index).hide("slow");
+					//Right Side
+						$('fieldset.businessapproaches > div > label').eq(index).show("slow");
+						$('fieldset.businessapproaches > div > label').eq(index).toggleClass('hidden');
+						$('fieldset.businessapproaches > div > input').eq(index).prop('checked' , true);
 				}
 			});
 		//Currently off, turning On
@@ -1068,9 +1111,12 @@
 				if (this.checked) {
 				} else {
 					var index = $(this).prevAll().length-2;
-					$('fieldset.businessapproaches > div > label').eq(index).hide("slow");
-					$('.block > .businessapproaches > section').eq(index).show("slow");
-					$('.block > .businessapproaches > section > input').eq(index).prop('checked' , true);
+					//GC Side
+						$('.block > .businessapproaches > section').eq(index).show("slow");
+						$('.block > .businessapproaches > section > input').eq(index).prop('checked' , true);
+					//Right Side
+						$('fieldset.businessapproaches > div > label').eq(index).hide("slow");
+						$('fieldset.businessapproaches > div > label').eq(index).toggleClass('hidden');
 				}
 			});
 	//Toggle BA completely
@@ -1078,27 +1124,29 @@
 			$('.block > .businessapproaches input:first').on('change', function () {
 				if (this.checked) {
 				} else {
-					$('.block > .businessapproaches').hide("slow");
-					$(this).nextAll('input').attr('disabled', 'disabled');
-					$('fieldset.businessapproaches label:first').show("slow");
-					$('fieldset.businessapproaches #ba_all').prop('checked' , false);
-					$('fieldset.businessapproaches > div > input:checked').each(function(){
-						// $(this).prop('label').hide();
-						$('label[for="'+ $(this).attr('id') +'"]').hide();
-					});
+					//GC Side
+						$('.block > .businessapproaches').hide("slow");
+						$(this).nextAll('input').attr('disabled', 'disabled');
+					//Right Side
+						$('fieldset.businessapproaches label:first').toggleClass('hidden');
+						$('fieldset.businessapproaches #ba_all').prop('checked' , false);
+						$('fieldset.businessapproaches > div > input:checked').each(function(){
+							$('label[for="'+ $(this).attr('id') +'"]').hide("slow");
+						});
 				}
 			});
 		//Currently off, turning On
 			$('fieldset.businessapproaches #ba_all').on('change', function () {
 				if (this.checked) {
-					$('.block > .businessapproaches').show("slow");
-					$('.block > .businessapproaches input:first').prop('checked' , true);
-					$(this).nextAll('input').removeAttr('disabled');
-					$('fieldset.businessapproaches label:first').hide("slow");
-					$('fieldset.businessapproaches > div > input:checked').each(function(){
-						// $(this).prop('label').hide();
-						$('label[for="'+ $(this).attr('id') +'"]').show();
-					});
+					//GC Side
+						$('.block > .businessapproaches').show("slow");
+						$('.block > .businessapproaches input:first').prop('checked' , true);
+					//Right Side
+						$(this).nextAll('input').removeAttr('disabled');
+						$('fieldset.businessapproaches label:first').toggleClass('hidden');
+						$('fieldset.businessapproaches > div > input:checked').each(function(){
+							$('label[for="'+ $(this).attr('id') +'"]').show("slow");
+						});
 				} else {				
 				}
 			});
@@ -1181,27 +1229,32 @@
 		$('workexperience.company.position')
 	//Toggle WE completely
 		//hide initially
-			$('fieldset.workexperience label:nth-child(2)').hide();
-		//Change header to white, so when it shows, it looks like it's hidden
-			$("label[for='workexperience_all']").css('color', 'white');
+			// $('fieldset.workexperience label:nth-child(2)').hide();
 		//Currently on, turning Off
 			$('.block > .workexperience input:first').on('change', function () {
 				if (this.checked) {
 				} else {
-					$('.block > .workexperience').hide("slow");
-					$(this).nextAll('input').attr('disabled', 'disabled');
-					$('fieldset.workexperience label:first').show("slow");
-					$('fieldset.workexperience #workexperience_all').prop('checked' , false);
-					
+					//GC SIDE
+						$('.block > .workexperience').hide("slow");
+						$(this).nextAll('input').attr('disabled', 'disabled');
+					//Right SIDE
+						$('fieldset.workexperience #workexperience_all').prop('checked' , false);
+						$('fieldset.workexperience > label').hide("slow");
+						$('label[for="'+ $('fieldset.workexperience #workexperience_all').attr('id') +'"]').toggleClass('hidden');
+						$('.workexperience .workdates').hide("slow");
 				}
 				});
 		//Currently off, turning On
 			$('fieldset.workexperience #workexperience_all').on('change', function () {
 				if (this.checked) {
-					$('.block > .workexperience').show("slow");
-					$('.block > .workexperience input:first').prop('checked' , true);
-					$(this).nextAll('input').removeAttr('disabled');
-					$('fieldset.workexperience label:first').hide("slow");
+					//GC Side
+						$('.block > .workexperience').show("slow");
+						$('.block > .workexperience input:first').prop('checked' , true);
+					//Right Side
+						$(this).nextAll('input').removeAttr('disabled');
+						$('fieldset.workexperience > label').show("slow");
+						$('label[for="'+ $('fieldset.workexperience #workexperience_all').attr('id') +'"]').toggleClass('hidden');
+						$('.workexperience .workdates').show("slow");
 				} else {				
 				}
 			});
@@ -1234,7 +1287,7 @@
 			$('section.company').each(processCompanyTime);
 		});
 	// Job Type Button
-		$('fieldset.workexperience input').on('change', function() {
+		$('fieldset.workexperience .jobtype').on('change', function() {
 		    var notSelectedList = $('fieldset.workexperience .jobtype:not(:checked)').map(function() {
 		        return '.' + $(this).attr('name');
 		    }).get().join(',');
@@ -1248,26 +1301,34 @@
 		});
 //Academic
 	//hide initially
-			$('fieldset.academic label').hide();
+		// $('fieldset.academic label').hide();
+		$('fieldset.academic label:not(:first)').hide();
+		// $('fieldset.academic').hide();
 	//individual BA elements Toggle Buttons
 		//Currently on, turning Off
 			$('.block > .academic > section > input').on('change', function () {
 				if (this.checked) {
 				} else {
 					var index = $(this).closest('section').prevAll('section').length;
-					$('.block > .academic > section').eq(index).hide("slow");
-					$('fieldset.academic > label').eq(index+1).show("slow");
-					$('fieldset.academic > input').eq(index+1).prop('checked' , true);
+					//GC side
+						$('.block > .academic > section').eq(index).hide("slow");
+					//Right side
+						$('fieldset.academic > div > label').eq(index).show("slow");
+						$('fieldset.academic > div > label').eq(index).toggleClass('hidden');
+						$('fieldset.academic > input').eq(index).prop('checked' , true);
 				}
 			});
 		//Currently off, turning On
-			$('fieldset.academic > input').on('change', function () {
+			$('fieldset.academic > div').on('change', function () {
 				if (this.checked) {
 				} else {
-					var index = $(this).prevAll('input').length;
-					$('.block > .academic > section').eq(index-1).show("slow");
-					$('.block > .academic > section > input').eq(index-1).prop('checked' , true);
-					$('fieldset.academic > label').eq(index).hide("slow");
+					var index = $(this).prevAll().length;
+					//GC side
+						$('.block > .academic > section').eq(index-2).show("slow");
+						$('.block > .academic > section > input').eq(index-2).prop('checked' , true);
+					//Right side
+						$('fieldset.academic > div > label').eq(index-2).hide("slow");
+						$('fieldset.academic > div > label').eq(index-2).toggleClass('hidden');
 				}
 			});
 	//Toggle A completely
@@ -1275,19 +1336,23 @@
 			$('.block > .academic input:first').on('change', function () {
 				if (this.checked) {
 				} else {
-					$('.block > .academic').hide("slow");
-					$(this).nextAll('input').attr('disabled', 'disabled');
-					$('fieldset.academic label:first').show("slow");
-					$('fieldset.academic #academic_all').prop('checked' , false);
+					//GC side
+						$('.block > .academic').hide("slow");
+						$(this).nextAll('input').attr('disabled', 'disabled');
+					//Right side
+						$('fieldset.academic label:first').toggleClass('hidden');
+						$('fieldset.academic #academic_all').prop('checked' , false);
 				}
 				});
 		//Currently off, turning On
 			$('fieldset.academic #academic_all').on('change', function () {
 				if (this.checked) {
-					$('.block > .academic').show("slow");
-					$('.block > .academic input:first').prop('checked' , true);
-					$(this).nextAll('input').removeAttr('disabled');
-					$('fieldset.academic label:first').hide("slow");
+					//GC side
+						$('.block > .academic').show("slow");
+						$('.block > .academic input:first').prop('checked' , true);
+					//Right side
+						$('fieldset.academic label:first').toggleClass('hidden');
+						$(this).nextAll('input').removeAttr('disabled');
 				} else {				
 				}
 			});
@@ -1376,10 +1441,10 @@
 				}
 			//Row Button Generator
 				$.each(keys, function(i) {
-				$('<input type="checkbox" checked="checked" id="skillstable_'+this+'" name="skillstable_'+this+'" class="row"/><label for="skillstable_'+this+'">'+this+' '+'</label>').appendTo($("fieldset.skillstable"));
+				$('<input type="checkbox" checked="checked" id="skillstable_'+this+'" name="skillstable_'+this+'" class="row"/><label for="skillstable_'+this+'" class="row">'+this+'</label>').appendTo($("fieldset.skillstable"));
 				});
 				// separate rows from columns
-					$('<br>').appendTo($('label[for="'+ $("fieldset.skillstable .row:last").attr('id') +'"]'));
+					$('<br>').appendTo($("fieldset.skillstable .row:last"));
 		//column button generator
 			var cols = [];
 			$('section.skillstable table th').each(function(){
@@ -1387,7 +1452,7 @@
 			});
 			cols.splice(0,2);
 			$.each(cols, function(i) {
-					$('<input type="checkbox" checked="checked" id="ttcol_'+this+'" name="ttcol_'+this+'" class="column"/><label for="ttcol_'+this+'">'+cols[i]+'</label>' + '<br>').appendTo($('fieldset.skillstable'));
+					$('<input type="checkbox" checked="checked" id="ttcol_'+this+'" name="ttcol_'+this+'" class="column"/><label for="ttcol_'+this+'" class="column">'+cols[i]+'</label>' + '<br>').appendTo($('fieldset.skillstable'));
 			});
 		//Row Button Hider
 			$('fieldset.skillstable input.row[type=checkbox]').on('change', function() {
@@ -1504,11 +1569,70 @@
 		$(".skillstable table").addClass("tablesorter");
 
 
-		$(function(){
-			$('.ds #valueAA, .ds #valueBB').selectToUISlider({
-				labels: 0,
+		// $(function(){
+		// 	$('.ds #valueAA, .ds #valueBB').selectToUISlider({
+		// 		labels: 0,
+		// 	});
+		// });
+//Community
+	//hide initially
+		// $('fieldset.community label').hide();
+		$('fieldset.community label:not(:first)').hide();
+		// $('fieldset.community').hide();
+	//individual Community elements Toggle Buttons
+		//Currently on, turning Off
+			$('.block > .community > section > input').on('change', function () {
+				if (this.checked) {
+				} else {
+					var index = $(this).closest('section').prevAll('section').length;
+					//GC side
+						$('.block > .community > section').eq(index).hide("slow");
+					//Right side
+						$('fieldset.community > div > label').eq(index).show("slow");
+						$('fieldset.community > div > label').eq(index).toggleClass('hidden');
+						$('fieldset.community > input').eq(index).prop('checked' , true);
+				}
 			});
-		});
+		//Currently off, turning On
+			$('fieldset.community > div').on('change', function () {
+				if (this.checked) {
+				} else {
+					var index = $(this).prevAll().length;
+					//GC side
+						$('.block > .community > section').eq(index-2).show("slow");
+						$('.block > .community > section > input').eq(index-2).prop('checked' , true);
+					//Right side
+						$('fieldset.community > div > label').eq(index-2).hide("slow");
+						$('fieldset.community > div > label').eq(index-2).toggleClass('hidden');
+				}
+			});
+	//Toggle Community completely
+		//Currently on, turning Off
+			$('.block > .community input:first').on('change', function () {
+				if (this.checked) {
+				} else {
+					//GC side
+						$('.block > .community').hide("slow");
+						$(this).nextAll('input').attr('disabled', 'disabled');
+					//Right side
+						$('fieldset.community label:first').toggleClass('hidden');
+						$('fieldset.community #community_all').prop('checked' , false);
+				}
+				});
+		//Currently off, turning On
+			$('fieldset.academic #community_all').on('change', function () {
+				if (this.checked) {
+					//GC side
+						$('.block > .community').show("slow");
+						$('.block > .community input:first').prop('checked' , true);
+					//Right side
+						$('fieldset.community label:first').toggleClass('hidden');
+						$(this).nextAll('input').removeAttr('disabled');
+				} else {				
+				}
+			});
+
+
 
 $(document).ready(function () {  
 
