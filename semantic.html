@@ -925,7 +925,7 @@
 	//NUI (GC SIDE)
 		//main headers (all but the skillstable and workexperience)
 		$('.block > section > h1:not(:has("span.skillstablevisibility"))').each(function () {
-			var value = this.innerHTML;
+			var value = this.innerHTML.replace(/ /g,'');
 			$(this).replaceWith($('<input type="checkbox" checked="checked" id="header_' + value.toLowerCase() + '" name="header_' + value.toLowerCase() + '"/><label for="header_' + value.toLowerCase() + '" class="gcheader">' + value + '</label>' + '<br>	'));
 		});
 		$('section.abstract section h1').each(function () {
@@ -1173,8 +1173,8 @@
 					//If all elements were hidden to hide Abstract section completely
 						if(!$('.block > .businessapproaches').is(':visible') && ($('fieldset.businessapproaches > div > input:checkbox:checked').length==7)) {
 							console.log('all elements were hidden previously');
-							$('fieldset.businessapproaches #businessapproaches_all').prop('checked' , false);
-							$('.businessapproaches ').children().show();
+							$('fieldset.businessapproaches #ba_all').prop('checked' , false);
+							$('.businessapproaches').children(':not(#ba_all, #header_businessapproach)').show();
 							$('fieldset.businessapproaches > div > label').each(function() {
 								$(this).removeClass('hidden');
 							});
