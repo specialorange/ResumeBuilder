@@ -880,24 +880,27 @@
 
 	//SideBar
 		//Abstract sidebar elements
-			$('section.abstract section h1').each(function () {
-				var value = this.innerHTML;
-				// $('<input type="checkbox" id="abstract_' + value.toLowerCase() + '" name="abstract_' + value.toLowerCase() + '"/><label for="abstract_' + value.toLowerCase() + '">' + value + '</label>').appendTo($('fieldset.abstract'));
-				$('<div class="' + value.toLowerCase() + '"><input type="checkbox" id="abstract_' + value.toLowerCase() + '" name="abstract_' + value.toLowerCase() + '"/><label for="abstract_' + value.toLowerCase() + '" class="formElems">' + value + '</label>' + '</div>').appendTo($('fieldset.abstract'));			});
+			function addSidebarElems(val, i, elem) {
+					// console.log(val);
+				var value = val.toLowerCase().replace(/ /g,'');
+				var id = i + "_";
+				var newElem = $('<div class="' + value + '"><input type="checkbox" id="' + id + value + '" name="' + id + value + '"/><label for="' + id + value + '" class="formElems">' + val + '</label>' + '</div>');
+				newElem.appendTo(elem);
+			}
+			$('section.abstract section h1').each(function(){
+				return addSidebarElems($(this).html(), "abstract", $('fieldset.abstract'));
+			});
 		// Business Approach sideBar elements
 			$('section.businessapproaches section h1').each(function () {
-				var value = this.innerHTML;
-				// $('<input type="checkbox" id="ba_' + value.toLowerCase() + '" name="ba_' + value.toLowerCase() + '"/><label for="ba_' + value.toLowerCase() + '">' + value + '</label>').appendTo($('fieldset.businessapproaches'));
-				$('<div class="' + value.toLowerCase() + '"><input type="checkbox" id="ba_' + value.toLowerCase() + '" name="ba_' + value.toLowerCase() + '"/><label for="ba_' + value.toLowerCase() + '" class="formElems">' + value + '</label>' + '</div>').appendTo($('fieldset.businessapproaches'));			});
+				return addSidebarElems($(this).html(), "ba", $('fieldset.businessapproaches'));
+			});
 		//Academic section sidebar elements
 			$('section.academic section.school > h1').each(function () {
-				var value = this.innerHTML;
-				$('<div class="' + value.toLowerCase() + '"><input type="checkbox" id="a_' + value.toLowerCase().replace(/ /g,'') + '" name="a_' + value.toLowerCase() + '"/><label for="a_' + value.toLowerCase().replace(/ /g,'') + '" class="formElems">' + value + '</label>' + '</div>').appendTo($('fieldset.academic'));
+				return addSidebarElems($(this).html(), "a", $('fieldset.academic'));
 			});
 		//Community section sidebar elements
 			$('section.community section.org > h1').each(function () {
-				var value = this.innerHTML;
-				$('<div class="' + value.toLowerCase() + '"><input type="checkbox" id="c_' + value.toLowerCase().replace(/ /g,'') + '" name="c_' + value.toLowerCase() + '"/><label for="c_' + value.toLowerCase().replace(/ /g,'') + '" class="formElems">' + value + '</label>' + '</div>').appendTo($('fieldset.community'));
+				return addSidebarElems($(this).html(), "c", $('fieldset.community'));
 			});
 		//Find all <li> class types, and make a button
 			(function li() {
