@@ -182,6 +182,9 @@ select {margin-right: 1em; float: left;}
 #enddate {
     width: 50%;
 }
+#header_community {
+	clear: both;
+}
 .jobtype {
 	display: block;
 	padding-left: 10px;

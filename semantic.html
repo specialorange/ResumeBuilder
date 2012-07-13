@@ -1673,7 +1673,7 @@
 	//hide initially
 		$('fieldset.community label:not(:first)').hide();
 		$('fieldset.community label').each(function () {
-			$(this).attr('disabled', 'disabled');				
+			$(this).attr('disabled', 'disabled');		2		
 		});
 	//individual Community elements Toggle Buttons
 		//Currently on, turning Off
@@ -1708,7 +1708,7 @@
 			$('fieldset.community > div').on('change', function () {
 				if (this.checked) {
 				} else {
-					var index = $(this).prevAll().length-2;
+					var index = $(this).prevAll().length-3;
 					//GC Side
 						$('.block > .community > section').eq(index).show("slow");
 						$('.block > .community > section > input').eq(index).prop('checked' , true);
