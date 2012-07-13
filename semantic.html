@@ -592,6 +592,15 @@
 									<td>1</td>
 								</tr>
 								<tr>
+									<td>Technology</td>
+									<td><a href="http://jquery.com/" target="_blank">JQuery</a></td>
+									<td>1.6.4, 1.7.1, 1.7.2</td>
+									<td>June, 2012</td>
+									<td></td>
+									<td></td>
+									<td>2</td>
+								</tr>
+								<tr>
 									<td>Compliance</td>
 									<td><a href="http://en.wikipedia.org/wiki/Critical_infrastructure_protection" target="_blank">CIP</a></td>
 									<td></td>
@@ -882,12 +891,12 @@
 		//Academic section sidebar elements
 			$('section.academic section.school > h1').each(function () {
 				var value = this.innerHTML;
-				$('<div class="' + value.toLowerCase() + '"><input type="checkbox" id="a_' + value.toLowerCase() + '" name="a_' + value.toLowerCase() + '"/><label for="a_' + value.toLowerCase() + '">' + value + '</label>' + '</div>').appendTo($('fieldset.academic'));
+				$('<div class="' + value.toLowerCase() + '"><input type="checkbox" id="a_' + value.toLowerCase().replace(/ /g,'') + '" name="a_' + value.toLowerCase() + '"/><label for="a_' + value.toLowerCase().replace(/ /g,'') + '" class="formElems">' + value + '</label>' + '</div>').appendTo($('fieldset.academic'));
 			});
 		//Community section sidebar elements
 			$('section.community section.org > h1').each(function () {
 				var value = this.innerHTML;
-				$('<div class="' + value.toLowerCase() + '"><input type="checkbox" id="c_' + value.toLowerCase() + '" name="c_' + value.toLowerCase() + '"/><label for="c	_' + value.toLowerCase() + '">' + value + '</label>' + '</div>').appendTo($('fieldset.community'));
+				$('<div class="' + value.toLowerCase() + '"><input type="checkbox" id="c_' + value.toLowerCase().replace(/ /g,'') + '" name="c_' + value.toLowerCase() + '"/><label for="c_' + value.toLowerCase().replace(/ /g,'') + '" class="formElems">' + value + '</label>' + '</div>').appendTo($('fieldset.community'));
 			});
 		//Find all <li> class types, and make a button
 			(function li() {
@@ -938,7 +947,7 @@
 		});
 		$('section.academic section.school > h1').each(function () {
 			var value = this.innerHTML;
-			$(this).replaceWith($('<input type="checkbox" checked="checked" id="na_' + value.toLowerCase() + '" name="na_' + value.toLowerCase() + '"/><label for="na_' + value.toLowerCase() + '" class="gcsubheader">' + value + '</label>' + '<br>	'));
+			$(this).replaceWith($('<input type="checkbox" checked="checked" id="na_' + value.toLowerCase().replace(/ /g,'') + '" name="na_' + value.toLowerCase() + '"/><label for="na_' + value.toLowerCase().replace(/ /g,'') + '" class="gcsubheader">' + value + '</label>' + '<br>	'));
 		});
 		// $('section.skillstable > h1').each(function () {
 		// 	var value = $(this).text();
@@ -1125,7 +1134,7 @@
 							$('fieldset.businessapproaches > div > input').eq(index).prop('checked' , true);
 						//If ALL Elements are turned off
 							if (($('fieldset.businessapproaches > div > input:checkbox:checked').length) == 7){
-								$('.block > .businessapproaches > section').eq(index).hide();  //removed "slow" because of rendering
+								$('.block > .businessapproaches > section').eq(index).hide("slow");
 								$('.block > .businessapproaches').hide("slow");
 								$('.block > .businessapproaches > section input').each(function(){
 									$(this).prop('checked' , true);
@@ -1352,7 +1361,7 @@
 		$('fieldset.academic label').each(function () {
 			$(this).attr('disabled', 'disabled');				
 		});
-	//individual BA elements Toggle Buttons
+	//individual Academic elements Toggle Buttons
 		//Currently on, turning Off
 			$('.block > .academic > section > input').on('change', function () {
 				if (this.checked) {
@@ -1369,7 +1378,7 @@
 							$('fieldset.academic > div > input').eq(index).prop('checked' , true);
 						//If ALL Elements are turned off
 							if (($('fieldset.academic > div > input:checkbox:checked').length) == ($('fieldset.academic > div')).length) {
-								$('.block > .academic > section').eq(index).hide();  //removed "slow" because of rendering
+								$('.block > .academic > section').eq(index).hide("slow");
 								$('.block > .academic').hide("slow");
 								$('.block > .academic > section input').each(function(){
 									$(this).prop('checked' , true);
@@ -1394,7 +1403,7 @@
 						$('fieldset.academic > div > label').eq(index).toggleClass('hidden');
 				}
 			});
-	//Toggle BA completely
+	//Toggle Academic completely
 		//Currently on, turning Off
 			$('.block > .academic input:first').on('change', function () {
 				if (this.checked) {
@@ -1441,63 +1450,6 @@
 				} else {				
 				}
 			});
-
-	// //hide initially
-	// 	// $('fieldset.academic label').hide();
-	// 	$('fieldset.academic label:not(:first)').hide();
-	// 	// $('fieldset.academic').hide();
-	// //individual BA elements Toggle Buttons
-	// 	//Currently on, turning Off
-	// 		$('.block > .academic > section > input').on('change', function () {
-	// 			if (this.checked) {
-	// 			} else {
-	// 				var index = $(this).closest('section').prevAll('section').length;
-	// 				//GC side
-	// 					$('.block > .academic > section').eq(index).hide("slow");
-	// 				//Right side
-	// 					$('fieldset.academic > div > label').eq(index).show("slow");
-	// 					$('fieldset.academic > div > label').eq(index).toggleClass('hidden');
-	// 					$('fieldset.academic > input').eq(index).prop('checked' , true);
-	// 			}
-	// 		});
-	// 	//Currently off, turning On
-	// 		$('fieldset.academic > div').on('change', function () {
-	// 			if (this.checked) {
-	// 			} else {
-	// 				var index = $(this).prevAll().length;
-	// 				//GC side
-	// 					$('.block > .academic > section').eq(index-2).show("slow");
-	// 					$('.block > .academic > section > input').eq(index-2).prop('checked' , true);
-	// 				//Right side
-	// 					$('fieldset.academic > div > label').eq(index-2).hide("slow");
-	// 					$('fieldset.academic > div > label').eq(index-2).toggleClass('hidden');
-	// 			}
-	// 		});
-	// //Toggle A completely
-	// 	//Currently on, turning Off
-	// 		$('.block > .academic input:first').on('change', function () {
-	// 			if (this.checked) {
-	// 			} else {
-	// 				//GC side
-	// 					$('.block > .academic').hide("slow");
-	// 					$(this).nextAll('input').attr('disabled', 'disabled');
-	// 				//Right side
-	// 					$('fieldset.academic label:first').toggleClass('hidden');
-	// 					$('fieldset.academic #academic_all').prop('checked' , false);
-	// 			}
-	// 			});
-	// 	//Currently off, turning On
-	// 		$('fieldset.academic #academic_all').on('change', function () {
-	// 			if (this.checked) {
-	// 				//GC side
-	// 					$('.block > .academic').show("slow");
-	// 					$('.block > .academic input:first').prop('checked' , true);
-	// 				//Right side
-	// 					$('fieldset.academic label:first').toggleClass('hidden');
-	// 					$(this).nextAll('input').removeAttr('disabled');
-	// 			} else {				
-	// 			}
-	// 		});
 
 // Skills Table
 	(function TCC() {  
@@ -1604,7 +1556,7 @@
 				var index = $(this).prevAll('input').length - 1;
 				$('section.skillstable table td:first-child').each(function() {
 					if ($formelem.attr('id').replace('skillstable_','') == $(this).html()) {
-						$(this).parent().toggle();
+						$(this).parent().toggle("slow");
 					}
 				});
 			//handles the |s between T|C|C of the gc SkillsTable name 
@@ -1618,7 +1570,7 @@
 		//Column Button Hider
 			$('fieldset.skillstable input.column[type=checkbox]').on('change', function() {
 				var index = $(this).prevAll('input.column').length+2;
-				$('colgroup').parent('table').find("td,th").filter(":nth-child(" + (index+1) + ")").toggle();
+				$('colgroup').parent('table').find("td,th").filter(":nth-child(" + (index+1) + ")").toggle("slow");
 				//change clicked buttons to white
 					$('label[for="'+ $(this).attr('id') +'"]').toggleClass("hidden");
 			});
@@ -1716,36 +1668,53 @@
 		// 		labels: 0,
 		// 	});
 		// });
+
 //Community
 	//hide initially
-		// $('fieldset.community label').hide();
 		$('fieldset.community label:not(:first)').hide();
-		// $('fieldset.community').hide();
+		$('fieldset.community label').each(function () {
+			$(this).attr('disabled', 'disabled');				
+		});
 	//individual Community elements Toggle Buttons
 		//Currently on, turning Off
 			$('.block > .community > section > input').on('change', function () {
 				if (this.checked) {
 				} else {
-					var index = $(this).closest('section').prevAll('section').length;
-					//GC side
-						$('.block > .community > section').eq(index).hide("slow");
-					//Right side
-						$('fieldset.community > div > label').eq(index).show("slow");
-						$('fieldset.community > div > label').eq(index).toggleClass('hidden');
-						$('fieldset.community > input').eq(index).prop('checked' , true);
+					if (this.checked) {
+					} else {
+						var index = $(this).closest('section').prevAll('section').length;
+						//GC Side
+							$('.block > .community > section').eq(index).hide("slow");
+							$('.block > .community > section').eq(index).prop('checked' , false);
+						//Right Side
+							$('fieldset.community > div > label').eq(index).show("slow");
+							$('fieldset.community > div > label').eq(index).toggleClass('hidden');
+							$('fieldset.community > div > input').eq(index).prop('checked' , true);
+						//If ALL Elements are turned off
+							if (($('fieldset.community > div > input:checkbox:checked').length) == ($('fieldset.community > div')).length) {
+								$('.block > .community > section').eq(index).hide("slow");
+								$('.block > .community').hide("slow");
+								$('.block > .community > section input').each(function(){
+									$(this).prop('checked' , true);
+								});
+								$('fieldset.community input:first').removeAttr('disabled');
+								$('fieldset.community > div > label').hide("slow");
+								$('fieldset.community label:first').toggleClass('hidden');
+							}
+					}
 				}
 			});
 		//Currently off, turning On
 			$('fieldset.community > div').on('change', function () {
 				if (this.checked) {
 				} else {
-					var index = $(this).prevAll().length;
-					//GC side
-						$('.block > .community > section').eq(index-2).show("slow");
-						$('.block > .community > section > input').eq(index-2).prop('checked' , true);
-					//Right side
-						$('fieldset.community > div > label').eq(index-2).hide("slow");
-						$('fieldset.community > div > label').eq(index-2).toggleClass('hidden');
+					var index = $(this).prevAll().length-2;
+					//GC Side
+						$('.block > .community > section').eq(index).show("slow");
+						$('.block > .community > section > input').eq(index).prop('checked' , true);
+					//Right Side
+						$('fieldset.community > div > label').eq(index).hide("slow");
+						$('fieldset.community > div > label').eq(index).toggleClass('hidden');
 				}
 			});
 	//Toggle Community completely
@@ -1753,26 +1722,49 @@
 			$('.block > .community input:first').on('change', function () {
 				if (this.checked) {
 				} else {
-					//GC side
+					//GC Side
 						$('.block > .community').hide("slow");
 						$(this).nextAll('input').attr('disabled', 'disabled');
-					//Right side
+					//Right Side
 						$('fieldset.community label:first').toggleClass('hidden');
+						$('fieldset.community input:first').removeAttr('disabled');
 						$('fieldset.community #community_all').prop('checked' , false);
+						$('fieldset.community > div > input:checked').each(function(){
+							$('label[for="'+ $(this).attr('id') +'"]').hide("slow");
+						});
 				}
-				});
+			});
 		//Currently off, turning On
-			$('fieldset.academic #community_all').on('change', function () {
+			$('fieldset.community #community_all').on('change', function () {
 				if (this.checked) {
-					//GC side
+					//If all elements were hidden to hide Abstract section completely
+						if(!$('.block > .community').is(':visible') && ($('fieldset.community > div > input:checkbox:checked').length == $('fieldset.community > div').length)) {
+							console.log('all elements were hidden previously');
+							$('fieldset.community #community_all').prop('checked' , false);
+							$('.community').children(':not(#community_all, #header_community, #abstract_community, #a_centralpiedmontcommunitycollege, #na_centralpiedmontcommunitycollege)').show();
+							$('fieldset.community > div > label').each(function() {
+								$(this).removeClass('hidden');
+							});
+							$('fieldset.community > div > input').each(function(){
+								$(this).prop('checked' , false);
+							});
+						};
+					//GC Side
 						$('.block > .community').show("slow");
 						$('.block > .community input:first').prop('checked' , true);
-					//Right side
-						$('fieldset.community label:first').toggleClass('hidden');
+					//Right Side
 						$(this).nextAll('input').removeAttr('disabled');
+						$('fieldset.community label:first').toggleClass('hidden');
+						$('fieldset.community > div > input:checked').each(function(){
+							$('label[for="'+ $(this).attr('id') +'"]').show("slow");
+						});
+						//Prevent right side from being clicked while visisble
+							$('fieldset.community input:first').attr('disabled' , 'disabled');
+
 				} else {				
 				}
 			});
+
 
 
 

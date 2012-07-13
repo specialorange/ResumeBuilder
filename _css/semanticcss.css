@@ -186,6 +186,10 @@ select {margin-right: 1em; float: left;}
 	display: block;
 	padding-left: 10px;
 }
+.school {
+	display: block;
+	padding-left: 10px;
+}
 .formElems {
 	padding-left: 10px;	
 }
