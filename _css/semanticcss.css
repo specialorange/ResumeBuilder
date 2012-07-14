@@ -185,6 +185,9 @@ select {margin-right: 1em; float: left;}
 #header_community {
 	clear: both;
 }
+#header-container {
+	padding-left: 10px;
+}
 .jobtype {
 	display: block;
 	padding-left: 10px;
@@ -258,8 +261,9 @@ select {margin-right: 1em; float: left;}
 .oneseven {
 	/*display: inline-block;*/
 	/*float: left;*/
-	width: 14.285714%;
+/*	width: 14.285714%;*/
 /*	clear: right;*/
+	margin-bottom: 10px;
 }
 .oneseven ul {
 	margin-left: 10px;
@@ -267,6 +271,9 @@ select {margin-right: 1em; float: left;}
 }
 .gc .abstract {
 	float:right;
+	text-align: right;
+	margin-left: 10px;
+	margin-bottom: 10px;
 }
 .gc .businessapproaches {
 	/*display: inline-block;*/
