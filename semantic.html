@@ -707,7 +707,7 @@
 			function addSidebarElems(val, i, elem) {
 				var value = val.toLowerCase().replace(/ /g,'');
 				var id = i + "_";
-				var newElem = $('<div class="' + value + '"><input type="checkbox" id="' + id + value + '" name="' + id + value + '"/><label for="' + id + value + '" class="formElems">' + val + '</label>' + '</div>');
+				var newElem = $('<div class="' + value + '"><input type="checkbox" id="' + id + value + '" name="' + id + value + '"/><label for="' + id + value + '" class="displayHidden formElems">' + val + '</label>' + '</div>');
 				newElem.appendTo(elem);
 			}
 			$('section.abstract section h1').each(function(){
@@ -836,15 +836,10 @@
 		}
 	});
 // Abstract
-	//hide all but title initially
-		$('fieldset.abstract label:not(:first)').hide();
 	//individual Abstract elements Toggle Buttons
 		//Currently on, turning Off
 			$('.block > .abstract > .superseven > section > .oneseven > input').on('change', function () {
-				var hidden = 0;
-				var width = ((1/(7-hidden))*100);
-				if (this.checked) {
-				} else {
+				if (!this.checked) {
 					var index = $(this).closest('section').prevAll('section').length;
 					//GC Side
 						var hidden = ($('.block > .abstract > .superseven > section > :hidden').length + .98);

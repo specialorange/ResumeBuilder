@@ -448,3 +448,7 @@ aside .hover {
 	font-size: 50px;
 }
 
+.displayHidden {
+	display: none;
+}
+
