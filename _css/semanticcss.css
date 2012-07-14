@@ -256,8 +256,8 @@ select {margin-right: 1em; float: left;}
 .superseven {
 }
 .oneseven {
-	display: inline-block;
-	float: left;
+	/*display: inline-block;*/
+	/*float: left;*/
 	width: 14.285714%;
 /*	clear: right;*/
 }
@@ -266,9 +266,10 @@ select {margin-right: 1em; float: left;}
 	text-indent: -10px;
 }
 .gc .abstract {
+	float:right;
 }
 .gc .businessapproaches {
-	display: inline-block;
+	/*display: inline-block;*/
 }
 .gc .workexperience ol {
 	margin:0;
@@ -281,14 +282,14 @@ select {margin-right: 1em; float: left;}
 	list-style-type: square;
 }
 .gc .workexperience {
-	display: inline-block;
+	/*display: inline-block;*/
 }
 .gc .academic {
-	display: inline-block;
+	/*display: inline-block;*/
 }
 .gc .skillstable {
-	display: inline-block;
-	width: 100%;
+	/*display: inline-block;*/
+	/*width: 100%;*/
 }
 #commentWrapper {
 	float: right;
