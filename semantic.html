@@ -1579,22 +1579,22 @@ $(document).ready(function () {
 
 		//Sidebar
 			//sliding Float
-				var top = $('#comment').offset().top - parseFloat($('#comment').css('marginTop').replace(/auto/, 0));
-				var hh = $('header').height();
-				var ah = $('aside').height();
-				var fh = $('footer').height();
-				$(window).on('scroll', function(event) {
-					// what the y position of the scroll is
-					var y = $(this).scrollTop();
-					// whether that's below the form
-					if (y >= top) {
-						// if so, ad the fixed class
-						$('#comment').addClass('fixed');
-					} else {
-						// otherwise remove it
-						$('#comment').removeClass('fixed');
-					}
-				});
+				// var top = $('#comment').offset().top - parseFloat($('#comment').css('marginTop').replace(/auto/, 0));
+				// var hh = $('header').height();
+				// var ah = $('aside').height();
+				// var fh = $('footer').height();
+				// $(window).on('scroll', function(event) {
+				// 	// what the y position of the scroll is
+				// 	var y = $(this).scrollTop();
+				// 	// whether that's below the form
+				// 	if (y >= top) {
+				// 		// if so, ad the fixed class
+				// 		$('#comment').addClass('fixed');
+				// 	} else {
+				// 		// otherwise remove it
+				// 		$('#comment').removeClass('fixed');
+				// 	}
+				// });
 				// $(window).on('scroll', function(event) {
 				// 	var sh = $(this).scrollTop();
 				// 	if (sh + ah <= window.innerHeight - (fh + hh)) {

@@ -98,7 +98,16 @@ td { vertical-align: top; color: black; }/* changed color to black*/
     ALL: Orange Theme
    =================== */
 
-#header-container{ margin-bottom: .5cm;}
+#header-container{ 
+	margin-bottom: .5cm;
+	position: fixed;
+	top: 0;
+	min-width: 100%;
+	min-height: 67px;
+}
+#main-container {
+	margin-top:	67px;
+}
 #footer-container{ border-top:    20px solid #e44d26; }
 #main aside      {
 	box-shadow: 2px 4px 20px #e44d26;
@@ -258,7 +267,7 @@ select {margin-right: 1em; float: left;}
 .oneseven {
 	/*display: inline-block;*/
 	/*float: left;*/
-	width: 14.285714%;
+	/*width: 14.285714%;*/
 /*	clear: right;*/
 }
 .oneseven ul {
@@ -267,6 +276,7 @@ select {margin-right: 1em; float: left;}
 }
 .gc .abstract {
 	float:right;
+	text-align: right;
 }
 .gc .businessapproaches {
 	/*display: inline-block;*/
@@ -293,8 +303,9 @@ select {margin-right: 1em; float: left;}
 }
 #commentWrapper {
 	float: right;
+	position: fixed;
 	width:23%;
-	top: 0;
+	top: 62px;
 	right: 0;
 }
 #comment {
