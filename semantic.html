@@ -19,6 +19,9 @@
 		<script type="text/javascript">
 		if (typeof jQuery == 'undefined') {
 		    document.write(unescape("%3Cscript src='_js/libs/jquery-1.7.2.min.js' type='text/javascript'%3E%3C/script%3E"));
+		    document.write(unescape("%3Cscript src='_js/libs/jquery.tablesorter.min.js' type='text/javascript'%3E%3C/script%3E"));
+		    document.write(unescape("%3Cscript src='_js/libs/jquery-ui-1.7.1.custom.min.js' type='text/javascript'%3E%3C/script%3E"));
+		    document.write(unescape("%3Cscript src='_js/libs/modernizr-2.5.3-respond-1.1.0.min.js' type='text/javascript'%3E%3C/script%3E"));
 		}
 		</script>
 <!--		<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js" ></script> -->
@@ -982,15 +985,6 @@
 // //sort skillstable name alphabetically
 	// $('section.skillstable .skillstablevisibility').html($('section.skillstable .skillstablevisibility').html().split(' / ').sort().join(' / '));
 
-//Stateful change of checkbox text
-	$(function() {
-	    $(".checkbox").each(function () {
-			$(this).on('change', function () {
-				console.log("Changed");
-				});
-		});
-	});
-
 // Persistence
 //¿¿??
 	var formvals = {};
@@ -1085,7 +1079,6 @@
 				if (this.checked) {
 					//If all elements were hidden to hide Abstract section completely
 						if(!$('.block > .abstract').is(':visible') && ($('fieldset.abstract > div > input:checkbox:checked').length == $('fieldset.abstract > div').length)) {
-							console.log('all elements were hidden previously');
 							$('fieldset.abstract #abstract_all').prop('checked' , false);
 							$('.superseven ').children().show();
 							var width = ((1/7)*100);
@@ -1180,8 +1173,7 @@
 			$('fieldset.businessapproaches #ba_all').on('change', function () {
 				if (this.checked) {
 					//If all elements were hidden to hide Abstract section completely
-						if(!$('.block > .businessapproaches').is(':visible') && ($('fieldset.businessapproaches > div > input:checkbox:checked').length == $('fieldset.businessapproaches > div').length)) {
-							console.log('all elements were hidden previously');
+						if(!$('.block > .businessapproaches').is(':visible') && ($('fieldset.businessapproaches > div > input:checkbox:checked').length == $('fieldset.businessapproaches > div').length)) {x
 							$('fieldset.businessapproaches #ba_all').prop('checked' , false);
 							$('.businessapproaches').children(':not(#ba_all, #header_businessapproach)').show();
 							$('fieldset.businessapproaches > div > label').each(function() {
@@ -1739,7 +1731,6 @@
 				if (this.checked) {
 					//If all elements were hidden to hide Abstract section completely
 						if(!$('.block > .community').is(':visible') && ($('fieldset.community > div > input:checkbox:checked').length == $('fieldset.community > div').length)) {
-							console.log('all elements were hidden previously');
 							$('fieldset.community #community_all').prop('checked' , false);
 							$('.community').children(':not(#community_all, #header_community, #abstract_community, #a_centralpiedmontcommunitycollege, #na_centralpiedmontcommunitycollege)').show();
 							$('fieldset.community > div > label').each(function() {
