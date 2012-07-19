@@ -740,14 +740,14 @@
 		function nHeader (ths, id, sideButton) {
 			var value = ths.html().toLowerCase().replace(/ /g,'');
 			var spaced = ths.html().toLowerCase();
-			var id = 'gc' + id;
-			ths.replaceWith($('<label id="' + value + '" class="btn head">' + ths.html() + '</label>'));
+			var id = 'gc' + value;
+			ths.replaceWith($('<label id="' + id + '" class="btn head ' + value + '">' + ths.html() + '</label>'));
 		}
 		function nElement (ths, id, sideButton) {
 			var value = ths.html().toLowerCase().replace(/ /g,'');
 			var spaced = ths.html().toLowerCase();
-			var id = 'gc' + id;
-			ths.replaceWith($('<label id="' + value + '" class="btn head">' + ths.html() + '</label>'));
+			var id = 'gc' + value;
+			ths.replaceWith($('<label id="' + id + '" class="btn element ' + value + '">' + ths.html() + '</label>'));
 		}
 		//main headers (all but the skillstable and workexperience)
 		$('.block > section > h1:not(:has("span.skillstablevisibility"))').each(function () {
