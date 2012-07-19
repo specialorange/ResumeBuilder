@@ -257,15 +257,13 @@ select {margin-right: 1em; float: left;}
 	font-size: 11px;
 	color: black;
 }
-.gcheader{
+.gc .head{
 	font-size: 35px;
 	color: #E44D26;
 }
-.gcsubheader{
+.gc .element{
 	font-size: 20px;
 	color: #E44D26;
-}
-.superseven {
 }
 .oneseven {
 	/*display: inline-block;*/
@@ -278,12 +276,14 @@ select {margin-right: 1em; float: left;}
 	margin-left: 10px;
 	text-indent: -10px;
 }
-.gc .abstract {
+
+.gc .fr {
 	float:right;
 	text-align: right;
 	margin-left: 10px;
 	margin-bottom: 10px;
 }
+
 .gc .businessapproaches {
 	/*display: inline-block;*/
 }
