@@ -751,7 +751,10 @@
 		}
 		//main headers (all but the skillstable and workexperience)
 		$('.block > section > h1:not(:has("span.skillstablevisibility"))').each(function () {
-			return nHeader($(this), "section ", "gc header");
+			$(this).parent().children(':not("h1")').each(function () {
+				console.log($(this));
+			});
+			// return nHeader($(this), "section ", "gc header");		
 		});
 		//Add FR to abstract
 		$('.gc > .abstract').addClass("fr");  //float right
