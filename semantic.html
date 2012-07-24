@@ -721,7 +721,7 @@
 					var value = val.toLowerCase();
 					var name = jtaa[value];
 					
-					$('<label for="wejt_' + value + '" class="jobtype" name="' + value + '">' + name + '<br></label>').appendTo($('fieldset.workexperience'));
+					$('<label for="wejt_' + value + '" class="jobtype" name="' + value + '">' + name + '</label>').appendTo($('fieldset.workexperience'));
 				});
 			})();
 
@@ -872,9 +872,13 @@
 			//heading
 			if ($(this).hasClass("heading")) {
 				var count = ($(this).siblings().length);
+				var counted = ($(this).siblings());
 				console.log(count);
+				console.log(counted);
 				var hidden = ($(this).siblings().filter(':hidden').length);
+				var hiddened = ($(this).siblings().filter(':hidden'));
 				console.log(hidden);
+				console.log(hiddened);
 				var classes = ($(this).attr('class').split(' '));
 				//remove 'white' if it exists as a class
 				for (var i=classes.length-1; i>=0; i--) {
