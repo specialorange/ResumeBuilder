@@ -19,7 +19,7 @@ audio:not([controls]) { display: none; }
 [hidden] { display: none; }
 
 html { font-size: 100%; -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; }
-html, input, select, textarea { font-family: sans-serif; color: #black; }
+html, input, select, textarea { font-family: sans-serif; color: black; }
 body { margin: 0; font-size: 1em; line-height: 1.4; }
 
 ::-moz-selection { background: #fe57a1; color: #fff; text-shadow: none; }
@@ -103,7 +103,7 @@ td { vertical-align: top; color: black; }/* changed color to black*/
 	position: fixed;
 	top: 0;
 	min-width: 100%;
-	min-height: 67px;
+/*	min-height: 67px;*/
 }
 #main-container {
 	margin-top:	67px;
@@ -175,6 +175,7 @@ select {margin-right: 1em; float: left;}
     display: block;
     padding: 5px 5px 5px;
     margin: 5px 5px;
+	margin-top: 18px;
 }
 #gc {
 	width:74%;

@@ -27,7 +27,7 @@
 <!--		<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js" ></script> -->
 <!--		<script type="text/javascript" src="_js/libs/selectToUISlider.jQuery.js"></script> -->
 		<div id="header-container">
-			<header class="wrapper clearfix">
+			<header class="clearfix">
 				<h1>Chris Frisina</h1>
 				<a href="javascript:var%20i=0;if(document.styleSheets.length>0){cs=!document.styleSheets[0].disabled; 
 					for(i=0;i<document.styleSheets.length;i++) 
@@ -42,47 +42,38 @@
 					<div class="block aside" id ="slideAside">
 						<aside>
 							<form class="form">
-								<!-- <div class="abstract"> -->
-									<fieldset id="fs-section-abstract" class="fs section abstract">
-										<label for="fs-abstract-heading" class="fs btn heading abstract">Abstract</label>
-									</fieldset>
-								<!-- </div> -->
-								<!-- <div class="businessapproaches"> -->
-									<fieldset id="fs-section-businessapproach" class="fs section businessapproach">
-										<label for="fs-businessapproach-heading" class="fs btn heading businessapproach">Business Approach</label>
-									</fieldset>
-								<!-- </div> -->
-								<!-- <div class="workexperience"> -->
-									<fieldset id="fs-section-workexperience" class="fs section workexperience">
-										<div>
-											<label for="fs-workexperience-heading" class="fs btn heading workexperience">Work Experience</label>
-										</div>
-										<div class="workdates"><label for="startdate" style="width:45%">Start Date </label><input id="startdate" name="startdate" type="text" value="" /></div>
-										<div class="workdates"><label for="enddate" style="width:45%">End Date   </label><input id="enddate" name="enddate" type="text" value="" /><br></div>
-									</fieldset>
-								<!-- </div> -->
-								<!-- <div class="academic"> -->
-									<fieldset id="fs-section-academic" class="fs section academic">
-										<label for="fs-academic-heading" class="fs btn heading academic">Academic</label>
-									</fieldset>
-								<!-- </div> -->
-								<!-- <div class="skillstable"> -->
-									<fieldset id="fs-section-skillstable" class="fs section skillstable">
-										<label for="fs-skillstable-heading" class="fs btn heading skillstable">Skills Table</label><br>
-									</fieldset>
-								<!-- </div> -->
-								<!-- <div class="community"> -->
-									<fieldset id="fs-section-community" class="fs section community">
-										<label for="fs-community-heading" class="fs btn heading community">Community</label><br>
-									</fieldset>
-								<!-- </div> -->
+								<fieldset id="fs_section_abstract" class="fs section abstract">
+									<label for="fs_abstract_heading" class="fs btn heading abstract">Abstract</label>
+								</fieldset>
+
+								<fieldset id="fs_section_businessapproach" class="fs section businessapproach">
+									<label for="fs_businessapproach_heading" class="fs btn heading businessapproach">Business Approach</label>
+								</fieldset>
+								
+								<fieldset id="fs_section_workexperience" class="fs section workexperience">
+										<label for="fs_workexperience_heading" class="fs btn heading workexperience">Work Experience</label><br>
+										<label for="startdate">Start Date </label><input id="startdate" name="startdate" type="text" value="" style="width:23%"/>
+										<label for="enddate">End Date </label><input id="enddate" name="enddate" type="text" value="" style="width:23%"/><br>
+								</fieldset>
+
+								<fieldset id="fs_section_academic" class="fs section academic">
+									<label for="fs_academic_heading" class="fs btn heading academic">Academic</label>
+								</fieldset>
+
+								<fieldset id="fs_section_skillstable" class="fs section skillstable">
+									<label for="fs_skillstable_heading" class="fs btn heading skillstable">Skills Table</label><br>
+								</fieldset>
+
+								<fieldset id="fs_section_community" class="fs section community">
+									<label for="fs_community_heading" class="fs btn heading community">Community</label><br>
+								</fieldset>
 							</form>
 						</aside>
 					</div>
 				</div>
 
 				<div class="block gc" id="gc">
-					<section id="gc-section-ab" class="gc section abstract fr"><h1>Abstract</h1>
+					<section id="gc_section_ab" class="gc section abstract fr"><h1>Abstract</h1>
 						<section>
 							<h1>Design</h1>
 							<ul>
@@ -151,7 +142,7 @@
 						</section>
 					</section>
 
-					<section id="gc-section-ba" class="gc section businessapproaches"><h1>Business Approach</h1>
+					<section id="gc_section_ba" class="gc section businessapproaches"><h1>Business Approach</h1>
 						<section><h1>Analysis</h1>
 								<p>I use a multitude of tools and experiences that bring a comprehensive approach to evaluate systems, processes, objects, and personnel. I achieve this through a mix of initial communication with stakeholders and departments, and use this information to develop the framework for developing scope and planning resources to exceed client or project expectations.</p>
 						</section>
@@ -175,7 +166,7 @@
 						</section>	
 					</section>
 
-					<section id="gc-section-we" class="gc section workexperience"><h1>Work Experience</h1>
+					<section id="gc_section_we" class="gc section workexperience"><h1>Work Experience</h1>
 						<section class="company"><h1>FedEx Ground</h1>
 							<section class="position"><h1>Contractor Corporate Liaison - IT Development Projects</h1>
 								<time class="start" datetime="2010-07">Jul 2010</time>
@@ -314,7 +305,7 @@
 						</section>
 					</section>
 
-					<section id="gc-section-a" class="gc section academic"><h1>Academic</h1>
+					<section id="gc_section_a" class="gc section academic"><h1>Academic</h1>
 		
 						<section class="school"><h1>University of North Carolina at Charlotte</h1>
 			
@@ -352,7 +343,7 @@
 						</section>
 					</section>
 
-					<section id="gc-section-st" class="gc section skillstable">
+					<section id="gc_section_st" class="gc section skillstable">
 						<h1>Skills Table : <span class="skillstablevisibility">Certifications | Compliance | Technologies</span></h1>
 						<table cellspacing="0">
 							<colgroup>
@@ -623,7 +614,7 @@
 						</table>
 					</section>
 
-					<section id="gc-section-c" class="gc section community"><h1>Community</h1>
+					<section id="gc_section_c" class="gc section community"><h1>Community</h1>
 
 						<section class="org"><h1>Habitat For Humanity</h1>
 							<section class="event"><h1>Builder</h1>
@@ -683,9 +674,8 @@
 	//SideBar
 		function addSidebarElems(ths, section, elem) {
 			var value = ths.toLowerCase().replace(/ /g,'');
-			var id = 'fs-' + section + '-' + value;
+			var id = 'fs_' + section + '_' + value;
 			var newElem = $('<section><label id="' + id + '" class="fs btn element ' + value + ' hidden">' + ths + '</label></section>');
-			//TODO insert                                                                       hidden here when ready
 			newElem.appendTo(elem);
 		}
 		//headers
@@ -731,7 +721,7 @@
 					var value = val.toLowerCase();
 					var name = jtaa[value];
 					
-					$('<input type="checkbox" class="jobtype" id="wejt_' + value + '" name="' + value + '"/><label for="wejt_' + value + '" class="jobtype">' + name + '<br></label>').appendTo($('fieldset.workexperience'));
+					$('<label for="wejt_' + value + '" class="jobtype" name="' + value + '">' + name + '<br></label>').appendTo($('fieldset.workexperience'));
 				});
 			})();
 
@@ -739,13 +729,13 @@
 		function nHeading (ths) {
 			var value = ths.html().toLowerCase().replace(/ /g,'');
 			var spaced = ths.html().toLowerCase();
-			var id = 'gc-' + value + '-heading';
+			var id = 'gc_' + value + '_heading';
 			ths.replaceWith($('<h1><label id="' + id + '" class="gc btn heading ' + value + '">' + ths.html() + '</label></h1>'));
 		}
 		function nElement (ths, section, elem) {
 			var value = ths.html().toLowerCase().replace(/ /g,'');
 			var spaced = ths.html().toLowerCase();
-			var id = 'gc-' + section + '-' + value;
+			var id = 'gc_' + section + '_' + value;
 			ths.replaceWith($('<label id="' + id + '" class="gc btn element ' + value + '">' + ths.html() + '</label>'));
 		}
 		//main headers (all but the skillstable and workexperience)
@@ -882,7 +872,9 @@
 			//heading
 			if ($(this).hasClass("heading")) {
 				var count = ($(this).siblings().length);
-				var hidden = ($(this).siblings().filter(':hidden').size());
+				console.log(count);
+				var hidden = ($(this).siblings().filter(':hidden'));
+				console.log(hidden);
 				var classes = ($(this).attr('class').split(' '));
 				//remove 'white' if it exists as a class
 				for (var i=classes.length-1; i>=0; i--) {
@@ -894,9 +886,11 @@
 				var newClasses = '.' + classes.join().replace(/\,/g,'.');
 				//left
 				($("'" + newClasses + "'").parent().parent().toggleClass('hidden'));
+				console.log($("'" + newClasses + "'").parent().parent());
 				//right
 				($(this).toggleClass('white', (!$(this).hasClass('white'))));
 					//unhide any element's sections that were hidden
+					// console.log($(this).siblings());
 						($(this).siblings().each(function() {
 							if (!$(this).children().hasClass('hidden')) {
 								$(this).toggleClass('hidden');
@@ -1035,17 +1029,16 @@
 			$('section.company').each(processCompanyTime);
 		});
 	// Job Type Button
-		$('fieldset.workexperience .jobtype').on('change', function() {
-		    var notSelectedList = $('fieldset.workexperience .jobtype:not(:checked)').map(function() {
-		        return '.' + $(this).attr('name');
-		    }).get().join(',');
-		    $('.workexperience li').each(function() {
-		        $(this).toggle($(this).is(notSelectedList));
-		    });
+		$('fieldset.workexperience .jobtype').on('click', function() {
 			//Change color to white to mean hidden
-			if ($(this).attr('id') != 'workexperience_all') {
-				$('label[for="'+ $(this).attr('id') +'"]').toggleClass("white");
-			}
+			$(this).toggleClass("white");
+			// get the non selected jobtypes, and toggle them
+			var notSelectedList = $('fieldset.workexperience .jobtype:not(.white)').map(function() {
+				return '.' + $(this).attr('name');
+			}).get().join(',');
+			$('.workexperience li').each(function() {
+				$(this).toggle($(this).is(notSelectedList));
+			});
 		});
 
 // Skills Table
@@ -1132,10 +1125,10 @@
 				}
 			//Row Button Generator
 				$.each(keys, function(i) {
-					$('<input type="checkbox" checked="checked" id="skillstable_'+this+'" name="skillstable_'+this+'" class="row"/><label for="skillstable_'+this+'" class="row">'+this+'</label>').appendTo($("fieldset.skillstable"));
+					$('<label id="skillstable_'+this+'" class="row">'+this+'</label>').appendTo($("fieldset.skillstable"));
 				});
 				// separate rows from columns
-					$('<br>').appendTo($("fieldset.skillstable .row:last"));
+					$('<br>').appendTo($("fieldset.skillstable"));
 		//column button generator
 			var cols = [];
 			$('section.skillstable table th').each(function(){
@@ -1143,12 +1136,12 @@
 			});
 			cols.splice(0,2);
 			$.each(cols, function(i) {
-					$('<input type="checkbox" checked="checked" id="ttcol_'+this+'" name="ttcol_'+this+'" class="column"/><label for="ttcol_'+this+'" class="column">'+cols[i]+'</label>' + '<br>').appendTo($('fieldset.skillstable'));
+					$('<label id="ttcol_'+this+'" class="column">'+cols[i]+'</label>' + '<br>').appendTo($('fieldset.skillstable'));
 			});
 		//Row Button Hider
-			$('fieldset.skillstable input.row[type=checkbox]').on('change', function() {
+			$('fieldset.skillstable .row').on('click', function() {
 				//change clicked buttons to white
-					$('label[for="'+ $(this).attr('id') +'"]').toggleClass("white");
+					$(this).toggleClass("white");
 				$formelem = $(this);
 				var index = $(this).prevAll('input').length - 1;
 				$('section.skillstable table td:first-child').each(function() {
@@ -1158,33 +1151,37 @@
 				});
 			//handles the |s between T|C|C of the gc SkillsTable name 
 				var segments = [];
-				$('fieldset.skillstable input.row:checked').each(function() {
+				$('fieldset.skillstable .row:not(.white)').each(function() {
 					segments.push(hash[$(this).attr('id').replace('skillstable_','')]);
 				});
 				$('section.skillstable .skillstablevisibility').html(segments.join(' | '));
+				//if all three are unselected, hide the skills table
+				if ($('fieldset.skillstable .white').length === 3) {
+					console.log('all three')
+				}
 			});
 		//Column Button Hider
-			$('fieldset.skillstable input.column[type=checkbox]').on('change', function() {
-				var index = $(this).prevAll('input.column').length+2;
+			$('fieldset.skillstable .column').on('click', function() {
+				var index = $(this).prevAll('.column').length+2;
 				$('colgroup').parent('table').find("td,th").filter(":nth-child(" + (index+1) + ")").toggle("slow");
 				//change clicked buttons to white
-					$('label[for="'+ $(this).attr('id') +'"]').toggleClass("white");
+					$(this).toggleClass("white");
 			});
 		//Permanently hide the Category Column
 			$('section.skillstable th:nth-child(1)').hide();
 			$('section.skillstable td:nth-child(1)').hide();
-		//Hide all of skillstable with button
-			$('fieldset.skillstable #skillstable_all').on('change', function() {
-				//Toggle text to white
-					$('label[for="'+ $(this).attr('id') +'"]').toggleClass("white");
-				if (this.checked) {
-					$('section.skillstable').hide("slow");
-					$(this).nextAll('input').attr('disabled','disabled');
-				} else {
-					$('section.skillstable').show("slow");
-					$(this).nextAll('input').removeAttr('disabled');
-				}
-			});
+		// //Hide all of skillstable with button
+		// 	$('fieldset.skillstable #skillstable_all').on('change', function() {
+		// 		//Toggle text to white
+		// 			$('label[for="'+ $(this).attr('id') +'"]').toggleClass("hidden");
+		// 		if (this.checked) {
+		// 			$('section.skillstable').hide("slow");
+		// 			$(this).nextAll('input').attr('disabled','disabled');
+		// 		} else {
+		// 			$('section.skillstable').show("slow");
+		// 			$(this).nextAll('input').removeAttr('disabled');
+		// 		}
+		// 	});
 	})();
 	//Table Sorter dateSorter
 		$.tablesorter.addParser({
