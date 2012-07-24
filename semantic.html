@@ -873,7 +873,7 @@
 			if ($(this).hasClass("heading")) {
 				var count = ($(this).siblings().length);
 				console.log(count);
-				var hidden = ($(this).siblings().filter(':hidden'));
+				var hidden = ($(this).siblings().filter(':hidden').length);
 				console.log(hidden);
 				var classes = ($(this).attr('class').split(' '));
 				//remove 'white' if it exists as a class
@@ -890,15 +890,17 @@
 				//right
 				($(this).toggleClass('white', (!$(this).hasClass('white'))));
 					//unhide any element's sections that were hidden
-					// console.log($(this).siblings());
-						($(this).siblings().each(function() {
-							if (!$(this).children().hasClass('hidden')) {
-								$(this).toggleClass('hidden');
-							};
-						}));
 					//if all elements were hidden
 						if(hidden >= count) {
+							console.log('gothere');
 							($(this).siblings().children().toggleClass('hidden'));
+							($(this).siblings().toggleClass('hidden'));
+						} else {
+							($(this).siblings().each(function() {
+								if (!$(this).children().hasClass('hidden')) {
+									$(this).toggleClass('hidden');
+								};
+							}));							
 						}
 			// element
 			} else if ($(this).hasClass("element")) {
