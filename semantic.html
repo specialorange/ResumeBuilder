@@ -727,8 +727,12 @@
 
 	//NUI (GC SIDE)
 		function nHeading (ths) {
-			var value = ths.html().toLowerCase().replace(/ /g,'');
-			var spaced = ths.html().toLowerCase();
+			var spaced = ths.html().toLowerCase().split(' ');
+			if (spaced[0] == 'skills') {
+				var value = spaced[0]+spaced[1];
+			} else {
+				var value = ths.html().toLowerCase().replace(/ /g,'');
+			}
 			var id = 'gc_' + value + '_heading';
 			ths.replaceWith($('<h1><label id="' + id + '" class="gc btn heading ' + value + '">' + ths.html() + '</label></h1>'));
 		}
@@ -740,11 +744,17 @@
 		}
 		//main headers (all but the skillstable and workexperience)
 			$('.block > section > h1:not(:has("span.skillstablevisibility"))').each(function () {
-				// $(this).parent().children(':not("h1")').each(function () {
-				// 	console.log($(this));
-				// });
 				return nHeading($(this));
 			});
+			$('.block > section > h1:has("span.skillstablevisibility")').each(function () {
+				return nHeading($(this));
+				// var spaced = $(this).html().toLowerCase().split(' ');
+				// var value = spaced[0]+spaced[1];
+				// var id = 'gc_' + value + '_heading';
+				// console.log(id);
+				// $(this).replaceWith($('<h1><label id="' + id + '" class="gc btn heading ' + value + '">' + $(this).html() + '</label></h1>'));
+			});
+
 		//subheaders for each section
 			$('section.abstract section h1').each(function () {
 				return nElement($(this), "ab", "gc element");
@@ -872,13 +882,13 @@
 			//heading
 			if ($(this).hasClass("heading")) {
 				var count = ($(this).siblings().length);
-				var counted = ($(this).siblings());
-				console.log(count);
-				console.log(counted);
+				// var counted = ($(this).siblings());
+				// console.log(count);
+				// console.log(counted);
 				var hidden = ($(this).siblings().filter(':hidden').length);
-				var hiddened = ($(this).siblings().filter(':hidden'));
-				console.log(hidden);
-				console.log(hiddened);
+				// var hiddened = ($(this).siblings().filter(':hidden'));
+				// console.log(hidden);
+				// console.log(hiddened);
 				var classes = ($(this).attr('class').split(' '));
 				//remove 'white' if it exists as a class
 				for (var i=classes.length-1; i>=0; i--) {
@@ -890,13 +900,11 @@
 				var newClasses = '.' + classes.join().replace(/\,/g,'.');
 				//left
 				($("'" + newClasses + "'").parent().parent().toggleClass('hidden'));
-				console.log($("'" + newClasses + "'").parent().parent());
 				//right
 				($(this).toggleClass('white', (!$(this).hasClass('white'))));
 					//unhide any element's sections that were hidden
 					//if all elements were hidden
 						if(hidden >= count) {
-							console.log('gothere');
 							($(this).siblings().children().toggleClass('hidden'));
 							($(this).siblings().toggleClass('hidden'));
 						} else {
@@ -1161,8 +1169,39 @@
 					segments.push(hash[$(this).attr('id').replace('skillstable_','')]);
 				});
 				$('section.skillstable .skillstablevisibility').html(segments.join(' | '));
-				//if all three are unselected, hide the skills table
-				if ($('fieldset.skillstable .white').length === 3) {
+			//if all three are unselected, hide the skills table
+				if ($('fieldset.skillstable .white').length === $('fieldset.skillstable .row').length) {
+					//hide the sections
+						//left
+							//hide the skills table
+							($('.gc.section.skillstable')).toggleClass('hidden');
+							//rest of stuff
+								$formelem = $(this);
+								console.log($formelem);
+								var index = $(this).prevAll('input').length - 1;
+								console.log(index);
+								console.log($('section.skillstable table td:first-child'));
+								$('section.skillstable table td:first-child').each(function() {
+									if ($formelem.attr('id').replace('skillstable_','') == $(this).html()) {
+										console.log(($formelem.attr('id').replace('skillstable_','')));
+										console.log($(this).html());
+										console.log($(this).parent());
+										$(this).parent().toggle("slow");
+									}
+								});
+								//handles the |s between T|C|C of the gc SkillsTable name 
+								var segments = [];
+								$('fieldset.skillstable .row:not(.white)').each(function() {
+									segments.push(hash[$(this).attr('id').replace('skillstable_','')]);
+								});
+								$('section.skillstable .skillstablevisibility').html(segments.join(' | '));
+						//right
+							//reset all three from white to black
+							($('fieldset.skillstable .white').each(function() {
+								($(this).toggleClass('white', (!$(this).hasClass('white'))));
+							}));
+							//hide the formElements subsections of skillstable
+							($(this).parent().children().not(':eq(0)').toggleClass('hidden'));
 					console.log('all three')
 				}
 			});
