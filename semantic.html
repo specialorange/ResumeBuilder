@@ -38,51 +38,51 @@
 
 		<div id="main-container" class="wrapper">
 			<div id="main">
-				<div class="commentWrapper" id="commentWrapper">
-					<div class="block aside" id ="comment">
+				<div class="asideTrack" id="asideTrack">
+					<div class="block aside" id ="slideAside">
 						<aside>
 							<form class="form">
-								<div class="abstract">
-									<fieldset class="abstract">
-										<label for="abstract_all" class="formHeader">Abstract</label>
+								<!-- <div class="abstract"> -->
+									<fieldset id="fs-section-abstract" class="fs section abstract">
+										<label for="fs-abstract-heading" class="fs btn heading abstract">Abstract</label>
 									</fieldset>
-								</div>
-								<div class="businessapproaches">
-									<fieldset class="businessapproaches">
-										<label for="ba_all" class="formHeader">Business Approach</label>
+								<!-- </div> -->
+								<!-- <div class="businessapproaches"> -->
+									<fieldset id="fs-section-businessapproach" class="fs section businessapproach">
+										<label for="fs-businessapproach-heading" class="fs btn heading businessapproach">Business Approach</label>
 									</fieldset>
-								</div>
-								<div class="workexperience">
-									<fieldset class="workexperience">
+								<!-- </div> -->
+								<!-- <div class="workexperience"> -->
+									<fieldset id="fs-section-workexperience" class="fs section workexperience">
 										<div>
-											<label for="workexperience_all" class="formHeader">Work Experience</label>
+											<label for="fs-workexperience-heading" class="fs btn heading workexperience">Work Experience</label>
 										</div>
 										<div class="workdates"><label for="startdate" style="width:45%">Start Date </label><input id="startdate" name="startdate" type="text" value="" /></div>
 										<div class="workdates"><label for="enddate" style="width:45%">End Date   </label><input id="enddate" name="enddate" type="text" value="" /><br></div>
 									</fieldset>
-								</div>
-								<div class="academic">
-									<fieldset class="academic">
-										<label for="academic_all" class="formHeader">Academic</label>
+								<!-- </div> -->
+								<!-- <div class="academic"> -->
+									<fieldset id="fs-section-academic" class="fs section academic">
+										<label for="fs-academic-heading" class="fs btn heading academic">Academic</label>
 									</fieldset>
-								</div>
-								<div class="skillstable">
-									<fieldset class="skillstable">
-										<label for="skillstable_all" class="formHeader">Skills Table</label><br>
+								<!-- </div> -->
+								<!-- <div class="skillstable"> -->
+									<fieldset id="fs-section-skillstable" class="fs section skillstable">
+										<label for="fs-skillstable-heading" class="fs btn heading skillstable">Skills Table</label><br>
 									</fieldset>
-								</div>
-								<div class="community">
-									<fieldset class="community">
-										<label for="community_all" class="formHeader">Community</label><br>
+								<!-- </div> -->
+								<!-- <div class="community"> -->
+									<fieldset id="fs-section-community" class="fs section community">
+										<label for="fs-community-heading" class="fs btn heading community">Community</label><br>
 									</fieldset>
-								</div>
+								<!-- </div> -->
 							</form>
 						</aside>
 					</div>
 				</div>
 
 				<div class="block gc" id="gc">
-					<section class="abstract"><h1>Abstract</h1>
+					<section id="gc-section-ab" class="gc section abstract fr"><h1>Abstract</h1>
 						<section>
 							<h1>Design</h1>
 							<ul>
@@ -151,7 +151,7 @@
 						</section>
 					</section>
 
-					<section class="businessapproaches"><h1>Business Approach</h1>
+					<section id="gc-section-ba" class="gc section businessapproaches"><h1>Business Approach</h1>
 						<section><h1>Analysis</h1>
 								<p>I use a multitude of tools and experiences that bring a comprehensive approach to evaluate systems, processes, objects, and personnel. I achieve this through a mix of initial communication with stakeholders and departments, and use this information to develop the framework for developing scope and planning resources to exceed client or project expectations.</p>
 						</section>
@@ -175,7 +175,7 @@
 						</section>	
 					</section>
 
-					<section class="workexperience"><h1>Work Experience</h1>
+					<section id="gc-section-we" class="gc section workexperience"><h1>Work Experience</h1>
 						<section class="company"><h1>FedEx Ground</h1>
 							<section class="position"><h1>Contractor Corporate Liaison - IT Development Projects</h1>
 								<time class="start" datetime="2010-07">Jul 2010</time>
@@ -214,8 +214,8 @@
 									<li class="ocm mgr eng dev">Vision
 										<ul>
 											<li class="ocm">Job Aids</li>
-											<li class="ocm mgr">Training</li>
-											<li class="eng dev">GUI/UX Design</li>
+											<li class="ocm mgr">Training manuals, classes, testing, and reporting materials design, printing and </li>
+											<li class="eng dev">GUI/UX Design of web based program from field user perspectives</li>
 										</ul>
 									</li>
 								</ul>
@@ -314,7 +314,7 @@
 						</section>
 					</section>
 
-					<section class="academic"><h1>Academic Experience</h1>
+					<section id="gc-section-a" class="gc section academic"><h1>Academic</h1>
 		
 						<section class="school"><h1>University of North Carolina at Charlotte</h1>
 			
@@ -352,7 +352,7 @@
 						</section>
 					</section>
 
-					<section class="skillstable">
+					<section id="gc-section-st" class="gc section skillstable">
 						<h1>Skills Table : <span class="skillstablevisibility">Certifications | Compliance | Technologies</span></h1>
 						<table cellspacing="0">
 							<colgroup>
@@ -623,7 +623,7 @@
 						</table>
 					</section>
 
-					<section class="community"><h1>Community</h1>
+					<section id="gc-section-c" class="gc section community"><h1>Community</h1>
 
 						<section class="org"><h1>Habitat For Humanity</h1>
 							<section class="event"><h1>Builder</h1>
@@ -681,25 +681,25 @@
 // Generation
 
 	//SideBar
-		//Abstract sidebar elements
-			function addSidebarElems(val, i, elem) {
-				var value = val.toLowerCase().replace(/ /g,'');
-				var id = i;
-				var newElem = $('<div class="' + id + value + ' sh"><label class="displayHidden formElems">' + val + '</label>' + '</div>');
-				newElem.appendTo(elem);
-			}
+		function addSidebarElems(ths, section, elem) {
+			var value = ths.toLowerCase().replace(/ /g,'');
+			var id = 'fs-' + section + '-' + value;
+			var newElem = $('<section><label id="' + id + '" class="fs btn element ' + value + ' hidden">' + ths + '</label></section>');
+			//TODO insert                                                                       hidden here when ready
+			newElem.appendTo(elem);
+		}
+		//headers
+			//already in HTML via Form/Fieldset/Label
+		//sidebar elements
 			$('section.abstract section h1').each(function(){
-				return addSidebarElems($(this).html(), "abstract", $('fieldset.abstract'));
+				return addSidebarElems($(this).html(), "ab", $('fieldset.abstract'));
 			});
-		// Business Approach sideBar elements
 			$('section.businessapproaches section h1').each(function () {
-				return addSidebarElems($(this).html(), "ba", $('fieldset.businessapproaches'));
+				return addSidebarElems($(this).html(), "ba", $('fieldset.businessapproach'));
 			});
-		//Academic section sidebar elements
 			$('section.academic section.school > h1').each(function () {
-				return addSidebarElems($(this).html(), "a", $('fieldset.academic'));
+				return addSidebarElems($(this).html(), "ac", $('fieldset.academic'));
 			});
-		//Community section sidebar elements
 			$('section.community section.org > h1').each(function () {
 				return addSidebarElems($(this).html(), "c", $('fieldset.community'));
 			});
@@ -710,7 +710,7 @@
 							"cs" : "Customer Service",
 							"dev" : "Developer",
 							"eng" : "Engineer",
-							"mgr" : "Management",
+							"mgr" : "Manager",
 							"ocm" : "Organizational Change Management",
 							"pm" : "Project Management" };
 				var lis = [];
@@ -736,41 +736,38 @@
 			})();
 
 	//NUI (GC SIDE)
-
-		function nHeader (ths, id, sideButton) {
+		function nHeading (ths) {
 			var value = ths.html().toLowerCase().replace(/ /g,'');
 			var spaced = ths.html().toLowerCase();
-			var id = 'gc' + value;
-			ths.replaceWith($('<label id="' + id + '" class="btn head ' + value + '">' + ths.html() + '</label>'));
+			var id = 'gc-' + value + '-heading';
+			ths.replaceWith($('<h1><label id="' + id + '" class="gc btn heading ' + value + '">' + ths.html() + '</label></h1>'));
 		}
-		function nElement (ths, id, sideButton) {
+		function nElement (ths, section, elem) {
 			var value = ths.html().toLowerCase().replace(/ /g,'');
 			var spaced = ths.html().toLowerCase();
-			var id = 'gc' + value;
-			ths.replaceWith($('<label id="' + id + '" class="btn element ' + value + '">' + ths.html() + '</label>'));
+			var id = 'gc-' + section + '-' + value;
+			ths.replaceWith($('<label id="' + id + '" class="gc btn element ' + value + '">' + ths.html() + '</label>'));
 		}
 		//main headers (all but the skillstable and workexperience)
-		$('.block > section > h1:not(:has("span.skillstablevisibility"))').each(function () {
-			$(this).parent().children(':not("h1")').each(function () {
-				console.log($(this));
+			$('.block > section > h1:not(:has("span.skillstablevisibility"))').each(function () {
+				// $(this).parent().children(':not("h1")').each(function () {
+				// 	console.log($(this));
+				// });
+				return nHeading($(this));
 			});
-			// return nHeader($(this), "section ", "gc header");		
-		});
-		//Add FR to abstract
-		$('.gc > .abstract').addClass("fr");  //float right
 		//subheaders for each section
-		$('section.abstract section h1').each(function () {
-			return nElement($(this), "abstract", "gc element");
-		});
-		$('section.businessapproaches section h1').each(function () {
-			return nElement($(this), " ba subsection", "gc element");
-		});
-		$('section.academic section.school > h1').each(function () {
-			return nElement($(this), "a", "gc element");
-		});
-		$('section.community section.org > h1').each(function () {
-			return nElement($(this), "c", "gc element");
-		});
+			$('section.abstract section h1').each(function () {
+				return nElement($(this), "ab", "gc element");
+			});
+			$('section.businessapproaches section h1').each(function () {
+				return nElement($(this), " ba", "gc element");
+			});
+			$('section.academic section.school > h1').each(function () {
+				return nElement($(this), "ac", "gc element");
+			});
+			$('section.community section.org > h1').each(function () {
+				return nElement($(this), "c", "gc element");
+			});
 	
 // Initialize the start date and end date function.
 	(function () {
@@ -825,16 +822,111 @@
 			// }
 		}
 	});
-//trial for all
-	$('.sh').click(function () {
+//hiding all elements
+	$('.btn').click(function () {
 		var text = $(this).text().toLowerCase();
 		var cNames = $(this).attr("class");
-		console.log(cNames);
+		// console.log(cNames);
 		//Left to Right
-		if ($(this).is(":visible")) {
-			console.log('left');
+		if ($(this).hasClass("gc")) {
+			//heading
+			if ($(this).hasClass("heading")) {
+				//left
+				($(this).parent().parent().toggleClass('hidden'));
+				//right
+				var classes = ($(this).attr('class').split(' '));
+				classes[0] = "fs";
+				var newClasses = '.' + classes.join().replace(/\,/g,'.');
+				($("'" + newClasses + "'").toggleClass('white'));
+					//hide any element's section that are being hidden 
+					($("'" + newClasses + "'").siblings().each(function() {
+						if (!$(this).children().hasClass('hidden')) {
+							$(this).toggleClass('hidden');
+						};
+					}));
+			// element
+			} else if ($(this).hasClass("element")) {
+				var count = ($(this).parent().parent().children().length-1);
+				var hidden = ($(this).parent().parent().children().filter(':hidden').size()+1);
+				//if all elelemts are hidden, hide the parent too
+				if (hidden >= count) {
+					//left
+					($(this).parent().toggleClass('hidden'));
+					($(this).parent().parent().toggleClass('hidden'));
+					($(this).parent().parent().children().each(function() {
+						($(this).removeClass('hidden'));
+					}));
+					//right
+					var classes = ($(this).attr('class').split(' '));
+					classes[0] = "fs";
+					var newClasses = '.' + classes.join().replace(/\,/g,'.');
+					($("'" + newClasses + "'").toggleClass('hidden'));
+					($("'" + newClasses + "'").parent().parent().children().slice(1)).toggleClass('hidden');
+					($("'" + newClasses + "'").parent().parent().children().eq(0)).toggleClass('white');
+				//hide one element only
+				} else {
+					//left
+					($(this).parent().toggleClass('hidden'));
+					//right
+					var classes = ($(this).attr('class').split(' '));
+					classes[0] = "fs";
+					var newClasses = '.' + classes.join().replace(/\,/g,'.');
+					($("'" + newClasses + "'").toggleClass('hidden'));
+				}
+			//dunno
+			} else {
+				
+			}
 		//Right to Left
-		} else {
+		} else if ($(this).hasClass("fs")) {
+			//heading
+			if ($(this).hasClass("heading")) {
+				var count = ($(this).siblings().length);
+				var hidden = ($(this).siblings().filter(':hidden').size());
+				var classes = ($(this).attr('class').split(' '));
+				//remove 'white' if it exists as a class
+				for (var i=classes.length-1; i>=0; i--) {
+					if (classes[i] === 'white') {
+						classes.splice(i, 1);
+					}
+				};
+				classes[0] = "gc";
+				var newClasses = '.' + classes.join().replace(/\,/g,'.');
+				//left
+				($("'" + newClasses + "'").parent().parent().toggleClass('hidden'));
+				//right
+				($(this).toggleClass('white', (!$(this).hasClass('white'))));
+					//unhide any element's sections that were hidden
+						($(this).siblings().each(function() {
+							if (!$(this).children().hasClass('hidden')) {
+								$(this).toggleClass('hidden');
+							};
+						}));
+					//if all elements were hidden
+						if(hidden >= count) {
+							($(this).siblings().children().toggleClass('hidden'));
+						}
+			// element
+			} else if ($(this).hasClass("element")) {
+				var classes = ($(this).attr('class').split(' '));
+				//remove 'white' if it exists as a class
+				for (var i=classes.length-1; i>=0; i--) {
+					if (classes[i] === 'white') {
+						classes.splice(i, 1);
+					}
+				};
+				classes[0] = "gc";
+				var newClasses = '.' + classes.join().replace(/\,/g,'.');
+				//left
+				($("'" + newClasses + "'").parent().toggleClass('hidden'));
+				//right
+				($(this).toggleClass('hidden', (!$(this).hasClass('hidden'))));
+			//dunno
+			} else {
+				
+			}
+		//neither 'gc' or 'fs'
+		} else { 
 			
 		}
 		
@@ -950,9 +1042,9 @@
 		    $('.workexperience li').each(function() {
 		        $(this).toggle($(this).is(notSelectedList));
 		    });
-			//Change color to white to show hidden
+			//Change color to white to mean hidden
 			if ($(this).attr('id') != 'workexperience_all') {
-				$('label[for="'+ $(this).attr('id') +'"]').toggleClass("hidden");
+				$('label[for="'+ $(this).attr('id') +'"]').toggleClass("white");
 			}
 		});
 
@@ -1056,7 +1148,7 @@
 		//Row Button Hider
 			$('fieldset.skillstable input.row[type=checkbox]').on('change', function() {
 				//change clicked buttons to white
-					$('label[for="'+ $(this).attr('id') +'"]').toggleClass("hidden");
+					$('label[for="'+ $(this).attr('id') +'"]').toggleClass("white");
 				$formelem = $(this);
 				var index = $(this).prevAll('input').length - 1;
 				$('section.skillstable table td:first-child').each(function() {
@@ -1076,7 +1168,7 @@
 				var index = $(this).prevAll('input.column').length+2;
 				$('colgroup').parent('table').find("td,th").filter(":nth-child(" + (index+1) + ")").toggle("slow");
 				//change clicked buttons to white
-					$('label[for="'+ $(this).attr('id') +'"]').toggleClass("hidden");
+					$('label[for="'+ $(this).attr('id') +'"]').toggleClass("white");
 			});
 		//Permanently hide the Category Column
 			$('section.skillstable th:nth-child(1)').hide();
@@ -1084,7 +1176,7 @@
 		//Hide all of skillstable with button
 			$('fieldset.skillstable #skillstable_all').on('change', function() {
 				//Toggle text to white
-					$('label[for="'+ $(this).attr('id') +'"]').toggleClass("hidden");
+					$('label[for="'+ $(this).attr('id') +'"]').toggleClass("white");
 				if (this.checked) {
 					$('section.skillstable').hide("slow");
 					$(this).nextAll('input').attr('disabled','disabled');
@@ -1189,7 +1281,7 @@ $(document).ready(function () {
 
 		//Sidebar
 			//sliding Float
-				// var top = $('#comment').offset().top - parseFloat($('#comment').css('marginTop').replace(/auto/, 0));
+				// var top = $('#slideAside').offset().top - parseFloat($('#slideAside').css('marginTop').replace(/auto/, 0));
 				// var hh = $('header').height();
 				// var ah = $('aside').height();
 				// var fh = $('footer').height();
@@ -1199,10 +1291,10 @@ $(document).ready(function () {
 				// 	// whether that's below the form
 				// 	if (y >= top) {
 				// 		// if so, ad the fixed class
-				// 		$('#comment').addClass('fixed');
+				// 		$('#slideAside').addClass('fixed');
 				// 	} else {
 				// 		// otherwise remove it
-				// 		$('#comment').removeClass('fixed');
+				// 		$('#slideAside').removeClass('fixed');
 				// 	}
 				// });
 				// $(window).on('scroll', function(event) {

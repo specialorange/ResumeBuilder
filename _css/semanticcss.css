@@ -19,11 +19,11 @@ audio:not([controls]) { display: none; }
 [hidden] { display: none; }
 
 html { font-size: 100%; -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; }
-html, input, select, textarea { font-family: sans-serif; color: #222; }
+html, input, select, textarea { font-family: sans-serif; color: #black; }
 body { margin: 0; font-size: 1em; line-height: 1.4; }
 
 ::-moz-selection { background: #fe57a1; color: #fff; text-shadow: none; }
-::selection { background: #fe57a1; color: #fff; text-shadow: none; }
+::selection { background: #fe57a1; text-shadow: none; }
 
 a { color: black; text-decoration: none; border-bottom: 2px #e44d26 dotted; }
 a:visited { color: black; text-decoration: none; border-bottom: 2px green dotted; }
@@ -149,11 +149,11 @@ header h1 { color:white; }
 	td { vertical-align: top; color: black; }/* changed color to black*/
 	#header-container {display:none}
 	.footer {display:none}
-	.commentWrapper {display:none}
+	.asideTrack {display:none}
 	#gc {
 		width: 100%;
 	}
-	#commentWrapper {
+	#asideTrack {
 		width: 100%;
 	}
 }
@@ -205,19 +205,19 @@ select {margin-right: 1em; float: left;}
 	display: block;
 	padding-left: 10px;
 }
-.formElems {
+.fs .element {
 	padding-left: 10px;	
+	color: white;
 }
 .aside {
 	display: block;
 	font-size: 11px;
 }
-.hidden {
+.white {
 	color: white;
 }
 .aside .abstract{
 	font-size: 11px;
-	display: block;
 	clear: left;
 }
 .aside .businessapproaches{
@@ -228,7 +228,7 @@ select {margin-right: 1em; float: left;}
 }
 .form .workexperience{
 	font-size: 11px;
-	color: black;
+/*	color: black;*/
 }
 .form {
 	padding: 5px;
@@ -255,9 +255,13 @@ select {margin-right: 1em; float: left;}
 }
 .aside .skillstable{
 	font-size: 11px;
-	color: black;
+/*	color: black;*/
 }
-.gc .head{
+.fs .heading{
+	font-size: 15px;
+/*	color: black;*/
+}
+.gc .heading{
 	font-size: 35px;
 	color: #E44D26;
 }
@@ -307,21 +311,21 @@ select {margin-right: 1em; float: left;}
 	/*display: inline-block;*/
 	/*width: 100%;*/
 }
-#commentWrapper {
+#asideTrack {
 	float: right;
 	position: fixed;
 	width:23%;
 	top: 62px;
 	right: 0;
 }
-#comment {
+#slideAside {
 	float: right;
 	top: 0;
 	right: 0;
 	width:100%;
 	/* Can include margins in the sliding effect here */
 }
-#comment.fixed {
+#slideAside.fixed {
 	position: fixed;
 	top: 0;
 	right: 0;
@@ -424,7 +428,6 @@ li {
 	background-color: transparent;
 	border: 0;
 	padding: 0;
-	color: white;
 }
 aside .hover {
 	cursor: pointer;
@@ -448,7 +451,7 @@ aside .hover {
 	font-size: 50px;
 }
 
-.displayHidden {
+.hidden {
 	display: none;
 }
 
