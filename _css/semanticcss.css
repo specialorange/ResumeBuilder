@@ -154,7 +154,12 @@ header h1 { color:white; }
 		width: 100%;
 	}
 	#asideTrack {
-		width: 100%;
+/*		width: 100%;*/
+		display: none;
+	}
+	.asideTrack {
+/*		width: 100%;*/
+		display: none;
 	}
 }
 
@@ -212,17 +217,17 @@ select {margin-right: 1em; float: left;}
 .white {
 	color: white;
 }
-.aside .abstract{
+.aside .abstract {
 	font-size: 11px;
 	clear: left;
 }
-.aside .businessapproaches{
+.aside .businessapproaches {
 	font-size: 11px;
 }
-.aside .academic{
+.aside .academic {
 	font-size: 11px;
 }
-.form .workexperience{
+.form .workexperience {
 	font-size: 11px;
 /*	color: black;*/
 }
@@ -245,24 +250,28 @@ select {margin-right: 1em; float: left;}
 	width: 45%;
 	padding-left: 10px;
 }
-#workexperience_all{
+#workexperience_all {
 	font-size: 11px;
 	color: white;
 }
-.aside .skillstable{
+.aside .skillstable {
 	font-size: 11px;
 /*	color: black;*/
 }
-.fs .heading{
+.fs .heading {
 	font-size: 15px;
 /*	color: black;*/
 }
-.gc .heading{
+.gc .heading {
 	font-size: 35px;
 	color: #E44D26;
 }
+.jokes {
+	font-size: 30px;
+	color: #E44D26;
+}
 .gc .heading:hover { color: #06e; }	
-.gc .element{
+.gc .element {
 	font-size: 20px;
 	color: #E44D26;
 }
@@ -295,6 +304,16 @@ select {margin-right: 1em; float: left;}
 	list-style-type: circle;
 }
 .gc .workexperience ul {
+	margin:0;
+	padding: 0 0 0 40px;
+	list-style-type: square;
+}
+.gc .community ol {
+	margin:0;
+	padding: 0 0 0 40px;
+	list-style-type: circle;
+}
+.gc .community ul {
 	margin:0;
 	padding: 0 0 0 40px;
 	list-style-type: square;

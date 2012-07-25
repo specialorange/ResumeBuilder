@@ -616,17 +616,48 @@
 
 					<section id="gc_section_c" class="gc section community"><h1>Community</h1>
 
+						<section class="org"><h1>Ecumenical Think Tank</h1>
+							<section class="event"><h1>Committee Chair</h1>
+								<time class="start" datetime="2001-02"></time>
+								<time class="end" datetime="2012-05">May 2012</time>
+								<time class="once" datetime=""></time>
+								<p>I was asked to sit on with select community members to develop appropriate potential opportunities to help increase young adult attendance and participation in community churches and small groups.</p>
+							</section>
+						</section>
+
 						<section class="org"><h1>Habitat For Humanity</h1>
 							<section class="event"><h1>Builder</h1>
 								<time class="start" datetime="2001-02">Feb 2001</time>
-								<time class="end" datetime="2003-04">Apr 2003</time>
+								<time class="end" datetime=""></time>
 								<time class="once" datetime=""></time>
-								<p>I pursued this specific track of Communication Studies to study the gender biased elements within social interactions.</p>
+								<p>Starting with weekend builds, I have become specialized in framing and roofing.</p>
+							</section>
+							<section class="event"><h1>International Logistics</h1>
+								<time class="start" datetime="2008-05">Mar 2008</time>
+								<time class="end" datetime=""></time>
+								<time class="once" datetime=""></time>
+								<p>I oversee supply chain for the Bahamas Habitat, a country often not thought of requiring Habitat's resources, who help serve over 1000 families across the various islands.'</p>
 								<ul>
-									<li>National South Eastern Women's Studies Association(SEWSA) invitational speaker on self researched topic surrounding gender neutral non-hegemonic communication - 2008</li>
-									<li>Habitat for Humanity Build Lead</li>
+									<li>State-side fundraising</li>
+									<li>Flight scheduling</li>
+									<li>Critical inventory procurement</li>
+									<li>Disaster logistics for Haiti earthquake</li>
+								</ul>
+							</section>
+
+						</section>
+
+
+						<section class="org"><h1>Volunteer</h1>
+							<section class="event"><h1>Disaster Relief</h1>
+								<time class="start" datetime="2004-04">Apr 2004</time>
+								<time class="end" datetime="2009-09">Sep 2009</time>
+								<time class="once" datetime=""></time>
+								<p>Interested in providing relief to families in disaster areas, the complex situations surrounding the affected areas highlighted the need for effective solutions in a timely fashion, utilizing limited resources to repair and improve homes and community centers.</p>
+								<ul>
 									<li>Disaster Response Lead Coordinator
 										<ul>
+											<li>Haiti - 2 visits</li>
 											<li>Katrina - 10+ visits within 3 years</li>
 											<li>Rita - 1 Visit</li>
 										</ul>
@@ -637,20 +668,27 @@
 
 						<section class="org"><h1>Scouts</h1>
 							<section class="event"><h1>NESA</h1>
-								<time class="start" datetime="2005-06">Jun 2005</time>
-								<time class="end" datetime="2007-08">Aug 2007</time>
+								<time class="start" datetime="2003-02">Feb 2003</time>
+								<time class="end" datetime=""></time>
 								<time class="once" datetime=""></time>
-								<p>I utilize one of the best community colleges in the US to further my education in interdisciplinary areas.</p>
+								<p>I earned my Eagle Scout, and have participated in several NESA Sponsored events since, and enjoy providing individual support to younger scouts.</p>
+							</section>
+							<section class="event"><h1>OA</h1>
+								<time class="start" datetime="1999-06">Jun 1999</time>
+								<time class="end" datetime="2003-06">Jun 2003</time>
+								<time class="once" datetime=""></time>
+								<p>I achieved the rank of Brotherhood, and served different lodge positions.</p>
 								<ul>
-									<li>Six Sigma Black Belt Certification - 2012</li>
-									<li>Culinary Approaches - 2011</li>
-									<li>Car Mechanics - 2007</li>
-									<li>Masonry - 2006</li>
-									<li>Math - 2003</li>
-									<li>Music - 2002</li>
+									<li>Webmaster</li>
+									<li>Chaplain</li>
 								</ul>
 							</section>
 						</section>
+					</section>
+					
+					<section id="gc_section_j" class="gc section jokes hidden">I am not sure why you don't want to know about me, but here are two of my favorite comics!
+						<span style="float:left"><img src="_img/bee.jpeg" width="750" height="477" alt="Bee"></span>
+						<span style="float:right"><img src="_img/investigator.jpeg" width="398" height="512" alt="Investigator"></span>
 					</section>
 				</div>
 			</div>
@@ -872,6 +910,9 @@
 				};
 				classes[0] = "gc";
 				var newClasses = '.' + classes.join().replace(/\,/g,'.');
+				if ($('.fs.section').length == $('.fs.white').length) { 
+					$('.jokes').toggleClass('hidden');
+				}
 				//left
 				($("'" + newClasses + "'").parent().parent().toggleClass('hidden'));
 				//right
@@ -907,7 +948,10 @@
 			} else {				
 			}
 		//neither 'gc' or 'fs'
-		} else { 
+		} else {
+		}
+		if ($('.fs.section').length == $('.fs.white').length) { 
+			$('.jokes').toggleClass('hidden');
 		}
 	});
 
@@ -927,7 +971,15 @@
 			m[0] = "01"; m[1] = "02"; m[2] = "03"; m[3] = "04"; m[4] = "05"; m[5] = "06"; m[6] = "07"; m[7] = "08"; m[8] = "09"; m[9] = "10"; m[10] = "11"; m[11] = "12";
 			return y + '-' + m[d.getMonth()];
 		};
+		//workexperience end date if empty
 		$('.workexperience .company .position > time.end').each(function(){
+			if (!($(this).attr('datetime'))){
+				$(this).attr('datetime', currentDateYMFormat());
+				$(this).html('Current');
+			}
+		});
+		//community end date if empty
+		$('.community .org .event > time.end').each(function(){
 			if (!($(this).attr('datetime'))){
 				$(this).attr('datetime', currentDateYMFormat());
 				$(this).html('Current');
