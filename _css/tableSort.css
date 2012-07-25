@@ -7,11 +7,14 @@ table.tablesorter {
 /*	width: 100%;*/
 	text-align: left;
 }
+table.tablesorter thead tr th:hover {
+	color: #06e;
+}
 table.tablesorter thead tr th, table.tablesorter tfoot tr th {
 	background-color: #F16529;
 	border: 1px solid #FFF;
 	min-width:100px;
-/*	font-size: 8pt;*/
+	font-size: 8pt;
 	padding: 4px;
 	min-width: 100px;
 }
