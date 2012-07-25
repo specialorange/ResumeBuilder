@@ -29,10 +29,10 @@
 		<div id="header-container">
 			<header class="clearfix">
 				<h1>Chris Frisina</h1>
-				<a href="javascript:var%20i=0;if(document.styleSheets.length>0){cs=!document.styleSheets[0].disabled; 
+				<!-- <a href="javascript:var%20i=0;if(document.styleSheets.length>0){cs=!document.styleSheets[0].disabled; 
 					for(i=0;i<document.styleSheets.length;i++) 
 						%20document.styleSheets[i].disabled=cs;}; 
-						void(cs=true);">Toggle stylesheet</a>
+						void(cs=true);">Toggle stylesheet</a> -->
 			</header>
 		</div>
 
@@ -668,9 +668,7 @@
 </html>
 
 <script>
- 
 // Generation
-
 	//SideBar
 		function addSidebarElems(ths, section, elem) {
 			var value = ths.toLowerCase().replace(/ /g,'');
@@ -714,17 +712,13 @@
 						}
 					}
 				});
-
 				lis.sort();
-				
 				$.each(lis, function(idx, val){
 					var value = val.toLowerCase();
 					var name = jtaa[value];
-					
 					$('<label for="wejt_' + value + '" class="jobtype" name="' + value + '">' + name + '</label>').appendTo($('fieldset.workexperience'));
 				});
 			})();
-
 	//NUI (GC SIDE)
 		function nHeading (ths) {
 			var spaced = ths.html().toLowerCase().split(' ');
@@ -748,13 +742,7 @@
 			});
 			$('.block > section > h1:has("span.skillstablevisibility")').each(function () {
 				return nHeading($(this));
-				// var spaced = $(this).html().toLowerCase().split(' ');
-				// var value = spaced[0]+spaced[1];
-				// var id = 'gc_' + value + '_heading';
-				// console.log(id);
-				// $(this).replaceWith($('<h1><label id="' + id + '" class="gc btn heading ' + value + '">' + $(this).html() + '</label></h1>'));
 			});
-
 		//subheaders for each section
 			$('section.abstract section h1').each(function () {
 				return nElement($(this), "ab", "gc element");
@@ -768,7 +756,6 @@
 			$('section.community section.org > h1').each(function () {
 				return nElement($(this), "c", "gc element");
 			});
-	
 // Initialize the start date and end date function.
 	(function () {
 		var start = [];
@@ -788,11 +775,8 @@
 			$('#enddate').val(end[end.length - 1]);
 		});
 	})();
-
 // //sort skillstable name alphabetically
 	// $('section.skillstable .skillstablevisibility').html($('section.skillstable .skillstablevisibility').html().split(' / ').sort().join(' / '));
-
-
 //Stateful change of checkbox text
 	// $(function() {
 	//     $(".checkbox").each(function () {
@@ -801,8 +785,6 @@
 	// 			});
 	// 	});
 	// });
-
-
 // Persistence
 //¿¿??
 	var formvals = {};
@@ -826,7 +808,6 @@
 	$('.btn').click(function () {
 		var text = $(this).text().toLowerCase();
 		var cNames = $(this).attr("class");
-		// console.log(cNames);
 		//Left to Right
 		if ($(this).hasClass("gc")) {
 			//heading
@@ -875,20 +856,13 @@
 				}
 			//dunno
 			} else {
-				
 			}
 		//Right to Left
 		} else if ($(this).hasClass("fs")) {
 			//heading
 			if ($(this).hasClass("heading")) {
 				var count = ($(this).siblings().length);
-				// var counted = ($(this).siblings());
-				// console.log(count);
-				// console.log(counted);
 				var hidden = ($(this).siblings().filter(':hidden').length);
-				// var hiddened = ($(this).siblings().filter(':hidden'));
-				// console.log(hidden);
-				// console.log(hiddened);
 				var classes = ($(this).attr('class').split(' '));
 				//remove 'white' if it exists as a class
 				for (var i=classes.length-1; i>=0; i--) {
@@ -930,14 +904,11 @@
 				//right
 				($(this).toggleClass('hidden', (!$(this).hasClass('hidden'))));
 			//dunno
-			} else {
-				
+			} else {				
 			}
 		//neither 'gc' or 'fs'
 		} else { 
-			
 		}
-		
 	});
 
 // Work Experience
@@ -1013,7 +984,6 @@
 		});
 	//Set position level end time if current
 		// $('workexperience.company.position')
-
 	//start selector functionality
 		$('#startdate').on('change', function () {
 			var $formelem = $(this);
@@ -1160,7 +1130,7 @@
 				var index = $(this).prevAll('input').length - 1;
 				$('section.skillstable table td:first-child').each(function() {
 					if ($formelem.attr('id').replace('skillstable_','') == $(this).html()) {
-						$(this).parent().toggle("slow");
+						$(this).parent().toggleClass("hidden");
 					}
 				});
 			//handles the |s between T|C|C of the gc SkillsTable name 
@@ -1175,34 +1145,21 @@
 						//left
 							//hide the skills table
 							($('.gc.section.skillstable')).toggleClass('hidden');
-							//rest of stuff
-								$formelem = $(this);
-								console.log($formelem);
-								var index = $(this).prevAll('input').length - 1;
-								console.log(index);
-								console.log($('section.skillstable table td:first-child'));
-								$('section.skillstable table td:first-child').each(function() {
-									if ($formelem.attr('id').replace('skillstable_','') == $(this).html()) {
-										console.log(($formelem.attr('id').replace('skillstable_','')));
-										console.log($(this).html());
-										console.log($(this).parent());
-										$(this).parent().toggle("slow");
-									}
-								});
-								//handles the |s between T|C|C of the gc SkillsTable name 
-								var segments = [];
-								$('fieldset.skillstable .row:not(.white)').each(function() {
-									segments.push(hash[$(this).attr('id').replace('skillstable_','')]);
-								});
-								$('section.skillstable .skillstablevisibility').html(segments.join(' | '));
+							//resets the span class of jobtypes
+							$('.skillstablevisibility').html('Certifications | Compliance | Technologies');
+							//unhides all rows of table
+							$('section.skillstable table tbody').children().each(function() {
+								$(this).toggleClass('hidden');
+							});
 						//right
 							//reset all three from white to black
 							($('fieldset.skillstable .white').each(function() {
 								($(this).toggleClass('white', (!$(this).hasClass('white'))));
 							}));
+							//toggle FS skillstable to white
+							($('.fs.btn.heading.skillstable').toggleClass('white'));
 							//hide the formElements subsections of skillstable
 							($(this).parent().children().not(':eq(0)').toggleClass('hidden'));
-					console.log('all three')
 				}
 			});
 		//Column Button Hider
@@ -1215,18 +1172,6 @@
 		//Permanently hide the Category Column
 			$('section.skillstable th:nth-child(1)').hide();
 			$('section.skillstable td:nth-child(1)').hide();
-		// //Hide all of skillstable with button
-		// 	$('fieldset.skillstable #skillstable_all').on('change', function() {
-		// 		//Toggle text to white
-		// 			$('label[for="'+ $(this).attr('id') +'"]').toggleClass("hidden");
-		// 		if (this.checked) {
-		// 			$('section.skillstable').hide("slow");
-		// 			$(this).nextAll('input').attr('disabled','disabled');
-		// 		} else {
-		// 			$('section.skillstable').show("slow");
-		// 			$(this).nextAll('input').removeAttr('disabled');
-		// 		}
-		// 	});
 	})();
 	//Table Sorter dateSorter
 		$.tablesorter.addParser({
@@ -1300,19 +1245,13 @@
 		}); 
 		$(".skillstable table").addClass("tablesorter");
 
-
 		// $(function(){
 		// 	$('.ds #valueAA, .ds #valueBB').selectToUISlider({
 		// 		labels: 0,
 		// 	});
 		// });
 
-
-
 $(document).ready(function () {  
-
-
-
 	// check to see if the scrollHeight + right hand side height is <= to screen height - (footerheight + margin).
 	//        if not, position: absolute; bottom: (footer height + margin)px;
 	// 
@@ -1346,5 +1285,4 @@ $(document).ready(function () {
 				// 	}
 				// });
 });				
-				
 </script>

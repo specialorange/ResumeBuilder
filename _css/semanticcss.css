@@ -160,12 +160,8 @@ header h1 { color:white; }
 
 /*chris's crap*/
 
-/*hide checkboxes*/
-input[type="checkbox"] {
-    display: none;
-}
-
 label:hover { color: #06e; }
+/*.btn:hover { color: #06e; }*/
 
 fieldset.ds { height: 12em;}	
 label.dsl {font-weight: normal; float: left; margin-right: .5em; font-size: 1.1em;}
@@ -184,8 +180,7 @@ select {margin-right: 1em; float: left;}
 }
 #main aside article {
 	float:right;
-/*	width:25%;
-*/}
+}
 #startdate {
     width: 50%;
 }
@@ -266,10 +261,12 @@ select {margin-right: 1em; float: left;}
 	font-size: 35px;
 	color: #E44D26;
 }
+.gc .heading:hover { color: #06e; }	
 .gc .element{
 	font-size: 20px;
 	color: #E44D26;
 }
+.gc .element:hover { color: #06e; }
 .oneseven {
 	/*display: inline-block;*/
 	/*float: left;*/
@@ -430,10 +427,8 @@ li {
 	border: 0;
 	padding: 0;
 }
-aside .hover {
+.aside:hover {
 	cursor: pointer;
-	font-color: blue;
-	font-weight: bold;
 }
 
 @font-face {
