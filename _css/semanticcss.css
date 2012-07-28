@@ -19,11 +19,11 @@ audio:not([controls]) { display: none; }
 [hidden] { display: none; }
 
 html { font-size: 100%; -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; }
-html, input, select, textarea { font-family: sans-serif; color: #222; }
+html, input, select, textarea { font-family: sans-serif; color: black; }
 body { margin: 0; font-size: 1em; line-height: 1.4; }
 
 ::-moz-selection { background: #fe57a1; color: #fff; text-shadow: none; }
-::selection { background: #fe57a1; color: #fff; text-shadow: none; }
+::selection { background: #fe57a1; text-shadow: none; }
 
 a { color: black; text-decoration: none; border-bottom: 2px #e44d26 dotted; }
 a:visited { color: black; text-decoration: none; border-bottom: 2px green dotted; }
@@ -103,7 +103,7 @@ td { vertical-align: top; color: black; }/* changed color to black*/
 	position: fixed;
 	top: 0;
 	min-width: 100%;
-	min-height: 67px;
+/*	min-height: 67px;*/
 }
 #main-container {
 	margin-top:	67px;
@@ -147,25 +147,28 @@ header h1 { color:white; }
 	h2, h3 { page-break-after: avoid; }
 	table { border-collapse: collapse; border-spacing: 0; font-color: black; }
 	td { vertical-align: top; color: black; }/* changed color to black*/
-	#header-container {display:none}
-	.footer {display:none}
-	.commentWrapper {display:none}
-	#gc {
-		width: 100%;
+	#header-container {
+/*		display:none*/
 	}
-	#commentWrapper {
-		width: 100%;
+	.footer {display:none}
+	.asideTrack {display:none}
+	#gc {
+		width: 95% !important;
+	}
+	#asideTrack {
+/*		width: 100%;*/
+		display: none;
+	}
+	.asideTrack {
+/*		width: 100%;*/
+		display: none;
 	}
 }
 
 /*chris's crap*/
 
-/*hide checkboxes*/
-input[type="checkbox"] {
-    display: none;
-}
-
 label:hover { color: #06e; }
+/*.btn:hover { color: #06e; }*/
 
 fieldset.ds { height: 12em;}	
 label.dsl {font-weight: normal; float: left; margin-right: .5em; font-size: 1.1em;}
@@ -175,6 +178,7 @@ select {margin-right: 1em; float: left;}
     display: block;
     padding: 5px 5px 5px;
     margin: 5px 5px;
+	margin-top: 18px;
 }
 #gc {
 	width:74%;
@@ -183,8 +187,7 @@ select {margin-right: 1em; float: left;}
 }
 #main aside article {
 	float:right;
-/*	width:25%;
-*/}
+}
 #startdate {
     width: 50%;
 }
@@ -205,30 +208,30 @@ select {margin-right: 1em; float: left;}
 	display: block;
 	padding-left: 10px;
 }
-.formElems {
+.fs .element {
 	padding-left: 10px;	
+	color: white;
 }
 .aside {
 	display: block;
 	font-size: 11px;
 }
-.hidden {
+.white {
 	color: white;
 }
-.aside .abstract{
+.aside .abstract {
 	font-size: 11px;
-	display: block;
 	clear: left;
 }
-.aside .businessapproaches{
+.aside .businessapproaches {
 	font-size: 11px;
 }
-.aside .academic{
+.aside .academic {
 	font-size: 11px;
 }
-.form .workexperience{
+.form .workexperience {
 	font-size: 11px;
-	color: black;
+/*	color: black;*/
 }
 .form {
 	padding: 5px;
@@ -249,24 +252,32 @@ select {margin-right: 1em; float: left;}
 	width: 45%;
 	padding-left: 10px;
 }
-#workexperience_all{
+#workexperience_all {
 	font-size: 11px;
 	color: white;
 }
-.aside .skillstable{
+.aside .skillstable {
 	font-size: 11px;
-	color: black;
+/*	color: black;*/
 }
-.gcheader{
+.fs .heading {
+	font-size: 15px;
+/*	color: black;*/
+}
+.gc .heading {
 	font-size: 35px;
 	color: #E44D26;
 }
-.gcsubheader{
+.jokes {
+	font-size: 30px;
+	color: #E44D26;
+}
+.gc .heading:hover { color: #06e; }	
+.gc .element {
 	font-size: 20px;
 	color: #E44D26;
 }
-.superseven {
-}
+.gc .element:hover { color: #06e; }
 .oneseven {
 	/*display: inline-block;*/
 	/*float: left;*/
@@ -278,12 +289,14 @@ select {margin-right: 1em; float: left;}
 	margin-left: 10px;
 	text-indent: -10px;
 }
-.gc .abstract {
+
+.gc .fr {
 	float:right;
 	text-align: right;
 	margin-left: 10px;
 	margin-bottom: 10px;
 }
+
 .gc .businessapproaches {
 	/*display: inline-block;*/
 }
@@ -293,6 +306,16 @@ select {margin-right: 1em; float: left;}
 	list-style-type: circle;
 }
 .gc .workexperience ul {
+	margin:0;
+	padding: 0 0 0 40px;
+	list-style-type: square;
+}
+.gc .community ol {
+	margin:0;
+	padding: 0 0 0 40px;
+	list-style-type: circle;
+}
+.gc .community ul {
 	margin:0;
 	padding: 0 0 0 40px;
 	list-style-type: square;
@@ -307,21 +330,21 @@ select {margin-right: 1em; float: left;}
 	/*display: inline-block;*/
 	/*width: 100%;*/
 }
-#commentWrapper {
+#asideTrack {
 	float: right;
 	position: fixed;
 	width:23%;
 	top: 62px;
 	right: 0;
 }
-#comment {
+#slideAside {
 	float: right;
 	top: 0;
 	right: 0;
 	width:100%;
 	/* Can include margins in the sliding effect here */
 }
-#comment.fixed {
+#slideAside.fixed {
 	position: fixed;
 	top: 0;
 	right: 0;
@@ -424,12 +447,9 @@ li {
 	background-color: transparent;
 	border: 0;
 	padding: 0;
-	color: white;
 }
-aside .hover {
+.aside:hover {
 	cursor: pointer;
-	font-color: blue;
-	font-weight: bold;
 }
 
 @font-face {
@@ -448,7 +468,7 @@ aside .hover {
 	font-size: 50px;
 }
 
-.displayHidden {
+.hidden {
 	display: none;
 }
 
