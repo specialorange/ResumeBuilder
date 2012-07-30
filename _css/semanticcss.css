@@ -344,6 +344,13 @@ select {margin-right: 1em; float: left;}
 	width:100%;
 	/* Can include margins in the sliding effect here */
 }
+#slideInfo {
+	float: right;
+	top: 0;
+	right: 0;
+	width:100%;
+	/* Can include margins in the sliding effect here */
+}
 #slideAside.fixed {
 	position: fixed;
 	top: 0;
