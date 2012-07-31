@@ -6,9 +6,9 @@ article, aside, details, figcaption, figure, hgroup, nav, section { display: blo
 header { 
 	display: block;
 	width: 100%;
-	box-shadow: 2px 4px 20px #e44d26;
-	-moz-box-shadow: 2px 4px 20px #e44d26;
-	-webkit-box-shadow: 2px 4px 20px #e44d26;
+	box-shadow: 2px 4px 20px #F16529;
+	-moz-box-shadow: 2px 4px 20px #F16529;
+	-webkit-box-shadow: 2px 4px 20px #F16529;
 }
 footer {
 	display: block;
@@ -25,7 +25,7 @@ body { margin: 0; font-size: 1em; line-height: 1.4; }
 ::-moz-selection { background: #fe57a1; color: #fff; text-shadow: none; }
 ::selection { background: #fe57a1; text-shadow: none; }
 
-a { color: black; text-decoration: none; border-bottom: 2px #e44d26 dotted; }
+a { color: black; text-decoration: none; border-bottom: 2px #F16529 dotted; }
 a:visited { color: black; text-decoration: none; border-bottom: 2px green dotted; }
 a:hover { color: #06e; }
 a:focus { outline: thin dotted; }
@@ -108,11 +108,11 @@ td { vertical-align: top; color: black; }/* changed color to black*/
 #main-container {
 	margin-top:	67px;
 }
-#footer-container{ border-top:    20px solid #e44d26; }
+#footer-container{ border-top:    20px solid #F16529; }
 #main aside      {
-	box-shadow: 2px 4px 20px #e44d26;
-	-moz-box-shadow: 2px 4px 20px #e44d26;
-	-webkit-box-shadow: 2px 4px 20px #e44d26;
+	box-shadow: 2px 4px 20px #F16529;
+	-moz-box-shadow: 2px 4px 20px #F16529;
+	-webkit-box-shadow: 2px 4px 20px #F16529;
 }
 
 #header-container,
@@ -172,8 +172,22 @@ label:hover { color: #06e; }
 
 fieldset.ds { height: 12em;}	
 label.dsl {font-weight: normal; float: left; margin-right: .5em; font-size: 1.1em;}
-select {margin-right: 1em; float: left;}
-
+select {margin-right: 150px; float: right;}
+#header-container {
+	box-shadow: 2px 4px 20px #F16529;
+	-moz-box-shadow: 2px 4px 20px #F16529;
+	-webkit-box-shadow: 2px 4px 20px #F16529;
+}
+#leftHeader, #rightHeader {
+	vertical-align: bottom;
+	display: inline-block;	
+}
+#leftHeader {
+	width:74%;
+}
+#rightHeader {
+	width:24%;
+}
 .block {
     display: block;
     padding: 5px 5px 5px;
@@ -263,16 +277,16 @@ select {margin-right: 1em; float: left;}
 }
 .gc .heading {
 	font-size: 35px;
-	color: #E44D26;
+	color: #F16529;
 }
 .jokes {
 	font-size: 30px;
-	color: #E44D26;
+	color: #F16529;
 }
 .gc .heading:hover { color: #06e; }	
 .gc .element {
 	font-size: 20px;
-	color: #E44D26;
+	color: #F16529;
 }
 .gc .element:hover { color: #06e; }
 .oneseven {
@@ -451,6 +465,15 @@ li {
 	background-color: transparent;
 	border: 0;
 	padding: 0;
+}
+.btn.jobtype {
+	padding-left: 10px;
+}
+.btn.row {
+	padding-left: 10px;
+}
+.btn.column {
+	padding-left: 10px;
 }
 .aside:hover {
 	cursor: pointer;

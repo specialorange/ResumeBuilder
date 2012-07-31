@@ -27,7 +27,22 @@
 <!--		<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js" ></script> -->
 <!--		<script type="text/javascript" src="_js/libs/selectToUISlider.jQuery.js"></script> -->
 		<div id="header-container">
-			<header style="text-align: center" class="clearfix"><a href="mailto:resume@specialorange.org?subject=Resume Oppurtunity&body=Thank you for reviewing my resume and contacting me about a potential oppurtunity. -Chris" target="_blank">resume@specialorange.org</a> | <span style="color: white; font-size:32px; font-weight: bold;">Chris Frisina</span> | <a href="tel:724-426-5676" target="_blank">724.426.5676</a>
+			<header style="text-align: center;" class="clearfix">
+				<div>
+					<div id="leftHeader">
+						<div style="width: 99%; margin: 0px auto;">
+							<div>
+								<span style="color: white; font-size:32px; font-weight: bold;">Chris Frisina</span>
+							</div>
+							<div>
+								<a href="mailto:resume@specialorange.org?subject=Resume Oppurtunity&body=Thank you for reviewing my resume and contacting me about a potential oppurtunity. -Chris" target="_blank">resume@specialorange.org</a> | <a href="tel:724-426-5676" target="_blank">724.426.5676</a> | <a href="goo.gl/DFYZ4" target="_blank">Belmont, NC</a>
+							</div>
+						</div>
+					</div>
+					<div id="rightHeader">
+						<span style="display: inline-block;">Resume Templates : <select style=""><option value="">Select:</option><option value="1">1</option><option value="2">2</option><option value="2">2</option></select></span>
+					</div>
+				</div>
 			</header>
 		</div>
 
@@ -40,8 +55,8 @@
 							<form class="form">
 								<fieldset id="i_section_information" class="i section information">
 									<div>
-										<span style="float: left">Information</span>
-										<label for="fs_heading_information" class="fs btn i information" style="font-weight: bold;"><span style="float: right; border:1px solid">X</span></label>
+										<span style="float: left;">Information</span>
+										<label id="fs_heading_information" class="fs btn i information" style="font-weight: bold;"><span style="float: right; border:1px solid;">X</span></label>
 									</div>
 									<p style="clear: both; text-indent: 10px;">This interactive resume allows you to generate a resume that is tailored to information you need.  Click a heading or subsection to un/hide.  If you hide an element (via the left or right side), the right side will be become <span style="color: white;">unfilled</span>.  Click it again, and it will become visible and return to normal.</p>
 									<p style="text-indent: 10px;">The Work Experience section can be limited by a date range, and narrowed by job roles.</p>
@@ -56,29 +71,29 @@
 						<aside>
 							<form class="form">
 								<fieldset id="fs_section_abstract" class="fs section abstract">
-									<label for="fs_abstract_heading" class="fs btn heading abstract">Abstract</label>
+									<label id="fs_abstract_heading" class="fs btn heading abstract">Abstract</label>
 								</fieldset>
 
 								<fieldset id="fs_section_businessapproach" class="fs section businessapproach">
-									<label for="fs_businessapproach_heading" class="fs btn heading businessapproach">Business Approach</label>
+									<label id="fs_businessapproach_heading" class="fs btn heading businessapproach">Business Approach</label>
 								</fieldset>
 								
 								<fieldset id="fs_section_workexperience" class="fs section workexperience">
-										<label for="fs_workexperience_heading" class="fs btn heading workexperience">Work Experience</label><br>
-										<label for="startdate">Start Date </label><input id="startdate" name="startdate" type="text" value="" style="width:23%"/>
-										<label for="enddate">End Date </label><input id="enddate" name="enddate" type="text" value="" style="width:23%"/><br>
+										<label id="fs_workexperience_heading" class="fs btn heading workexperience">Work Experience</label><br>
+										<label>Start Date </label><input id="startdate" name="startdate" type="text" value="" style="width: 23%;"/>
+										<label>End Date </label><input id="enddate" name="enddate" type="text" value="" style="width: 23%;"/><br>
 								</fieldset>
 
 								<fieldset id="fs_section_academic" class="fs section academic">
-									<label for="fs_academic_heading" class="fs btn heading academic">Academic</label>
+									<label id="fs_academic_heading" class="fs btn heading academic">Academic</label>
 								</fieldset>
 
 								<fieldset id="fs_section_skillstable" class="fs section skillstable">
-									<label for="fs_skillstable_heading" class="fs btn heading skillstable">Skills Table</label><br>
+									<label id="fs_skillstable_heading" class="fs btn heading skillstable">Skills Table</label><br>
 								</fieldset>
 
 								<fieldset id="fs_section_community" class="fs section community">
-									<label for="fs_community_heading" class="fs btn heading community">Community</label><br>
+									<label id="fs_community_heading" class="fs btn heading community">Community</label><br>
 								</fieldset>
 							</form>
 						</aside>
@@ -118,12 +133,12 @@
 						<section>
 							<h1>Tools</h1>
 							<ul>
-								<li><a href="http://specialorange.org/gallery-pictures/?album=3&gallery=1" title="Me, Smiling" target="_blank"><span style="font-size:20px"> ☺</span></a></li>
-								<li><a href="http://www.r-project.org/" target="_blank">R</a></li>
-								<li><a href="http://office.microsoft.com/en-us/excel/" target="_blank">excel</a></li>
-								<li><a href="http://codingbat.com/" target="_blank">codingbat</a></li>
-								<li><a href="http://stackexchange.com/" target="_blank">stackexchange</a></li>
-								<li><a href="http://macromates.com/" target="_blank">textmate</a></li>
+								<li><a href="http://goo.gl/GjxlI" title="Me, Smiling" target="_blank"><span style="font-size: 20px;"> ☺</span></a></li>
+								<li><a href="http://goo.gl/RKAK8" target="_blank">R</a></li>
+								<li><a href="http://goo.gl/4DUcg" target="_blank">excel</a></li>
+								<li><a href="http://goo.gl/8llRi" target="_blank">codingbat</a></li>
+								<li><a href="http://goo.gl/dRPWZ" target="_blank">stackexchange</a></li>
+								<li><a href="http://goo.gl/saZsP" target="_blank">textmate</a></li>
 							</ul>
 						</section>
 						<section>
@@ -146,10 +161,10 @@
 						<section>
 							<h1>Interests</h1>
 							<ul>
-								<li><a href="http://specialorange.org/gallery-pictures/?album=2&gallery=4" target="_blank">neon art bending</a></li>
-								<li><a href="http://specialorange.org/gallery-pictures/?album=4&gallery=3" target="_blank">whitewater kayaking</a></li>
-								<li><a href="http://specialorange.org/category/recipes/" target="_blank">large scale gourmet cooking</a></li>
-								<li><a href="http://specialorange.org/2010/12/07/neon-cross-no-not-neon-trees/" target="_blank">woodturning</a></li>
+								<li><a href="http://goo.gl/w3yZp" target="_blank">neon art bending</a></li>
+								<li><a href="http://goo.gl/h7rwX" target="_blank">whitewater kayaking</a></li>
+								<li><a href="http://goo.gl/kJXvx" target="_blank">large scale gourmet cooking</a></li>
+								<li><a href="http://goo.gl/GIdn8" target="_blank">woodturning</a></li>
 								<li>hiking/camping</li>
 							</ul>
 						</section>
@@ -203,7 +218,7 @@
 									<li class="dev ocm cs pm">Contractor Optimization
 										<ul>
 											<li class="dev">J2EE implementation including <span title="my Structured Query Language">mySQL</span>, <span title="JavaServer Faces">JSF</span>/myFaces, Spring, Hibernate, Tomcat, Maven, <span title="Extensible Markup Language">XML</span>, and <span title="Extensible / HyperText Markup Language">X/HTML</span>, with Git versioning, in a traditional Waterfall developing environment comprised solely of myself, end to end in Eclipse</li>
-											<li class="dev">Customized data reporting and data entry of <span title="Portable Document Format">PDF</span>, email (<span title="Simple Mail Transfer Protocol">SMTP</span>), <span title="Extensible Markup Language">XML</span>, and <span title="Concurrent Versions/Versioning System">CVS</span> into single comprehensive queryable presentations using <a href="http://sikuli.org/" target="_blank">Sikuli</a></li>
+											<li class="dev">Customized data reporting and data entry of <span title="Portable Document Format">PDF</span>, email (<span title="Simple Mail Transfer Protocol">SMTP</span>), <span title="Extensible Markup Language">XML</span>, and <span title="Concurrent Versions/Versioning System">CVS</span> into single comprehensive queryable presentations using <a href="http://goo.gl/cgppx" target="_blank">Sikuli</a></li>
 											<li class="dev">Basic data verification and session/transaction steps within the bean to cleanse and prevent rogue data from entering database</li>
 											<li class="dev">Database design with Business level logic for security management of <span title="Create, Read, Update and Delete cycle">CRUD cycle</span> user and data history retention</li>
 											<li class="dev">Chose J2EE and associated technologies and self taught to account for 50 requirements including scaling and future support of the program</li>
@@ -295,8 +310,10 @@
 							<section class="position"><h1>Grocery Manager</h1>
 								<time class="start" datetime="2003-12">Dec 2003</time>
 								<time class="end" datetime="2006-03">Mar 2006</time>
-								<p>Heading a team that ensured the daily presentation of the grocery department, eventually connecting 3 stores inventory to reduce product gaps to customers.</p>
+								<p>Heading a team that ensured the daily presentation of the grocery department, eventually connecting 3 stores' inventory to reduce product gaps to customers.</p>
 								<ul>
+									<li class="dev">QA test a prototype automated inventory control and ordering system and focus on inventory mismatches and business anomalies</li>
+									<li class="eng">Redesigned the store price sticker to reflect inventory of slow moving product, and created reports to track label issues that cause excess inventory</li>
 									<li class="mgr cs">Lead a team of six clerks to ensure proper ordering, stocking, rotation, and appearance of the Grocery Department with a <span title="$15 Million">$15M</span> inventory</li>
 									<li class="mgr cs">Manage three adjacent stores and retrain employees on the proper procedures, methodologies, and system processes</li>
 								</ul>
@@ -396,7 +413,7 @@
 							<tbody>
 								<tr>
 									<td>Technology</td>
-									<td><a href="http://www.oracle.com/technetwork/java/javaee/overview/index.html" title="Java Enterprise Edition" target="_blank">J2EE</a></td>
+									<td><a href="http://goo.gl/IZko6" title="Java Enterprise Edition" target="_blank">J2EE</a></td>
 									<td>1.5, 1.6, 1.7</td>
 									<td>November, 2011</td>
 									<td></td>
@@ -405,7 +422,7 @@
 								</tr>
 								<tr>
 									<td>Technology</td>
-									<td><a href="http://en.wikipedia.org/wiki/JavaScript" title="Javascript" target="_blank">JS</a></td>
+									<td><a href="http://goo.gl/wHD7X" title="Javascript" target="_blank">JS</a></td>
 									<td></td>
 									<td>April, 2012</td>
 									<td></td>
@@ -414,7 +431,7 @@
 								</tr>
 								<tr>
 									<td>Technology</td>
-									<td><a href="http://jquery.com/" title="Javascript Query" target="_blank">JQuery</a></td>
+									<td><a href="http://goo.gl/DwDtX" title="Javascript Query" target="_blank">JQuery</a></td>
 									<td>1.6.4, 1.7.1, 1.7.2</td>
 									<td>June, 2012</td>
 									<td></td>
@@ -423,7 +440,7 @@
 								</tr>
 								<tr>
 									<td>Compliance</td>
-									<td><a href="http://en.wikipedia.org/wiki/Critical_infrastructure_protection" title="Critical Infrastructure Protection" target="_blank">CIP</a></td>
+									<td><a href="http://goo.gl/kFpYV" title="Critical Infrastructure Protection" target="_blank">CIP</a></td>
 									<td></td>
 									<td>May, 2008</td>
 									<td>August, 2011</td>
@@ -432,8 +449,8 @@
 								</tr>
 								<tr>
 									<td>Certification</td>
-									<td><a href="http://www.redcross.org/" target="_blank">Red Cross</a></td>
-									<td><a href="http://www.redcross.org/portal/site/en/menuitem.d229a5f06620c6052b1ecfbf43181aa0/?vgnextoid=b2a80ffc9331d210VgnVCM10000089f0870aRCRD&vgnextchannel=aea70c45f663b110VgnVCM10000089f0870aRCRD#Emergency" target="_blank">First Aid</a>, <a href="http://www.redcross.org/portal/site/en/menuitem.d229a5f06620c6052b1ecfbf43181aa0/?vgnextoid=b2a80ffc9331d210VgnVCM10000089f0870aRCRD&vgnextchannel=aea70c45f663b110VgnVCM10000089f0870aRCRD#CPR-AED" title="Cardiac Pulminary Resucitation" target="_blank">CPR</a>, <a href="http://www.redcross.org/portal/site/en/menuitem.d229a5f06620c6052b1ecfbf43181aa0/?vgnextoid=b2a80ffc9331d210VgnVCM10000089f0870aRCRD&vgnextchannel=aea70c45f663b110VgnVCM10000089f0870aRCRD#Pathogens" target="_blank">Bloodborne Pathogens</a></td>
+									<td><a href="http://goo.gl/bdG3v" target="_blank">Red Cross</a></td>
+									<td><a href="http://goo.gl/b4Klw" target="_blank">First Aid</a>, <a href="http://goo.gl/cbVvk" title="Cardiac Pulminary Resucitation" target="_blank">CPR</a>, <a href="http://goo.gl/lmi2u" target="_blank">Bloodborne Pathogens</a></td>
 									<td>May, 2007</td>
 									<td>April, 2013</td>
 									<td></td>
@@ -441,7 +458,7 @@
 								</tr>
 								<tr>
 									<td>Compliance</td>
-									<td><a href="https://www.ansica.org/wwwversion2/outside/PERgeneral.asp?menuID=2" title="American National Standards Institute" target="_blank">ANSI</a></td>
+									<td><a href="goo.gl/sQxd9" title="American National Standards Institute" target="_blank">ANSI</a></td>
 									<td></td>
 									<td>November, 2007</td>
 									<td>August, 2010</td>
@@ -450,7 +467,7 @@
 								</tr>
 								<tr>
 									<td>Certification</td>
-									<td><a href="http://www.iso.org/iso/certification" title="International Organization for Standardization " target="_blank">ISO</a></td>
+									<td><a href="http://goo.gl/FEKrz" title="International Organization for Standardization " target="_blank">ISO</a></td>
 									<td>9000, 9001</td>
 									<td>May, 2007</td>
 									<td>August, 2010</td>
@@ -459,7 +476,7 @@
 								</tr>
 								<tr>
 									<td>Certification</td>
-									<td><a href="http://www.fmcsa.dot.gov/rules-regulations/topics/medical/aboutdotexam.htm" title="Department of Transportation" target="_blank">DOT</a></td>
+									<td><a href="http://goo.gl/5Fm1F" title="Department of Transportation" target="_blank">DOT</a></td>
 									<td><span title="United States of America">USA</span>, <span title="North Carolina">NC</span></td>
 									<td>June, 2006</td>
 									<td>April, 2013</td>
@@ -468,7 +485,7 @@
 								</tr>
 								<tr>
 									<td>Compliance</td>
-									<td><a href="http://www.osha.gov/dte/oti/certification_prof_development.html" title="Occupations Safety and Helath Administration" target="_blank">OSHA</a></td>
+									<td><a href="http://goo.gl/vLCTQ" title="Occupations Safety and Helath Administration" target="_blank">OSHA</a></td>
 									<td><span title="United States of America">USA</span>, <span title="North Carolina">NC</span>, <span title="Tennessee">TN</span></td>
 									<td>June, 2007</td>
 									<td>April, 2012</td>
@@ -477,7 +494,7 @@
 								</tr>
 								<tr>
 									<td>Compliance</td>
-									<td><a href="http://www.nerc.com/page.php?cid=6%7C84" title="National Electric Reliability Corporation" target="_blank">NERC</a></td>
+									<td><a href="http://goo.gl/gpPHr" title="National Electric Reliability Corporation" target="_blank">NERC</a></td>
 									<td><span title="United States of America">USA</span>, <span title="North Carolina">NC</span></td>
 									<td>April, 2006</td>
 									<td>April, 2012</td>
@@ -504,8 +521,8 @@
 								</tr>
 								<tr>
 									<td>Technology</td>
-									<td><a href="http://office.microsoft.com/en-us/excel/" target="_blank">Excel</a></td>
-									<td><a href="http://en.wikipedia.org/wiki/Visual_Basic_for_Applications" title="Visual Basic for Applications" target="_blank">VBA</a></td>
+									<td><a href="http://goo.gl/nwlr1" target="_blank">Excel</a></td>
+									<td><a href="http://goo.gl/pJY07" title="Visual Basic for Applications" target="_blank">VBA</a></td>
 									<td>April, 1998</td>
 									<td></td>
 									<td></td>
@@ -513,7 +530,7 @@
 								</tr>
 								<tr>
 									<td>Technology</td>
-									<td><a href="http://office.microsoft.com/en-us/suites/" target="_blank">Microsoft suite</a></td>
+									<td><a href="http://goo.gl/yAA9A" target="_blank">Microsoft suite</a></td>
 									<td></td>
 									<td>April, 1998</td>
 									<td></td>
@@ -522,7 +539,7 @@
 								</tr>
 								<tr>
 									<td>Technology</td>
-									<td><a href="http://www.r-project.org/" title="R" target="_blank">R</a></td>
+									<td><a href="http://goo.gl/RKAK8" title="R" target="_blank">R</a></td>
 									<td>2.x</td>
 									<td>September, 2008</td>
 									<td></td>
@@ -531,8 +548,8 @@
 								</tr>
 								<tr>
 									<td>Technology</td>
-									<td><a href="http://en.wikipedia.org/wiki/SQL" title="Structured Query Language" target="_blank">SQL</a></td>
-									<td><a href="http://www.mysql.com/" title="my (named after the daughter of co-founder Michael Widenius, My) Structured Query Language" target="_blank">mySQL</a>, <a href="http://www.microsoft.com/sqlserver/en/us/default.aspx" title="Microsoft Structured Query Language" target="_blank">msSQL</a>/<a href="http://www.sybase.com/products/databasemanagement/sqlanywhere" target="_blank">Sybase</a></td>
+									<td><a href="http://goo.gl/URfX8" title="Structured Query Language" target="_blank">SQL</a></td>
+									<td><a href="http://goo.gl/N5oEi" title="my (named after the daughter of co-founder Michael Widenius, My) Structured Query Language" target="_blank">mySQL</a>, <a href="http://goo.gl/O2MdD" title="Microsoft Structured Query Language" target="_blank">msSQL</a>/<a href="http://goo.gl/X67RG" target="_blank">Sybase</a></td>
 									<td>August, 2010</td>
 									<td></td>
 									<td></td>
@@ -540,8 +557,8 @@
 								</tr>
 								<tr>
 									<td>Technology</td>
-									<td><a href="http://www.eclipse.org/" target="_blank">Eclipse</a></td>
-									<td><a href="http://www.eclipse.org/helios/" target="_blank">Helios</a> and Indigo for <a href="http://www.eclipse.org/downloads/packages/eclipse-classic-372/indigosr2" target="_blank">Classic</a>, <a href="http://www.eclipse.org/downloads/packages/eclipse-ide-java-developers/indigosr2" target="_blank">Java</a>, <a href="http://www.eclipse.org/downloads/packages/eclipse-ide-java-ee-developers/indigosr2" title="Java Enterprise Edition" target="_blank">J2EE</a>, <a href="http://www.eclipse.org/downloads/packages/eclipse-ide-javascript-web-developers/indigosr2" title="Javascript" target="_blank">JS</a></td>
+									<td><a href="http://goo.gl/Zna1s" target="_blank">Eclipse</a></td>
+									<td><a href="http://goo.gl/0ddg0" target="_blank">Helios</a> and Indigo for <a href="http://goo.gl/qUECh" target="_blank">Classic</a>, <a href="http://goo.gl/aI0EY" target="_blank">Java</a>, <a href="http://goo.gl/ipRKO" title="Java Enterprise Edition" target="_blank">J2EE</a>, <a href="http://goo.gl/TIVXw" title="Javascript" target="_blank">JS</a></td>
 									<td>August, 2009</td>
 									<td></td>
 									<td></td>
@@ -549,7 +566,7 @@
 								</tr>
 								<tr>
 									<td>Technology</td>
-									<td><a href="http://maven.apache.org/" target="_blank">Maven</a></td>
+									<td><a href="http://goo.gl/7ULG5" target="_blank">Maven</a></td>
 									<td>2, 3</td>
 									<td>August, 2010</td>
 									<td></td>
@@ -558,7 +575,7 @@
 								</tr>
 								<tr>
 									<td>Technology</td>
-									<td><a href="http://en.wikipedia.org/wiki/XML" title="Extensible Markup Language" target="_blank">XML</a></td>
+									<td><a href="http://goo.gl/6ja5S" title="Extensible Markup Language" target="_blank">XML</a></td>
 									<td>1.0, 1.1</td>
 									<td>August, 2009</td>
 									<td></td>
@@ -567,7 +584,7 @@
 								</tr>
 								<tr>
 									<td>Technology</td>
-									<td><a href="http://www.springsource.org/" target="_blank">Spring</a></td>
+									<td><a href="http://goo.gl/5DrsJ" target="_blank">Spring</a></td>
 									<td>2.5, 3.0, 3.1</td>
 									<td>August, 2010</td>
 									<td></td>
@@ -576,7 +593,7 @@
 								</tr>
 								<tr>
 									<td>Technology</td>
-									<td><a href="http://www.hibernate.org/" target="_blank">Hibernate</a></td>
+									<td><a href="http://goo.gl/vz9fB" target="_blank">Hibernate</a></td>
 									<td>3.x, 4.x</td>
 									<td>August, 2010</td>
 									<td></td>
@@ -594,7 +611,7 @@
 								</tr>
 								<tr>
 									<td>Technology</td>
-									<td><a href="http://en.wikipedia.org/wiki/Cascading_Style_Sheets" title="Cascading Style Sheets" target="_blank">CSS</a></td>
+									<td><a href="http://goo.gl/gfpbV" title="Cascading Style Sheets" target="_blank">CSS</a></td>
 									<td></td>
 									<td>January, 1997</td>
 									<td></td>
@@ -603,7 +620,7 @@
 								</tr>
 								<tr>
 									<td>Technology</td>
-									<td><a href="http://en.wikipedia.org/wiki/HTML" title="HyperText Markup Language" target="_blank">HTML</a></td>
+									<td><a href="http://goo.gl/OQrsC" title="HyperText Markup Language" target="_blank">HTML</a></td>
 									<td><span title="The fifth version of HTML (HyperText Markup Langugae)">HTML5</span></td>
 									<td>January, 1997</td>
 									<td></td>
@@ -612,7 +629,7 @@
 								</tr>
 								<tr>
 									<td>Technology</td>
-									<td><a href="http://en.wikipedia.org/wiki/XHTML" title="Extensible HyperText Markup Language" target="_blank">XHTML</a></td>
+									<td><a href="http://goo.gl/OXJz1" title="Extensible HyperText Markup Language" target="_blank">XHTML</a></td>
 									<td></td>
 									<td>January, 2010</td>
 									<td></td>
@@ -621,8 +638,8 @@
 								</tr>
 								<tr>
 									<td>Technology</td>
-									<td><a href="http://scadacertification.com/" title="Supervisory Control And Data Acquisition" target="_blank">SCADA</a></td>
-									<td><a href="http://scadacertification.com/about-scada-certification" title="Certified SCADA Technology Specialist" target="_blank">CSTS</a>: Distributed, Networked</td>
+									<td><a href="http://goo.gl/l2Ag0" title="Supervisory Control And Data Acquisition" target="_blank">SCADA</a></td>
+									<td><a href="http://goo.gl/7LXXz" title="Certified SCADA Technology Specialist" target="_blank">CSTS</a>: Distributed, Networked</td>
 									<td>January, 2007</td>
 									<td></td>
 									<td></td>
@@ -630,9 +647,18 @@
 								</tr>
 								<tr>
 									<td>Technology</td>
-									<td><a href="http://www.python.org/" target="_blank">Python</a></td>
+									<td><a href="http://goo.gl/qFgVl" target="_blank">Python</a></td>
 									<td></td>
 									<td>April, 2010</td>
+									<td></td>
+									<td></td>
+									<td><span title="2 = I am very familiar, and able to complete most projects with little oversight.">2</span></td>
+								</tr>
+								<tr>
+									<td>Technology</td>
+									<td><a href="http://goo.gl/dFPZl" target="_blank">Unix</a></td>
+									<td><a href="http://goo.gl/SNGpt" target="blank">Linux</a>, <a href="http://goo.gl/WmJCR" target="_blank">Ubuntu</a></td>
+									<td>March, 2004</td>
 									<td></td>
 									<td></td>
 									<td><span title="2 = I am very familiar, and able to complete most projects with little oversight.">2</span></td>
@@ -714,8 +740,8 @@
 					</section>
 					
 					<section id="gc_section_j" class="gc section jokes hidden">I am not sure why you don't want to know about me, but here are two of my favorite comics!
-						<span style="float:left"><img src="_img/bee.jpeg" width="750" height="477" alt="Bee"></span>
-						<span style="float:right"><img src="_img/investigator.jpeg" width="398" height="512" alt="Investigator"></span>
+						<span style="float: left;"><img src="_img/bee.jpeg" width="750" height="477" alt="Bee"></span>
+						<span style="float: right;"><img src="_img/investigator.jpeg" width="398" height="512" alt="Investigator"></span>
 					</section>
 				</div>
 			</div>
@@ -724,8 +750,8 @@
 		<footer class="footer">
 			<!-- <div> -->
 				<p>
-					<span style="float:left">Specific references available upon request</span>
-					<span style="float:right">For comprehensive information on this resume, please view <a href="http://specialorange.org/2012/07/27/the-first-interactive-resume/" target="_blank">this</a> post</span>
+					<span style="float: left;">Specific references available upon request</span>
+					<span style="float: right;">For comprehensive information on this resume, please view <a href="http://goo.gl/MVxc5" target="_blank">this</a> post</span>
 				</p>
 			<!-- </div> -->
 		</footer>
@@ -781,7 +807,7 @@
 				$.each(lis, function(idx, val){
 					var value = val.toLowerCase();
 					var name = jtaa[value];
-					$('<label for="wejt_' + value + '" class="jobtype" name="' + value + '">' + name + '</label>').appendTo($('fieldset.workexperience'));
+					$('<label id="wejt_' + value + '" class="btn jobtype" name="' + value + '">' + name + '</label>').appendTo($('fieldset.workexperience'));
 				});
 			})();
 	//NUI (GC SIDE)
@@ -813,7 +839,7 @@
 				return nElement($(this), "ab", "gc element");
 			});
 			$('section.businessapproaches section h1').each(function () {
-				return nElement($(this), " ba", "gc element");
+				return nElement($(this), "ba", "gc element");
 			});
 			$('section.academic section.school > h1').each(function () {
 				return nElement($(this), "ac", "gc element");
@@ -851,26 +877,33 @@
 	// 	});
 	// });
 // Persistence
-//¿¿??
-	var formvals = {};
 	var keyval = location.search.replace('?', '').split('&');
-	$.each(keyval, function () {
-		var splitval = this.split('=');
-		formvals[splitval[0]] = splitval[1];
-	});
+	var clicked = [];
+	console.log(clicked);
+	
 
-	$.each($('form')[0].elements, function () {
-		var key = $(this).attr('name');
-		if (key && formvals[key]) {
-			$('#' + key).val(formvals[key]);
-		} else {
-			// if ($(this).attr('type') == 'checkbox') {
-			//   $('#'+key)[0].checked = false;
-			// }
-		}
-	});
+	function persistence(keyval) {
+		for ( i=0 ; i < keyval.length ; i++ ) {
+			// console.log('Trigger click on: '+keyval[i]);
+			$('#'+keyval[i]).click();
+		};
+	};
+	
+	// $.each($('form')[0].elements, function () {
+	// 	var key = $(this).attr('name');
+	// 	if (key && formvals[key]) {
+	// 		$('#' + key).val(formvals[key]);
+	// 	} else {
+	// 		// if ($(this).attr('type') == 'checkbox') {
+	// 		//   $('#'+key)[0].checked = false;
+	// 		// }
+	// 	}
+	// });
 //hiding all elements
 	$('.btn').click(function () {
+	console.log($(this).attr('id'))
+		clicked.push($(this).attr('id'));
+	// console.log(clicked);
 		var text = $(this).text().toLowerCase();
 		var cNames = $(this).attr("class");
 		//Left to Right
@@ -1179,9 +1212,10 @@
 			//grab each first td child of skillstable
 				var keys = [];
 				$('section.skillstable table td:first-child').each(function(){ keys.push($(this).html()); });
-				keys.sort(); //WHY IS THIS HERE WHEN IT'S ALSO RIGHT AFTER THE UNIQUE? TGM
+				keys.sort();
 				keys = $.unique(keys);
 				keys.sort();
+
 			// //¿¿ asign the label to the key and assign to hash??
 				var hash = {};
 				for (var i = 0; i < keys.length; i++) {
@@ -1189,18 +1223,18 @@
 				}
 			//Row Button Generator
 				$.each(keys, function(i) {
-					$('<label id="skillstable_'+this+'" class="row">'+this+'</label>').appendTo($("fieldset.skillstable"));
+					$('<label id="skillstable_'+this+'" class="row btn">'+this+'</label>').appendTo($("fieldset.skillstable"));
 				});
 				// separate rows from columns
 					$('<br>').appendTo($("fieldset.skillstable"));
 		//column button generator
 			var cols = [];
 			$('section.skillstable table th').each(function(){
-				cols.push($(this).html());
+				cols.push($(this).html().replace(/\ /g,''));
 			});
 			cols.splice(0,2);
 			$.each(cols, function(i) {
-					$('<label id="ttcol_'+this+'" class="column">'+cols[i]+'</label>' + '<br>').appendTo($('fieldset.skillstable'));
+					$('<label id="skillstable_'+this.toLowerCase()+'" class="column btn">'+cols[i]+'</label>' + '<br>').appendTo($('fieldset.skillstable'));
 			});
 		//Row Button Hider
 			$('fieldset.skillstable .row').on('click', function() {
@@ -1220,7 +1254,7 @@
 				});
 				$('section.skillstable .skillstablevisibility').html(segments.join(' | '));
 			//if all three are unselected, hide the skills table
-				if ($('fieldset.skillstable .white').length === $('fieldset.skillstable .row').length) {
+				if ($('fieldset.skillstable .row.white').length === $('fieldset.skillstable .row').length) {
 					//hide the sections
 						//left
 							//hide the skills table
@@ -1331,6 +1365,7 @@
 		// 	});
 		// });
 
+
 //Blinking
 	function blinks(hide) {
 		if(hide==1) {
@@ -1341,9 +1376,12 @@
 			hide = 1;
 		}
 		setTimeout("blinks("+hide+")",1000);
-		}
+	}
+	
 $(document).ready(function () {  
 	blinks(1);
+	
+	// persistence(keyval);
 	// check to see if the scrollHeight + right hand side height is <= to screen height - (footerheight + margin).
 	//        if not, position: absolute; bottom: (footer height + margin)px;
 	// 
@@ -1376,5 +1414,12 @@ $(document).ready(function () {
 				// 		$('aside').css({'position: absolute; bottom: 150px;'})
 				// 	}
 				// });
-});				
+});	
+// var whichPart = '?';
+
+// $(document).on('click','.btn',function() {
+// 
+//     whichPart += $(this).attr('id') + '&';
+//     console.log(whichPart);
+// });			
 </script>
