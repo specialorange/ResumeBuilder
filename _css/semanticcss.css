@@ -163,16 +163,30 @@ header h1 { color:white; }
 /*		width: 100%;*/
 		display: none;
 	}
+	body { 
+		margin: 0; 
+		font-size: 10px; 
+		line-height: 1.4; 
+	}
+	.gc .element {
+		font-size: 11px; 
+	}
+	.gc .heading {
+		font-size: 14px; 
+	}
 }
 
 /*chris's crap*/
+.dockList {
+     display: none;   
+}
 
 label:hover { color: #06e; }
 /*.btn:hover { color: #06e; }*/
 
 fieldset.ds { height: 12em;}	
 label.dsl {font-weight: normal; float: left; margin-right: .5em; font-size: 1.1em;}
-select {margin-right: 150px; float: right;}
+select {margin-right: 150px;/* float: right;*/}
 #header-container {
 	box-shadow: 2px 4px 20px #F16529;
 	-moz-box-shadow: 2px 4px 20px #F16529;

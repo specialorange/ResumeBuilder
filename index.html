@@ -1,3 +1,8 @@
+<!-- //Todo create methods of the hiding/unhiding of each type
+//reset the DOM load orders to all be the same  to account for the persistent templates
+//potentially add previous word and pdf resumes -->
+
+
 <!DOCTYPE html>
 <html>
 	<head>
@@ -10,6 +15,17 @@
 		<!-- <link rel="stylesheet" href="_css/bootstrap.min.css"> -->
 		<!-- <link rel="stylesheet" href="_css/bootstrap-responsive.min.css"> -->
 		<!-- <link rel="stylesheet" href="_css/style.css"> -->
+		<script type="text/javascript">
+			var _gaq = _gaq || [];
+			_gaq.push(['_setAccount', 'UA-33903909-1']);
+			_gaq.push(['_trackPageview']);
+
+			(function() {
+				var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+				ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+				var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+			})();
+		</script>
 	</head>
 	<body>
 		<script src="http://code.jquery.com/jquery.min.js"></script>
@@ -35,7 +51,7 @@
 								<span style="color: white; font-size:32px; font-weight: bold;">Chris Frisina</span>
 							</div>
 							<div>
-								<a href="mailto:resume@specialorange.org?subject=Resume Oppurtunity&body=Thank you for reviewing my resume and contacting me about a potential oppurtunity. -Chris" target="_blank">resume@specialorange.org</a> | <a href="tel:724-426-5676" target="_blank">724.426.5676</a> | <a href="goo.gl/DFYZ4" target="_blank">Belmont, NC</a>
+								<a href="mailto:resume@specialorange.org?subject=Resume Oppurtunity&body=Thank you for reviewing my resume and contacting me about a potential oppurtunity. -Chris" target="_blank">resume@specialorange.org</a> | <a href="tel:724-426-5676" target="_blank">724.426.5676</a> | <a href="http://goo.gl/DFYZ4" target="_blank">Belmont, NC</a>
 							</div>
 						</div>
 					</div>
@@ -44,6 +60,14 @@
 					</div>
 				</div>
 			</header>
+			<!-- <noscript>
+			    <div style="background-color:red;font-size:14pt;">
+			        This site will be very boring unless you enable Javascript!
+			    </div> -->
+			    <!-- if you're convinced that bots won't follow your redirect, add this: -->
+			    <!-- Proceed to the <a href="resume/index.html">Interactive Resume</a> anyway.
+			</noscript> -->
+
 		</div>
 
 		<div id="main-container" class="wrapper">
@@ -94,6 +118,14 @@
 
 								<fieldset id="fs_section_community" class="fs section community">
 									<label id="fs_community_heading" class="fs btn heading community">Community</label><br>
+								</fieldset>
+								
+								<fieldset id="fs_section_oldresumes" class="fs section oldresumes">
+									<label id="fs_oldresumes_heading" class="fs btn heading oldresumes">Old Resumes</label><br>
+								</fieldset>
+
+								<fieldset id="fs_section_visibility" class="fs section visibility">
+									<label id="fs_visibility_off_heading" class="fs btn off visibility">Hide All</label> | <label id="fs_visibility_on_heading" class="fs btn on visibility">Show All</label><br>
 								</fieldset>
 							</form>
 						</aside>
@@ -244,6 +276,7 @@
 									<li class="bit">Identify an <span title="Structured Query Language">SQL</span> security hole in an outsourced employee information database, affecting +30% of FedEx Operations, saving +20M in liability</li>
 									<li class="pm bit">Restructure vendor <span title="Information Technology">IT</span> infrastructure to streamline reporting, feedback, and decrease downtime by implementing self-efficacy processes</li>
 									<li class="mgr cs">Manage budget of employees (7 direct), interact with external customers and vendors to plan and execute projects on time</li>
+									<li class="ocm pm">Facilitate business requirements gathering and definition in various formats including joint collaboration sessions with business and IT, targeted Q&A sessions with multiple Subject Mater Experts, and one-on-one user interviews in order to provide solutions that meet business and user needs</li>
 									<li class="ocm mgr eng dev">Vision
 										<ul>
 											<li class="ocm">Job Aids</li>
@@ -502,6 +535,15 @@
 									<td><span title="2 = I am very familiar, and able to complete most projects with little oversight.">2</span></td>
 								</tr>
 								<tr>
+									<td>Technology</td>
+									<td><a href="http://goo.gl/6GJHU" title="Lightweight Directory Access Protocol" target="_blank">LDAP</a></td>
+									<td></td>
+									<td>January, 2003</td>
+									<td></td>
+									<td></td>
+									<td><span title="2 = I am very familiar, and able to complete most projects with little oversight.">2</span></td>
+								</tr>
+								<tr>
 									<td>Certification</td>
 									<td>Leadership Principles</td>
 									<td></td>
@@ -527,6 +569,15 @@
 									<td></td>
 									<td></td>
 									<td><span title="3 = I can teach this to others.">3</span></td>
+								</tr>
+								<tr>
+									<td>Technology</td>
+									<td><a href="http://goo.gl/N5AwB" target="_blank">SharePoint</a></td>
+									<td></td>
+									<td>May, 2007</td>
+									<td></td>
+									<td></td>
+									<td><span title="2 = I am very familiar, and able to complete most projects with little oversight.">2</span></td>
 								</tr>
 								<tr>
 									<td>Technology</td>
@@ -689,7 +740,7 @@
 								<time class="start" datetime="2008-05">Mar 2008</time>
 								<time class="end" datetime=""></time>
 								<time class="once" datetime=""></time>
-								<p>I oversee supply chain for the Bahamas Habitat, a country often not thought of requiring Habitat's resources, who help serve over 1000 families across the various islands.'</p>
+								<p>I oversee supply chain for the Bahamas Habitat, a country often not thought of requiring Habitat's resources, who help serve over 1000 families across the various islands.</p>
 								<ul>
 									<li>State-side fundraising</li>
 									<li>Flight scheduling</li>
@@ -739,10 +790,57 @@
 						</section>
 					</section>
 					
-					<section id="gc_section_j" class="gc section jokes hidden">I am not sure why you don't want to know about me, but here are two of my favorite comics!
+					<section id="gc_section_oldresumes" class="gc section oldresumes "><h1>Old Resumes</h1>
+
+						<!-- <div>
+						<object data="_img/java.pdf" type="application/pdf" width="775" height="1000">
+						PDF : <a href="_img/java.pdf">Java.pdf</a>
+						</object>
+						</div> -->
+						<!-- <div class="b"> -->
+							<select class="oldDocs">
+								<option value="d0" selected>Please select one:</option>
+								<option value="d1">PM.docx</option>
+								<option value="d2">PM.pdf</option>
+								<option value="d3">Java.docx</option>
+								<option value="d4">Java.pdf</option>
+							</select>
+						<!-- </div> -->
+						<!-- <div class="descArea"> 
+						</div> -->
+						<div class="scroll-content">
+							<div class="dockList d0">
+							</div>
+							<div class="dockList d1">
+								<!-- <iframe src="http://goo.gl/pmZry" width="600" height="780" style="border: none;"></iframe> -->
+								<iframe src="http://docs.google.com/viewer?url=http%3A%2F%2Fspecialorange.org%2Fresume%2F_img%2Fpm.docx&embedded=true" width="75%" height="1170" style="border: none;"></iframe>
+							</div>
+							<div class="dockList d2">
+								<!-- <iframe src="http://goo.gl/y1U8O" width="600" height="780" style="border: none;"></iframe> -->
+								<iframe src="http://docs.google.com/viewer?url=http%3A%2F%2Fspecialorange.org%2Fresume%2F_img%2Fpm.pdf&embedded=true" width="75%" height="1170" style="border: none;"></iframe>
+							</div>
+							<div class="dockList d3">
+								<!-- <iframe src="http://goo.gl/aFN5S" width="600" height="780" style="border: none;"></iframe> -->
+								<iframe src="http://docs.google.com/viewer?url=http%3A%2F%2Fspecialorange.org%2Fresume%2F_img%2Fjava.docx&embedded=true" width="600" height="780" style="border: none;"></iframe>
+							</div>
+							<div class="dockList d4">
+								<!-- <iframe src="http://goo.gl/mXkwJ" width="600" height="780" style="border: none;"></iframe> -->
+								<iframe src="http://docs.google.com/viewer?url=http%3A%2F%2Fspecialorange.org%2Fresume%2F_img%2Fjava.pdf&embedded=true" width="600" height="780" style="border: none;"></iframe>
+							</div>
+						</div>
+
+						
+						<!-- <div>
+							<iframe src="http://docs.google.com/viewer?url=http%3A%2F%2Fspecialorange.org%2Fresume%2F_img%2Fpm.docx&embedded=true" width="600" height="780" style="border: none;"></iframe>	
+						</div> -->
+						
+					</section>
+
+					<section id="gc_section_j" class="gc section jokes hidden">So you don't want to know something about me? Well, here are two of my favorite comics!
 						<span style="float: left;"><img src="_img/bee.jpeg" width="750" height="477" alt="Bee"></span>
 						<span style="float: right;"><img src="_img/investigator.jpeg" width="398" height="512" alt="Investigator"></span>
 					</section>
+
 				</div>
 			</div>
 		</div>
@@ -759,6 +857,17 @@
 </html>
 
 <script>
+
+$('.oldDocs').change(function() {
+	var selected = $(this).find(':selected');
+	$('.dockList').each(function() {
+		$(this).hide();
+	});
+	$('.'+selected.val()).show(); 
+	// if 
+	// $('.descArea').html(selected.html());
+});
+
 // Generation
 	//SideBar
 		function addSidebarElems(ths, section, elem) {
@@ -783,7 +892,7 @@
 				return addSidebarElems($(this).html(), "c", $('fieldset.community'));
 			});
 		//Find all <li> class types, and make a button
-			(function li() {
+			function li() {
 				//NOT DYNAMIC
 				var jtaa = {"bit" : "Business Information Technology",
 							"cs" : "Customer Service",
@@ -809,7 +918,7 @@
 					var name = jtaa[value];
 					$('<label id="wejt_' + value + '" class="btn jobtype" name="' + value + '">' + name + '</label>').appendTo($('fieldset.workexperience'));
 				});
-			})();
+			};
 	//NUI (GC SIDE)
 		function nHeading (ths) {
 			var spaced = ths.html().toLowerCase().split(' ');
@@ -879,7 +988,7 @@
 // Persistence
 	var keyval = location.search.replace('?', '').split('&');
 	var clicked = [];
-	console.log(clicked);
+	// console.log(clicked);
 	
 
 	function persistence(keyval) {
@@ -901,7 +1010,7 @@
 	// });
 //hiding all elements
 	$('.btn').click(function () {
-	console.log($(this).attr('id'))
+	// console.log($(this).attr('id'))
 		clicked.push($(this).attr('id'));
 	// console.log(clicked);
 		var text = $(this).text().toLowerCase();
@@ -910,6 +1019,10 @@
 		if ($(this).hasClass("gc")) {
 			//heading
 			if ($(this).hasClass("heading")) {
+				// $('#trackClick').click(function () {
+				  //track number of times element is clicked
+				_gaq.push(['_trackEvent', 'Action', 'Label', 'Value']);
+				// });​
 				//left
 				($(this).parent().parent().toggleClass('hidden'));
 				//right
@@ -970,7 +1083,7 @@
 				};
 				classes[0] = "gc";
 				var newClasses = '.' + classes.join().replace(/\,/g,'.');
-				if ($('.fs.section').length == $('.fs.white').length) { 
+				if ($('.fs.section').length-1 == $('.fs.white').length) { 
 					$('.jokes').toggleClass('hidden');
 				}
 				//left
@@ -1005,13 +1118,42 @@
 				//right
 				($(this).toggleClass('hidden', (!$(this).hasClass('hidden'))));
 			//information section
-			} else if ($(this).hasClass("i")){				
+			} else if ($(this).hasClass("i")) {				
 				$(this).parent().parent().parent().parent().parent().toggleClass('hidden');
+			//Hide all show all
+			} else if ($(this).hasClass("visibility")) {
+				//Hide
+				if ($(this).hasClass("off")) {
+					//headers
+					$(this).parent().prevAll().each(function() {
+						if (!$(this).children(':first-child').hasClass('white')) {
+							$(this).children(':first-child').click()							
+						}
+					});
+					$('.jokes').toggleClass('hidden');
+				//Show
+				} else if ($(this).hasClass("on")) {
+					//headers
+					$(this).parent().prevAll().each(function() {
+						if ($(this).children(':first-child').hasClass('white')) {
+							$(this).children(':first-child').click()							
+						}
+					});
+					//elements
+					$(this).parent().prevAll().each(function() {
+						console.log($(this).children().children());
+						$(this).children().children().each(function() {
+							if (!$(this).hasClass('hidden')) {
+							$(this).click()
+							}
+						})
+					});
+				}
 			}
 		//not 'fs' or 'gc'
-		} else  {
-		}
-		if ($('.fs.section').length == $('.fs.white').length) { 
+		} else {
+		}	
+		if ($('.fs.section').length-1 === $('.fs.white').length) { 
 			$('.jokes').toggleClass('hidden');
 		}
 	});
@@ -1380,8 +1522,9 @@
 	
 $(document).ready(function () {  
 	blinks(1);
-	
-	// persistence(keyval);
+	li();
+
+	persistence(keyval);
 	// check to see if the scrollHeight + right hand side height is <= to screen height - (footerheight + margin).
 	//        if not, position: absolute; bottom: (footer height + margin)px;
 	// 
@@ -1415,11 +1558,11 @@ $(document).ready(function () {
 				// 	}
 				// });
 });	
-// var whichPart = '?';
+var whichPart = '?';
 
-// $(document).on('click','.btn',function() {
-// 
-//     whichPart += $(this).attr('id') + '&';
-//     console.log(whichPart);
-// });			
+$(document).on('click','.btn',function() {
+
+    whichPart += $(this).attr('id') + '&';
+    console.log(whichPart);
+});			
 </script>
