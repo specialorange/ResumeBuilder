@@ -121,7 +121,7 @@
 								</fieldset>
 								
 								<fieldset id="fs_section_oldresumes" class="fs section oldresumes">
-									<label id="fs_oldresumes_heading" class="fs btn heading oldresumes">Old Resumes</label><br>
+									<label id="fs_oldresumes_heading" class="fs btn heading oldresumes white">Old Resumes</label><br>
 								</fieldset>
 
 								<fieldset id="fs_section_visibility" class="fs section visibility">
@@ -790,7 +790,7 @@
 						</section>
 					</section>
 					
-					<section id="gc_section_oldresumes" class="gc section oldresumes "><h1>Old Resumes</h1>
+					<section id="gc_section_oldresumes" class="gc section oldresumes hidden"><h1>Old Resumes</h1>
 
 						<!-- <div>
 						<object data="_img/java.pdf" type="application/pdf" width="775" height="1000">
@@ -1019,10 +1019,8 @@ $('.oldDocs').change(function() {
 		if ($(this).hasClass("gc")) {
 			//heading
 			if ($(this).hasClass("heading")) {
-				// $('#trackClick').click(function () {
-				  //track number of times element is clicked
-				_gaq.push(['_trackEvent', 'Action', 'Label', 'Value']);
-				// });​
+				//track btn clicks
+				_gaq.push(['_trackEvent', 'GC Heading', 'ID: ' + $(this).attr('id')]);
 				//left
 				($(this).parent().parent().toggleClass('hidden'));
 				//right
@@ -1042,6 +1040,8 @@ $('.oldDocs').change(function() {
 				var hidden = ($(this).parent().parent().children().filter(':hidden').size()+1);
 				//if all elelemts are hidden, hide the parent too
 				if (hidden >= count) {
+					//track btn clicks
+					_gaq.push(['_trackEvent', 'GC Element(all)', 'ID: ' + $(this).attr('id')]);
 					//left
 					($(this).parent().toggleClass('hidden'));
 					($(this).parent().parent().toggleClass('hidden'));
@@ -1057,6 +1057,8 @@ $('.oldDocs').change(function() {
 					($("'" + newClasses + "'").parent().parent().children().eq(0)).toggleClass('white');
 				//hide one element only
 				} else {
+					//track btn clicks
+					_gaq.push(['_trackEvent', 'GC Element(1)', 'ID: ' + $(this).attr('id')]);
 					//left
 					($(this).parent().toggleClass('hidden'));
 					//right
@@ -1093,9 +1095,13 @@ $('.oldDocs').change(function() {
 					//unhide any element's sections that were hidden
 					//if all elements were hidden
 						if(hidden >= count) {
+							//track btn clicks
+							_gaq.push(['_trackEvent', 'FS Heading(allElementsHidden)', 'ID: ' + $(this).attr('id')]);
 							($(this).siblings().children().toggleClass('hidden'));
 							($(this).siblings().toggleClass('hidden'));
 						} else {
+							//track btn clicks
+							_gaq.push(['_trackEvent', 'FS Heading', 'ID: ' + $(this).attr('id')]);
 							($(this).siblings().each(function() {
 								if (!$(this).children().hasClass('hidden')) {
 									$(this).toggleClass('hidden');
@@ -1113,17 +1119,23 @@ $('.oldDocs').change(function() {
 				};
 				classes[0] = "gc";
 				var newClasses = '.' + classes.join().replace(/\,/g,'.');
+				//track btn clicks
+				_gaq.push(['_trackEvent', 'FS Element', 'ID: ' + $(this).attr('id')]);
 				//left
 				($("'" + newClasses + "'").parent().toggleClass('hidden'));
 				//right
 				($(this).toggleClass('hidden', (!$(this).hasClass('hidden'))));
 			//information section
-			} else if ($(this).hasClass("i")) {				
+			} else if ($(this).hasClass("i")) {
+				//track btn clicks
+				_gaq.push(['_trackEvent', 'FS Information', 'ID: ' + $(this).attr('id')]);
 				$(this).parent().parent().parent().parent().parent().toggleClass('hidden');
 			//Hide all show all
 			} else if ($(this).hasClass("visibility")) {
 				//Hide
 				if ($(this).hasClass("off")) {
+					//track btn clicks
+					_gaq.push(['_trackEvent', 'FS All', 'ID: ' + $(this).attr('id')]);
 					//headers
 					$(this).parent().prevAll().each(function() {
 						if (!$(this).children(':first-child').hasClass('white')) {
@@ -1133,6 +1145,8 @@ $('.oldDocs').change(function() {
 					$('.jokes').toggleClass('hidden');
 				//Show
 				} else if ($(this).hasClass("on")) {
+					//track btn clicks
+					_gaq.push(['_trackEvent', 'FS All', 'ID: ' + $(this).attr('id')]);
 					//headers
 					$(this).parent().prevAll().each(function() {
 						if ($(this).children(':first-child').hasClass('white')) {
@@ -1154,6 +1168,8 @@ $('.oldDocs').change(function() {
 		} else {
 		}	
 		if ($('.fs.section').length-1 === $('.fs.white').length) { 
+			//track btn clicks
+			_gaq.push(['_trackEvent', 'ALL HEADINGS HIDDEN']);
 			$('.jokes').toggleClass('hidden');
 		}
 	});
