@@ -1381,18 +1381,18 @@ $('.oldDocs').change(function() {
 				}
 			//Row Button Generator
 				$.each(keys, function(i) {
-					$('<label id="skillstable_'+this+'" class="row btn">'+this+'</label>').appendTo($("fieldset.skillstable"));
+					$('<label id="skillstable_row_'+this+'" class="row btn">'+this+'</label>').appendTo($("fieldset.skillstable"));
 				});
 				// separate rows from columns
 					$('<br>').appendTo($("fieldset.skillstable"));
 		//column button generator
 			var cols = [];
 			$('section.skillstable table th').each(function(){
-				cols.push($(this).html().replace(/\ /g,''));
+				cols.push($(this).html().replace(/\ /g,'').replace('(','').replace(')',''));
 			});
 			cols.splice(0,2);
 			$.each(cols, function(i) {
-					$('<label id="skillstable_'+this.toLowerCase()+'" class="column btn">'+cols[i]+'</label>' + '<br>').appendTo($('fieldset.skillstable'));
+					$('<label id="skillstable_col_'+this.toLowerCase()+'" class="column btn">'+cols[i]+'</label>' + '<br>').appendTo($('fieldset.skillstable'));
 			});
 		//Row Button Hider
 			$('fieldset.skillstable .row').on('click', function() {
