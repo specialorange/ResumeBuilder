@@ -201,6 +201,7 @@ select {margin-right: 150px;/* float: right;*/}
 }
 #rightHeader {
 	width:24%;
+	text-align: center;
 }
 .block {
     display: block;

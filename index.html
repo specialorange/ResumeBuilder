@@ -56,7 +56,14 @@
 						</div>
 					</div>
 					<div id="rightHeader">
-						<span style="display: inline-block;">Resume Templates : <select style=""><option value="">Select:</option><option value="1">1</option><option value="2">2</option><option value="2">2</option></select></span>
+						<span style="display: inline-block; ">Resume Templates : 
+							<select style="" onchange="if(this.options[this.selectedIndex].value != ''){window.top.location.href=this.options[this.selectedIndex].value}">
+								<option value="" selected>Select:</option>
+								<option value="?1">1</option>
+								<option value="?2">2</option>
+								<option value="?3">3</option>
+							</select>
+						</span>
 					</div>
 				</div>
 			</header>
@@ -992,10 +999,36 @@ $('.oldDocs').change(function() {
 	
 
 	function persistence(keyval) {
-		for ( i=0 ; i < keyval.length ; i++ ) {
-			// console.log('Trigger click on: '+keyval[i]);
-			$('#'+keyval[i]).click();
+					console.log(parseInt(keyval[0]) + " " +parseInt(keyval[1]));
+					console.log(typeof keyval[0]);
+					// console.log(typeof parseInt(keyval[0]),10);
+		function template(keyval) {
+			for ( i=0 ; i < keyval.length ; i++ ) {
+				// console.log('Trigger click on: '+keyval[i]);
+				$('#'+keyval[i]).click();
+			};
 		};
+		if (typeof parseInt(keyval[0]) === 'number' && keyval[0] % 1 == 0) {
+			switch(keyval[0])
+				{
+				case '1': //Developer
+					keyval = ["gc_ab_design", "gc_businessapproach_heading", "wejt_dev", "skillstable_Certification", "skillstable_versions"];
+					console.log('1');
+					template(keyval);
+					break;
+				case '2': //PM
+					keyval = ["gc_abstract_heading", "gc_businessapproach_heading", "gc_workexperience_heading", "gc_skillstable_heading", "gc_academic_heading"];
+					template(keyval);
+					console.log('2');
+					break;
+				default:
+					template(keyval);
+					console.log('default');
+				};
+		} else {
+			console.log('other');
+			template(keyval);
+		}
 	};
 	
 	// $.each($('form')[0].elements, function () {
