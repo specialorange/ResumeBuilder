@@ -1381,7 +1381,7 @@ $('.oldDocs').change(function() {
 				}
 			//Row Button Generator
 				$.each(keys, function(i) {
-					$('<label id="skillstable_row_'+this+'" class="row btn">'+this+'</label>').appendTo($("fieldset.skillstable"));
+					$('<label id="skillstable_'+this+'" class="row btn">'+this+'</label>').appendTo($("fieldset.skillstable"));
 				});
 				// separate rows from columns
 					$('<br>').appendTo($("fieldset.skillstable"));
@@ -1392,7 +1392,7 @@ $('.oldDocs').change(function() {
 			});
 			cols.splice(0,2);
 			$.each(cols, function(i) {
-					$('<label id="skillstable_col_'+this.toLowerCase()+'" class="column btn">'+cols[i]+'</label>' + '<br>').appendTo($('fieldset.skillstable'));
+					$('<label id="skillstable_'+this.toLowerCase()+'" class="column btn">'+cols[i]+'</label>' + '<br>').appendTo($('fieldset.skillstable'));
 			});
 		//Row Button Hider
 			$('fieldset.skillstable .row').on('click', function() {
@@ -1517,6 +1517,7 @@ $('.oldDocs').change(function() {
 		}); 
 		$(".skillstable table").addClass("tablesorter");
 
+
 		// $(function(){
 		// 	$('.ds #valueAA, .ds #valueBB').selectToUISlider({
 		// 		labels: 0,
@@ -1574,11 +1575,11 @@ $(document).ready(function () {
 				// 	}
 				// });
 });	
-var whichPart = '?';
+// var whichPart = '?';
 
-$(document).on('click','.btn',function() {
-
-    whichPart += $(this).attr('id') + '&';
-    console.log(whichPart);
-});			
+// $(document).on('click','.btn',function() {
+// 
+//     whichPart += $(this).attr('id') + '&';
+//     console.log(whichPart);
+// });			
 </script>
