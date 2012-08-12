@@ -94,7 +94,7 @@
 								<fieldset id="fs_section_businessapproach" class="fs section businessapproach">
 									<label id="fs_businessapproach_heading" class="fs btn heading businessapproach">Business Approach</label>
 								</fieldset>
-								
+
 								<fieldset id="fs_section_workexperience" class="fs section workexperience">
 										<label id="fs_workexperience_heading" class="fs btn heading workexperience">Work Experience</label><br>
 										<label id="">Start Date </label><input id="startdate" name="startdate" type="text" value="" style="width:23%"/>
@@ -112,6 +112,11 @@
 								<fieldset id="fs_section_community" class="fs section community">
 									<label id="fs_community_heading" class="fs btn heading community">Community</label><br>
 								</fieldset>
+
+								<fieldset id="fs_section_oldresumes" class="fs section oldresumes">
+									<label id="fs_traditionalresumes_heading" class="fs btn heading traditionalresumes white">Traditional Resumes</label><br>
+								</fieldset>
+
 							</form>
 						</aside>
 					</div>
@@ -774,7 +779,34 @@
 							</section>
 						</section>
 					</section>
-					
+
+					<section id="gc_section_traditionalresumes" class="gc section traditionalresumes hidden"><h1>Traditional Resumes</h1>
+						<section>This section of previous resumes is posted as a courtesy. Please note, content is valid until March 2012, and not updated.</section>
+						<select id="oldDocs" class="oldDocs">
+							<option value="d0" selected>Please select one:</option>
+							<option value="d1">PM.docx</option>
+							<option value="d2">PM.pdf</option>
+							<option value="d3">Java.docx</option>
+							<option value="d4">Java.pdf</option>
+						</select>
+						<div class="scroll-content">
+							<div class="dockList d0" id="d0">
+							</div>
+							<div class="dockList d1" id="d1">
+								<iframe src="http://docs.google.com/viewer?url=http%3A%2F%2Fspecialorange.org%2Fresume%2F_img%2Fpm.docx&embedded=true" width="75%" height="1250" style="border: none;"></iframe>
+							</div>
+							<div class="dockList d2" id="d2">
+								<iframe src="http://docs.google.com/viewer?url=http%3A%2F%2Fspecialorange.org%2Fresume%2F_img%2Fpm.pdf&embedded=true" width="75%" height="1250" style="border: none;"></iframe>
+							</div>
+							<div class="dockList d3" id="d3">
+								<iframe src="http://docs.google.com/viewer?url=http%3A%2F%2Fspecialorange.org%2Fresume%2F_img%2Fjava.docx&embedded=true" width="75%" height="1250" style="border: none;"></iframe>
+							</div>
+							<div class="dockList d4" id="d4">
+								<iframe src="http://docs.google.com/viewer?url=http%3A%2F%2Fspecialorange.org%2Fresume%2F_img%2Fjava.pdf&embedded=true" width="75%" height="1250" style="border: none;"></iframe>
+							</div>
+						</div>
+					</section>
+
 					<section id="gc_section_j" class="gc section jokes hidden">So you don't want to know something about me? Well, here are two of my favorite comics!
 						<span style="float: left;"><img src="_img/bee.jpeg" width="750" height="477" alt="Bee"></span>
 						<span style="float: right;"><img src="_img/investigator.jpeg" width="398" height="512" alt="Investigator"></span>
@@ -952,7 +984,7 @@
 				classes[0] = "fs";
 				var newClasses = '.' + classes.join().replace(/\,/g,'.');
 				$(newClasses).toggleClass('white');
-					//hide any element's section that are being hidden 
+					//hide any element's section that are being hidden
 					$(newClasses).siblings().each(function() {
 						if (!$(this).children().hasClass('hidden')) {
 							$(this).toggleClass('hidden');
@@ -1005,9 +1037,9 @@
 				};
 				classes[0] = "gc";
 				var newClasses = '.' + classes.join().replace(/\,/g,'.');
-				if ($('.fs.section').length-1 == $('.fs.white').length) { 
-					$('.jokes').toggleClass('hidden');
-				}
+				// if ($('.fs.section').length-1 === $('.fs.white').length) { 
+				// 	$('.jokes').toggleClass('hidden');
+				// }
 				//left
 				$(newClasses).parent().parent().toggleClass('hidden');
 				//right
@@ -1049,21 +1081,20 @@
 					//headers
 					$(this).parent().prevAll().each(function() {
 						if (!$(this).children(':first-child').hasClass('white')) {
-							$(this).children(':first-child').click()							
+							$(this).children(':first-child').click()
 						}
 					});
-					$('.jokes').toggleClass('hidden');
+					// $('.jokes').toggleClass('hidden');
 				//Show
 				} else if ($(this).hasClass("on")) {
 					//headers
 					$(this).parent().prevAll().each(function() {
 						if ($(this).children(':first-child').hasClass('white')) {
-							$(this).children(':first-child').click()							
+							$(this).children(':first-child').click()
 						}
 					});
 					//elements
 					$(this).parent().prevAll().each(function() {
-						console.log($(this).children().children());
 						$(this).children().children().each(function() {
 							if (!$(this).hasClass('hidden')) {
 							$(this).click()
@@ -1074,10 +1105,18 @@
 			}
 		//not 'fs' or 'gc'
 		} else {
-		}	
-		if ($('.fs.section').length-1 === $('.fs.white').length) { 
-			$('.jokes').toggleClass('hidden');
 		}
+		// console.log($('.fs.section').length);
+		// console.log($('.fs.white').length);
+		if ($('.fs.section').length === $('.fs.white').length) { 
+			$('.jokes').is(':visible') ? $('.jokes').addClass('hidden') : $('.jokes').removeClass('hidden') ;
+		} else {
+			if ($('.jokes').is(':visible')) {
+				$('.jokes').addClass('hidden');
+			}
+			// $('.jokes').is(':visible') ? console.log('visible') : console.log('not vis') ;
+		}
+
 	});
 
 // Work Experience
@@ -1434,8 +1473,14 @@
 		}
 		setTimeout("blinks("+hide+")",1000);
 		}
-		
-$(document).ready(function () {  
+//old resumes
+	$('#oldDocs').change(function(){
+		$('.dockList').hide();
+	console.log($(this).val());
+		$('#' + $(this).val()).show();
+	});
+
+$(document).ready(function () {
 	blinks(1);
 	persistence(keyval);
 });
