@@ -1256,21 +1256,35 @@
 		//fill in blank end dates with Today's date
 			$('section.skillstable td:nth-child(5)').each(function() {
 				if ($(this).is(':empty')) {
-					$(this).append(getCurrentDate());
+					$(this).append('Current');
 				};
 			});	
 		//fill in blank elapsed time
-			var monthNames = [ "january", "february", "march", "april", "may", "june", "july", "august", "september", "october", "november", "december" ]
-			var monthNumber = {}
-			for (var i=0; i<monthNames.length; ++i) {
-				monthNumber[monthNames[i]] = i;
-			};
+			function monthNumber(string) {
+				var lower = string.toLowerCase();
+				var monthNames = [ "january", "february", "march", "april", "may", "june", "july", "august", "september", "october", "november", "december" ];
+				for (var i=0; i<monthNames.length; ++i) {
+					if (lower === monthNames[i]) {
+						return i+1;
+					}
+				}
+			}
 		//convert the string to number of months
 			function stringToMonthNumber(monthYear) {
-				var parts = monthYear.split(/\s*,\s*/);
-				var month = monthNumber[parts[0]];
-				var year = parts[1] - 1;
-				return year * 12 + month;
+			// console.log(parts);
+				if (monthYear === 'current') {
+					d = getCurrentDate();
+					parts = d.split(/\s*,\s*/);
+					var month = monthNumber(parts[0]);
+					var year = parts[1];
+					return year * 12 + month;
+				} else {
+					var parts = monthYear.split(/\s*,\s*/);
+					var month = monthNumber(parts[0]);
+					var year = parts[1] - 1;
+					return year * 12 + month;
+					console.log(year * 12 + month);
+				}
 			};
 		//How many elapsed months
 			function elapsedMonths(startString, endString) {
@@ -1399,13 +1413,40 @@
 				// return false so this parser is not auto detected
 				return false;
 			},
+			//
+			// if (monthYear === 'current') {
+			// 	d = getCurrentDate();
+			// 	parts = d.split(/\s*,\s*/);
+			// 	var month = monthNumber(parts[0]);
+			// 	var year = parts[1];
+			// 	return year * 12 + month;
+			//
 			format: function(s) {
 				// format your data for normalization
 				for (var i = 0 ; i < s.length ; i++) {
+					function monthNumber(string) {
+						var lower = string.toLowerCase();
+						var monthNames = [ "january", "february", "march", "april", "may", "june", "july", "august", "september", "october", "november", "december" ];
+						for (var i=0; i<monthNames.length; ++i) {
+							if (lower === monthNames[i]) {
+								return i+1;
+							}
+						}
+					}
 					var parts = [];
 					var order = [];
-					parts.push(s.toLowerCase().replace(/january/,0).replace(/february/,1).replace(/march/,2).replace(/april/,3).replace(/may/,4).replace(/june/,5).replace(/july/,6).replace(/august/,7).replace(/september/,8).replace(/october/,9).replace(/november/,10).replace(/december/,11).split(/\s*,\s*/));
-					order.push(parseInt(parts[0][0])+(parseInt(parts[0][1])*12));
+					if (s === 'Current') {
+						d = getCurrentDate();
+						var partial = d.split(" ");
+						var month = monthNumber(partial[0]);
+						var year = parseInt(partial[1]);
+						parts.push(month);
+						parts.push(year);
+						order.push(parts[0]+parts[1]*12)
+					} else {
+						parts.push(s.toLowerCase().replace(/january/,0).replace(/february/,1).replace(/march/,2).replace(/april/,3).replace(/may/,4).replace(/june/,5).replace(/july/,6).replace(/august/,7).replace(/september/,8).replace(/october/,9).replace(/november/,10).replace(/december/,11).split(/\s*,\s*/));
+						order.push(parseInt(parts[0][0])+(parseInt(parts[0][1])*12));
+					}
 					return order;
 				};
 				s = order;
@@ -1449,16 +1490,15 @@
 	//Table Sorter parsers Identification
 		$(".skillstable table").tablesorter({
 			headers: {
-			3: {
-			sorter:'dateSorter'
-			},
-			4: {
-			sorter:'dateSorter'
-			}
-			,
-			5: {
-			sorter:'elapsedSorter'
-			}
+				3: {
+					sorter:'dateSorter'
+				},
+				4: {
+					sorter:'dateSorter'
+				},
+				5: {
+					sorter:'elapsedSorter'
+				}
 			}
 		}); 
 		$(".skillstable table").addClass("tablesorter");
