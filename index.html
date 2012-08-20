@@ -79,6 +79,7 @@
 									<p style="text-indent: 10px;">The Work Experience section can be limited by a date range, and narrowed by job roles.</p>
 									<p style="text-indent: 10px;">The Skills Table contains certifications, compliances, and technologies I am experienced in, all selectable.   The multi-column sortation (hold 'Shift' while clicking columns) will allow you to view the information in the order you need.</p>
 									<p style="text-indent: 10px;">All abbreviations and unique categories can be hovered over for full length terminology or brief explanation, while major ideas, programs or technologies provide a <span style="border-bottom: 2px black dotted;">link</span> to provide more information.</p>
+									<p style="text-indent: 10px;">Traditional pre-formatted paper resumes are available in the 'Traditional Resumes' section.</p>
 								</fieldset>
 							</form>
 						</aside>
@@ -227,6 +228,7 @@
 									<li class="pm cs">Research and design transportation routes to support the media, staff, and guests</li>
 									<li class="pm mgr">Coordinate volunteers and staff training, materials, and presentations</li>
 									<li class="pm mgr">Incorporate safety, security, and access requirements into events and transportation</li>
+									<li class="dev">Construct a volunteer and staff management system that incorporates availability with restrictions enabling on the fly adjustments for various conflicts</li>
 								</ul>
 							</section>
 						</section>
@@ -974,10 +976,8 @@
 		if ($(this).hasClass("gc")) {
 			//heading
 			if ($(this).hasClass("heading")) {
-				// $('#trackClick').click(function () {
 				  //track number of times element is clicked
-				_gaq.push(['_trackEvent', 'Action', 'Label', 'Value']);
-				// });​
+				_gaq.push(['_trackEvent', 'L2R - Heading', $(this).attr('id')]);
 				//left
 				$(this).parent().parent().toggleClass('hidden');
 				//right
@@ -997,6 +997,7 @@
 				var hidden = ($(this).parent().parent().children().filter(':hidden').size()+1);
 				//if all elelemts are hidden, hide the parent too
 				if (hidden >= count) {
+					_gaq.push(['_trackEvent', 'L2R - All Elements hidden', $(this).attr('id')]);
 					//left
 					$(this).parent().toggleClass('hidden');
 					$(this).parent().parent().toggleClass('hidden');
@@ -1012,6 +1013,7 @@
 					$(newClasses).parent().parent().children().eq(0).toggleClass('white');
 				//hide one element only
 				} else {
+					_gaq.push(['_trackEvent', 'L2R - Element', $(this).attr('id')]);
 					//left
 					$(this).parent().toggleClass('hidden');
 					//right
@@ -1038,9 +1040,7 @@
 				};
 				classes[0] = "gc";
 				var newClasses = '.' + classes.join().replace(/\,/g,'.');
-				// if ($('.fs.section').length-1 === $('.fs.white').length) { 
-				// 	$('.jokes').toggleClass('hidden');
-				// }
+				_gaq.push(['_trackEvent', 'R2L - Heading', $(this).attr('id')]);
 				//left
 				$(newClasses).parent().parent().toggleClass('hidden');
 				//right
@@ -1068,12 +1068,14 @@
 				};
 				classes[0] = "gc";
 				var newClasses = '.' + classes.join().replace(/\,/g,'.');
+				_gaq.push(['_trackEvent', 'R2L - Element', $(this).attr('id')]);
 				//left
 				$(newClasses).parent().toggleClass('hidden');
 				//right
 				$(this).toggleClass('hidden', (!$(this).hasClass('hidden')));
 			//information section
 			} else if ($(this).hasClass("i")) {
+				_gaq.push(['_trackEvent', 'Information', $(this).attr('id')]);
 				$(this).parent().parent().parent().parent().parent().toggleClass('hidden');
 			//Hide all show all
 			} else if ($(this).hasClass("visibility")) {
@@ -1276,7 +1278,7 @@
 					d = getCurrentDate();
 					parts = d.split(/\s*,\s*/);
 					var month = monthNumber(parts[0]);
-					var year = parts[1];
+					var year = parts[1]-1;
 					return year * 12 + month;
 				} else {
 					var parts = monthYear.split(/\s*,\s*/);
