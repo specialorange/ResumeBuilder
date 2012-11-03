@@ -6,6 +6,7 @@
 		<title>An Interactive Resume Builder</title>
 		<link rel="stylesheet" href="_css/semanticcss.css">
 		<link rel="stylesheet" href="_css/tableSort.css">
+		<link rel="stylesheet" href="_css/popover.css">
 		<!-- <link rel="stylesheet" href="_css/bootstrap.min.css"> -->
 		<!-- <link rel="stylesheet" href="_css/bootstrap-responsive.min.css"> -->
 		<!-- <link rel="stylesheet" href="_css/style.css"> -->
@@ -20,12 +21,11 @@
 				var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
 			})();
 		</script>
-	</head>
-	<body>
 		<script src="http://code.jquery.com/jquery.min.js"></script>
 		<script type="text/javascript" src="_js/libs/modernizr-2.5.3-respond-1.1.0.min.js"></script>
 		<script type="text/javascript" src="_js/libs/jquery.tablesorter.min.js"></script>
 		<script type="text/javascript" src="_js/libs/jquery-ui-1.7.1.custom.min.js"></script>
+		<script type="text/javascript" src="_js/libs/popover/jquery.popover-1.1.2.js"></script>
 		<script type="text/javascript">
 		if (typeof jQuery == 'undefined') {
 		    document.write(unescape("%3Cscript src='_js/libs/jquery-1.7.2.min.js' type='text/javascript'%3E%3C/script%3E"));
@@ -36,6 +36,21 @@
 		</script>
 <!--		<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js" ></script> -->
 <!--		<script type="text/javascript" src="_js/libs/selectToUISlider.jQuery.js"></script> -->
+
+		<script type="text/javascript">
+		/* <![CDATA[ */
+			jQuery(document).ready(function($) {
+				$("#popover").click(function(event) {
+					event.preventDefault();
+					event.stopPropagation();
+					$("#popover").popover('show');
+				});
+			});
+		/* ]]> */
+		</script>
+		
+	</head>
+	<body>
 		<div id="header-container">
 			<header style="text-align: center;" class="clearfix">
 				<div>
@@ -72,14 +87,8 @@
 							<form class="form">
 								<fieldset id="i_section_information" class="i section information">
 									<div>
-										<span style="float: left"><h1>Information</h1></span>
-										<label id="fs_heading_information" class="fs btn i information" style="font-weight: bold;"><span style="float: right; border:1px solid">X</span></label>
+										<span id="popover" style="float: left"><h1 style="text-align:center; font-weight:normal">Information</h1></span>
 									</div>
-									<p style="clear: both; text-indent: 10px;">This interactive resume allows you to generate a resume that is tailored to information you need.  Click a heading or subsection to un/hide.  If you hide an element (via the left or right side), the right side will be become <span style="color: white;">unfilled</span>.  Click it again, and it will become visible and return to normal.</p>
-									<p style="text-indent: 10px;">The Work Experience section can be limited by a date range, and narrowed by job roles.</p>
-									<p style="text-indent: 10px;">The Skills Table contains certifications, compliances, and technologies I am experienced in, all selectable.   The multi-column sortation (hold 'Shift' while clicking columns) will allow you to view the information in the order you need.</p>
-									<p style="text-indent: 10px;">All abbreviations and unique categories can be hovered over for full length terminology or brief explanation, while major ideas, programs or technologies provide a <span style="border-bottom: 2px black dotted;">link</span> to provide more information.</p>
-									<p style="text-indent: 10px;">Traditional pre-formatted paper resumes are available in the 'Traditional Resumes' section.  Templates with my personal predefined scope are available by selecting the template type in the drop down menu above.</p>
 								</fieldset>
 							</form>
 						</aside>
@@ -219,11 +228,22 @@
 
 					<section id="gc_section_we" class="gc section workexperience"><h1>Work Experience</h1>
 
+						<section class="company"><h1>DASH Systems</h1>
+							<section class="position"><h1>Developer</h1>
+								<time class="start" datetime="2012-10">Oct 2012</time>
+								<time class="end" datetime=""></time>
+								<p>As a developer for DASH, I work on client facing websites to update or develop online solutions for their specific business needs.</p>
+								<ul>
+									<li class="dev">I work predominately in a ColdFusion environment to support small and large scale projects, using a suite of programs and tools to learn and implement challenging requests.</li>
+								</ul>
+							</section>
+						</section>
+
 						<section class="company"><h1>Democratic National Convention</h1>
 							<section class="position"><h1>Event Manager</h1>
-								<time class="start" datetime="2012-7">Jul 2012</time>
+								<time class="start" datetime="2012-07">Jul 2012</time>
 								<time class="end" datetime="2012-09">Sep 2012</time>
-								<p>The 2012 Democratic National Convention is in Charlotte, NC, my hometown.  Given the rare opportunity, I was excited to be a part of the select few overseeing the success of the event, as well as providing the true southern hospitality to those attending.</p>
+								<p>The 2012 Democratic National Convention is in Charlotte, NC, my hometown.  Given the rare opportunity, I was excited to be a part of the select few overseeing the success of the event, as well as providing the true southern hospitality to those attending, by overseeing the entire staff for hospitality, transportation, and communication.</p>
 								<ul>
 									<li class="pm cs">Research and design transportation routes to support the media, staff, and guests</li>
 									<li class="pm mgr">Coordinate volunteers and staff training, materials, and presentations</li>
@@ -965,6 +985,21 @@
 			template(keyval);
 		}
 	};
+
+//Information Popover
+	$("#popover").popover({
+		title: "Information",
+		content: "This interactive resume allows you to generate a resume that is tailored to information you need.  Click a heading or subsection to un/hide.  If you hide an element \(via the left or right side\), the right side will be become \<span style=\"color: white; background-color: \#F16529\"\>&nbsp;unfilled \<\/span\>.  Click it again, and it will become \<span style=\"color: black; background-color: \#F16529\"\>\&nbsp;filled \<\/span\> on the right and visible on the left.\<br\>\<br\>The Work Experience section can be limited by a date range, and narrowed by job roles.\<br\>\<br\>The Skills Table contains certifications, compliances, and technologies I am experienced in, all selectable.   The multi-column sortation \(hold \'Shift\' while clicking columns\) will allow you to view the information in the order you need.\<br\>\<br\>All abbreviations and unique categories can be hovered over for full length terminology or brief explanation, while major ideas, programs or technologies provide a to provide more information.\<br\>\<br\>Traditional pre-formatted paper resumes are available in the \'Traditional Resumes\' section.  Templates with my personal predefined scope are available by selecting the template type in the drop down menu above.\<br\>\<br\>"
+		// trigger: "none"
+	});
+		// "<p style=\"clear: both; text-indent: 10px;\">This interactive resume allows you to generate a resume that is tailored to information you need.  Click a heading or subsection to un/hide.  If you hide an element (via the left or right side), the right side will be become <span style=\"color: white;\">unfilled</span>.  Click it again, and it will become visible and return to normal.</p>
+		// <p style=\"text-indent: 10px;\">The Work Experience section can be limited by a date range, and narrowed by job roles.</p>
+		// <p style=\"text-indent: 10px;\">The Skills Table contains certifications, compliances, and technologies I am experienced in, all selectable.   The multi-column sortation (hold 'Shift' while clicking columns) will allow you to view the information in the order you need.</p>
+		// <p style=\"text-indent: 10px;\">All abbreviations and unique categories can be hovered over for full length terminology or brief explanation, while major ideas, programs or technologies provide a <span style=\"border-bottom: 2px black dotted;\">link</span> to provide more information.</p>
+		// <p style=\"text-indent: 10px;\">Traditional pre-formatted paper resumes are available in the 'Traditional Resumes' section.  Templates with my personal predefined scope are available by selecting the template type in the drop down menu above.</p>"
+		// trigger: "none"
+
+
 //hiding all elements
 	$('.btn').click(function () {
 	// console.log($(this).attr('id'))
@@ -1076,7 +1111,7 @@
 			//information section
 			} else if ($(this).hasClass("i")) {
 				_gaq.push(['_trackEvent', 'Information', $(this).attr('id')]);
-				$(this).parent().parent().parent().parent().parent().toggleClass('hidden');
+				// $(this).parent().parent().parent().parent().parent().toggleClass('hidden');
 			//Hide all show all
 			} else if ($(this).hasClass("visibility")) {
 				//Hide
@@ -1526,5 +1561,11 @@
 $(document).ready(function () {
 	blinks(1);
 	persistence(keyval);
+});
+jQuery(document).ready(function($) {
+	$("#popover").popover({
+		title: "Hello",
+		content: "Finally, I can speak!"
+	});
 });
 </script>
