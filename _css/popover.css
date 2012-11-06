@@ -9,7 +9,7 @@
 .popover {
 	position: absolute;
 	top: 0; left: 0;
-	max-height: 50%;
+	max-height: 70%;
 	width: 25%;
 	margin-right: 10px;
 	display: none;
@@ -21,7 +21,7 @@
 }
 .popover.large {
 	width: 470px;
-	max-height: 350px;
+	max-height: 70%;
 }
 .popover .arrow, .popover .top-arrow {
 	position: absolute;
@@ -69,7 +69,7 @@
 }
 .popover .content {
 	padding: 15px;
-	max-height: 175px;
+	max-height: 70%;
 	overflow: auto;
 	line-height: 1.3em;
 	font-size: 0.9em;
