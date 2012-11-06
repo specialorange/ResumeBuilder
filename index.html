@@ -419,7 +419,7 @@
 			
 							<section class="degree"><h1>Post-Graduate programs</h1>
 								<time class="start" datetime="2002-08">Aug 2002</time>
-								<time class="end" datetime="">CURRENT</time>
+								<time class="end" datetime=""></time>
 								<p>I utilize one of the best community colleges in the US to further my education in interdisciplinary areas.</p>
 								<ul>
 									<li><span title="Six Sigma">6&sigma;</span> (Six Sigma) Black Belt Certification - 2012</li>
@@ -761,11 +761,6 @@
 									<li>Disaster logistics for Haiti earthquake</li>
 								</ul>
 							</section>
-
-						</section>
-
-
-						<section class="org"><h1>Volunteer</h1>
 							<section class="event"><h1>Disaster Relief</h1>
 								<time class="start" datetime="2004-04">Apr 2004</time>
 								<time class="end" datetime="2009-09">Sep 2009</time>
@@ -918,6 +913,12 @@
 			var id = 'gc_' + section + '_' + value;
 			ths.replaceWith($('<label id="' + id + '" class="gc btn element ' + value + '">' + ths.html() + '</label>'));
 		}
+		function nElementH1 (ths, section, elem) {
+			var value = ths.html().toLowerCase().replace(/ /g,'');
+			var spaced = ths.html().toLowerCase();
+			var id = 'gc_' + section + '_' + value;
+			ths.replaceWith($('<label id="' + id + '" class="gc btn element ' + value + '"><h1>' + ths.html() + '</h1></label>'));
+		}
 		//main headers (all but the skillstable and workexperience)
 			$('.block > section > h1:not(:has("span.skillstablevisibility"))').each(function () {
 				return nHeading($(this));
@@ -936,7 +937,7 @@
 				return nElement($(this), "ac", "gc element");
 			});
 			$('section.community section.org > h1').each(function () {
-				return nElement($(this), "c", "gc element");
+				return nElementH1($(this), "c", "gc element");
 			});
 // Initialize the start date and end date function.
 	(function () {
@@ -989,16 +990,8 @@
 //Information Popover
 	$("#popover").popover({
 		title: "Information",
-		content: "This interactive resume allows you to generate a resume that is tailored to information you need.  Click a heading or subsection to un/hide.  If you hide an element \(via the left or right side\), the right side will be become \<span style=\"color: white; background-color: \#F16529\"\>&nbsp;unfilled \<\/span\>.  Click it again, and it will become \<span style=\"color: black; background-color: \#F16529\"\>\&nbsp;filled \<\/span\> on the right and visible on the left.\<br\>\<br\>The Work Experience section can be limited by a date range, and narrowed by job roles.\<br\>\<br\>The Skills Table contains certifications, compliances, and technologies I am experienced in, all selectable.   The multi-column sortation \(hold \'Shift\' while clicking columns\) will allow you to view the information in the order you need.\<br\>\<br\>All abbreviations and unique categories can be hovered over for full length terminology or brief explanation, while major ideas, programs or technologies provide a to provide more information.\<br\>\<br\>Traditional pre-formatted paper resumes are available in the \'Traditional Resumes\' section.  Templates with my personal predefined scope are available by selecting the template type in the drop down menu above.\<br\>\<br\>"
-		// trigger: "none"
+		content: "This interactive resume allows you to generate a resume that is tailored to information you need.  Click a heading or subsection to un/hide.  If you hide an element \(via the left or right side\), the right side will be become \<span style=\"color: white; background-color: \#F16529\"\>&nbsp;unfilled \<\/span\>.  Click it again, and it will become \<span style=\"color: black; background-color: \#F16529\"\>\&nbsp;filled \<\/span\>&nbspon the right and visible on the left.\<br\>\<br\>The Work Experience section can be limited by a date range, and narrowed by job roles.\<br\>\<br\>The Skills Table contains certifications, compliances, and technologies I am experienced in, all selectable.   The multi-column sortation \(hold \'Shift\' while clicking columns\) will allow you to view the information in the order you need.\<br\>\<br\>All abbreviations and unique categories can be hovered over for full length terminology or brief explanation, while major ideas, programs or technologies provide a to provide more information.\<br\>\<br\>Traditional pre-formatted paper resumes are available in the \'Traditional Resumes\' section.  Templates with my personal predefined scope are available by selecting the template type in the drop down menu above.\<br\>\<br\>"
 	});
-		// "<p style=\"clear: both; text-indent: 10px;\">This interactive resume allows you to generate a resume that is tailored to information you need.  Click a heading or subsection to un/hide.  If you hide an element (via the left or right side), the right side will be become <span style=\"color: white;\">unfilled</span>.  Click it again, and it will become visible and return to normal.</p>
-		// <p style=\"text-indent: 10px;\">The Work Experience section can be limited by a date range, and narrowed by job roles.</p>
-		// <p style=\"text-indent: 10px;\">The Skills Table contains certifications, compliances, and technologies I am experienced in, all selectable.   The multi-column sortation (hold 'Shift' while clicking columns) will allow you to view the information in the order you need.</p>
-		// <p style=\"text-indent: 10px;\">All abbreviations and unique categories can be hovered over for full length terminology or brief explanation, while major ideas, programs or technologies provide a <span style=\"border-bottom: 2px black dotted;\">link</span> to provide more information.</p>
-		// <p style=\"text-indent: 10px;\">Traditional pre-formatted paper resumes are available in the 'Traditional Resumes' section.  Templates with my personal predefined scope are available by selecting the template type in the drop down menu above.</p>"
-		// trigger: "none"
-
 
 //hiding all elements
 	$('.btn').click(function () {
@@ -1173,18 +1166,11 @@
 			m[0] = "01"; m[1] = "02"; m[2] = "03"; m[3] = "04"; m[4] = "05"; m[5] = "06"; m[6] = "07"; m[7] = "08"; m[8] = "09"; m[9] = "10"; m[10] = "11"; m[11] = "12";
 			return y + '-' + m[d.getMonth()];
 		};
-		//workexperience end date if empty
+		//workexperience company position end date if empty
 		$('.workexperience .company .position > time.end').each(function(){
 			if (!($(this).attr('datetime'))){
 				$(this).attr('datetime', currentDateYMFormat());
-				$(this).html('Current');
-			}
-		});
-		//community end date if empty
-		$('.community .org .event > time.end').each(function(){
-			if (!($(this).attr('datetime'))){
-				$(this).attr('datetime', currentDateYMFormat());
-				$(this).html('Current');
+				$(this).html('Current ');
 			}
 		});
 		//generate the company start and end dates
@@ -1229,15 +1215,21 @@
 			start.sort(compareTime);
 			end.sort(compareTime);
 		//Dynamically set company level start and end time.
-			$(this).find('>h1').after($('.workexperience time.end[datetime=' + end[end.length - 1] + ']').clone());
-			$(this).find('>h1').after($('.workexperience time.start[datetime=' + start[0] + ']').clone());
+			if ($(this).find('time.end[datetime=' + end[end.length-1] + ']').length >= 2) {
+			$(this).find('>h1').after($(this).find('time.end[datetime=' + end[end.length-1] + ']').last().clone());
+			} else {
+			$(this).find('>h1').after($(this).find('time.end[datetime=' + end[end.length-1] + ']').clone());
+			}
+            $(this).find('>h1').after($(this).find('time.start[datetime=' + start[0] + ']').clone());
 		};
 	//Add a Hyphen between dates
 		$('section.workexperience section time.start').each(function(){
-			$(this).html($(this).html() + ' - ');
+			if ($(this).html() === "") {
+				// $(this).html($(this).html() + ' - ');				
+			} else {
+				$(this).html($(this).html() + ' - ');				
+			}
 		});
-	//Set position level end time if current
-		// $('workexperience.company.position')
 	//start selector functionality
 		$('#startdate').on('change', function () {
 			var $formelem = $(this);
@@ -1539,6 +1531,78 @@
 			}
 		}); 
 		$(".skillstable table").addClass("tablesorter");
+
+//Community
+	//community org event end date if empty
+	$('.community .org .event > time.end').each(function(){
+		if (!($(this).attr('datetime'))){
+			$(this).attr('datetime', currentDateYMFormat());
+			$(this).html('Current');
+		}
+	});
+	function processCommunityTime() {
+		var start = [];
+		var end = [];
+		$(this).find('section.event > time.start:visible').each(function () {
+			start.push($(this).attr('datetime'));
+		});
+		$(this).find('section.event > time.end:visible').each(function () {
+			end.push($(this).attr('datetime'));
+		});
+		if (start.length == 0 && end.length == 0) {
+			$(this).hide();
+		} else {
+			$(this).show();
+		}
+		start.sort(compareTime);
+		end.sort(compareTime);
+	//Dynamically set company level start and end time.
+		if ($(this).find('time.end[datetime=' + end[end.length-1] + ']').length >= 2) {
+		$(this).find('>label').after($(this).find('time.end[datetime=' + end[end.length-1] + ']').last().clone());
+		} else {
+		$(this).find('>label').after($(this).find('time.end[datetime=' + end[end.length-1] + ']').clone());
+		}
+        $(this).find('>label').after($(this).find('time.start[datetime=' + start[0] + ']').clone());
+	};
+	//generate the company start and end dates
+		$('.community section.org').each(processCommunityTime);
+	//Add a Hyphen between dates
+		$('section.community section time.start').each(function(){
+			if ($(this).html() === "") {
+				// $(this).html($(this).html() + ' - ');				
+			} else {
+				$(this).html($(this).html() + ' - ');				
+			}
+		});
+	//start selector functionality
+		$('#startdate').on('change', function () {
+			var $formelem = $(this);
+			// Hide all positions that end before the specified date.
+			$('section.event time.start').each(function () {
+				if (compareTime($(this).attr('datetime'), $formelem.val()) <= 0) {
+					$(this).parent().hide();
+				} else {
+					$(this).parent().show();
+				}
+			});
+			$('section.org > time').remove();
+			$('section.org').each(processCommunityTime);
+		});
+	//end selector functionality
+		$('#enddate').on('change', function () {
+			var $formelem = $(this);
+			// Hide all positions that start after the specified date.
+			$('section.event time.end').each(function () {
+				if (compareTime($(this).attr('datetime'), $formelem.val()) > 0) {
+					$(this).parent().hide();
+				} else {
+					$(this).parent().show();
+				}
+			});
+			$('section.org > time').remove();
+			$('section.org').each(processCommunityTime);
+		});
+
 
 //Blinking
 	function blinks(hide) {
