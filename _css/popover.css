@@ -69,7 +69,7 @@
 }
 .popover .content {
 	padding: 15px;
-	max-height: 175px;
+	max-height: 70%;
 	overflow: auto;
 	line-height: 1.3em;
 	font-size: 0.9em;
