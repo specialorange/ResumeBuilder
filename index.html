@@ -43,7 +43,13 @@
 				$("#popover").click(function(event) {
 					event.preventDefault();
 					event.stopPropagation();
-					$("#popover").popover('show');
+					if ($(".popover").is(':visible')) {
+						$("#popover").popover('hide');
+						$("#popover h1").css('color', 'white')
+					} else {
+						$("#popover").popover('show');
+						$("#popover h1").css('color', 'black')
+					}
 				});
 			});
 		/* ]]> */
@@ -87,7 +93,7 @@
 							<form class="form">
 								<fieldset id="i_section_information" class="i section information">
 									<div>
-										<span id="popover" style="float: left"><h1 style="text-align:center; font-weight:normal">Information</h1></span>
+										<span id="popover" style="float: left"><h1 style="color:white; text-align:center; font-weight:normal">Information</h1></span>
 									</div>
 								</fieldset>
 							</form>
@@ -459,6 +465,33 @@
 							<tbody>
 								<tr>
 									<td>Technology</td>
+									<td><a href="http://goo.gl/RNeEO" title="Ruby" target="_blank">Ruby on Rails</a></td>
+									<td>3.2</td>
+									<td>November, 2012</td>
+									<td></td>
+									<td></td>
+									<td><span title="1 = I have used and implememted this, but very specifc to the project at hand.">1</span></td>
+								</tr>
+								<tr>
+									<td>Technology</td>
+									<td><a href="http://goo.gl/RNeEO" title="Ruby" target="_blank">Ruby</a></td>
+									<td>1.9</td>
+									<td>August, 2011</td>
+									<td></td>
+									<td></td>
+									<td><span title="2 = I am very familiar, and able to complete most projects with little oversight.">2</span></td>
+								</tr>
+								<tr>
+									<td>Technology</td>
+									<td><a href="http://goo.gl/xFzNP" title="Drupal" target="_blank">Drupal</a></td>
+									<td>8</td>
+									<td>November, 2012</td>
+									<td></td>
+									<td></td>
+									<td><span title="1 = I have used and implememted this, but very specifc to the project at hand.">1</span></td>
+								</tr>
+								<tr>
+									<td>Technology</td>
 									<td><a href="http://goo.gl/IZko6" title="Java Enterprise Edition" target="_blank">J2EE</a></td>
 									<td>1.5, 1.6, 1.7</td>
 									<td>August, 2010</td>
@@ -552,7 +585,7 @@
 									<td><a href="http://goo.gl/6GJHU" title="Lightweight Directory Access Protocol" target="_blank">LDAP</a></td>
 									<td></td>
 									<td>January, 2003</td>
-									<td></td>
+									<td>July, 2011</td>
 									<td></td>
 									<td><span title="2 = I am very familiar, and able to complete most projects with little oversight.">2</span></td>
 								</tr>
@@ -588,7 +621,7 @@
 									<td><a href="http://goo.gl/N5AwB" target="_blank">SharePoint</a></td>
 									<td></td>
 									<td>May, 2007</td>
-									<td></td>
+									<td>May, 2009</td>
 									<td></td>
 									<td><span title="2 = I am very familiar, and able to complete most projects with little oversight.">2</span></td>
 								</tr>
@@ -613,7 +646,7 @@
 								<tr>
 									<td>Technology</td>
 									<td><a href="http://goo.gl/URfX8" title="Structured Query Language" target="_blank">SQL</a></td>
-									<td><a href="http://goo.gl/N5oEi" title="my (named after the daughter of co-founder Michael Widenius, My) Structured Query Language" target="_blank">mySQL</a>, <a href="http://goo.gl/O2MdD" title="Microsoft Structured Query Language" target="_blank">msSQL</a>/<a href="http://goo.gl/X67RG" target="_blank">Sybase</a></td>
+									<td><a href="http://goo.gl/N5oEi" title="my (named after the daughter of co-founder Michael Widenius, My) Structured Query Language" target="_blank">mySQL</a>, <a href="http://goo.gl/6O60S" target="_blank">postgreSQL</a>, <a href="http://goo.gl/e8P0u" target="_blank">SQLite</a></td>
 									<td>August, 2010</td>
 									<td></td>
 									<td></td>
@@ -624,7 +657,7 @@
 									<td><a href="http://goo.gl/Zna1s" target="_blank">Eclipse</a></td>
 									<td><a href="http://goo.gl/0ddg0" target="_blank">Helios</a> and Indigo for <a href="http://goo.gl/qUECh" target="_blank">Classic</a>, <a href="http://goo.gl/aI0EY" target="_blank">Java</a>, <a href="http://goo.gl/ipRKO" title="Java Enterprise Edition" target="_blank">J2EE</a>, <a href="http://goo.gl/TIVXw" title="Javascript" target="_blank">JS</a></td>
 									<td>August, 2009</td>
-									<td></td>
+									<td>August, 2012</td>
 									<td></td>
 									<td><span title="2 = I am very familiar, and able to complete most projects with little oversight.">2</span></td>
 								</tr>
@@ -633,7 +666,7 @@
 									<td><a href="http://goo.gl/7ULG5" target="_blank">Maven</a></td>
 									<td>2, 3</td>
 									<td>August, 2010</td>
-									<td></td>
+									<td>August, 2012</td>
 									<td></td>
 									<td><span title="2 = I am very familiar, and able to complete most projects with little oversight.">2</span></td>
 								</tr>
@@ -651,7 +684,7 @@
 									<td><a href="http://goo.gl/5DrsJ" target="_blank">Spring</a></td>
 									<td>2.5, 3.0, 3.1</td>
 									<td>August, 2010</td>
-									<td></td>
+									<td>August, 2012</td>
 									<td></td>
 									<td><span title="2 = I am very familiar, and able to complete most projects with little oversight.">2</span></td>
 								</tr>
@@ -660,7 +693,7 @@
 									<td><a href="http://goo.gl/vz9fB" target="_blank">Hibernate</a></td>
 									<td>3.x, 4.x</td>
 									<td>August, 2010</td>
-									<td></td>
+									<td>August, 2012</td>
 									<td></td>
 									<td><span title="2 = I am very familiar, and able to complete most projects with little oversight.">2</span></td>
 								</tr>
@@ -669,7 +702,7 @@
 									<td><a href="http://tomcat.apache.org/" target="_blank">Tomcat</a></td>
 									<td>5.5, 6, 7</td>
 									<td>August, 2010</td>
-									<td></td>
+									<td>August, 2012</td>
 									<td></td>
 									<td><span title="2 = I am very familiar, and able to complete most projects with little oversight.">2</span></td>
 								</tr>
@@ -989,6 +1022,7 @@
 
 //Information Popover
 	$("#popover").popover({
+		id: "infopop",
 		title: "Information",
 		content: "This interactive resume allows you to generate a resume that is tailored to information you need.  Click a heading or subsection to un/hide.  If you hide an element \(via the left or right side\), the right side will be become \<span style=\"color: white; background-color: \#F16529\"\>&nbsp;unfilled \<\/span\>.  Click it again, and it will become \<span style=\"color: black; background-color: \#F16529\"\>\&nbsp;filled \<\/span\>&nbspon the right and visible on the left.\<br\>\<br\>The Work Experience section can be limited by a date range, and narrowed by job roles.\<br\>\<br\>The Skills Table contains certifications, compliances, and technologies I am experienced in, all selectable.   The multi-column sortation \(hold \'Shift\' while clicking columns\) will allow you to view the information in the order you need.\<br\>\<br\>All abbreviations and unique categories can be hovered over for full length terminology or brief explanation, while major ideas, programs or technologies provide a to provide more information.\<br\>\<br\>Traditional pre-formatted paper resumes are available in the \'Traditional Resumes\' section.  Templates with my personal predefined scope are available by selecting the template type in the drop down menu above.\<br\>\<br\>"
 	});
