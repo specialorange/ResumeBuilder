@@ -440,6 +440,7 @@
 	},
 	"file_history":
 	[
+		"/Users/special/dev/ResumeBuilder/index.html",
 		"/Users/special/dev/ResumeBuilder/resumebuilder.sublime-workspace",
 		"/Users/special/Sites/setheo/component/pages/about.php",
 		"/Users/special/Sites/setheo/component/pages/managementTeam.php",
@@ -566,8 +567,7 @@
 		"/Users/special/Sites/setheo/component/navbar.php",
 		"/Users/special/Sites/setheo/component/pages/locations.php",
 		"/Users/special/.bashrc",
-		"/Users/special/Sites/setheo/js/functions.js",
-		"/Users/special/Sites/setheo/index.php"
+		"/Users/special/Sites/setheo/js/functions.js"
 	],
 	"find":
 	{
