@@ -17,7 +17,7 @@
       }
     </style>
     <link href="css/bootstrap-responsive.css" rel="stylesheet" />
-    <link href="css/app.css" rel="stylesheet" />
+    <link href="css/RB.css" rel="stylesheet" />
   </head>
 
   <body>
@@ -27,10 +27,10 @@
     <script src="js/libs/bootstrap.min.js"></script>
     <script src="js/libs/handlebars-1.0.0.beta.6.js"></script>
     <script src="js/libs/ember.js"></script>
-    <script src="js/app.js"></script>
+    <script src="js/RB.js"></script>
     
     <script type="text/x-handlebars" data-template-name="application">
-      <div class="navbar navbar-fixed-top">
+      <div class="navbar navbar-inverse navbar-fixed-top">
         <div class="navbar-inner">
           <div class="container-fluid">
             <a class="brand" href="#">Chris Frisina</a>
@@ -55,11 +55,14 @@
         <div class="span9">
           <h1>Viewer</h1>
           <p>This is my shit</p>
+          {{lorem type=paragraph amount=12}}
         </div>
         <div class="span3">
-          <h1>Tooltable</h1>
-          <p>Selector 1</p>
-          <p>Selector 1</p>
+          <div id="tooltable" class="tooltable hero-unit affix">
+            <h1>Tooltable</h1>
+            <p>Selector 1</p>
+            <p>Selector 1</p>
+          </div>
         </div>
       </div>
     </script>

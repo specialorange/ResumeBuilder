@@ -1,3 +1,4 @@
+//create and run this function
 (function() {
 
 // Handlebars helper to generate lorem ipsum text
@@ -146,8 +147,7 @@ window.RB = Ember.Application.create({
 
 });
 
-$(function() {
-RB.initialize();
-});
+//ACtually start RB with ember
+$(function() { RB.initialize(); });
 
 })();
