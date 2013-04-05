@@ -26,19 +26,19 @@
     <script src="js/libs/jquery.lorem.js"></script>
     <script src="js/libs/bootstrap.min.js"></script>
     <script src="js/libs/handlebars-1.0.0.beta.6.js"></script>
-    <script src="js/libs/ember.js"></script>
+    <!-- // <script src="js/libs/ember1.js"></script> -->
+    <script src="js/libs/ember2.js"></script>
     <script src="js/RB.js"></script>
     
     <script type="text/x-handlebars" data-template-name="application">
       <div class="navbar navbar-inverse navbar-fixed-top">
         <div class="navbar-inner">
           <div class="container-fluid">
-            <a class="brand" href="#">Chris Frisina</a>
+            <div class="brand home" {{bindAttr class="isHome:active"}} {{action "doHome"}}>Chris Frisina</div>
             <div class="nav-collapse pull-right">
               <ul class="nav">
-                <li class="home" {{bindAttr class="isHome:active"}}><a {{action "doHome"}}>Home</a></li>
-                <li class="sections" {{bindAttr class="isSections:active"}}><a {{action "doSections"}}>Sections</a></li>
-                <li class="items" {{bindAttr class="isItems:active"}}><a {{action "doItems"}}>Items</a></li>
+                <li class="sections"><a>1</a></li>
+                <li class="sections"><a>2</a></li>
               </ul>
             </div>
           </div>
@@ -50,19 +50,32 @@
       </div>
     </script>
     
+    <script type="text/x-handlebars" data-template-name="index">
+      <h3 class="demo-panel-title">This is the index template</h3>
+      {{home}}
+    </script>
+
     <script type="text/x-handlebars" data-template-name="home">
       <div class="row-fluid">
-        <div class="span9">
-          <h1>Viewer</h1>
-          <p>This is my shit</p>
-          {{lorem type=paragraph amount=12}}
-        </div>
-        <div class="span3">
-          <div id="tooltable" class="tooltable hero-unit affix">
-            <h1>Tooltable</h1>
-            <p>Selector 1</p>
-            <p>Selector 1</p>
-          </div>
+        <!-- This is where I resume template should be placed -->
+        {{resume}}
+        <!-- This is where I tooltable template should be placed -->
+        {{tooltable}}
+      </div>
+    </script>
+    
+    <script type="text/x-handlebars" data-template-name="resume">
+      <div class="span9">
+        <h1>Viewer</h1>
+      </div>
+    </script>
+
+    <script type="text/x-handlebars" data-template-name="tooltable">
+      <div class="span3">
+        <div id="tooltable" class="tooltable hero-unit affix">
+          <h1>Tooltable</h1>
+          <p>Selector 1</p>
+          <p>Selector 1</p>
         </div>
       </div>
     </script>

@@ -1,0 +1,1690 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8">
+    <title>An Interactive Resume Builder</title>
+    <link rel="stylesheet" href="_css/semanticcss.css">
+    <link rel="stylesheet" href="_css/tableSort.css">
+    <link rel="stylesheet" href="_css/popover.css">
+    <!-- <link rel="stylesheet" href="_css/bootstrap.min.css"> -->
+    <!-- <link rel="stylesheet" href="_css/bootstrap-responsive.min.css"> -->
+    <!-- <link rel="stylesheet" href="_css/style.css"> -->
+    <script type="text/javascript">
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-33903909-1']);
+      _gaq.push(['_trackPageview']);
+
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+    </script>
+    <script src="http://code.jquery.com/jquery.min.js"></script>
+    <script type="text/javascript" src="_js/libs/modernizr-2.5.3-respond-1.1.0.min.js"></script>
+    <script type="text/javascript" src="_js/libs/jquery.tablesorter.min.js"></script>
+    <script type="text/javascript" src="_js/libs/jquery-ui-1.7.1.custom.min.js"></script>
+    <script type="text/javascript" src="_js/libs/popover/jquery.popover-1.1.2.js"></script>
+    <script type="text/javascript">
+    if (typeof jQuery == 'undefined') {
+        document.write(unescape("%3Cscript src='_js/libs/jquery-1.7.2.min.js' type='text/javascript'%3E%3C/script%3E"));
+        document.write(unescape("%3Cscript src='_js/libs/jquery.tablesorter.min.js' type='text/javascript'%3E%3C/script%3E"));
+        document.write(unescape("%3Cscript src='_js/libs/jquery-ui-1.7.1.custom.min.js' type='text/javascript'%3E%3C/script%3E"));
+        document.write(unescape("%3Cscript src='_js/libs/modernizr-2.5.3-respond-1.1.0.min.js' type='text/javascript'%3E%3C/script%3E"));
+    }
+    </script>
+<!--    <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js" ></script> -->
+<!--    <script type="text/javascript" src="_js/libs/selectToUISlider.jQuery.js"></script> -->
+
+    <script type="text/javascript">
+    /* <![CDATA[ */
+      jQuery(document).ready(function($) {
+        $("#popover").click(function(event) {
+          event.preventDefault();
+          event.stopPropagation();
+          if ($(".popover").is(':visible')) {
+            $("#popover").popover('hide');
+            $("#popover h1").css('color', 'white')
+          } else {
+            $("#popover").popover('show');
+            $("#popover h1").css('color', 'black')
+          }
+        });
+      });
+    /* ]]> */
+    </script>
+    
+  </head>
+  <body>
+    <div id="header-container">
+      <header style="text-align: center;" class="clearfix">
+        <div>
+          <div id="leftHeader">
+            <div style="width: 99%; margin: 0px auto;">
+              <div>
+                <span style="color: white; font-size:32px; font-weight: bold;">Chris Frisina</span>
+              </div>
+              <div>
+                <a href="mailto:resume@specialorange.org?subject=Resume Oppurtunity&body=Thank you for reviewing my resume and contacting me about a potential oppurtunity. -Chris" target="_blank">resume@specialorange.org</a> | <a href="tel:724-426-5676" target="_blank">724.426.5676</a> | <a href="http://goo.gl/sF6o7" target="_blank">Christiansburg, VA</a>
+              </div>
+            </div>
+          </div>
+          <div id="rightHeader" align="center">
+            <span style="display: inline-block;">Resume Templates : 
+              <select style="" onchange="if(this.options[this.selectedIndex].value != ''){window.top.location.href=this.options[this.selectedIndex].value}">
+                <option value="" selected>Select:</option>
+                <option value="?1">Developer</option>
+                <option value="?2">PM</option>
+                <!-- <option value="?3">3</option> -->
+              </select>
+            </span>
+          </div>
+        </div>
+      </header>
+    </div>
+    
+    <div id="main-container" class="wrapper">
+      <div id="main">
+        <div class="asideTrack" id="asideTrack">
+        
+          <div class="block aside" id ="slideInfo">
+            <aside>
+              <form class="form">
+                <fieldset id="i_section_information" class="i section information">
+                  <div>
+                    <span id="popover" style="float: left"><h1 style="color:white; text-align:center; font-weight:normal">Information</h1></span>
+                  </div>
+                </fieldset>
+              </form>
+            </aside>
+          </div>
+        
+          <div class="block aside" id ="slideAside">
+            <aside>
+              <form class="form">
+                <fieldset id="fs_section_abstract" class="fs section abstract">
+                  <label id="fs_abstract_heading" class="fs btn heading abstract">Abstract</label>
+                </fieldset>
+
+                <fieldset id="fs_section_businessapproach" class="fs section businessapproach">
+                  <label id="fs_businessapproach_heading" class="fs btn heading businessapproach">Business Approach</label>
+                </fieldset>
+
+                <fieldset id="fs_section_workexperience" class="fs section workexperience">
+                    <label id="fs_workexperience_heading" class="fs btn heading workexperience">Work Experience</label><br>
+                    <label id="">Start Date </label><input id="startdate" name="startdate" type="text" value="" style="width:23%"/>
+                    <label id="">End Date </label><input id="enddate" name="enddate" type="text" value="" style="width:23%"/><br>
+                </fieldset>
+
+                <fieldset id="fs_section_academic" class="fs section academic">
+                  <label id="fs_academic_heading" class="fs btn heading academic">Academic</label>
+                </fieldset>
+
+                <fieldset id="fs_section_skillstable" class="fs section skillstable">
+                  <label id="fs_skillstable_heading" class="fs btn heading skillstable">Skills Table</label><br>
+                </fieldset>
+
+                <fieldset id="fs_section_community" class="fs section community">
+                  <label id="fs_community_heading" class="fs btn heading community">Community</label><br>
+                </fieldset>
+
+                <fieldset id="fs_section_oldresumes" class="fs section oldresumes">
+                  <label id="fs_traditionalresumes_heading" class="fs btn heading traditionalresumes white">Traditional Resumes</label><br>
+                </fieldset>
+
+              </form>
+            </aside>
+          </div>
+        </div>
+
+        <div class="block gc" id="gc">
+          <section id="gc_section_ab" class="gc section abstract fr"><h1>Abstract</h1>
+            <section>
+              <h1>Design</h1>
+              <ul>
+                <li>heuristic evaluation</li>
+                <li>cognitive walkthrough</li>
+                <li>t<span class="blink">:</span>me and method engineering</li>
+              </ul>
+            </section>
+            <section>
+              <h1>Expertise</h1>
+              <ul>
+                <li>turnkey business solutions</li>
+                <li>systems analysis</li>
+                <li>change management</li>
+                <li>communication methodologies</li>
+              </ul>
+            </section>
+            <section>
+              <h1>Skills</h1>
+              <ul>
+                <li>data visualization</li>
+                <li>workflow optimization</li>
+                <li>presentation</li>
+                <li>communication design</li>
+                <li>statistical analysis</li>
+                <li>sdlc methods</li>
+              </ul>
+            </section>
+            <section>
+              <h1>Tools</h1>
+              <ul>
+                <li><a href="http://goo.gl/GjxlI" title="Me, Smiling" target="_blank"><span style="font-size: 20px;"> ☺</span></a></li>
+                <li><a href="http://goo.gl/RKAK8" target="_blank">R</a></li>
+                <li><a href="http://goo.gl/4DUcg" target="_blank">excel</a></li>
+                <li><a href="http://goo.gl/8llRi" target="_blank">codingbat</a></li>
+                <li><a href="http://goo.gl/dRPWZ" target="_blank">stackexchange</a></li>
+                <li><a href="http://goo.gl/saZsP" target="_blank">textmate</a></li>
+              </ul>
+            </section>
+            <section>
+              <h1>Projects</h1>
+              <ul>
+                <li><span title="Six Sigma">6&sigma;</span> black belt</li>
+                <li>javascript</li>
+                <li>pedagogy methods</li>
+              </ul>
+            </section>
+            <section>
+              <h1>Community</h1>
+              <ul>
+                <li>inter/national disaster relief</li>
+                <li>habitat for humanity</li>
+                <li>small group leadership</li>
+                <li>logistics mgmt (NPO/NGOs)</li>
+              </ul>
+            </section>
+            <section>
+              <h1>Interests</h1>
+              <ul>
+                <li><a href="http://goo.gl/w3yZp" target="_blank">neon art bending</a></li>
+                <li><a href="http://goo.gl/h7rwX" target="_blank">whitewater kayaking</a></li>
+                <li><a href="http://goo.gl/kJXvx" target="_blank">large scale gourmet cooking</a></li>
+                <li><a href="http://goo.gl/GIdn8" target="_blank">woodturning</a></li>
+                <li>hiking/camping</li>
+              </ul>
+            </section>
+          </section>
+ 
+          <section id="gc_section_ba" class="gc section businessapproaches"><h1>Business Approach</h1>
+            <section><h1>Analysis</h1>
+                <p>I use a multitude of tools and experiences that bring a comprehensive approach to evaluate systems, processes, objects, and personnel. I achieve this through a mix of initial communication with stakeholders and departments, and use this information to develop the framework for developing scope and planning resources to exceed client or project expectations.</p>
+            </section>
+            <section><h1>Communication</h1>
+              <p>I ensure that our team develops time-sensitive seminars, conferences, and meetings designed to explicate the scope and complexities of deadlines in a unified environment for clients and team members. I develop daily business interactions to maintain a positive milieu, within a prescribed common creative atmosphere, vital to the team’s success in daily challenges, ultimately to the project, company, and client.</p>
+            </section>
+            <section><h1>Budgeting</h1>
+              <p>Listening to the needs of the project’s stakeholders, I tailor a solution using a top down method for providing the needs of budget conscious clients, or a ground up design for customized turnkey solutions. These hybrid approaches are weighted towards the common voice of the client, where detail oriented solutions are applied along the common tones throughout the client’s organization.</p>
+            </section>
+            <section><h1>Teamwork</h1>
+              <p>Organizing teams to a preferable size of 7 persons, with a wide assortment of experience and a solid rubric for life cycle development of projects, enables synergistic teamwork practices and enables succinct solutions with minimal interruptions. When a group is given full control with the understanding of full accountability, time and time again the group as a whole is able to provide the necessary decisions to achieve positive progression.</p>
+            </section>
+            <section><h1>Intelligence</h1>
+              <p>With diverse hobbies, experiences, contacts, and interests, I bring a special perspective to providing successful solutions, on time, and above and beyond requirements. I owe my successes to borrowed approaches in scouting, mentorship, and previous successes where developing a strong approach to looking through a problem to see its solution has allowed me to approach situations with objective clarity.</p>
+            </section>
+            <section><h1>Enthusiasm</h1>
+              <p>Understanding the importance of the products and services needed of the end users and clients, and forming an environment, which highlights those needs, allows me to convey a quick, calm, succinct product. There is nothing more successful than a team with a common goal and the will to accomplish that goal as their own.</p>
+            </section>
+            <section><h1>Time</h1>
+              <p>I operate on a business healthy approach of meeting the requirements of the project; both personnel/clients’ and planning/execution are balanced to achieve an overall positive relationship with the client, team members, and other staff in a warm and inviting manner.</p>
+            </section>  
+          </section>
+
+          <section id="gc_section_we" class="gc section workexperience"><h1>Work Experience</h1>
+
+<!--            <section class="company"><h1>Company</h1>
+              <section class="position"><h1>Position</h1>
+                <time class="start" datetime="2012-10">Oct 2012</time>
+                <time class="end" datetime=""></time>
+                <p>Description</p>
+                <ul>
+                  <li class="dev">li of project with class type</li>
+                </ul>
+              </section>
+            </section>
+ -->
+            <section class="company"><h1>Virginia Tech</h1>
+              <section class="position"><h1>Research Assistant</h1>
+                <time class="start" datetime="2013-02">Feb 2013</time>
+                <time class="end" datetime=""></time>
+                <p>I am on a multidisciplinary design team to help refine a proof of concept learning tool to help struggling middle school students to learn fractions, the largest road block in K-12 mathematics.  The application uses a musically complex interface to help students understand part/whole concepts in different representations, building from their current strong musical skills.</p>
+                <ul>
+                  <li class="pm cs">Research and design mockups to beta test intricate learning theories</li>
+                  <li class="pm mgr">Convert the single page JS application into a robust front and backend, using require.js, backbone.js, underscore.js, Ruby on Rails, and a VM server</li>
+                  <li class="pm mgr">Research current concepts and theories surrounding entrainment, child brain development, learning stages, music education, and fractions.</li>
+                  <li>The Sound Of Fractions proof of concept can be found at <a href="http://www.specialorange.org/sof" target="_blank">specialorange.org/sof</a></li>
+                </ul>
+              </section>
+            </section>
+
+            <section class="company"><h1>Democratic National Convention</h1>
+              <section class="position"><h1>Event Manager</h1>
+                <time class="start" datetime="2012-07">Jul 2012</time>
+                <time class="end" datetime="2012-09">Sep 2012</time>
+                <p>The 2012 Democratic National Convention is in Charlotte, NC, my hometown.  Given the rare opportunity, I was excited to be a part of the select few overseeing the success of the event, as well as providing the true southern hospitality to those attending, by overseeing the entire staff for hospitality, transportation, and communication.</p>
+                <ul>
+                  <li class="pm cs">Research and design transportation routes to support the media, staff, and guests</li>
+                  <li class="pm mgr">Coordinate volunteers and staff training, materials, and presentations</li>
+                  <li class="pm mgr">Incorporate safety, security, and access requirements into events and transportation</li>
+                  <li class="dev">Construct a volunteer and staff management system that incorporates availability with restrictions enabling on the fly adjustments for various conflicts</li>
+                </ul>
+              </section>
+            </section>
+
+            <section class="company"><h1>FedEx Ground</h1>
+              <section class="position"><h1>Contractor Corporate Liaison - IT Development Projects</h1>
+                <time class="start" datetime="2010-07">Jul 2010</time>
+                <time class="end" datetime=""></time>
+                <p>After a massive business realignment resulting from the economy crash, IT resources available to independent delivery contractors were significantly reduced.   I presented and developed an elective application that would allow the contractors to provide business analytics that provide daily performance feedback, as well as trending analysis that identifies areas of opportunity as well as high performing metrics, available to each contractor and their employees.</p>
+                <ul>
+                  <li class="dev pm eng bit cs">Ruby on Rails Conversion and Proof of Concept
+                    <ul>
+                      <li class="dev pm">Convert working snippets into a <span title="Ruby on Rails">RoR</span> application, for agile testing with field users, using the feedback to create and update feature sets</li>
+                      <li class="dev eng cs">Design a representational database with accompanying models to match business practices for all Contractors, despite different business practices</li>
+                      <li class="bit eng">Aggregate data and analyze of "best practices" and identify areas of opportunity in the scopes of safety, fuel consumption, and hours worked</li>
+                    </ul>
+                  </li>
+                  <li class="dev ocm cs pm bit eng">Contractor Optimization
+                    <ul>
+                      <li class="bit eng">After enough data aggregate was collected, I was able to identify atypical operational correlations previously unknown, including: low productivity and excessive tire wear for newer employees, brake pad lifespan and other specific vehicle component wear, and although easily highlighted - maintenance record upkeep with increased injury incidents</li>
+                      <li class="dev">J2EE implementation including <span title="my Structured Query Language">mySQL</span>, <span title="JavaServer Faces">JSF</span>/myFaces, Spring, Hibernate, Tomcat, Maven, <span title="Extensible Markup Language">XML</span>, and <span title="Extensible / HyperText Markup Language">X/HTML</span>, with Git versioning, in a traditional Waterfall developing environment comprised solely of myself, end to end in Eclipse</li>
+                      <li class="dev">Customized data reporting and data entry of <span title="Portable Document Format">PDF</span>, email (<span title="Simple Mail Transfer Protocol">SMTP</span>), <span title="Extensible Markup Language">XML</span>, and <span title="Concurrent Versions/Versioning System">CVS</span> into single comprehensive queryable presentations using <a href="http://sikuli.org/" target="_blank">Sikuli</a></li>
+                      <li class="dev">Basic data verification and session/transaction steps within the bean to cleanse and prevent rogue data from entering database</li>
+                      <li class="dev">Database design with Business level logic for security management of <span title="Create, Read, Update and Delete cycle">CRUD cycle</span> user and data history retention</li>
+                      <li class="dev">Chose J2EE and associated technologies and self taught to account for 50 requirements including scaling and future support of the program</li>
+                      <li class="ocm cs pm">Hold recurring contractor meetings to discuss functionality, best practices, requirement listing, and business potentials</li>
+                    </ul>
+                  </li>
+                  <li class="dev pm ocm cs">Vehicle Rental standardization
+                    <ul>
+                      <li class="dev pm ocm cs">After making an excel version for proof of concept, a viable <span title="Javascript">JS</span>, <span title="Javascript Query">JQuery</span>, <span title="The fifth version of HTML (HyperText Markup Language)">HTML5</span>, and <span title="Cascading Style Sheets">CSS</span> version was constructed, eliminating time consuming paperwork, inventory controls, and management</li>
+                    </ul>
+                  </li>
+                </ul>
+              </section>  
+      
+              <section class="position"><h1>Vision Implementation Manager</h1>
+                <time class="start" datetime="2010-02">Feb 2010</time>
+                <time class="end" datetime="2011-12">Dec 2011</time>
+                <p>Vision, a live <span title="Geopgraphic Informations Systems">GIS</span>/<span title="Global Positioning System">GPS</span> aided <span title="Graphical User Interface">GUI</span> dispatch system developed in <a href="http://goo.gl/aI0EY" target="_blank">Java</a> to aid package handlers to load packages correctly on Contractor vehicles based on daily utilizations, thresholds, and temporary logistics, was 5 years behind a releasable product, and closing in on <span title="$125 Million">$125M</span> cost, despite an original and incorrect scoped project of <span title="$25 MIllion">$25M</span> in 9 months.   I took over a team of seven engineers and 120 vendor developers, and restructured the reporting, deliverables release schedule, and testing around an Agile inspired environment.  Focusing on releasing working deliverables to the field enabled for a more comprehensive testing environment for faster feedback, eliminating group think and finger pointing.  A full release to 15 terminals was achieved in 8 months, affecting 25% of the daily package volume of the company.  A two year scaled rollout was designed, with the first year achieving 70% of company package volume.</p>
+                <ul>
+                  <li class="ocm">Train terminal management and employees on new processes, follow up with previous terminals, and prepare new rollouts</li>
+                  <li class="bit pm eng cs">Engineer new technologies while communicating between field, programmers, and corporate to exceed deadlines</li>
+                  <li class="pm mgr">Project Manager for 10 terminals with a proprietary sorting technology, while exceeding process standards, increasing staffing, and reducing task oriented processes, effecting 11% of daily package volume in the company, all on or ahead of a 10 month schedule</li>
+                  <li class="bit">Identify an <span title="Structured Query Language">SQL</span> security hole in an outsourced employee information database, affecting +30% of FedEx Operations, saving +20M in liability</li>
+                  <li class="pm bit">Restructure vendor <span title="Information Technology">IT</span> infrastructure to streamline reporting, feedback, and decrease downtime by implementing self-efficacy processes</li>
+                  <li class="mgr cs">Manage budget of employees (7 direct), interact with external customers and vendors to plan and execute projects on time</li>
+                  <li class="ocm pm">Facilitate business requirements gathering and definition in various formats including joint collaboration sessions with business and IT, targeted Q&A sessions with multiple Subject Mater Experts, and one-on-one user interviews in order to provide solutions that meet business and user needs</li>
+                  <li class="ocm mgr eng dev">Vision
+                    <ul>
+                      <li class="ocm">Job Aids</li>
+                      <li class="ocm mgr">Training manuals, classes, testing, and reporting materials design, printing and </li>
+                      <li class="eng dev"><span title="Graphical User Interface">GUI</span>/<span title="User Experience">UX</span> Design of web based program from field user perspectives</li>
+                    </ul>
+                  </li>
+                </ul>
+              </section>
+      
+              <section class="position"><h1>Southern Divisional Preload Quality Initiative Manager 2</h1>
+                <time class="start" datetime="2009-02">Feb 2009</time>
+                <time class="end" datetime="2010-01">Jan 2010</time>
+                <p>With the southeast <span title="United States">US</span> as my geographical area, I lead a team of two that identified struggling terminals and worked with the local management team to identify root problems, retraining of best practices, develop short term solutions, and used teleconferencing for long term follow up.  Our Division went from a reactive focus to preventative measures within 6 months, exceeding all other divisions in 4 of every 5 metrics.  Our team had an 87% success rate of management improvement, and we suggested individual Performance Improvement Plans to upper management for followup with extremely low performers.</p>
+                <ul>
+                  <li class="mgr ocm pm">Retrain terminal management and employees on current processes and improve on new opportunities</li>
+                  <li class="eng dev">SCADA process improvements using to reduce specific redundant or legacy workflows of hourly workers by 50%, totaling a 5% increase across all productivity</li>
+                  <li class="mgr ocm pm">Support 116 terminals with 20+ different personal visits resulting in streamlined adjustments with $10K savings each</li>
+                  <li class="pm mgr cs"><span title="First Action Response Team">FAST</span> Team Manager - Peak Season 2009</li>
+                </ul>
+              </section>
+      
+              <section class="position"><h1>Dock Service Manager 3</h1>
+                <time class="start" datetime="2007-01">Jan 2007</time>
+                <time class="end" datetime="2009-01">Jan 2009</time>
+                <p>A veteran service manager responsible for training, service and production metrics, and internal and external customer issues on a daily basis, with long term junior manager mentorship programs.</p>
+                <ul>
+                  <li class="cs">Encompass all aspects of customer service to ensure proper delivery of the customers' package(s)</li>
+                  <li class="dev eng">Developed streamlined applications for inventory and daily workflows enabling users to visualize current and potential issues in real time</li>
+                  <li class="eng dev">Sortation Charts
+                    <ul>
+                      <li class="dev eng">Melissa Data incorporation in Excel with color coding and van attribute listing</li>
+                    </ul>
+                  </li>
+                </ul>
+              </section>
+
+              <section class="position"><h1><span title="Part Time">P/T</span> Service Manager</h1>
+                <time class="start" datetime="2006-06">Jul 2006</time>
+                <time class="end" datetime="2006-12">Dec 2006</time>
+                <p>A self proposed training position to transition qualified package handlers into full time managers, focusing on management training, not training for metric requirements of typical full time manager positions.</p>
+                <ul>
+                  <li class="mgr cs">Manage 15 Package Handlers in daily operations</li>
+                  <li class="eng">Load Optimizations
+                    <ul>
+                      <li class="eng">Using time studies to improve productivity</li>
+                    </ul>
+                  </li>
+                </ul>
+              </section>
+      
+              <section class="position"><h1><span title="Part Time">P/T</span> Package Handler</h1>
+                <time class="start" datetime="2006-03">Mar 2006</time>
+                <time class="end" datetime="2006-05">May 2006</time>
+                <p>Load packages on to contractor vehicles for daily dispatch, handling special customer requests as needed.</p>
+                <ul>
+                  <li class="cs">Load Packages</li>
+                </ul>
+              </section>  
+            </section>
+
+            <section class="company"><h1>Harris Teeter</h1>
+
+              <section class="position"><h1>Grocery Manager</h1>
+                <time class="start" datetime="2003-12">Dec 2003</time>
+                <time class="end" datetime="2006-03">Mar 2006</time>
+                <p>Heading a team that ensured the daily presentation of the grocery department, eventually connecting 3 stores' inventory to reduce product gaps to customers.</p>
+                <ul>
+                  <li class="dev">QA test a prototype automated inventory control and ordering system and focus on inventory mismatches and business anomalies</li>
+                  <li class="eng">Redesigned the store price sticker to reflect inventory of slow moving product, and created reports to track label issues that cause excess inventory</li>
+                  <li class="mgr cs">Lead a team of six clerks to ensure proper ordering, stocking, rotation, and appearance of the Grocery Department with a <span title="$15 Million">$15M</span> inventory</li>
+                  <li class="mgr cs">Manage three adjacent stores and retrain employees on the proper procedures, methodologies, and system processes</li>
+                </ul>
+              </section>
+      
+              <section class="position"><h1>Customer Service Clerk</h1>
+                <time class="start" datetime="2002-06">Jun 2002</time>
+                <time class="end" datetime="2003-11">Nov 2003</time>
+                <p>Managing different part time employees to meet the needs of customers throughout the day.</p>
+                <ul>
+                  <li class="cs">Assist a team of 10+ associates on the front line while ensuring the customers' needs/wants are met and exceeded</li>
+                </ul>
+              </section>
+            </section>
+
+            <section class="company"><h1>Winn-Dixie</h1>
+
+              <section class="position"><h1>Cashier</h1>
+                <time class="start" datetime="2001-01">Jan 2001</time>
+                <time class="end" datetime="2002-06">Jun 2002</time>
+                <ul>
+                  <li class="cs">Cash</li>
+                </ul>
+              </section>
+
+              <section class="position"><h1>Bagger</h1>
+                <time class="start" datetime="2000-11">Nov 2000</time>
+                <time class="end" datetime="2000-12">Dec 2000</time>
+                <ul>
+                  <li class="cs">Bag</li>
+                </ul>
+              </section>
+            </section>
+          </section>
+
+          <section id="gc_section_a" class="gc section academic"><h1>Academic</h1>
+    
+            <section class="school"><h1>University of North Carolina at Charlotte</h1>
+      
+              <section class="degree"><h1>Gendered Communication with a focus on the Female Voice</h1>
+                <time class="start" datetime="2003-08">Aug 2003</time>
+                <time class="end" datetime="2007-12">Dec 2007</time>
+                <p>I pursued this specific track of Communication Studies to study the gender biased elements within social interactions.</p>
+                <ul>
+                  <li>National South Eastern Women's Studies Association(SEWSA) invitational speaker on self researched topic surrounding gender neutral non-hegemonic communication - 2008</li>
+                  <li>Habitat for Humanity Build Lead</li>
+                  <li>Disaster Response Lead Coordinator
+                    <ul>
+                      <li>Katrina - 10+ visits within 3 years</li>
+                      <li>Rita - 1 Visit</li>
+                    </ul>
+                  </li>
+                </ul>
+              </section>
+            </section>
+            <section class="school"><h1>Central Piedmont Community College</h1>
+      
+              <section class="degree"><h1>Post-Graduate programs</h1>
+                <time class="start" datetime="2002-08">Aug 2002</time>
+                <time class="end" datetime=""></time>
+                <p>I utilize one of the best community colleges in the US to further my education in interdisciplinary areas.</p>
+                <ul>
+                  <li><span title="Six Sigma">6&sigma;</span> (Six Sigma) Black Belt Certification - 2012</li>
+                  <li>Culinary Approaches - 2011</li>
+                  <li>Car Mechanics - 2007</li>
+                  <li>Masonry - 2006</li>
+                  <li>Math - 2003</li>
+                  <li>Music - 2002</li>
+                </ul>
+              </section>
+            </section>
+          </section>
+
+          <section id="gc_section_st" class="gc section skillstable">
+            <h1>Skills Table : <span class="skillstablevisibility">Certifications | Compliance | Technologies</span></h1>
+            <table cellspacing="0">
+              <colgroup>
+                <col id="col0">
+                <col id="col1">
+                <col id="col2">
+                <col id="col3">
+                <col id="col4">
+                <col id="col5">
+                <col id="col6">
+              </colgroup>
+              <thead>
+                <tr>
+                  <th>Category</th>
+                  <th>Skill</th>
+                  <th>Version(s)</th>
+                  <th>Start Date</th>
+                  <th>End Date</th>
+                  <th>Elapsed Time</th>
+                  <th title="1 = I have used and implememted this, but very specifc to the project at hand. 2 = I am very familiar, and able to complete most projects with little oversight. 3 = I can teach this to others.">Expertise Rating</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Technology</td>
+                  <td><a href="http://goo.gl/RNeEO" title="Ruby" target="_blank">Ruby on Rails</a></td>
+                  <td>3.2</td>
+                  <td>November, 2012</td>
+                  <td></td>
+                  <td></td>
+                  <td><span title="1 = I have used and implememted this, but very specifc to the project at hand.">1</span></td>
+                </tr>
+                <tr>
+                  <td>Technology</td>
+                  <td><a href="http://goo.gl/RNeEO" title="Ruby" target="_blank">Ruby</a></td>
+                  <td>1.9</td>
+                  <td>August, 2011</td>
+                  <td></td>
+                  <td></td>
+                  <td><span title="2 = I am very familiar, and able to complete most projects with little oversight.">2</span></td>
+                </tr>
+                <tr>
+                  <td>Technology</td>
+                  <td><a href="http://goo.gl/xFzNP" title="Drupal" target="_blank">Drupal</a></td>
+                  <td>8</td>
+                  <td>November, 2012</td>
+                  <td></td>
+                  <td></td>
+                  <td><span title="1 = I have used and implememted this, but very specifc to the project at hand.">1</span></td>
+                </tr>
+                <tr>
+                  <td>Technology</td>
+                  <td><a href="http://goo.gl/IZko6" title="Java Enterprise Edition" target="_blank">J2EE</a></td>
+                  <td>1.5, 1.6, 1.7</td>
+                  <td>August, 2010</td>
+                  <td></td>
+                  <td></td>
+                  <td><span title="2 = I am very familiar, and able to complete most projects with little oversight.">2</span></td>
+                </tr>
+                <tr>
+                  <td>Technology</td>
+                  <td><a href="http://goo.gl/wHD7X" title="Javascript" target="_blank">JS</a></td>
+                  <td></td>
+                  <td>April, 2012</td>
+                  <td></td>
+                  <td></td>
+                  <td><span title="1 = I have used and implememted this, but very specifc to the project at hand.">1</span></td>
+                </tr>
+                <tr>
+                  <td>Technology</td>
+                  <td><a href="http://goo.gl/DwDtX" title="Javascript Query" target="_blank">JQuery</a></td>
+                  <td>1.6.4, 1.7.1, 1.7.2</td>
+                  <td>June, 2012</td>
+                  <td></td>
+                  <td></td>
+                  <td><span title="2 = I am very familiar, and able to complete most projects with little oversight.">2</span></td>
+                </tr>
+                <tr>
+                  <td>Compliance</td>
+                  <td><a href="http://goo.gl/kFpYV" title="Critical Infrastructure Protection" target="_blank">CIP</a></td>
+                  <td></td>
+                  <td>May, 2008</td>
+                  <td>August, 2011</td>
+                  <td></td>
+                  <td><span title="2 = I am very familiar, and able to complete most projects with little oversight.">2</span></td>
+                </tr>
+                <tr>
+                  <td>Certification</td>
+                  <td><a href="http://goo.gl/bdG3v" target="_blank">Red Cross</a></td>
+                  <td><a href="http://goo.gl/b4Klw" target="_blank">First Aid</a>, <a href="http://goo.gl/cbVvk" title="Cardiac Pulminary Resucitation" target="_blank">CPR</a>, <a href="http://goo.gl/lmi2u" target="_blank">Bloodborne Pathogens</a></td>
+                  <td>May, 2007</td>
+                  <td>April, 2013</td>
+                  <td></td>
+                  <td><span title="3 = I can teach this to others.">3</span></td>
+                </tr>
+                <tr>
+                  <td>Compliance</td>
+                  <td><a href="goo.gl/sQxd9" title="American National Standards Institute" target="_blank">ANSI</a></td>
+                  <td></td>
+                  <td>November, 2007</td>
+                  <td>August, 2010</td>
+                  <td></td>
+                  <td><span title="2 = I am very familiar, and able to complete most projects with little oversight.">2</span></td>
+                </tr>
+                <tr>
+                  <td>Certification</td>
+                  <td><a href="http://goo.gl/FEKrz" title="International Organization for Standardization " target="_blank">ISO</a></td>
+                  <td>9000, 9001</td>
+                  <td>May, 2007</td>
+                  <td>August, 2010</td>
+                  <td></td>
+                  <td><span title="2 = I am very familiar, and able to complete most projects with little oversight.">2</span></td>
+                </tr>
+                <tr>
+                  <td>Certification</td>
+                  <td><a href="http://goo.gl/5Fm1F" title="Department of Transportation" target="_blank">DOT</a></td>
+                  <td><span title="United States of America">USA</span>, <span title="North Carolina">NC</span></td>
+                  <td>June, 2006</td>
+                  <td>April, 2013</td>
+                  <td></td>
+                  <td><span title="2 = I am very familiar, and able to complete most projects with little oversight.">2</span></td>
+                </tr>
+                <tr>
+                  <td>Compliance</td>
+                  <td><a href="http://goo.gl/vLCTQ" title="Occupations Safety and Helath Administration" target="_blank">OSHA</a></td>
+                  <td><span title="United States of America">USA</span>, <span title="North Carolina">NC</span>, <span title="Tennessee">TN</span></td>
+                  <td>June, 2007</td>
+                  <td>April, 2012</td>
+                  <td></td>
+                  <td><span title="2 = I am very familiar, and able to complete most projects with little oversight.">2</span></td>
+                </tr>
+                <tr>
+                  <td>Compliance</td>
+                  <td><a href="http://goo.gl/gpPHr" title="National Electric Reliability Corporation" target="_blank">NERC</a></td>
+                  <td><span title="United States of America">USA</span>, <span title="North Carolina">NC</span></td>
+                  <td>April, 2006</td>
+                  <td>April, 2012</td>
+                  <td></td>
+                  <td><span title="2 = I am very familiar, and able to complete most projects with little oversight.">2</span></td>
+                </tr>
+                <tr>
+                  <td>Technology</td>
+                  <td><a href="http://goo.gl/6GJHU" title="Lightweight Directory Access Protocol" target="_blank">LDAP</a></td>
+                  <td></td>
+                  <td>January, 2003</td>
+                  <td>July, 2011</td>
+                  <td></td>
+                  <td><span title="2 = I am very familiar, and able to complete most projects with little oversight.">2</span></td>
+                </tr>
+                <tr>
+                  <td>Certification</td>
+                  <td>Leadership Principles</td>
+                  <td></td>
+                  <td>January, 2008</td>
+                  <td></td>
+                  <td></td>
+                  <td><span title="3 = I can teach this to others.">3</span></td>
+                </tr>
+                <tr>
+                  <td>Certification</td>
+                  <td>Forklift / Pallet Jack</td>
+                  <td></td>
+                  <td>April, 2001</td>
+                  <td></td>
+                  <td></td>
+                  <td><span title="3 = I can teach this to others.">3</span></td>
+                </tr>
+                <tr>
+                  <td>Technology</td>
+                  <td><a href="http://goo.gl/nwlr1" target="_blank">Excel</a></td>
+                  <td><a href="http://goo.gl/pJY07" title="Visual Basic for Applications" target="_blank">VBA</a></td>
+                  <td>April, 1998</td>
+                  <td></td>
+                  <td></td>
+                  <td><span title="3 = I can teach this to others.">3</span></td>
+                </tr>
+                <tr>
+                  <td>Technology</td>
+                  <td><a href="http://goo.gl/N5AwB" target="_blank">SharePoint</a></td>
+                  <td></td>
+                  <td>May, 2007</td>
+                  <td>May, 2009</td>
+                  <td></td>
+                  <td><span title="2 = I am very familiar, and able to complete most projects with little oversight.">2</span></td>
+                </tr>
+                <tr>
+                  <td>Technology</td>
+                  <td><a href="http://goo.gl/yAA9A" target="_blank">Microsoft suite</a></td>
+                  <td></td>
+                  <td>April, 1998</td>
+                  <td></td>
+                  <td></td>
+                  <td><span title="3 = I can teach this to others.">3</span></td>
+                </tr>
+                <tr>
+                  <td>Technology</td>
+                  <td><a href="http://goo.gl/RKAK8" title="R" target="_blank">R</a></td>
+                  <td>2.x</td>
+                  <td>September, 2008</td>
+                  <td></td>
+                  <td></td>
+                  <td><span title="2 = I am very familiar, and able to complete most projects with little oversight.">2</span></td>
+                </tr>
+                <tr>
+                  <td>Technology</td>
+                  <td><a href="http://goo.gl/URfX8" title="Structured Query Language" target="_blank">SQL</a></td>
+                  <td><a href="http://goo.gl/N5oEi" title="my (named after the daughter of co-founder Michael Widenius, My) Structured Query Language" target="_blank">mySQL</a>, <a href="http://goo.gl/6O60S" target="_blank">postgreSQL</a>, <a href="http://goo.gl/e8P0u" target="_blank">SQLite</a></td>
+                  <td>August, 2010</td>
+                  <td></td>
+                  <td></td>
+                  <td><span title="2 = I am very familiar, and able to complete most projects with little oversight.">2</span></td>
+                </tr>
+                <tr>
+                  <td>Technology</td>
+                  <td><a href="http://goo.gl/Zna1s" target="_blank">Eclipse</a></td>
+                  <td><a href="http://goo.gl/0ddg0" target="_blank">Helios</a> and Indigo for <a href="http://goo.gl/qUECh" target="_blank">Classic</a>, <a href="http://goo.gl/aI0EY" target="_blank">Java</a>, <a href="http://goo.gl/ipRKO" title="Java Enterprise Edition" target="_blank">J2EE</a>, <a href="http://goo.gl/TIVXw" title="Javascript" target="_blank">JS</a></td>
+                  <td>August, 2009</td>
+                  <td>August, 2012</td>
+                  <td></td>
+                  <td><span title="2 = I am very familiar, and able to complete most projects with little oversight.">2</span></td>
+                </tr>
+                <tr>
+                  <td>Technology</td>
+                  <td><a href="http://goo.gl/7ULG5" target="_blank">Maven</a></td>
+                  <td>2, 3</td>
+                  <td>August, 2010</td>
+                  <td>August, 2012</td>
+                  <td></td>
+                  <td><span title="2 = I am very familiar, and able to complete most projects with little oversight.">2</span></td>
+                </tr>
+                <tr>
+                  <td>Technology</td>
+                  <td><a href="http://goo.gl/6ja5S" title="Extensible Markup Language" target="_blank">XML</a></td>
+                  <td>1.0, 1.1</td>
+                  <td>August, 2009</td>
+                  <td></td>
+                  <td></td>
+                  <td><span title="2 = I am very familiar, and able to complete most projects with little oversight.">2</span></td>
+                </tr>
+                <tr>
+                  <td>Technology</td>
+                  <td><a href="http://goo.gl/5DrsJ" target="_blank">Spring</a></td>
+                  <td>2.5, 3.0, 3.1</td>
+                  <td>August, 2010</td>
+                  <td>August, 2012</td>
+                  <td></td>
+                  <td><span title="2 = I am very familiar, and able to complete most projects with little oversight.">2</span></td>
+                </tr>
+                <tr>
+                  <td>Technology</td>
+                  <td><a href="http://goo.gl/vz9fB" target="_blank">Hibernate</a></td>
+                  <td>3.x, 4.x</td>
+                  <td>August, 2010</td>
+                  <td>August, 2012</td>
+                  <td></td>
+                  <td><span title="2 = I am very familiar, and able to complete most projects with little oversight.">2</span></td>
+                </tr>
+                <tr>
+                  <td>Technology</td>
+                  <td><a href="http://tomcat.apache.org/" target="_blank">Tomcat</a></td>
+                  <td>5.5, 6, 7</td>
+                  <td>August, 2010</td>
+                  <td>August, 2012</td>
+                  <td></td>
+                  <td><span title="2 = I am very familiar, and able to complete most projects with little oversight.">2</span></td>
+                </tr>
+                <tr>
+                  <td>Technology</td>
+                  <td><a href="http://goo.gl/gfpbV" title="Cascading Style Sheets" target="_blank">CSS</a></td>
+                  <td></td>
+                  <td>November, 2011</td>
+                  <td></td>
+                  <td></td>
+                  <td><span title="2 = I am very familiar, and able to complete most projects with little oversight.">2</span></td>
+                </tr>
+                <tr>
+                  <td>Technology</td>
+                  <td><a href="http://goo.gl/OQrsC" title="HyperText Markup Language" target="_blank">HTML</a></td>
+                  <td><span title="The fifth version of HTML (HyperText Markup Langugae)">HTML5</span></td>
+                  <td>November, 2011</td>
+                  <td></td>
+                  <td></td>
+                  <td><span title="2 = I am very familiar, and able to complete most projects with little oversight.">2</span></td>
+                </tr>
+                <tr>
+                  <td>Technology</td>
+                  <td><a href="http://goo.gl/OXJz1" title="Extensible HyperText Markup Language" target="_blank">XHTML</a></td>
+                  <td></td>
+                  <td>January, 2010</td>
+                  <td></td>
+                  <td></td>
+                  <td><span title="2 = I am very familiar, and able to complete most projects with little oversight.">2</span></td>
+                </tr>
+                <tr>
+                  <td>Technology</td>
+                  <td><a href="http://goo.gl/l2Ag0" title="Supervisory Control And Data Acquisition" target="_blank">SCADA</a></td>
+                  <td><a href="http://goo.gl/7LXXz" title="Certified SCADA Technology Specialist" target="_blank">CSTS</a>: Distributed, Networked</td>
+                  <td>January, 2007</td>
+                  <td></td>
+                  <td></td>
+                  <td><span title="2 = I am very familiar, and able to complete most projects with little oversight.">2</span></td>
+                </tr>
+                <tr>
+                  <td>Technology</td>
+                  <td><a href="http://goo.gl/qFgVl" target="_blank">Python</a></td>
+                  <td></td>
+                  <td>April, 2010</td>
+                  <td></td>
+                  <td></td>
+                  <td><span title="2 = I am very familiar, and able to complete most projects with little oversight.">2</span></td>
+                </tr>
+                <tr>
+                  <td>Technology</td>
+                  <td><a href="http://goo.gl/dFPZl" target="_blank">Unix</a></td>
+                  <td><a href="http://goo.gl/SNGpt" target="blank">Linux</a>, <a href="http://goo.gl/WmJCR" target="_blank">Ubuntu</a></td>
+                  <td>March, 2004</td>
+                  <td></td>
+                  <td></td>
+                  <td><span title="2 = I am very familiar, and able to complete most projects with little oversight.">2</span></td>
+                </tr>
+              </tbody>
+            </table>
+          </section>
+
+          <section id="gc_section_c" class="gc section community"><h1>Community</h1>
+
+            <section class="org"><h1>Ecumenical Think Tank</h1>
+              <section class="event"><h1>Committee Chair</h1>
+                <time class="start" datetime="2001-02"></time>
+                <time class="end" datetime="2012-05">May 2012</time>
+                <time class="once" datetime=""></time>
+                <p>I was asked to sit on with select community members to develop appropriate potential opportunities to help increase young adult attendance and participation in community churches and small groups, and allocate and distribute <span title="$100 Thousand">$100K</span> to the oppurtunities.</p>
+              </section>
+            </section>
+
+            <section class="org"><h1>Habitat For Humanity</h1>
+              <section class="event"><h1>Builder</h1>
+                <time class="start" datetime="2001-02">Feb 2001</time>
+                <time class="end" datetime=""></time>
+                <time class="once" datetime=""></time>
+                <p>Starting with weekend builds, I have become specialized in framing and roofing.</p>
+              </section>
+              <section class="event"><h1>International Logistics</h1>
+                <time class="start" datetime="2008-05">Mar 2008</time>
+                <time class="end" datetime=""></time>
+                <time class="once" datetime=""></time>
+                <p>I oversee supply chain for the Bahamas Habitat, a country often not thought of requiring Habitat's resources, who help serve over 1000 families across the various islands.</p>
+                <ul>
+                  <li>State-side fundraising</li>
+                  <li>Flight scheduling</li>
+                  <li>Critical inventory procurement</li>
+                  <li>Disaster logistics for Haiti earthquake</li>
+                </ul>
+              </section>
+              <section class="event"><h1>Disaster Relief</h1>
+                <time class="start" datetime="2004-04">Apr 2004</time>
+                <time class="end" datetime="2009-09">Sep 2009</time>
+                <time class="once" datetime=""></time>
+                <p>Interested in providing relief to families in disaster areas, the complex situations surrounding the affected areas highlighted the need for effective solutions in a timely fashion, utilizing limited resources to repair and improve homes and community centers.</p>
+                <ul>
+                  <li>Disaster Response Lead Coordinator
+                    <ul>
+                      <li>Haiti - 2 visits</li>
+                      <li>Katrina - 10+ visits within 3 years</li>
+                      <li>Rita - 1 Visit</li>
+                    </ul>
+                  </li>
+                </ul>
+              </section>
+            </section>
+
+            <section class="org"><h1>Scouts</h1>
+              <section class="event"><h1>NESA</h1>
+                <time class="start" datetime="2003-02">Feb 2003</time>
+                <time class="end" datetime=""></time>
+                <time class="once" datetime=""></time>
+                <p>I earned my Eagle Scout, and have participated in several NESA Sponsored events since, and enjoy providing individual support to younger scouts.</p>
+              </section>
+              <section class="event"><h1><span title="Order of the Arrow">OA</span></h1>
+                <time class="start" datetime="1999-06">Jun 1999</time>
+                <time class="end" datetime="2003-06">Jun 2003</time>
+                <time class="once" datetime=""></time>
+                <p>I achieved the rank of Brotherhood, and served different lodge positions.</p>
+                <ul>
+                  <li>Webmaster</li>
+                  <li>Chaplain</li>
+                </ul>
+              </section>
+            </section>
+          </section>
+
+          <section id="gc_section_traditionalresumes" class="gc section traditionalresumes hidden"><h1>Traditional Resumes</h1>
+            <section>This section of previous resumes is posted as a courtesy. Please note, content is valid until March 2012, and not updated.</section>
+            <select id="oldDocs" class="oldDocs">
+              <option value="d0" selected>Please select one:</option>
+              <option value="d1">PM.docx</option>
+              <option value="d2">PM.pdf</option>
+              <option value="d3">Java.docx</option>
+              <option value="d4">Java.pdf</option>
+            </select>
+            <div class="scroll-content" style="width: 75%">
+              <div class="dockList d0" id="d0">
+              </div>
+              <div class="dockList d1" id="d1">
+                <iframe src="http://docs.google.com/viewer?url=http%3A%2F%2Fspecialorange.org%2Fresume%2F_img%2Fpm.docx&embedded=true" width="100%" height="1250" style="border: none;"></iframe>
+              </div>
+              <div class="dockList d2" id="d2">
+                <iframe src="http://docs.google.com/viewer?url=http%3A%2F%2Fspecialorange.org%2Fresume%2F_img%2Fpm.pdf&embedded=true" width="100%" height="1250" style="border: none;"></iframe>
+              </div>
+              <div class="dockList d3" id="d3">
+                <iframe src="http://docs.google.com/viewer?url=http%3A%2F%2Fspecialorange.org%2Fresume%2F_img%2Fjava.docx&embedded=true" width="100%" height="1250" style="border: none;"></iframe>
+              </div>
+              <div class="dockList d4" id="d4">
+                <iframe src="http://docs.google.com/viewer?url=http%3A%2F%2Fspecialorange.org%2Fresume%2F_img%2Fjava.pdf&embedded=true" width="100%" height="1250" style="border: none;"></iframe>
+              </div>
+            </div>
+          </section>
+
+          <section id="gc_section_j" class="gc section jokes hidden">So you don't want to know something about me? Well, here are two of my favorite comics!
+            <span style="float: left;"><img src="_img/bee.jpeg" width="750" height="477" alt="Bee"></span>
+            <span style="float: right;"><img src="_img/investigator.jpeg" width="398" height="512" alt="Investigator"></span>
+          </section>
+        </div>
+      </div>
+    </div>
+        
+    <footer class="footer">
+      <!-- <div> -->
+        <p>
+          <span style="float: left;">Specific references available upon request</span>
+          <span style="float: right;">For comprehensive information on this resume, please view <a href="http://goo.gl/MVxc5" target="_blank">this</a> post</span>
+        </p>
+      <!-- </div> -->
+    </footer>
+  </body>
+</html>
+
+<script>
+// Generation
+  //SideBar
+    function addSidebarElems(ths, section, elem) {
+      var value = ths.toLowerCase().replace(/ /g,'');
+      var id = 'fs_' + section + '_' + value;
+      var newElem = $('<section><label id="' + id + '" class="fs btn element ' + value + ' hidden">' + ths + '</label></section>');
+      newElem.appendTo(elem);
+    }
+    //headers
+      //already in HTML via Form/Fieldset/Label
+    //sidebar elements
+      $('section.abstract section h1').each(function(){
+        return addSidebarElems($(this).html(), "ab", $('fieldset.abstract'));
+      });
+      $('section.businessapproaches section h1').each(function () {
+        return addSidebarElems($(this).html(), "ba", $('fieldset.businessapproach'));
+      });
+      $('section.academic section.school > h1').each(function () {
+        return addSidebarElems($(this).html(), "ac", $('fieldset.academic'));
+      });
+      $('section.community section.org > h1').each(function () {
+        return addSidebarElems($(this).html(), "c", $('fieldset.community'));
+      });
+    //Find all <li> class types, and make a button
+      (function li() {
+        //NOT DYNAMIC
+        var jtaa = {"bit" : "Business Information Technology",
+              "cs" : "Customer Service",
+              "dev" : "Developer",
+              "eng" : "Engineer",
+              "mgr" : "Manager",
+              "ocm" : "Organizational Change Management",
+              "pm" : "Project Management" };
+        var lis = [];
+        $('.workexperience li').each(function() {
+          var liCN = $(this).attr('class'); //li Class Name
+          var temp = [];
+          temp = liCN.split(' ');
+          for (var i = 0 ; i < temp.length ; i++) {
+            if ($.inArray(temp[i], lis)<0) {
+              lis.push(temp[i]);
+            }
+          }
+        });
+        lis.sort();
+        $.each(lis, function(idx, val){
+          var value = val.toLowerCase();
+          var name = jtaa[value];
+          $('<label id="wejt_' + value + '" class="btn jobtype" name="' + value + '">' + name + '</label>').appendTo($('fieldset.workexperience'));
+        });
+      })();
+  //NUI (GC SIDE)
+    function nHeading (ths) {
+      var spaced = ths.html().toLowerCase().split(' ');
+      if (spaced[0] == 'skills') {
+        var value = spaced[0]+spaced[1];
+      } else {
+        var value = ths.html().toLowerCase().replace(/ /g,'');
+      }
+      var id = 'gc_' + value + '_heading';
+      ths.replaceWith($('<h1><label id="' + id + '" class="gc btn heading ' + value + '">' + ths.html() + '</label></h1>'));
+    }
+    function nElement (ths, section, elem) {
+      var value = ths.html().toLowerCase().replace(/ /g,'');
+      var spaced = ths.html().toLowerCase();
+      var id = 'gc_' + section + '_' + value;
+      ths.replaceWith($('<label id="' + id + '" class="gc btn element ' + value + '">' + ths.html() + '</label>'));
+    }
+    function nElementH1 (ths, section, elem) {
+      var value = ths.html().toLowerCase().replace(/ /g,'');
+      var spaced = ths.html().toLowerCase();
+      var id = 'gc_' + section + '_' + value;
+      ths.replaceWith($('<label id="' + id + '" class="gc btn element ' + value + '"><h1>' + ths.html() + '</h1></label>'));
+    }
+    //main headers (all but the skillstable and workexperience)
+      $('.block > section > h1:not(:has("span.skillstablevisibility"))').each(function () {
+        return nHeading($(this));
+      });
+      $('.block > section > h1:has("span.skillstablevisibility")').each(function () {
+        return nHeading($(this));
+      });
+    //subheaders for each section
+      $('section.abstract section h1').each(function () {
+        return nElement($(this), "ab", "gc element");
+      });
+      $('section.businessapproaches section h1').each(function () {
+        return nElement($(this), "ba", "gc element");
+      });
+      $('section.academic section.school > h1').each(function () {
+        return nElement($(this), "ac", "gc element");
+      });
+      $('section.community section.org > h1').each(function () {
+        return nElementH1($(this), "c", "gc element");
+      });
+// Initialize the start date and end date function.
+  (function () {
+    var start = [];
+    var end = [];
+    //for each time.start section
+    $('section.position time.start').each(function () {
+      //add the 'datetime' attr to the start[]
+      start.push($(this).attr('datetime'));
+      //sort start[] by using compareTime
+      start.sort(compareTime);
+      //place the first value of start[] in the startdate box
+      $('#startdate').val(start[0]);
+    });
+    $('section.position time.end').each(function () {
+      end.push($(this).attr('datetime'));
+      end.sort(compareTime);
+      $('#enddate').val(end[end.length - 1]);
+    });
+  })();
+// Persistence
+  var keyval = location.search.replace('?', '').split('&');
+  var clicked = [];
+  
+  function persistence(keyval) {
+    function template(keyval) {
+      for ( i=0 ; i < keyval.length ; i++ ) {
+        $('#'+keyval[i]).click();
+      };
+    };
+    if (typeof parseInt(keyval[0]) === 'number' && keyval[0] % 1 == 0) {
+      switch(keyval[0])
+        {
+        case '1': //Developer
+          keyval = ["gc_ab_skills", "gc_ab_design", "gc_ba_budgeting", "skillstable_Compliance", "skillstable_startdate", "skillstable_enddate", "wejt_eng", "wejt_mgr", "wejt_pm", "wejt_cs"];
+          template(keyval);
+          break;
+        case '2': //PM
+          keyval = ["gc_ab_projects", "skillstable_startdate", "skillstable_enddate", "wejt_dev", "wejt_cs", "skillstable_Technology"];
+          template(keyval);
+          break;
+        default:
+          template(keyval);
+        };
+    } else {
+      template(keyval);
+    }
+  };
+
+//Information Popover
+  $("#popover").popover({
+    id: "infopop",
+    title: "Information",
+    content: "This interactive resume allows you to generate a resume that is tailored to information you need.  Click a heading or subsection to un/hide.  If you hide an element \(via the left or right side\), the right side will be become \<span style=\"color: white; background-color: \#F16529\"\>&nbsp;unfilled \<\/span\>.  Click it again, and it will become \<span style=\"color: black; background-color: \#F16529\"\>\&nbsp;filled \<\/span\>&nbspon the right and visible on the left.\<br\>\<br\>The Work Experience section can be limited by a date range, and narrowed by job roles.\<br\>\<br\>The Skills Table contains certifications, compliances, and technologies I am experienced in, all selectable.   The multi-column sortation \(hold \'Shift\' while clicking columns\) will allow you to view the information in the order you need.\<br\>\<br\>All abbreviations and unique categories can be hovered over for full length terminology or brief explanation, while major ideas, programs or technologies provide a to provide more information.\<br\>\<br\>Traditional pre-formatted paper resumes are available in the \'Traditional Resumes\' section.  Templates with my personal predefined scope are available by selecting the template type in the drop down menu above.\<br\>\<br\>"
+  });
+
+//hiding all elements
+  $('.btn').click(function () {
+  // console.log($(this).attr('id'))
+    clicked.push($(this).attr('id'));
+  // console.log(clicked);
+    var text = $(this).text().toLowerCase();
+    var cNames = $(this).attr("class");
+    //Left to Right
+    if ($(this).hasClass("gc")) {
+      //heading
+      if ($(this).hasClass("heading")) {
+          //track number of times element is clicked
+        _gaq.push(['_trackEvent', 'L2R - Heading', $(this).attr('id')]);
+        //left
+        $(this).parent().parent().toggleClass('hidden');
+        //right
+        var classes = ($(this).attr('class').split(' '));
+        classes[0] = "fs";
+        var newClasses = '.' + classes.join().replace(/\,/g,'.');
+        $(newClasses).toggleClass('white');
+          //hide any element's section that are being hidden
+          $(newClasses).siblings().each(function() {
+            if (!$(this).children().hasClass('hidden')) {
+              $(this).toggleClass('hidden');
+            };
+          });
+      // element
+      } else if ($(this).hasClass("element")) {
+        var count = ($(this).parent().parent().children().length-1);
+        var hidden = ($(this).parent().parent().children().filter(':hidden').size()+1);
+        //if all elelemts are hidden, hide the parent too
+        if (hidden >= count) {
+          _gaq.push(['_trackEvent', 'L2R - All Elements hidden', $(this).attr('id')]);
+          //left
+          $(this).parent().toggleClass('hidden');
+          $(this).parent().parent().toggleClass('hidden');
+          $(this).parent().parent().children().each(function() {
+            ($(this).removeClass('hidden'));
+          });
+          //right
+          var classes = $(this).attr('class').split(' ');
+          classes[0] = "fs";
+          var newClasses = '.' + classes.join().replace(/\,/g,'.');
+          $(newClasses).toggleClass('hidden');
+          $(newClasses).parent().parent().children().slice(1).toggleClass('hidden');
+          $(newClasses).parent().parent().children().eq(0).toggleClass('white');
+        //hide one element only
+        } else {
+          _gaq.push(['_trackEvent', 'L2R - Element', $(this).attr('id')]);
+          //left
+          $(this).parent().toggleClass('hidden');
+          //right
+          var classes = ($(this).attr('class').split(' '));
+          classes[0] = "fs";
+          var newClasses = '.' + classes.join().replace(/\,/g,'.');
+          $(newClasses).toggleClass('hidden');
+        }
+      //dunno
+      } else {
+      }
+    //Right to Left
+    } else if ($(this).hasClass("fs")) {
+      //heading
+      if ($(this).hasClass("heading")) {
+        var count = $(this).siblings().length;
+        var hidden = $(this).siblings().filter(':hidden').length;
+        var classes = $(this).attr('class').split(' ');
+        //remove 'white' if it exists as a class
+        for (var i=classes.length-1; i>=0; i--) {
+          if (classes[i] === 'white') {
+            classes.splice(i, 1);
+          }
+        };
+        classes[0] = "gc";
+        var newClasses = '.' + classes.join().replace(/\,/g,'.');
+        _gaq.push(['_trackEvent', 'R2L - Heading', $(this).attr('id')]);
+        //left
+        $(newClasses).parent().parent().toggleClass('hidden');
+        //right
+        $(this).toggleClass('white', (!$(this).hasClass('white')));
+          //unhide any element's sections that were hidden
+          //if all elements were hidden
+            if(hidden >= count) {
+              $(this).siblings().children().toggleClass('hidden');
+              $(this).siblings().toggleClass('hidden');
+            } else {
+              $(this).siblings().each(function() {
+                if (!$(this).children().hasClass('hidden')) {
+                  $(this).toggleClass('hidden');
+                };
+              });             
+            }
+      // element
+      } else if ($(this).hasClass("element")) {
+        var classes = ($(this).attr('class').split(' '));
+        //remove 'white' if it exists as a class
+        for (var i=classes.length-1; i>=0; i--) {
+          if (classes[i] === 'white') {
+            classes.splice(i, 1);
+          }
+        };
+        classes[0] = "gc";
+        var newClasses = '.' + classes.join().replace(/\,/g,'.');
+        _gaq.push(['_trackEvent', 'R2L - Element', $(this).attr('id')]);
+        //left
+        $(newClasses).parent().toggleClass('hidden');
+        //right
+        $(this).toggleClass('hidden', (!$(this).hasClass('hidden')));
+      //information section
+      } else if ($(this).hasClass("i")) {
+        _gaq.push(['_trackEvent', 'Information', $(this).attr('id')]);
+        // $(this).parent().parent().parent().parent().parent().toggleClass('hidden');
+      //Hide all show all
+      } else if ($(this).hasClass("visibility")) {
+        //Hide
+        if ($(this).hasClass("off")) {
+          //headers
+          $(this).parent().prevAll().each(function() {
+            if (!$(this).children(':first-child').hasClass('white')) {
+              $(this).children(':first-child').click()
+            }
+          });
+          // $('.jokes').toggleClass('hidden');
+        //Show
+        } else if ($(this).hasClass("on")) {
+          //headers
+          $(this).parent().prevAll().each(function() {
+            if ($(this).children(':first-child').hasClass('white')) {
+              $(this).children(':first-child').click()
+            }
+          });
+          //elements
+          $(this).parent().prevAll().each(function() {
+            $(this).children().children().each(function() {
+              if (!$(this).hasClass('hidden')) {
+              $(this).click()
+              }
+            })
+          });
+        }
+      }
+    //not 'fs' or 'gc'
+    } else {
+    }
+    // console.log($('.fs.section').length);
+    // console.log($('.fs.white').length);
+    if ($('.fs.section').length === $('.fs.white').length) { 
+      $('.jokes').is(':visible') ? $('.jokes').addClass('hidden') : $('.jokes').removeClass('hidden') ;
+    } else {
+      if ($('.jokes').is(':visible')) {
+        $('.jokes').addClass('hidden');
+      }
+      // $('.jokes').is(':visible') ? console.log('visible') : console.log('not vis') ;
+    }
+
+  });
+
+// Work Experience
+  //functions
+    function getCurrentDate() {
+      var d = new Date();
+      var m = new Array(7);
+      var y = d.getFullYear();
+      m[0] = "January"; m[1] = "February"; m[2] = "March"; m[3] = "April"; m[4] = "May"; m[5] = "June"; m[6] = "July"; m[7] = "August"; m[8] = "September"; m[9] = "October"; m[10] = "November"; m[11] = "December";
+      return m[d.getMonth()] + " " + y; 
+    };
+    function currentDateYMFormat(){
+      var d = new Date();
+      var m = new Array(7);
+      var y = d.getFullYear();
+      m[0] = "01"; m[1] = "02"; m[2] = "03"; m[3] = "04"; m[4] = "05"; m[5] = "06"; m[6] = "07"; m[7] = "08"; m[8] = "09"; m[9] = "10"; m[10] = "11"; m[11] = "12";
+      return y + '-' + m[d.getMonth()];
+    };
+    //workexperience company position end date if empty
+    $('.workexperience .company .position > time.end').each(function(){
+      if (!($(this).attr('datetime'))){
+        $(this).attr('datetime', currentDateYMFormat());
+        $(this).html('Current ');
+      }
+    });
+    //generate the company start and end dates
+      $('.workexperience section.company').each(processCompanyTime);
+    function pad(number) {
+      var width = 2;
+      var str = '' + number;
+      while (number.length < width) {
+        str = '0' + str;
+      }
+      return str;
+    }
+    function compareTime(a, b) {
+      a = processTime(a);
+      b = processTime(b);
+      if (a.year != b.year) {
+        return a.year - b.year;
+      }
+      return a.month - b.month;
+    }
+    function processTime(time) {
+      var splitresults = time.split('-');
+      time = {};
+      time.year = splitresults[0];
+      time.month = splitresults[1];
+      return time;
+    }
+    function processCompanyTime() {
+      var start = [];
+      var end = [];
+      $(this).find('section.position > time.start:visible').each(function () {
+        start.push($(this).attr('datetime'));
+      });
+      $(this).find('section.position > time.end:visible').each(function () {
+        end.push($(this).attr('datetime'));
+      });
+      if (start.length == 0 && end.length == 0) {
+        $(this).hide();
+      } else {
+        $(this).show();
+      }
+      start.sort(compareTime);
+      end.sort(compareTime);
+    //Dynamically set company level start and end time.
+      if ($(this).find('time.end[datetime=' + end[end.length-1] + ']').length >= 2) {
+      $(this).find('>h1').after($(this).find('time.end[datetime=' + end[end.length-1] + ']').last().clone());
+      } else {
+      $(this).find('>h1').after($(this).find('time.end[datetime=' + end[end.length-1] + ']').clone());
+      }
+            $(this).find('>h1').after($(this).find('time.start[datetime=' + start[0] + ']').clone());
+    };
+  //Add a Hyphen between dates
+    $('section.workexperience section time.start').each(function(){
+      if ($(this).html() === "") {
+        // $(this).html($(this).html() + ' - ');        
+      } else {
+        $(this).html($(this).html() + ' - ');       
+      }
+    });
+  //start selector functionality
+    $('#startdate').on('change', function () {
+      var $formelem = $(this);
+      // Hide all positions that end before the specified date.
+      $('section.position time.start').each(function () {
+        if (compareTime($(this).attr('datetime'), $formelem.val()) <= 0) {
+          $(this).parent().hide();
+        } else {
+          $(this).parent().show();
+        }
+      });
+      $('section.company > time').remove();
+      $('section.company').each(processCompanyTime);
+    });
+  //end selector functionality
+    $('#enddate').on('change', function () {
+      var $formelem = $(this);
+      // Hide all positions that start after the specified date.
+      $('section.position time.end').each(function () {
+        if (compareTime($(this).attr('datetime'), $formelem.val()) > 0) {
+          $(this).parent().hide();
+        } else {
+          $(this).parent().show();
+        }
+      });
+      $('section.company > time').remove();
+      $('section.company').each(processCompanyTime);
+    });
+  // Job Type Button
+    $('fieldset.workexperience .jobtype').on('click', function() {
+      //Change color to white to mean hidden
+      $(this).toggleClass("white");
+      // get the non selected jobtypes, and toggle them
+      var notSelectedList = $('fieldset.workexperience .jobtype:not(.white)').map(function() {
+        return '.' + $(this).attr('name');
+      }).get().join(',');
+      $('.workexperience li').each(function() {
+        $(this).toggle($(this).is(notSelectedList));
+      });
+    });
+
+// Skills Table
+  (function TCC() {  
+    //TODO, make this function global
+    //Today's Date
+      function getCurrentDate() {
+        var d = new Date();
+        var m = new Array(7);
+        var y = d.getFullYear();
+        m[0] = "January"; m[1] = "February"; m[2] = "March"; m[3] = "April"; m[4] = "May"; m[5] = "June"; m[6] = "July"; m[7] = "August"; m[8] = "September"; m[9] = "October"; m[10] = "November"; m[11] = "December";
+        return m[d.getMonth()] + ", " + y;  
+      };
+    //fill in blank end dates with Today's date
+      $('section.skillstable td:nth-child(5)').each(function() {
+        if ($(this).is(':empty')) {
+          $(this).append('Current');
+        };
+      }); 
+    //fill in blank elapsed time
+      function monthNumber(string) {
+        var lower = string.toLowerCase();
+        var monthNames = [ "january", "february", "march", "april", "may", "june", "july", "august", "september", "october", "november", "december" ];
+        for (var i=0; i<monthNames.length; ++i) {
+          if (lower === monthNames[i]) {
+            return i+1;
+          }
+        }
+      }
+    //convert the string to number of months
+      function stringToMonthNumber(monthYear) {
+      // console.log(parts);
+        if (monthYear === 'current') {
+          d = getCurrentDate();
+          parts = d.split(/\s*,\s*/);
+          var month = monthNumber(parts[0]);
+          var year = parts[1]-1;
+          return year * 12 + month;
+        } else {
+          var parts = monthYear.split(/\s*,\s*/);
+          var month = monthNumber(parts[0]);
+          var year = parts[1] - 1;
+          return year * 12 + month;
+          console.log(year * 12 + month);
+        }
+      };
+    //How many elapsed months
+      function elapsedMonths(startString, endString) {
+          return stringToMonthNumber(endString) - stringToMonthNumber(startString);
+      };
+      function convertToElapsed(elapsed) {
+        var m = elapsed%12;
+        var y = Math.floor(elapsed/12);
+        if (y == 0) {
+          if(m == 0) {
+            return ("");
+          } else if(m == 1) {
+            return (m + " month");
+          } else {
+            return (m + " months");
+          }
+        } else if(y == 1) {
+          if(m == 0) {
+            return (y + " year");
+          } else if(m == 1) {
+            return (y + " year " + m + " month");
+          } else {
+            return (y + " year " + m + " months");
+          }
+        } else {
+          if(m == 0) {
+            return (y + " years");
+          } else if(m == 1) {
+            return (y + " years " + m + " month");
+          } else {
+            return (y + " years " + m + " months");
+          }
+        }
+      };
+    //calculate the elapsed based on start and end date
+      $('section.skillstable td:nth-child(6)').each(function() {
+        $(this).append(convertToElapsed(elapsedMonths($(this).prev().prev().html().toLowerCase(),$(this).prev().html().toLowerCase())));
+      })
+    //Row Button generator
+      // //grab the names T/C/C 'label' and sort
+        var labels = $('section.skillstable .skillstablevisibility').html().split(' | ');
+        labels.sort();
+      //grab each first td child of skillstable
+        var keys = [];
+        $('section.skillstable table td:first-child').each(function(){ keys.push($(this).html()); });
+        keys.sort();
+        keys = $.unique(keys);
+        keys.sort();
+
+      // //¿¿ asign the label to the key and assign to hash??
+        var hash = {};
+        for (var i = 0; i < keys.length; i++) {
+          hash[keys[i]] = labels[i];
+        }
+      //Row Button Generator
+        $.each(keys, function(i) {
+          $('<label id="skillstable_'+this+'" class="row btn">'+this+'</label>').appendTo($("fieldset.skillstable"));
+        });
+        // separate rows from columns
+          $('<br>').appendTo($("fieldset.skillstable"));
+    //column button generator
+      var cols = [];
+      $('section.skillstable table th').each(function(){
+        cols.push($(this).html().replace(/\ /g,'').replace('(','').replace(')',''));
+      });
+      cols.splice(0,2);
+      $.each(cols, function(i) {
+          $('<label id="skillstable_'+this.toLowerCase()+'" class="column btn">'+cols[i]+'</label>' + '<br>').appendTo($('fieldset.skillstable'));
+      });
+    //Row Button Hider
+      $('fieldset.skillstable .row').on('click', function() {
+        //change clicked buttons to white
+          $(this).toggleClass("white");
+        $formelem = $(this);
+        var index = $(this).prevAll('input').length - 1;
+        $('section.skillstable table td:first-child').each(function() {
+          if ($formelem.attr('id').replace('skillstable_','') == $(this).html()) {
+            $(this).parent().toggleClass("hidden");
+          }
+        });
+      //handles the |s between T|C|C of the gc SkillsTable name 
+        var segments = [];
+        $('fieldset.skillstable .row:not(.white)').each(function() {
+          segments.push(hash[$(this).attr('id').replace('skillstable_','')]);
+        });
+        $('section.skillstable .skillstablevisibility').html(segments.join(' | '));
+      //if all three are unselected, hide the skills table
+        if ($('fieldset.skillstable .row.white').length === $('fieldset.skillstable .row').length) {
+          //hide the sections
+            //left
+              //hide the skills table
+              ($('.gc.section.skillstable')).toggleClass('hidden');
+              //resets the span class of jobtypes
+              $('.skillstablevisibility').html('Certifications | Compliance | Technologies');
+              //unhides all rows of table
+              $('section.skillstable table tbody').children().each(function() {
+                $(this).toggleClass('hidden');
+              });
+            //right
+              //reset all three from white to black
+              ($('fieldset.skillstable .white').each(function() {
+                ($(this).toggleClass('white', (!$(this).hasClass('white'))));
+              }));
+              //toggle FS skillstable to white
+              ($('.fs.btn.heading.skillstable').toggleClass('white'));
+              //hide the formElements subsections of skillstable
+              ($(this).parent().children().not(':eq(0)').toggleClass('hidden'));
+        }
+      });
+    //Column Button Hider
+      $('fieldset.skillstable .column').on('click', function() {
+        var index = $(this).prevAll('.column').length+2;
+        $('colgroup').parent('table').find("td,th").filter(":nth-child(" + (index+1) + ")").toggle("slow");
+        //change clicked buttons to white
+          $(this).toggleClass("white");
+      });
+    //Permanently hide the Category Column
+      $('section.skillstable th:nth-child(1)').hide();
+      $('section.skillstable td:nth-child(1)').hide();
+  })();
+  //Table Sorter dateSorter
+    $.tablesorter.addParser({
+      // set a unique id
+      id: 'dateSorter',
+      is: function(s) {
+        // return false so this parser is not auto detected
+        return false;
+      },
+      //
+      // if (monthYear === 'current') {
+      //  d = getCurrentDate();
+      //  parts = d.split(/\s*,\s*/);
+      //  var month = monthNumber(parts[0]);
+      //  var year = parts[1];
+      //  return year * 12 + month;
+      //
+      format: function(s) {
+        // format your data for normalization
+        for (var i = 0 ; i < s.length ; i++) {
+          function monthNumber(string) {
+            var lower = string.toLowerCase();
+            var monthNames = [ "january", "february", "march", "april", "may", "june", "july", "august", "september", "october", "november", "december" ];
+            for (var i=0; i<monthNames.length; ++i) {
+              if (lower === monthNames[i]) {
+                return i+1;
+              }
+            }
+          }
+          var parts = [];
+          var order = [];
+          if (s === 'Current') {
+            d = getCurrentDate();
+            var partial = d.split(" ");
+            var month = monthNumber(partial[0]);
+            var year = parseInt(partial[1]);
+            parts.push(month);
+            parts.push(year);
+            order.push(parts[0]+parts[1]*12)
+          } else {
+            parts.push(s.toLowerCase().replace(/january/,0).replace(/february/,1).replace(/march/,2).replace(/april/,3).replace(/may/,4).replace(/june/,5).replace(/july/,6).replace(/august/,7).replace(/september/,8).replace(/october/,9).replace(/november/,10).replace(/december/,11).split(/\s*,\s*/));
+            order.push(parseInt(parts[0][0])+(parseInt(parts[0][1])*12));
+          }
+          return order;
+        };
+        s = order;
+        return s;
+      },
+      // set type, either numeric or text
+      type: 'numeric'
+    });
+  //Table Sorter elapsedSorter
+    $.tablesorter.addParser({
+      // set a unique id
+      id: 'elapsedSorter',
+      is: function(s) {
+        // return false so this parser is not auto detected
+        return false;
+      },
+      format: function(s) {
+        var myRegexp = /([\d]+) ([\w]+)(?: ([\d]+) ([\w]+))?/;
+        var match = myRegexp.exec(s);
+        var order = [];
+
+        if (typeof match[3] == 'undefined') {
+          //month
+            if (match[2][0] == "m") {
+                order.push(parseInt(match[1]));
+            }
+            // year
+            if (match[2][0] == "y") {
+                order.push(parseInt(match[1])*12);
+            }
+            // both elements
+        } else {
+            order.push(parseInt(match[1])*12 + parseInt(match[3]));
+        }
+        s = order;
+        return s;
+      },
+      // set type, either numeric or text
+      type: 'numeric'
+    });
+  //Table Sorter parsers Identification
+    $(".skillstable table").tablesorter({
+      headers: {
+        3: {
+          sorter:'dateSorter'
+        },
+        4: {
+          sorter:'dateSorter'
+        },
+        5: {
+          sorter:'elapsedSorter'
+        }
+      }
+    }); 
+    $(".skillstable table").addClass("tablesorter");
+
+//Community
+  //community org event end date if empty
+  $('.community .org .event > time.end').each(function(){
+    if (!($(this).attr('datetime'))){
+      $(this).attr('datetime', currentDateYMFormat());
+      $(this).html('Current');
+    }
+  });
+  function processCommunityTime() {
+    var start = [];
+    var end = [];
+    $(this).find('section.event > time.start:visible').each(function () {
+      start.push($(this).attr('datetime'));
+    });
+    $(this).find('section.event > time.end:visible').each(function () {
+      end.push($(this).attr('datetime'));
+    });
+    if (start.length == 0 && end.length == 0) {
+      $(this).hide();
+    } else {
+      $(this).show();
+    }
+    start.sort(compareTime);
+    end.sort(compareTime);
+  //Dynamically set company level start and end time.
+    if ($(this).find('time.end[datetime=' + end[end.length-1] + ']').length >= 2) {
+    $(this).find('>label').after($(this).find('time.end[datetime=' + end[end.length-1] + ']').last().clone());
+    } else {
+    $(this).find('>label').after($(this).find('time.end[datetime=' + end[end.length-1] + ']').clone());
+    }
+        $(this).find('>label').after($(this).find('time.start[datetime=' + start[0] + ']').clone());
+  };
+  //generate the company start and end dates
+    $('.community section.org').each(processCommunityTime);
+  //Add a Hyphen between dates
+    $('section.community section time.start').each(function(){
+      if ($(this).html() === "") {
+        // $(this).html($(this).html() + ' - ');        
+      } else {
+        $(this).html($(this).html() + ' - ');       
+      }
+    });
+  //start selector functionality
+    $('#startdate').on('change', function () {
+      var $formelem = $(this);
+      // Hide all positions that end before the specified date.
+      $('section.event time.start').each(function () {
+        if (compareTime($(this).attr('datetime'), $formelem.val()) <= 0) {
+          $(this).parent().hide();
+        } else {
+          $(this).parent().show();
+        }
+      });
+      $('section.org > time').remove();
+      $('section.org').each(processCommunityTime);
+    });
+  //end selector functionality
+    $('#enddate').on('change', function () {
+      var $formelem = $(this);
+      // Hide all positions that start after the specified date.
+      $('section.event time.end').each(function () {
+        if (compareTime($(this).attr('datetime'), $formelem.val()) > 0) {
+          $(this).parent().hide();
+        } else {
+          $(this).parent().show();
+        }
+      });
+      $('section.org > time').remove();
+      $('section.org').each(processCommunityTime);
+    });
+
+
+//Blinking
+  function blinks(hide) {
+    if(hide==1) {
+      $('.blink').addClass('white');
+      hide = 0;
+    } else { 
+      $('.blink').removeClass('white');
+      hide = 1;
+    }
+    setTimeout("blinks("+hide+")",1000);
+    }
+//old resumes
+  $('#oldDocs').change(function(){
+    $('.dockList').hide();
+  console.log($(this).val());
+    $('#' + $(this).val()).show();
+  });
+
+$(document).ready(function () {
+  blinks(1);
+  persistence(keyval);
+});
+jQuery(document).ready(function($) {
+  $("#popover").popover({
+    title: "Hello",
+    content: "Finally, I can speak!"
+  });
+});
+</script>
