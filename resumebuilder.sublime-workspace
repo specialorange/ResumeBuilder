@@ -441,6 +441,7 @@
 	"file_history":
 	[
 		"/Users/special/dev/ResumeBuilder/index.html",
+		"/Users/special/dev/ResumeBuilder/resumebuilder.sublime-project",
 		"/Users/special/dev/ResumeBuilder/resumebuilder.sublime-workspace",
 		"/Users/special/Sites/setheo/component/pages/about.php",
 		"/Users/special/Sites/setheo/component/pages/managementTeam.php",
@@ -566,8 +567,7 @@
 		"/Users/special/Sites/setheo/component/head.php",
 		"/Users/special/Sites/setheo/component/navbar.php",
 		"/Users/special/Sites/setheo/component/pages/locations.php",
-		"/Users/special/.bashrc",
-		"/Users/special/Sites/setheo/js/functions.js"
+		"/Users/special/.bashrc"
 	],
 	"find":
 	{
@@ -838,6 +838,6 @@
 	"show_open_files": false,
 	"show_tabs": true,
 	"side_bar_visible": true,
-	"side_bar_width": 412.0,
+	"side_bar_width": 266.0,
 	"status_bar_visible": true
 }
