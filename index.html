@@ -172,11 +172,11 @@
 							<h1>Tools</h1>
 							<ul>
 								<li><a href="http://goo.gl/GjxlI" title="Me, Smiling" target="_blank"><span style="font-size: 20px;"> ☺</span></a></li>
-								<li><a href="http://goo.gl/RKAK8" target="_blank">R</a></li>
-								<li><a href="http://goo.gl/4DUcg" target="_blank">excel</a></li>
-								<li><a href="http://goo.gl/8llRi" target="_blank">codingbat</a></li>
-								<li><a href="http://goo.gl/dRPWZ" target="_blank">stackexchange</a></li>
-								<li><a href="http://goo.gl/saZsP" target="_blank">textmate</a></li>
+								<li><a href="http://goo.gl/RKAK8" title="R - statistical analysis" target="_blank">R</a></li>
+								<li><a href="http://goo.gl/4DUcg" title="Microsoft Excel Spreadsheet" target="_blank">excel</a></li>
+								<li><a href="http://goo.gl/BT8DD" title="JS Fiddle" target="_blank">jsfiddle</a></li>
+								<li><a href="http://goo.gl/dRPWZ" title="StackExchange" target="_blank">stackexchange</a></li>
+								<li><a href="http://goo.gl/XcCH0" title="Sublime Text" target="_blank">sublime text</a></li>
 							</ul>
 						</section>
 						<section>
@@ -241,11 +241,20 @@
 								<p>I am on a multidisciplinary design team to help refine a proof of concept learning tool to help struggling middle school students to learn fractions, the largest road block in K-12 mathematics.  The application uses a musically complex interface to help students understand part/whole concepts in different representations, building from their current strong musical skills.</p>
 								<ul>
 									<li class="dev">Research and design mockups to beta test intricate learning theories</li>
-									<li class="pm mgr dev">Convert the single page JS application into a robust front and backend, using require.js, backbone.js, underscore.js, Ruby on Rails, and a VM server</li>
+									<li class="pm mgr dev">Convert the single page JS application into a robust front and backend, using <a href="http://goo.gl/70kNu" title="Require.js" target="_blank">require.js</a>, <a href="http://goo.gl/yOvn2" title="Backbone.js" target="_blank">backbone.js</a>, <a href="http://goo.gl/HU100" title="Underscore.js" target="_blank">underscore.js</a>, <a href="http://goo.gl/185z9" title="Ruby on Rails" target="_blank">RoR</a>, and an <a href="http://goo.gl/agSgR" title="Ubuntu 12.04.2 LTS" target="_blank">Ubuntu VM server</a></li>
 									<li class="pm mgr">Research current concepts and theories surrounding entrainment, child brain development, learning stages, music education, and fractions.</li>
-									<li class="dev">The Sound Of Fractions proof of concept can be found at <a href="http://www.specialorange.org/sof" target="_blank">specialorange.org/sof</a></li>
+									<li class="dev">The Sound Of Fractions proof of concept can be found at <a href="http://goo.gl/LqO4Z" target="_blank">specialorange.org/sof</a></li>
 								</ul>
 							</section>
+              <section class="position"><h1>Web Developer</h1>
+                <time class="start" datetime="2012-11">Nov 2012</time>
+                <time class="end" datetime=""></time>
+                <p>I help with a complete overhaul of the the <a href="http://goo.gl/QdgBI" title=" Institute for Creativity, Arts, & Technology" target="_blank">ICAT</a> website to integrate with two other main components, a project database and visualization, that help ICAT's accomplish it's mission to connect Virginia Tech both internally and externally for all.</p>
+                <ul>
+                  <li class="dev">Website development using <a href="http://goo.gl/xFzNP" title="Drupal" target="_blank">Drupal</a>.</li>
+                  <li class="pm dev">Discuss with other memebers of the team to organize the <a href="http://goo.gl/xFzNP" title="Drupal" target="_blank">Drupal</a> database across all three projects: website, project connections, and project visualization.</li>
+                </ul>
+              </section>
 						</section>
 
 						<section class="company"><h1>Democratic National Convention</h1>
@@ -995,28 +1004,35 @@
 		});
 	})();
 // Persistence
-	var keyval = location.search.replace('?', '').split('&');
+  var keyval = location.search.replace('?', '').charAt(0);
+  var filterDates;
 	var clicked = [];
-	
+
 	function persistence(keyval) {
-		function template(keyval) {
+		function template(keyval, filterDates) {
 			for ( i=0 ; i < keyval.length ; i++ ) {
 				$('#'+keyval[i]).click();
 			};
+      if (filterDates) {
+        $('#startdate').val(filterDates);
+        $('#startdate').trigger('change');
+      };
 		};
 		if (typeof parseInt(keyval[0]) === 'number' && keyval[0] % 1 == 0) {
 			switch(keyval[0])
 				{
 				case '1': //Developer
 					keyval = ["gc_ab_skills", "gc_ab_design", "gc_ba_budgeting", "skillstable_Compliance", "skillstable_startdate", "skillstable_enddate", "wejt_eng", "wejt_mgr", "wejt_pm", "wejt_cs"];
-					template(keyval);
+					filterDates = "2006-04";
+          template(keyval, filterDates);
 					break;
 				case '2': //PM
 					keyval = ["gc_ab_projects", "skillstable_startdate", "skillstable_enddate", "wejt_dev", "wejt_cs", "skillstable_Technology"];
-					template(keyval);
+          filterDates = "2002-11";
+          template(keyval, filterDates);
 					break;
 				default:
-					template(keyval);
+          template(keyval);
 				};
 		} else {
 			template(keyval);
@@ -1268,19 +1284,19 @@
 			}
 		});
 	//start selector functionality
-		$('#startdate').on('change', function () {
-			var $formelem = $(this);
-			// Hide all positions that end before the specified date.
-			$('section.position time.start').each(function () {
-				if (compareTime($(this).attr('datetime'), $formelem.val()) <= 0) {
-					$(this).parent().hide();
-				} else {
-					$(this).parent().show();
-				}
-			});
-			$('section.company > time').remove();
-			$('section.company').each(processCompanyTime);
-		});
+    $('#startdate').on('change', function () {
+    	var $formelem = $(this);
+    	// Hide all positions that end before the specified date.
+    	$('section.position time.start').each(function () {
+    		if (compareTime($(this).attr('datetime'), $formelem.val()) <= 0) {
+    			$(this).parent().hide();
+    		} else {
+    			$(this).parent().show();
+    		}
+    	});
+    	$('section.company > time').remove();
+    	$('section.company').each(processCompanyTime);
+    });
 	//end selector functionality
 		$('#enddate').on('change', function () {
 			var $formelem = $(this);
@@ -1610,34 +1626,6 @@
 			} else {
 				$(this).html($(this).html() + ' - ');				
 			}
-		});
-	//start selector functionality
-		$('#startdate').on('change', function () {
-			var $formelem = $(this);
-			// Hide all positions that end before the specified date.
-			$('section.event time.start').each(function () {
-				if (compareTime($(this).attr('datetime'), $formelem.val()) <= 0) {
-					$(this).parent().hide();
-				} else {
-					$(this).parent().show();
-				}
-			});
-			$('section.org > time').remove();
-			$('section.org').each(processCommunityTime);
-		});
-	//end selector functionality
-		$('#enddate').on('change', function () {
-			var $formelem = $(this);
-			// Hide all positions that start after the specified date.
-			$('section.event time.end').each(function () {
-				if (compareTime($(this).attr('datetime'), $formelem.val()) > 0) {
-					$(this).parent().hide();
-				} else {
-					$(this).parent().show();
-				}
-			});
-			$('section.org > time').remove();
-			$('section.org').each(processCommunityTime);
 		});
 
 

@@ -326,6 +326,16 @@ select {margin-right: 150px;/* float: right;*/}
 .gc .businessapproaches {
 	/*display: inline-block;*/
 }
+.gc .event {
+  margin:0;
+  padding: 0 0 0 20px;
+  list-style-type: circle;
+}
+.gc .position {
+  margin:0;
+  padding: 0 0 0 20px;
+  list-style-type: circle;
+}
 .gc .workexperience ol {
 	margin:0;
 	padding: 0 0 0 40px;
