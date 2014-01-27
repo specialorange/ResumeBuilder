@@ -4,6 +4,18 @@
 		"selected_items":
 		[
 			[
+				"text",
+				"textarea	<textarea>"
+			],
+			[
+				"sta",
+				"startdate"
+			],
+			[
+				"filt",
+				"filterDates"
+			],
+			[
 				"de",
 				"deliveryPackage"
 			],
@@ -308,10 +320,6 @@
 				"FedexContract"
 			],
 			[
-				"sta",
-				"startDate"
-			],
-			[
 				"contrac",
 				"contractorContractName"
 			],
@@ -383,25 +391,6 @@
 	},
 	"buffers":
 	[
-		{
-			"contents": "// Attach the application to window\nwindow.RB = Ember.Application.create({});\n\n// Define the main application controller. This is automatically picked up by\n// the application and initialized.\nRB.ApplicationController = Ember.Controller.extend({\n\n});\nRB.ApplicationView = Ember.View.extend({\n  templateName: 'application'\n});\n\n// Router\nRB.Router = Ember.Router.extend({\n\n});\nRB.Router.map(function(){\n\n});\n\n// Home\nRB.HomeController = Ember.Controller.extend({\n});\nRB.HomeView = Ember.View.extend({\n  templateName: 'home',\n});\n// Resume\nRB.ResumeController = Ember.ObjectController.extend({\n});\nRB.ResumeView = Ember.View.extend({\n  templateName: 'resume'\n});\n\n// Tooltable\nRB.TooltableController = Ember.ObjectController.extend({\n});\nRB.TooltableView = Ember.View.extend({\n  templateName: 'tooltable'\n});\n\n// Abstract\nRB.AbstractController = Ember.ObjectController.extend({\n});\nRB.AbstractView = Ember.View.extend({\n  templateName: 'abstract'\n});\n\n// Approach\nRB.ApproachController = Ember.ObjectController.extend({\n});\nRB.ApproachView = Ember.View.extend({\n  templateName: 'approach'\n});\n\n// Work\nRB.WorkController = Ember.ObjectController.extend({\n});\nRB.WorkView = Ember.View.extend({\n  templateName: 'work'\n});\n\n// Academic\nRB.AcademicController = Ember.ObjectController.extend({\n});\nRB.AcademicView = Ember.View.extend({\n  templateName: 'academic'\n});\n\n// Skills\nSkillsController = Ember.ObjectController.extend({\n});\nRB.SkillsView = Ember.View.extend({\n  templateName: 'skills'\n});\nRB.SkillsRoute = Ember.Route.extend({\n  setupController: function(controller) {\n    controller.set('content', ['angular.js', 'backbone.js', 'ember.js']);\n  }\n});\n\n// Community\nRB.CommunityController = Ember.ObjectController.extend({\n});\nRB.CommunityView = Ember.View.extend({\n  templateName: 'community'\n});\n\n//Traditional\nRB.TraditionalController = Ember.ObjectController.extend({\n});\nRB.TraditionalView = Ember.View.extend({\n  templateName: 'traditional'\n});\n\n//Defer the start until advanceReadiness() is complete\n// cant init RB manually, must use advanceReadiness(), which needs defer...\nRB.deferReadiness();\n// var test = function() {\n  RB.advanceReadiness();\n// });\n",
-			"file": "js/RB.js",
-			"file_size": 2163,
-			"file_write_time": 1365346439000000,
-			"settings":
-			{
-				"buffer_size": 2163,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "index.html",
-			"settings":
-			{
-				"buffer_size": 4867,
-				"line_ending": "Unix"
-			}
-		}
 	],
 	"build_system": "",
 	"command_palette":
@@ -446,7 +435,11 @@
 	},
 	"console":
 	{
-		"height": 125.0
+		"height": 125.0,
+		"history":
+		[
+			"import urllib.request,os; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); open(os.path.join(ipp, pf), 'wb').write(urllib.request.urlopen( 'http://sublime.wbond.net/' + pf.replace(' ','%20')).read())"
+		]
 	},
 	"distraction_free":
 	{
@@ -460,6 +453,11 @@
 	"file_history":
 	[
 		"/Users/special/dev/ResumeBuilder/index.html",
+		"/Users/special/dev/ResumeBuilder/_css/semanticcss.css",
+		"/Users/special/dev/Learning/Rails/Railscasts/getall.rb",
+		"/Users/special/dev/ResumeBuilder/_css/live.css",
+		"/Users/special/dev/ResumeBuilder/_css/style.css",
+		"/Users/special/dev/ResumeBuilder/js/RB.js",
 		"/Users/special/dev/ResumeBuilder/resumebuilder.sublime-workspace",
 		"/Users/special/Sites/setheo/component/pages/about.php",
 		"/Users/special/Sites/setheo/component/pages/managementTeam.php",
@@ -581,12 +579,7 @@
 		"/private/etc/apache2/httpd.conf",
 		"/Users/special/dev/impress.js/impress.sublime-project",
 		"/Users/special/Sites/setheo/js/functions.min.js",
-		"/Users/special/.bash_profile",
-		"/Users/special/Sites/setheo/component/head.php",
-		"/Users/special/Sites/setheo/component/navbar.php",
-		"/Users/special/Sites/setheo/component/pages/locations.php",
-		"/Users/special/.bashrc",
-		"/Users/special/Sites/setheo/js/functions.js"
+		"/Users/special/.bash_profile"
 	],
 	"find":
 	{
@@ -605,6 +598,10 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"#startdate",
+			"work experience",
+			"position",
+			"p {",
 			"kumbie",
 			"hope",
 			"business",
@@ -716,65 +713,8 @@
 	"groups":
 	[
 		{
-			"selected": 0,
 			"sheets":
 			[
-				{
-					"buffer": 0,
-					"file": "js/RB.js",
-					"settings":
-					{
-						"buffer_size": 2163,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								500,
-								500
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 166.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 1,
-					"file": "index.html",
-					"settings":
-					{
-						"buffer_size": 4867,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								0,
-								0
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/HTML/HTML.tmLanguage",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 812.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				}
 			]
 		}
 	],
@@ -809,6 +749,11 @@
 		]
 	},
 	"menu_visible": true,
+	"output.find_results":
+	{
+		"height": 142.0
+	},
+	"project": "resumebuilder.sublime-project",
 	"replace":
 	{
 		"height": 64.0
@@ -910,10 +855,24 @@
 		],
 		"width": 0.0
 	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"settings":
+	{
+	},
 	"show_minimap": true,
 	"show_open_files": false,
 	"show_tabs": true,
 	"side_bar_visible": true,
 	"side_bar_width": 412.0,
-	"status_bar_visible": true
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
 }
