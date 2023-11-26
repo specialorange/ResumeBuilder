@@ -1,0 +1,1425 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Chris Frisina's Resume</title>
+    <link rel="stylesheet" href="_css/fa-min.css">
+    <link rel="stylesheet" href="_css/all.css">
+    <link rel="stylesheet" href="_css/regular.min.css">
+    <link rel="stylesheet" href="_css/brands.min.css">
+    <link rel="stylesheet" href="_css/solid.min.css">
+    <link rel="stylesheet" href="_css/bootstrap.min.css">
+    <link rel="stylesheet" href="_css/main.css">
+  </head>
+
+<!-- HELLO Prospective team member !  Kudos to you trying to get a better understanding of me :) -->
+<!-- I like working with other intelligent people and groups, solving complex problems in multiple sometimes overlapping domains.   I tend to make fewer significant career moves  -->
+<!-- My favorite project is a Visual Joke Database Explorer [https://specialorange.org/jokes] as it was a proof of concept for another data project that could be mapped to a similar data structure and UX requirements.  -->
+<!-- This resume is designed for people actually planning on talking with me.  More technical [and dated] information and specifications can be found in previous version(s) [https://specialorange.org/resume/index.old.html . The code is meant to automate its presentation, with a simple JSON data structure.  -->
+  <body itemscope itemtype="https://schema.org/Person">
+    <script>
+      window.onload = function () {
+        var toggleFloatingMenu = function() {
+          $( '.js-floating-nav' ).toggleClass( 'is-visible' );
+          $( '.js-floating-nav-trigger' ).toggleClass( 'is-open' );
+        };
+
+        $( ".background-card" ).css( "min-height", window.screen.availHeight + "px" );
+        $( ".js-tooltip" ).tooltip();
+        $( '.js-floating-nav-trigger' ).on( 'click', function(e) {
+          e.preventDefault();
+          toggleFloatingMenu();
+        });
+        $( '.js-floating-nav a' ).on( 'click', toggleFloatingMenu );
+      }
+    </script>
+    <div class="container-fluid">
+      <div class="row main clearfix">
+        <a href="#" class="js-floating-nav-trigger floating-nav-trigger">
+          <i class="fas fa-bars"></i>
+          <span class="close-icon">&times;</span>
+        </a>
+        <nav class="floating-nav js-floating-nav">
+          <ul class="list-unstyled">
+            <li>
+              <a href="#about">
+                <i class="far fa-user"></i>
+                About
+              </a>
+            </li>
+            <li>
+              <a href="#work-experience">
+                <i class="fa fa-building"></i>
+                Work Experience
+              </a>
+            </li>
+            <li>
+              <a href="#skills">
+                <i class="fa fa-code"></i>
+                Skills
+              </a>
+            </li>
+            <li>
+              <a href="#education">
+                <i class="fa fa-mortar-board"></i>
+                Education
+              </a>
+            </li>
+              <li>
+                <a href="#awards">
+                  <i class="fa fa-trophy"></i>
+                  Awards
+                </a>
+              </li>
+              <li>
+                <a href="#volunteer-work">
+                  <i class="fa fa-child"></i>
+                  Volunteer Work
+                </a>
+              </li>
+              <li>
+                <a href="#publications">
+                  <i class="fa fa-book"></i>
+                  Publications
+                </a>
+              </li>
+              <li>
+                <a href="#interests">
+                  <i class="fa fa-heart"></i>
+                  Interests
+                </a>
+              </li>
+              <li>
+                <a href="#references">
+                  <i class="fa fa-thumbs-up"></i>
+                  References
+                </a>
+              </li>
+          </ul>
+        </nav>
+
+        <section class="col-md-3 card-wrapper profile-card-wrapper affix">
+          <div class="card profile-card">
+              <span class="profile-pic-container">
+                <div class="profile-pic">
+                  <img class="media-object img-circle center-block"  data-src="holder.js"
+                    alt="Chris Frisina" src="_img/smile-head.jpg" itemprop="image">
+                </div>
+
+                <div class="name-and-profession">
+                  <h3 class="text-center text-bolder name" itemprop="name"> Chris Frisina</h3>
+                  <h5 class="text-center text-muted name" itemprop="name">krĭs  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;fɹɪ sēn ŭ &nbsp;&nbsp;(IPA)</h5>
+                  <br>
+                  <h5 class="text-muted text-center" itemprop="jobTitle">Programmer | Chef | Maker</h5>
+                  <h5 class="text-muted text-center" itemprop="jobTitle"><i class="fas fa-2x fa-code"></i>&nbsp;&nbsp; <i class="fas fa-2x fa-pepper-hot"></i> &nbsp;&nbsp; <i class="fas fa-2x fa-tools"></i></h5>
+                  <h6 class="text-muted text-center" itemprop="jobTitle">digital: <a href="https://www.specialorange.org/resume">specialorange.org/resume</a></h6>
+                </div>
+              </span>
+              <hr>
+
+              <div class="contact-details clearfix">
+
+                  <div class="detail">
+                    <a href="https://www.google.com/maps/place/Charlotte,+NC/data=!4m2!3m1!1s0x88541fc4fc381a81:0x884650e6bf43d164?sa=X&ved=0ahUKEwig2JfPv63QAhVM4IMKHdVuAHoQ8gEIdzAP">
+                      <span class="icon">
+                        <i class="fa fa-lg fa-location-arrow"></i>
+                      </span>
+
+                      <span class="info">
+                        Charlotte, North Carolina,
+                        USA
+                      </span>
+                    </a>
+                  </div>
+
+                  <div class="detail">
+                    <a href="tel:1+724-426-5676">
+                      <span class="icon">
+                        <i class="fa fa-lg fa-phone"></i>
+                      </span>
+
+                      <span class="info" itemprop="telephone">
+                        (724) 426-5676
+                      </span>
+                    </a>
+                  </div>
+
+                  <div class="detail">
+                    <a href="mailto:resume@specialorange.org" itemprop="email">
+                      <span class="icon">
+                        <i class="fa fa-lg fa-envelope"></i>
+                      </span>
+
+                      <span class="info">
+                        resume@specialorange.org
+                      </span>
+                    </a>
+                  </div>
+
+                  <div class="detail">
+                    <span class="icon" title="Languages I speak">
+                      <i class="fa fa-lg fa-2x fa-language"></i>
+                    </span>
+
+                    <span class="info">
+                      <span data-toggle="tooltip" data-placement="bottom" title="Native Language">English</span>, 
+                      <span data-toggle="tooltip" data-placement="bottom" title="así así">Spanish</span>, 
+                      <span data-toggle="tooltip" data-placement="bottom" title="Anfänger">German</span>
+                    </span>
+                  </div>
+
+                  <div class="detail">
+                      <span class="icon" title="Proof of Concept">
+                        <i class="far fa-2x fa-pencil-ruler"></i>&nbsp;&nbsp;Proof Of Concepts
+                      </span>
+
+                      <span class="info">
+                        <a href="https://specialorange.org/jokes" itemprop="email">
+                          <span data-toggle="tooltip" data-placement="bottom" title="Data attribute filter via Jokes">
+                            <i class="far fa-grin-squint-tears">&nbsp;&nbsp;Humor</i>
+                          </span> 
+                        </a>
+                        <br>
+                        <a href="https://www.developer.specialorange.org/vt/PD/dashboard/#/" itemprop="email">
+                          <span data-toggle="tooltip" data-placement="bottom" title="Undergrad Dashboard">
+                            <i class="fas fa-tachometer-alt">&nbsp;&nbsp;Educational</i>
+                          </span>
+                        </a>
+                        <br>
+                        <a href="https://masterspecialists.com/fleets/DFD/222003/weeklyInspectionReact" itemprop="email">
+                          <!-- Overall Architecture can be found at https://www.dropbox.com/s/6cb4i90bud4qj6q/Overall.jpg?dl=0 -->
+                          <span data-toggle="tooltip" data-placement="bottom" title="Weekly Vehicle Inspections">
+                            <i class="fas fa-tasks">&nbsp;&nbsp;Vehicle Inspection</i>
+                          </span> 
+                        </a>
+                      </span>
+                  </div>
+              </div>
+
+              <hr>
+
+              <div class="social-links text-center">
+                  <a class="fa fa-2x social-link link-blog"
+                       href="https://specialorange.org" target="_blank"><img src="https://specialorange.org/resume/favicon.ico" height="28" alt=""/></a>
+                  <a class="fab fa-github fa-2x social-link link-github"
+                       href="https://github.com/specialorange" target="_blank"></a>
+                  <a class="fa fa-2x social-link link-stack-overflow"
+                       href="https://stackoverflow.com/users/1234721/chris-frisina" target="_blank"><img src="https://cdn.sstatic.net/stackexchange/img/logos/so/so-icon.png" alt="StackOverflow" height="28"></a>
+                  <a class="fa fa-2x social-link link-stack-exchange"
+                       href="https://stackexchange.com/users/1280541/chris-frisina" target="_blank"><img src="https://cdn.sstatic.net/stackexchange/img/logos/se/se-icon.png?v=93426798a1d4" alt="StackExchange" height="28"></a>
+                  <a class="fab fa-linkedin fa-2x social-link link-linkedin"
+                       href="https://www.linkedin.com/profile/view?id=164037181" target="_blank"></a>
+                  <a class="fab fa-twitter fa-2x social-link link-twitter"
+                       href="https://twitter.com/special_orange" target="_blank"></a>
+                  <a class="fab fa-pinterest fa-2x social-link link-pinterest" href="https://pinterest.com/chrisfrisina" target="_blank"></a>
+              </div>
+          </div>
+        </section>
+
+        <section class="col-md-9 card-wrapper pull-right">
+          <div class="card background-card">
+<!--             <h4 class="text-uppercase text-bolder">Background</h4>
+            <hr>
+ -->
+            <div class="background-details">
+              <div class="detail" id="about">
+                <div class="icon">
+                  <i class="fa fa-lg fa-user"></i>
+                  <span class="mobile-title">About</span>
+                </div>
+                <div class="info">
+                  <h4 class="title text-uppercase">
+                    About
+                  </h4>
+                  <div class="row">
+                    <div class="card card-nested clearfix">
+                      <div class="col-md-8">
+                        <div class="intro-main">
+                          I am an empathic designer and pride myself in making others smile while bettering our communities.  I specialize in making intuitive tools to improve highly complex systems for professional and organized communities.  I do this with <i>Usability</i>, <i>Programming</i>, and <i>Design</i> with strong influences from my skills in <i>Consulting</i> and <i>Logistics</i> backgrounds.
+                        </div>
+                      </div>
+                      <div class="col-md-4">
+                        <div class="intro-sidebar text-muted">
+                          <div class="text-center">
+                            <div class="col-xs-12 label label-success white-space-normal">
+                              <h5>
+                                Currently Seeking Employment Opportunities
+                              </h5>
+                            </div>
+                          </div>
+                          <div class="text-center">
+                            Degrees in :
+                          </div>
+                          <div class="text-center">
+                            <div class="label label-info text-center">
+                              Computer Science
+                            </div>
+                          </div>
+                          <div class="text-center">
+                            <div class="label label-info white-space-normal">
+                              Human Computer Interaction
+                            </div>
+                            &nbsp;
+                            <div class="label label-info">
+                              Human Centered Design
+                            </div>
+                          </div>                  
+                        </div>                  
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="detail" id="work-experience">
+                <div class="icon">
+                  <i class="fa fa-lg fa-building"></i>
+                  <span class="mobile-title">Work Experience</span>
+                </div>
+                <div class="info">
+                  <h4 class="title text-uppercase">
+                    Work Experience
+                  </h4>
+                  <div class="card card-nested clearfix col-md-12">
+                    <div class="row">
+                      <div class="col-sm-8 job-main">                      
+                        <p class="clear-margin-sm">
+                          <strong>Full Stack Engineer</strong>,&nbsp;Master Specialists
+                        </p>
+                        <p class="text-muted visible-xs visible-sm">
+                          <small>
+                            <span class="space-right">
+                            <!-- CHANGE JS SCRIPT TO CALCULATE #job1 -->
+                              May, 2016 -
+                                Present
+                            </span>
+
+                              <span>
+                                <i class="fa fa-clock-o icon-left"></i>
+                              <span id="job2a"></span>
+                              </span>
+                          </small>
+                        </p>
+                        <p>Master Specialists provides data analysis and logistics support for fleet delivery and logistics customers</p>
+                          <div class="row">
+                            <div class="col-xs-3">
+                              <img class="small-gap" src="_img/ms.png" title="Master Specialists" alt="Master Specialists">
+                            </div>
+                            <div class="col-xs-9">
+                              <ul>
+                                  <li>Full Stack Developer</li>
+                                  <li>Make API enpoints, mixins, workflows, and log reports</li>
+                                  <li>Convert method/function based calls to Class based for optimal mixin servicability</li>
+                                  <li>Write integration tests and unit tests for increased uptime, better development, and dev ops improvements</li>
+                                  <li>Optimize SQL / ORM calls for high traffic queries</li>
+                                  <li>Develop(ed) Finite State Machine FSM for records to track end to end regulatory and query states</li>
+                                  <li>Restructure, silo, and services into maintanable processes</li>
+                                  <li>Design, implement, and iterate features for the entire web platform, across multiple verticals, and prepare client guided meetings for support and design</li>
+                                  <li>Design and automate  procedural, regulatory, and cost-saving logistics processes and changes</li>
+                                  <!-- <li>Medium/Heavy duty diesel mechanic and fleet engineer</li>
+                                  <li>Founder and shareholder of an s-corp</li> -->
+                              </ul>
+                            </div>
+                          </div>
+
+                      </div>
+                      <div class="col-xs-12 col-sm-4 col-md-2 job-middle">
+                        <div class="text-muted text-center" >
+                          <p><strong>Project Stack:</strong></p>
+                          <div class="row row-no-padding">
+                            <div class="col-xs-3">
+                              <img class="small-gap" src="_img/django.png" title="Django" alt="Django">
+                            </div>
+                            <div class="col-xs-3">
+                              <img class="small-gap" src="_img/react.png" title="React" alt="React">
+                            </div>
+                            <div class="col-xs-3">
+                              <img class="small-gap" src="_img/d3.jpg" title="D3" alt="D3">
+                            </div>
+                            <div class="col-xs-3">
+                              <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" alt="SVG" title="SVG" width="100%" height="100%" viewBox="0 0 300 300">
+
+                                <title>SVG</title>
+                                <desc>Designed for the SVG Logo Contest in 2006 by Harvey Rayner, and adopted by W3C in 2009. It is available under the Creative Commons license for those who have an SVG product or who are using SVG on their site.</desc>
+                               
+                                 <metadata id="license">
+                                   <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://web.resource.org/cc/">
+                                     <cc:Work rdf:about="">
+                                       <dc:title>SVG Logo</dc:title>
+                                       <dc:date>14-08-2009</dc:date>
+                                       <dc:creator>
+                                         <cc:Agent><dc:title>W3C</dc:title></cc:Agent>
+                                         <cc:Agent><dc:title>Harvey Rayner, designer</dc:title></cc:Agent>
+                                       </dc:creator>
+                                       <dc:description>See document description</dc:description>
+                                       <cc:license rdf:resource="http://creativecommons.org/licenses/by-nc-sa/2.5/"/>
+                                       <dc:format>image/svg+xml</dc:format>
+                                       <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+                                     </cc:Work>
+                                     <cc:License rdf:about="http://creativecommons.org/licenses/by-nc-sa/2.5/">
+                                       <cc:permits rdf:resource="http://web.resource.org/cc/Reproduction"/>
+                                       <cc:permits rdf:resource="http://web.resource.org/cc/Distribution"/>
+                                       <cc:requires rdf:resource="http://web.resource.org/cc/Notice"/>
+                                       <cc:requires rdf:resource="http://web.resource.org/cc/Attribution"/>
+                                       <cc:prohibits rdf:resource="http://web.resource.org/cc/CommercialUse"/>
+                                       <cc:permits rdf:resource="http://web.resource.org/cc/DerivativeWorks"/>
+                                       <cc:requires rdf:resource="http://web.resource.org/cc/ShareAlike"/>
+                                     </cc:License>
+                                   </rdf:RDF>
+                                 </metadata>
+                                 
+                                 <g stroke-width="38.0086" stroke="#000">
+                                   <g id="svgstar" transform="translate(150, 150)">
+                                     <path id="svgbar" fill="#ffb13b" d="M-84.1487,-15.8513 a22.4171,22.4171 0 1 0 0,31.7026 h168.2974 a22.4171,22.4171 0 1 0 0,-31.7026 Z"/>
+                                     <use xlink:href="#svgbar" transform="rotate(45)"/>
+                                     <use xlink:href="#svgbar" transform="rotate(90)"/>
+                                     <use xlink:href="#svgbar" transform="rotate(135)"/>
+                                   </g>
+                                 </g>
+                                 <use xlink:href="#svgstar"/>
+
+                              </svg>
+                            </div>
+                            <div class="col-xs-3">
+                              <img class="small-gap" src="_img/typescript.png" title="TypeScript" alt="TypeScript">
+                            </div>
+                            <div class="col-xs-3">
+                              <img class="small-gap" src="_img/antd.svg" title="ANT Design" alt="ANT Design">
+                            </div>
+                            <div class="col-xs-3">
+                              <img class="small-gap" src="_img/font-awesome.jpg" title="Font Awesome" alt="Font Awesome">
+                            </div>
+                            <div class="col-xs-3">
+                              <img class="small-gap" src="_img/git.png" title="Git" alt="Git">
+                            </div>
+                            <div class="col-xs-3">
+                              <img class="small-gap" src="_img/postgres.png" title="PostgreS" alt="PostgreS">
+                            </div>
+                            <div class="col-xs-3">
+                              <img class="small-gap" src="_img/python.png" title="Python" alt="Python">
+                            </div>
+                            <div class="col-xs-3">
+                              <img class="small-gap" src="_img/celery.png" title="Celery" alt="Celery">
+                            </div>
+                            <div class="col-xs-3">
+                              <img class="small-gap" src="_img/twilio.png" title="Twilio" alt="Twilio">
+                            </div>
+                            <div class="col-xs-3">
+                              <img class="small-gap" src="_img/rabbit.png" title="RabbitMQ" alt="RabbitMQ">
+                            </div>
+                            <div class="col-xs-3">
+                              <img class="small-gap" src="_img/linux.png" title="Linux" alt="Linux">
+                            </div>
+                            <div class="col-xs-3">
+                              <img class="small-gap" src="_img/bootstrap.png" title="Bootstrap" alt="Bootstrap">
+                            </div>
+                            <div class="col-xs-3">
+                              <img class="small-gap" src="_img/eb.png" title="Elastic Beanstalk" alt="Elastic Beanstalk">
+                            </div>
+                            <div class="col-xs-3">
+                              <img class="small-gap" src="_img/aws.png" title="Amazon Web Services" alt="Amazon Web Services">
+                            </div>
+                            <div class="col-xs-3">
+                              <img class="small-gap" src="_img/https.jpg" title="HTTPS" alt="HTTPS">
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-md-2 hidden-xs hidden-sm">
+                        <div class="text-muted text-center">
+                          <p>
+                            <strong>Joined:</strong>&nbsp;
+                            April, 2016
+                          </p>
+
+                          <p>
+                              <span class="label label-success">
+                                Currently Working
+                              </span>
+                          </p>
+                          <p>
+                            <i class="fa fa-clock-o icon-left"></i>
+                              <span id="job2"></span>
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="card card-nested clearfix col-md-12">
+                    <div class="row">
+                      <div class="col-sm-8 job-main">                      
+                        <p class="clear-margin-sm">
+                          <strong>Graduate Researcher - The Sound of Fractions</strong>,&nbsp;Virginia Tech
+                        </p>
+                        <p class="text-muted visible-xs visible-sm">
+                          <small>
+                            <span class="space-right">
+                            <!-- CHANGE JS SCRIPT TO CALCULATE #job1 -->
+                              Jan, 2013 -
+                                Present
+                            </span>
+
+                              <span>
+                                <i class="fa fa-clock-o icon-left"></i>
+                                <span id="job1a"></span>
+                              </span>
+                          </small>
+                        </p>
+                        <p>The Sound of Fractions is an online tool to help students who struggle with fractions to understand the entire system of fractions through music. I designed, developed, and implemented a study, of a full stack application with accompanying curriculum to enable students to tap their own rhythms and have audio processing transform their rhythms into mathematical graphical representations.  I also designed and developed a data viewer to allow transparent and cross discipline investigation of the data.</p>
+                          <ul>
+                              <li>General Overview : <a href="https://thirdlab.cs.vt.edu/education-and-technology/sound-of-fractions/" target="_blank"><div class="btn btn-primary"><i class="fas fa-link"></i></div></a> </li>
+                              <li>Explore the design and data : <a href="https://www.specialorange.org/sof-data" target="_blank"><div class="btn btn-primary"><i class="fas fa-link"></i></div></a> </li>
+                              <li>Thesis, presentation, and documentation : <a href="https://www.specialorange.org/thesis" target="_blank"><div class="btn btn-primary"><i class="fas fa-link"></i></div></a> </li>
+                              <li>National Public Radio (NPR) Interview: <a href="https://virginiapublicradio.org/2014/10/02/virginia-science-festival-a-party-where-science-is-the-guest-of-honor/" target="_blank">
+                                <div class="btn btn-primary"><i class="fas fa-link"></i></div></a> <a href="https://cpa.ds.npr.org/wvtf/audio/2014/10/ScienceFestival.mp3" target="_blank"><div class="btn btn-primary"><i class="fas fa-file-audio"></i></div></a> </li>
+                          </ul>
+                      </div>
+                      <div class="col-xs-12 col-sm-4 col-md-2 job-middle">
+                        <div class="text-muted text-center" >
+                          <p><strong>Project Stack:</strong></p>
+                          <div class="row row-no-padding">
+                            <div class="col-xs-3">
+                              <img class="small-gap" src="_img/backbone.jpg" title="Backbone" alt="Backbone">
+                            </div>
+                            <div class="col-xs-3">
+                              <img class="small-gap" src="_img/chrome.jpg" title="Chrome" alt="Chrome">
+                            </div>
+                            <div class="col-xs-3">
+                              <img class="small-gap" src="_img/d3.jpg" title="D3" alt="D3">
+                            </div>
+                            <div class="col-xs-3">
+                              <img class="small-gap" src="_img/html5audio.png" title="HTML5 Audio" alt="HTML5 Audio">
+                            </div>
+                            <div class="col-xs-3">
+                              <img class="small-gap" src="_img/node.png" title="Node" alt="Node">
+                            </div>
+                            <div class="col-xs-3">
+                              <img class="small-gap" src="_img/parse.png" title="Parse" alt="Parse">
+                            </div>
+                            <div class="col-xs-3">
+                              <img class="small-gap" src="_img/upstart.png" title="Upstart" alt="Upstart">
+                            </div>
+                            <div class="col-xs-3">
+                              <img class="small-gap" src="_img/bootstrap.png" title="Bootstrap" alt="Bootstrap">
+                            </div>
+                            <div class="col-xs-3">
+                              <img class="small-gap" src="_img/font-awesome.jpg" title="Font Awesome" alt="Font Awesome">
+                            </div>
+                            <div class="col-xs-3">
+                              <img class="small-gap" src="_img/git.png" title="Git" alt="Git">
+                            </div>
+                            <div class="col-xs-3">
+                              <img class="small-gap" src="_img/jq.jpg" title="JQuery" alt="JQuery">
+                            </div>
+                            <div class="col-xs-3">
+                              <img class="small-gap" src="_img/jqui.jpg" title="JQuery " alt="JQuery UI">
+                            </div>
+                            <div class="col-xs-3">
+                              <img class="small-gap" src="_img/soundcloud.png" title="Soundcloud" alt="Soundcloud">
+                            </div>
+                            <div class="col-xs-3">
+                              <img class="small-gap" src="_img/ubuntu.png" title="Ubuntu" alt="Ubuntu">
+                            </div>
+                            <div class="col-xs-3">
+                              <img class="small-gap" src="_img/latex.png" title="LaTeX" alt="LaTeX">
+                            </div>
+                            <div class="col-xs-3">
+                              <img class="small-gap" src="_img/https.jpg" title="HTTPS" alt="HTTPS">
+                            </div>
+                            <div class="col-xs-3">
+                              <img class="small-gap" src="_img/homebrew.jpg" title="Homebrew" alt="Homebrew">
+                            </div>
+                            <div class="col-xs-3">
+                              <img class="small-gap" src="_img/underscore.png" title="Underscore" alt="Underscore">
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-md-2 hidden-xs hidden-sm">
+                        <div class="text-muted text-center">
+                          <p>
+                            <strong>Joined:</strong>&nbsp;
+                            Jan, 2013
+                          </p>
+
+                          <p>
+                              <span class="label label-success">
+                                Currently Working
+                              </span>
+                          </p>
+                          <p>
+                            <i class="fa fa-clock-o icon-left"></i>
+                              <span id="job1"></span>
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="card card-nested clearfix col-md-12">
+                    <div class="row">
+                      <div class="col-sm-8 job-main">
+                        <p class="clear-margin-sm">
+                          <strong>Graduate Researcher</strong>,&nbsp;Virginia Tech
+                        </p>
+                        <p class="text-muted visible-xs visible-sm">
+                          <small>
+
+                            <span class="space-right">
+                              Dec, 2013 -
+                                Present
+                            </span>
+
+                              <span>
+                                <i class="fa fa-clock-o icon-left"></i>
+                                1 year
+                              </span>
+                          </small>
+                        </p>
+                        <p>Research how to help entering undergraduates become more successful by making data meaningful to individual users and developed a custom dashboard for students, teachers, and administration.</p>
+                          <ul>
+                              <li> Fully customizable dashboard for learning analytics &nbsp <a href="https://www.developer.specialorange.org/vt/PD/dashboard/#/" target="_blank"><span class="btn btn-primary"><i class="fa fa-dashboard"></i>&nbsp;&nbsp;Proof Of Concept&nbsp;&nbsp;<i class="fa fa-area-chart"></i></span></a></li>
+                          </ul>
+                      </div>
+                      <div class="col-xs-12 col-sm-4 col-md-2 job-middle">
+                        <div class="text-muted text-center">
+                          <p><strong>Project Stack:</strong></p>
+                          <div class="row row-no-padding">
+                            <div class="col-xs-4">
+                              <img class="small-gap" src="_img/angular.jpg" title="Angular" alt="Angular">
+                            </div>
+                            <div class="col-xs-4">
+                              <img class="small-gap" src="_img/d3.jpg" title="D3" alt="D3">
+                            </div>
+                            <div class="col-xs-4">
+                              <img class="small-gap" src="_img/node.png" title="Node" alt="Node">
+                            </div>
+                            <div class="col-xs-4">
+                              <img class="small-gap" src="_img/bootstrap.png" title="Bootstrap" alt="Bootstrap">
+                            </div>
+                            <div class="col-xs-4">
+                              <img class="small-gap" src="_img/font-awesome.jpg" title="Font Awesome" alt="Font Awesome">
+                            </div>
+                            <div class="col-xs-4">
+                              <img class="small-gap" src="_img/git.png" title="Git" alt="Git">
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-md-2 hidden-xs hidden-sm">
+                        <div class="text-muted text-center">
+                          <p>
+                            <strong>Joined:</strong>&nbsp;
+                            Dec, 2012
+                          </p>
+
+                          <p>
+                              <strong>Left:</strong>&nbsp;
+                              Dec, 2015
+                          </p>
+                          <p>
+                            <i class="fa fa-clock-o icon-left"></i>
+                            3 years
+                          </p>         
+                        </div>                         
+                      </div>
+                    </div>
+                  </div>
+                  <div class="card card-nested clearfix col-md-12">
+                    <div class="row">
+                      <div class="col-sm-8 job-main">
+                        <p class="clear-margin-sm">
+                          <strong>Implementation Manager</strong>,&nbsp;FedEx Ground
+                        </p>
+                        <p class="text-muted visible-xs visible-sm">
+                          <small>
+                            <span class="space-right">
+                              Feb, 2006 -
+                                Dec, 2014
+                            </span>
+
+                              <span>
+                                <i class="fa fa-clock-o icon-left"></i>
+                                8 years 10 months
+                              </span>
+                          </small>
+                        </p>
+                        <p>I helped develop and implement an automated sortation and dispatch system to increase accuracy and productivity of the delivery of packages, the final stage in a the logistics of small package delivery networks.  Reduced costs by 5% and then increased accuracy by 4%.  Security and Six Sigma improvements savings totaling more than $10M.</p>
+                        <ul>
+                            <li> Contractor Corporate Liaison : July 2010 - Dec 2014 </li>
+                            <li> Vision Implementation Manager : Feb 2010 - Dec 2011 </li>
+                            <li> Southern Division Quality Initiative Manager : Feb 2009 - Jan 2011 </li>
+                            <li> Senior Service Manager : Jan 2007 - Jan 2009 </li>
+                            <li> Service Manager : April 2006 - Dec 2006 </li>
+                            <li> Package Handler : Mar 2006 - May 2006 </li>
+                        </ul>
+                      </div>
+                      <div class="col-xs-12 col-sm-4 col-md-2 job-middle">
+                        <div class="text-muted text-center">
+                          <p><strong>Project Examples:</strong></p>
+                          <div class="row">
+                            <div class="col-xs-12">
+                              <div>
+                                <a href="_img/load-chart-example.png" target="_blank">
+                                  <img src="_img/load-chart-manager.jpg" heigt="100%" width="100%" title="The load chart program I made in Excel" alt="Load Chart Program.  Click for an example load chart.">
+                                </a>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="row">
+                            <div class="col-xs-12">
+                              <div>
+                                <img src="_img/vision.jpg" heigt="100%" width="100%" title="A dynamic sticker from the 'Vision' program I oversaw" alt="Vision Sticker">
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-md-2 hidden-xs hidden-sm sidebar text-center">
+                        <p>
+                          <strong>Joined:</strong>&nbsp;
+                          Feb, 2006
+                        </p>
+
+                        <p>
+                            <strong>Left:</strong>&nbsp;
+                            Dec, 2014
+                        </p>
+                        <p>
+                          <i class="fa fa-clock-o icon-left"></i>
+                          8 years 10 months
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="card card-nested clearfix col-md-12">
+                    <div class="row">
+                      <div class="col-sm-10 job-main">
+                        <p class="clear-margin-sm">
+                          <strong>Grocery Manager</strong>,&nbsp;Harris Teeter
+                        </p>
+                        <p class="text-muted visible-xs visible-sm">
+                          <small>
+                            <span class="space-right">
+                              May, 2002 -
+                                Feb, 2006
+                            </span>
+
+                              <span>
+                                <i class="fa fa-clock-o icon-left"></i>
+                                3 years 9 months
+                              </span>
+                          </small>
+                        </p>
+                        <p>Managed grocery departments for several areas stores, eventually designing an improved inventory system.</p>
+                      </div>
+                      <div class="col-md-2 hidden-xs hidden-sm sidebar text-center">
+                        <p>
+                          <strong>Joined:</strong>&nbsp;
+                          May, 2002
+                        </p>
+
+                        <p>
+                            <strong>Left:</strong>&nbsp;
+                            Feb, 2006
+                        </p>
+                        <p>
+                          <i class="fa fa-clock-o icon-left"></i>
+                          3 years 9 months
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="detail" id="skills">
+                <div class="icon">
+                  <i class="fa fa-lg fa-code"></i>
+                  <span class="mobile-title">Skills</span>
+                </div>
+                <div class="info">
+                  <h4 class="title text-uppercase">
+                    Skills
+                  </h4>
+                  <div class="content">
+                    <div class="row">
+                      <div class="col-xs-6">                      
+                        <ul class="list-unstyled">
+                          <li class="card card-nested">
+                            <p>
+                              <strong>Areas</strong>
+                            </p>
+                            <div class="space-top labels">
+                              <span class="label label-keyword">Web Development (front end)</span>
+                              <span class="label label-keyword">BIG DATA</span>
+                              <span class="label label-keyword">UI/UX</span>
+                              <span class="label label-keyword">Data Visualization</span>
+                              <span class="label label-keyword">Open Data</span>
+                              <span class="label label-keyword">Pedagogy</span>
+                              <span class="label label-keyword">Time and Method Engineering</span>
+                              <span class="label label-keyword">Heuristic Evaluation</span>
+                              <span class="label label-keyword">Systems Analysis</span>
+                              <span class="label label-keyword">Participatory Design</span>
+                              <span class="label label-keyword">Human Centered Design</span>
+                            </div>
+                          </li>
+                        </ul>
+                      </div>
+                      <div class="col-xs-6">                      
+                        <ul class="list-unstyled">
+                          <li class="card card-nested">
+                            <p>
+                              <strong>Frameworks</strong>
+                            </p>
+                            <div class="space-top labels">
+                              <span class="label label-keyword">Angular</span>
+                              <span class="label label-keyword">Node</span>
+                              <span class="label label-keyword">Ember</span>
+                              <span class="label label-keyword">Backbone</span>
+                              <span class="label label-keyword">Rails</span>
+                              <span class="label label-keyword">Drupal</span>
+                            </div>
+                          </li>
+                        </ul>
+                      </div>
+                      <div class="col-xs-6">                      
+                        <ul class="list-unstyled">
+                          <li class="card card-nested">
+                            <p>
+                              <strong>Languages</strong>
+                            </p>
+                            <div class="space-top labels">
+                              <span class="label label-keyword">JavaScript</span>
+                              <span class="label label-keyword">Java</span>
+                              <span class="label label-keyword">Ruby</span>
+                              <span class="label label-keyword">Prolog</span>
+                              <span class="label label-keyword">Haskell</span>
+                            </div>
+                          </li>
+                        </ul>
+                      </div>
+                      <div class="col-xs-6">                      
+                        <ul class="list-unstyled">
+                          <li class="card card-nested">
+                            <p>
+                              <strong>Libraries &amp; supporting languages</strong>
+                            </p>
+                            <div class="space-top labels">
+                              <span class="label label-keyword">JQuery</span>
+                              <span class="label label-keyword" data-toggle="tooltip" data-placement="bottom" title="Structured Query Language">SQL</span>
+                              <span class="label label-keyword">Firebase</span>
+                              <span class="label label-keyword">Parse</span>
+                              <span class="label label-keyword">R</span>
+                              <span class="label label-keyword" data-toggle="tooltip" data-placement="bottom" title="Data Driven Documents">D3</span>
+                              <span class="label label-keyword">CSS</span>
+                              <span class="label label-keyword">HTML</span>
+                              <span class="label label-keyword">Bootstrap</span>
+                              <span class="label label-keyword">Markdown</span>
+                            </div>
+                          </li>
+                        </ul>
+                      </div>
+                      <div class="col-xs-6">                      
+                        <ul class="list-unstyled">
+                          <li class="card card-nested">
+                            <p>
+                              <strong>Certifications</strong>
+                            </p>
+                            <div class="space-top labels">
+                              <span class="label label-keyword" data-toggle="tooltip" data-placement="bottom" title="6σ">Six Sigma 6σ</span>
+                              <span class="label label-keyword" data-toggle="tooltip" data-placement="bottom" title="North American Electric Reliability Corporation">NERC</span>
+                              <span class="label label-keyword" data-toggle="tooltip" data-placement="bottom" title="Supervisory Control And Data Acquisition">SCADA</span>
+                              <span class="label label-keyword" data-toggle="tooltip" data-placement="bottom" title="Occupational Safety and Health Administration">OSHA</span>
+                              <span class="label label-keyword" data-toggle="tooltip" data-placement="bottom" title="Department Of Transportation">DOT</span>
+                              <span class="label label-keyword" data-toggle="tooltip" data-placement="bottom" title="International Organization of Standards">ISO</span>
+                              <span class="label label-keyword" data-toggle="tooltip" data-placement="bottom" title="Critical Infrastructure Protection">CIP</span>                            </div>
+                          </li>
+                        </ul>
+                      </div>
+                      <div class="col-xs-6">                      
+                        <ul class="list-unstyled">
+                          <li class="card card-nested">
+                            <p>
+                              <strong>Favorite Tools</strong>
+                            </p>
+                            <div class="space-top labels">
+                              <div class="label label-keyword">Smile <i class="fa fa-smile-o" aria-hidden="true"></i></div>
+                              <a href="https://open.spotify.com/user/chrisfrisina/playlist/1Y2FVuQq0BobEhoGs5ktDj" target="_blank"><div class="btn btn-primary">Music <i class="fa fa-music" aria-hidden="true"></i></div></a>
+                              <div class="label label-keyword">Submlime Text</div>
+                              <div class="label label-keyword">OmniGraffle</div>
+                              <div class="label label-keyword">Adobe Illustrator</div>
+                              <div class="label label-keyword">Excel <i class="fa fa-file-excel-o" aria-hidden="true"></i></div>
+                              <div class="label label-keyword">Git <i class="fa fa-git" aria-hidden="true"></i></div>
+                            </div>
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="detail" id="education">
+                <div class="icon">
+                  <i class="fa fa-lg fa-mortar-board"></i>
+                  <span class="mobile-title">Education</span>
+                </div>
+                <div class="info">
+                  <h4 class="title text-uppercase">
+                    Education
+                  </h4>
+
+                  <div class="card card-nested clearfix col-md-12">
+                    <div class="row">
+                      <div class="col-sm-10 job-main">                      
+                        <p class="clear-margin-sm">
+                          <strong>Computer Science : Human Computer Interaction, Masters</strong>,&nbsp;
+                          Virginia Tech
+                        </p>
+                        <p class="visible-xs visible-sm text-muted">
+                          <small>
+                            Jul, 2013 -
+                              Present
+                          </small>
+                        </p>
+                        <div class="space-top labels">
+                            <span class="label label-keyword" style="white-space:normal">Computer Supported Cooperative Work and Social Networks - S15</span>
+                            <span class="label label-keyword">Human Centered Methods - F14</span>
+                            <span class="label label-keyword">Programming Languages - F14</span>
+                            <span class="label label-keyword">Digital Libraries - S14</span>
+                            <span class="label label-keyword">Usability Engineering - S14</span>
+                            <a href="https://goo.gl/FQVlXo"><span class="btn btn-primary">Computational Thinking - F13  <i class="fas fa-link"></i></span></a>
+                            <span class="label label-keyword">Research Methods - F13</span>
+                        </div>
+                      </div>
+                      <div class="col-md-2 hidden-xs hidden-sm sidebar">
+                        <div class="sidebar text-muted text-center">
+                          <p>
+                            <strong>Started:</strong>&nbsp;
+                            Jul, 2013
+                          </p>
+                          <p>
+                            <strong>Completion:</strong>&nbsp;
+                            May, 2016
+                          </p>
+                          <i>3.7</i>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="card card-nested clearfix col-md-12">
+                    <div class="row">
+                      <div class="col-sm-10 job-main">                      
+                        <p class="clear-margin-sm">
+                          <strong>Female Gendered Communication, Undergraduate</strong>,&nbsp;
+                          University of North Carolina at Charlotte
+                        </p>
+                        <p class="visible-xs visible-sm text-muted">
+                          <small>
+                            Jul, 2003 -
+                              Nov, 2007
+                          </small>
+                        </p>
+                        <div class="space-top labels">
+                          <span class="label label-keyword">Science, Tech &amp; Society</span>
+                          <span class="label label-keyword">Public Speaking</span>
+                          <span class="label label-keyword">Comm Theory</span>
+                          <span class="label label-keyword">Leadership, Service, &amp; Ethics</span>
+                          <span class="label label-keyword">German Lit. Of The Holocaust</span>
+                          <span class="label label-keyword">Small Group Comm</span>
+                          <span class="label label-keyword">Comm Research Methods</span>
+                          <span class="label label-keyword">Women Studies</span>
+                          <span class="label label-keyword">Rhetorical Theory</span>
+                          <span class="label label-keyword">Communication Ethics</span>
+                          <span class="label label-keyword">Feminist Thought</span>
+                          <span class="label label-keyword">Persuasion</span>
+                          <span class="label label-keyword">Women and Gender in Modern Asia</span>
+                        </div>
+                      </div>
+                      <div class="col-md-2 hidden-xs hidden-sm sidebar">
+                        <div class="sidebar text-muted text-center hidden-xs hidden-sm">
+                          <p>
+                            <strong>Started:</strong>&nbsp;
+                            Jul, 2003
+                          </p>
+                          <p>
+                            <strong>Completion:</strong>&nbsp;
+                            Nov, 2007
+                          </p>
+                          <i>2.1</i>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+                <div class="detail" id="awards">
+                  <div class="icon">
+                    <i class="fa fa-lg fa-trophy"></i>
+                    <span class="mobile-title">Awards</span>
+                  </div>
+                  <div class="info">
+                    <h4 class="title text-uppercase">
+                      Awards
+                    </h4>
+
+                    <div class="content">
+                      <div class="row">
+                        <div class="col-xs-12 col-sm-4">                      
+                          <div class="card card-nested">
+                            <div class="row">
+                              <div class="col-xs-12 col-sm-6">                      
+                                <p class="clear-margin-sm" itemprop="award">
+                                  <strong>Student Research Grant ($25K)</strong>,&nbsp;
+                                  Virginia Tech
+                                </p>
+                                <p class="visible-xs visible-sm text-muted">
+                                  <small>
+                                    Awarded: Jan, 2013
+                                  </small>
+                                </p>
+                              </div>
+                              <div class="col-xs-12 col-sm-6">                      
+                                <div class="sidebar text-muted text-center hidden-xs hidden-sm">
+                                  <p>
+                                    <strong>Awarded:</strong>&nbsp;
+                                    Jan, 2013
+                                  </p>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-xs-12 col-sm-4">                      
+                          <div class="card card-nested">
+                            <div class="row">
+                              <div class="col-xs-12 col-sm-6">                      
+                                <p class="clear-margin-sm" itemprop="award">
+                                  <strong>Most Improved Service Manager</strong>,&nbsp;
+                                  FedEx
+                                </p>
+                                <p class="visible-xs visible-sm text-muted">
+                                  <small>
+                                    Awarded: Jun 30, 2009
+                                  </small>
+                                </p>
+                              </div>
+                              <div class="col-xs-12 col-sm-6">                      
+                                <div class="sidebar text-muted text-center hidden-xs hidden-sm">
+                                  <p>
+                                    <strong>Awarded:</strong>&nbsp;
+                                    Jun 30, 2009
+                                  </p>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-xs-12 col-sm-4">                      
+                          <div class="card card-nested">
+                            <div class="row">
+                              <div class="col-xs-12 col-sm-6">                      
+                                <p class="clear-margin-sm" itemprop="award">
+                                  <strong>Eagle Scout</strong>,&nbsp;
+                                  Boy Scouts of America
+                                </p>
+                                <p class="visible-xs visible-sm text-muted">
+                                  <small>
+                                    Awarded: Feb 07, 2003
+                                  </small>
+                                </p>
+                              </div>
+                              <div class="col-xs-12 col-sm-6">                      
+                                <div class="sidebar text-muted text-center hidden-xs hidden-sm">
+                                  <p>
+                                    <strong>Awarded:</strong>&nbsp;
+                                    Feb 07, 2003
+                                  </p>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="detail" id="volunteer-work">
+                  <div class="icon">
+                    <i class="fa fa-lg fa-child"></i>
+                    <span class="mobile-title">Volunteer Work</span>
+                  </div>
+                  <div class="info">
+                    <h4 class="title text-uppercase">
+                      Volunteer Work
+                    </h4>
+
+                    <div class="card card-nested clearfix col-md-12">
+                      <div class="row">
+                        <div class="col-sm-10 job-main">
+                          <p class="clear-margin-sm">
+                            <strong>Planning Director</strong>,&nbsp;
+                            IUPUI Relief Housing
+                          </p>
+                          <p class="visible-xs visible-sm text-muted">
+                            <small>
+                              Apr, 2016 -
+                                Present
+                            </small>
+                          </p>
+                          <p>I work with an incredible team of people to tackle housing for adults recovering from trauma</p>
+                        </div>
+                        <div class="col-sm-2 hidden-xs hidden-sm text-muted text-center">
+                          <p>
+                            <strong>Since:</strong>&nbsp;
+                            Apr, 2016
+                          </p>
+                          <p>
+                              <span class="label label-success">
+                                Currently Volunteering
+                              </span>
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="card card-nested clearfix col-md-12">
+                      <div class="row">
+                        <div class="col-sm-10 job-main">
+                          <p class="clear-margin-sm">
+                            <strong>Social Chair</strong>,&nbsp;
+                            Virginia Tech Computer Science Grad Council
+                          </p>
+                          <p class="visible-xs visible-sm text-muted">
+                            <small>
+                              Aug, 2014 -
+                                Present
+                            </small>
+                          </p>
+                          <p>I make things more fun.  I do this with graphic visualization of food menus, wood crafted games, home cooked meals, and of course smiles (and lots of them :) to every social event.</p>
+                        </div>
+                        <div class="col-sm-2 hidden-xs hidden-sm text-muted text-center">
+                          <p>
+                            Feb, 2012
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="card card-nested clearfix col-md-12">
+                      <div class="row">
+                        <div class="col-sm-10 job-main">
+                          <p class="clear-margin-sm">
+                            <strong>Committee Chair</strong>,&nbsp;
+                            Ecumenical Think Tank
+                          </p>
+                          <p class="visible-xs visible-sm text-muted">
+                            <small>
+                              Feb, 2012 -
+                                Feb, 2013
+                            </small>
+                          </p>
+                          <p>I participated with select community members to develop appropriate potential opportunities to help increase young adult attendance and participation in community  small groups, and allocate and distribute $100K to the opportunities.</p>
+                        </div>
+                        <div class="col-sm-2 hidden-xs hidden-sm text-muted text-center">
+                          <p>
+                            Feb, 2012
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="card card-nested clearfix col-md-12">
+                      <div class="row">
+                        <div class="col-sm-10 job-main">
+                          <p class="clear-margin-sm">
+                            <strong>Team Member</strong>,&nbsp;
+                            Habitat For Humanity
+                          </p>
+                          <p class="visible-xs visible-sm text-muted">
+                            <small>
+                              Jan, 2001 -
+                                Present
+                            </small>
+                          </p>
+                          <p>Starting with weekend builds, I have become specialized in framing and roofing.  I also help supply chains for the Bahamas Habitat, a country often not thought of requiring Habitat&#x27;s resources, who help serve over 1000 families across the various islands.  I also work with disaster relief efforts in the gulf.</p>
+                          <ul>
+                            <li> Builder </li>
+                            <li> International Logistics </li>
+                            <li> Disaster Relief </li>
+                          </ul>
+                        </div>
+                        <div class="col-sm-2 hidden-xs hidden-sm text-muted text-center">
+                          <p>
+                            <strong>Since:</strong>&nbsp;
+                            Jan, 2001
+                          </p>
+                          <p>
+                              <span class="label label-success">
+                                Currently Volunteering
+                              </span>
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="detail" id="publications">
+                  <div class="icon">
+                    <i class="fa fa-lg fa-book"></i>
+                    <span class="mobile-title">Publications</span>
+                  </div>
+                  <div class="info">
+                    <h4 class="title text-uppercase">
+                      Publications
+                    </h4>
+
+                    <div class="card card-nested clearfix col-md-12">
+                      <div class="row">
+                        <div class="col-sm-10 job-main">
+                          <p class="clear-margin-sm">
+                            <strong>
+                                <a href="https://specialorange.org/thesis"  target="_blank">The Sound of Fractions</a>
+                            </strong>,&nbsp;
+                            Virginia Tech
+                          </p>
+                          <p class="visible-xs visible-sm text-muted">
+                            <small>
+                              Published on: April 24, 2016
+                            </small>
+                          </p>
+                          <p class="clear-margin">Teaching fractions to students through music with an online application and accompanying curriculum.</p>
+                        </div>
+                        <div class="col-sm-2 text-muted text-center hidden-sm hidden-xs">
+                          <p>
+                            <strong>Published on:</strong>&nbsp;
+                            April 24, 2016
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="card card-nested clearfix col-md-12">
+                      <div class="row">
+                        <div class="col-sm-10 job-main">
+                          <p class="clear-margin-sm">
+                            <strong>
+                                <a href="https://vtechworks.lib.vt.edu/handle/10919/47913"  target="_blank">Knowledge Building and Sharing: A meta-model for Guided Research, Learning, and Application</a>
+                            </strong>,&nbsp;
+                            VTechWorks
+                          </p>
+                          <p class="visible-xs visible-sm text-muted">
+                            <small>
+                              Published on: May 06, 2014
+                            </small>
+                          </p>
+                          <p class="clear-margin">A model for classification and design of security systems incorporating up to date methods.</p>
+                        </div>
+                        <div class="col-sm-2 text-muted text-center hidden-sm hidden-xs">
+                          <p>
+                            <strong>Published on:</strong>&nbsp;
+                            May 06, 2014
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="card card-nested clearfix col-md-12">
+                      <div class="row">
+                        <div class="col-sm-10 job-main">
+                          <p class="clear-margin-sm">
+                            <strong>
+                                <a href="https://dl.acm.org/doi/10.1145/2593968.2610489"  target="_blank">RaBit EscAPE: a board game for computational thinking</a>
+                            </strong>,&nbsp;
+                            Interaction Design and Children
+                          </p>
+                          <p class="visible-xs visible-sm text-muted">
+                            <small>
+                              Published on: Dec 31, 2013
+                            </small>
+                          </p>
+                          <p class="clear-margin">Innovative child board game to teach computational thinking skills.</p>
+                        </div>
+                        <div class="col-sm-2 text-muted text-center hidden-sm hidden-xs">
+                          <p>
+                            <strong>Published on:</strong>&nbsp;
+                            Dec 31, 2013
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="detail" id="interests">
+                  <div class="icon">
+                    <i class="fa fa-lg fa-heart"></i>
+                    <span class="mobile-title">Interests</span>
+                  </div>
+                  <div class="info">
+                    <h4 class="title text-uppercase">
+                      Interests
+                    </h4>
+
+                    <div class="content">
+                      <div class="row">
+                        <div class="col-xs-6">                      
+                          <ul class="list-unstyled">
+                            <li class="card card-nested">
+                              <p>
+                                <strong>Outdoors</strong>
+                              </p>
+                              <div class="space-top labels">
+                                  <span class="label label-keyword" data-toggle="tooltip" data-placement="bottom" title="I never too far from my tent">Camping</span>
+                                  <span class="label label-keyword" data-toggle="tooltip" data-placement="bottom" title="Sunsets are better on the mountains">Hiking</span>
+                                  <span class="label label-keyword" data-toggle="tooltip" data-placement="bottom" title="You are always in between a swim">Whitewater Kayaking</span>
+                                  <span class="label label-keyword" data-toggle="tooltip" data-placement="bottom" title="Best one hour get away">Mountain Biking</span>
+                                  <span class="label label-keyword" data-toggle="tooltip" data-placement="bottom" title="Humans were never meant to live in the snow, but boy is it fun">Snowboarding</span>
+                              </div>
+                            </li>
+                          </ul>
+                        </div>
+                        <div class="col-xs-6">                      
+                          <ul class="list-unstyled">
+                            <li class="card card-nested">
+                              <p>
+                                <strong>Cooking</strong>
+                              </p>
+                              <div class="space-top labels">
+                                  <span class="label label-keyword" data-toggle="tooltip" data-placement="bottom" title="Cooking multiple course meals becomes easier when you have more people to share it with :)">Large Scale (100+)</span>
+                                  <span class="label label-keyword" data-toggle="tooltip" data-placement="bottom" title="Haute means 'High' in French.  Why not go all out when you do something?">Haute cuisine</span>
+                                  <span class="label label-keyword" data-toggle="tooltip" data-placement="bottom" title="Might as well let someone benefit from the work!">Fundraisers</span>
+                                  <span class="label label-keyword" data-toggle="tooltip" data-placement="bottom" title="Mac 'n Cheese you ask?  I can cook it at least 50 different ways!">Cuisine Blends</span>
+                              </div>
+                            </li>
+                          </ul>
+                        </div>
+                        <div class="col-xs-6">                      
+                          <ul class="list-unstyled">
+                            <li class="card card-nested">
+                              <p>
+                                <strong>Woodworking</strong>
+                              </p>
+                              <div class="space-top labels">
+                                  <span class="label label-keyword" data-toggle="tooltip" data-placement="bottom" title="Its hard to find good crafts[wo]manship these days...">Carpentry</span>
+                                  <span class="label label-keyword" data-toggle="tooltip" data-placement="bottom" title="What is better than wood?  Wood spinning at 3000 RPMs!">Turning</span>
+                                  <span class="label label-keyword" data-toggle="tooltip" data-placement="bottom" title="It's amazing what nature can make">Rare woods</span>
+                                  <span class="label label-keyword" data-toggle="tooltip" data-placement="bottom" title="Got something you want in wood?  I can work with you to make it happen!">Artistic</span>
+                              </div>
+                            </li>
+                          </ul>
+                        </div>
+                        <div class="col-xs-6">                      
+                          <ul class="list-unstyled">
+                            <li class="card card-nested">
+                              <p>
+                                <strong>Neon</strong>
+                              </p>
+                              <div class="space-top labels">
+                                  <span class="label label-keyword" data-toggle="tooltip" data-placement="bottom" title="I make mostly custom signs and artwork">Custom Artistic signs</span>
+                                  <span class="label label-keyword" data-toggle="tooltip" data-placement="bottom" title="I integrate neon with other mediums">Integrated Artwork</span>
+                                  <span class="label label-keyword" data-toggle="tooltip" data-placement="bottom" title="I push the science behind the profession">Scientific displays</span>
+                              </div>
+                            </li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="detail" id="references">
+                  <div class="icon">
+                    <i class="fa fa-lg fa-thumbs-up"></i>
+                    <span class="mobile-title">References</span>
+                  </div>
+                  <div class="info">
+                    <h4 class="title text-uppercase">
+                      References
+                    </h4>
+
+                    <div class="content">
+                      <div class="row">
+                        <div class="col-sm-3">
+                          <strong>Michael Stewart</strong>
+                          <blockquote class="quote">
+                            <p class="clear-margin"><a href="mailto:tgm@vt.edu?Subject=Chris%20Frisina%20Resume%20Reference">tgm@vt.edu</a></p>
+                          </blockquote>
+                        </div>
+                        <div class="col-sm-3">
+                          <strong>Melissa Avery-Wier</strong>
+                          <blockquote class="quote">
+                            <p class="clear-margin"><a href="mailto:averymd@irrsinn.net?Subject=Chris%20Frisina%20Resume%20Reference">averymd@irrsinn.net</a></p>
+                          </blockquote>
+                        </div>
+                        <div class="col-sm-3">
+                          <strong>Word</strong>
+                          <blockquote class="quote">
+                            <p class="clear-margin"><a href="https://www.specialorange.org/resume/_doc/_Chris Frisina-Resume.docx"><img src="_img/WordMac2016.png" height="26px" width="25px" alt="Word 2016 Logo" height="30px"></a></p>
+                          </blockquote>
+                        </div>
+                        <div class="col-sm-3">
+                          <strong>PDF</strong>
+                          <blockquote class="quote">
+                            <p class="clear-margin">
+                              <a href="https://www.specialorange.org/resume/_doc/_Chris Frisina-Resume.pdf">
+                                <i class="far fa-file-pdf fa-2x"></i>
+                              </a>
+                            </p>
+                          </blockquote>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+            </div>
+          </div>
+        </section>
+      </div>
+    </div>
+
+    <link href='https://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.2.0/js/tooltip.js"></script>
+  </body>
+  <script>
+    $(document).ready(function() {
+      $(function () {
+        $('[data-toggle="tooltip"]').tooltip()
+      })
+    });
+  </script>
+  <script>
+  function calcDate(date1,date2) {
+    var diff = Math.floor(date1.getTime() - date2.getTime());
+    var day = 1000 * 60 * 60 * 24;
+
+    var days = Math.floor(diff/day);
+    var monthsDirty = Math.floor(days/31);
+    var yearsDirty = Math.floor(monthsDirty/12);
+
+    var monthsClean = (monthsDirty == 1) ? '1 month' : monthsDirty % 12 + ' months';
+    var yearsClean = (yearsDirty == 1) ? '1 year' : yearsDirty + ' years';
+
+    var message = yearsClean + ' ' + monthsClean;
+
+    return message
+  }
+  var today = new Date()
+
+  // equivalent to 0 01 2013
+  var past1 = new Date(2013,00,01)
+  var past2 = new Date(2015,04,01)
+  $('#job1').text( calcDate(today,past1) );
+  $('#job1a').text( calcDate(today,past1) );
+  $('#job2').text( calcDate(today,past2) );
+  $('#job2a').text( calcDate(today,past2) );
+
+  console.log(
+    `HELLO Prospective team member !  Kudos to you trying to get a better understanding of me :) \n
+I like working with other intelligent people and groups, solving complex problems in multiple sometimes overlapping domains.   I tend to make fewer significant career moves \n
+My favorite project is a Visual Joke Database Explorer [https://specialorange.org/jokes] as it was a proof of concept for another data project that could be mapped to a similar data structure and UX requirements. \n
+This resume is designed for people actually planning on talking with me.  More technical [and dated] information and specifications can be found in previous version(s) [https://specialorange.org/resume/index.old.html . The code is meant to automate its presentation, with a simple JSON data structure.`)
+  </script>
+</html>

@@ -1,0 +1,764 @@
+<!doctype html>
+<!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js lt-ie9 lt-ie8" lang="en"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js lt-ie9" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+	<title>Resume Builder</title>
+	<meta name="description" content="This is a page that will generate a resume based on the specification you provide for my information">
+
+	<meta name="viewport" content="width=device-width">
+
+	<link rel="stylesheet" href="_css/style.css">
+
+	<script src="_js/libs/modernizr-2.5.3-respond-1.1.0.min.js"></script>
+</head>
+<body>
+<!--[if lt IE 7]><p class=chromeframe>Your browser is <em>ancient!</em> <a href="http://browsehappy.com/">Upgrade to a different browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to experience this site.</p><![endif]-->
+	<div id="header-container">
+		<header class="wrapper clearfix">
+			<h1>Resume Builder</h1>
+			<nav>
+				<ul>
+					<li><a href="#">User Generated</a></li>
+					<li><a href="#">Predefined</a></li>
+					<li><a href="#">Help</a></li>
+				</ul>
+			</nav>
+		</header>
+	</div>
+	<div id="main-container">
+		<div id="main" class="wrapper clearfix">
+			<aside>
+				<article>
+					<header>
+						<h1>Business Approach</h1>
+						<div class="mydiv">
+							<span id="ba1"><button type="button" class="button" id="clickApproach">Approach</button></span>
+						</div>                                                                                                  
+						<div class="mydiv">                                                                                     
+							<span id="ba2"><button type="button" class="button-vert" id="clickDesign">Design</button></span>
+						</div>                                                                                                  
+						<div class="mydiv">                                                                                     
+							<span id="ba3"><button type="button" class="button-vert" id="clickExpertise">Expertise</button></span>
+						</div>                                                                                                  
+						<div class="mydiv">                                                                                     
+							<span id="ba4"><button type="button" class="button-vert" id="clickSkills">Skills</button></span>
+						</div>                                                                                                  
+						<div class="mydiv">                                                                                     
+							<span id="ba5"><button type="button" class="button-vert" id="clickTools">Tools</button></span>
+						</div>                                                                                                                                                                                               
+						<div class="mydiv">                                                                                     
+							<span id="ba7"><button type="button" class="button-vert" id="clickProjects">Projects</button></span>
+						</div>                                                                                                  
+						<div class="mydiv">                                                                                     
+							<span id="ba8"><button type="button" class="button-vert" id="clickCommunity">Community</button></span>
+						</div>                                                                                                  
+						<div class="mydiv">                                                                                     
+							<span id="ba9"><button type="button" class="button-vert" id="clickInterests">Interests</button></span>
+						</div>                                                                                                  
+						<div class="mydiv">                                                                                     
+							<span id="ba10"><button type="button" class="button-vert" id="clickText">TESTER - remove top BA</button></span>
+						</div
+						
+					</header>
+				</article>
+
+				<article>
+					<header>
+						<h1>Who</h1>
+						<div class="mydiv">
+							<p1>this sections involves who I worked with</p1>
+						</div>
+					</header>
+					<section>
+						<h2>Boss</h2>
+						<p>Selector</p>
+					</section>
+					<section>
+						<h2>CoWorkers</h2>
+						<p>Selector</p>
+					</section>
+					<section>
+						<h2>Benefactors</h2>
+						<p>Selector</p>
+					</section>
+					<section>
+						<h2>Stakeholders</h2>
+						<p>Selector</p>
+					</section>
+					<!-- <footer>
+						<h2>footer</h2>
+						<p>footer</p>
+					</footer> -->
+				</article>
+<!-- TEST -->
+				<article>
+					<header>
+						<h1>What</h1>
+						<div class="mydiv">
+							<p1>this sections involves what I work with</p1>
+						</div>
+					</header>
+					<section>
+						<div class="mydiv">
+							<span id="what1"><button type="button" class="button" id="clickTech">Technologies</button></span> <span id="what2"><button type="button" class="button" id="clickComp">Compliance</button></span> <span id="what3"><button type="button" class="button" id="clickCert">Certifications</button></span>
+							<!-- <input type="button" class="btn" value="Technologies" id="clickTech" / -->
+						</div>
+					</section>
+					<section>
+						<h3><span id="whatsel2"><button type="button" class="button-vert" id="clickName">Name</button></span></h3>
+						<h3><span id="whatsel2"><button type="button" class="button-vert" id="clickStart">Start Date</button></span></h3>
+						<h3><span id="whatsel3"><button type="button" class="button-vert" id="clickEnd">Current/End Date</button></span></h3>
+						<h3><span id="whatsel4"><button type="button" class="button-vert" id="clickElapsed">Elapsed Time</button></span></h3>
+						<h3><span id="whatsel5"><button type="button" class="button-vert" id="clickVersion">Version(s)</button></span></h3>
+						<h3><span id="whatsel6"><button type="button" class="button-vert" id="clickRating">Personal Rating</button></span></h3>
+						<h3><span id="whatsel7"><button type="button" class="button-vert" id="clickProject">Project</button></span></h3>
+					</section>
+					<!-- <footer>
+						<h2>footer</h2>
+						<p>footer</p>
+					</footer> -->
+				</article>
+			
+				<article>
+	<!-- Format(Elapsed or Total), Current -->
+					<header>
+						<h1>When</h1>
+						<p1>this sections involves when I did it</p1>
+					</header>
+					<section>
+						<h2>Date Format</h2>
+						<p>Selector - elapsed or total or both</p>
+					</section>
+					<section>
+						<h2>Begin Date</h2>
+	<!--TODO: value should reflect the most relevant year ~2007-->
+							<input type="range" id="date-range-begin-selector" value=Array.min step="1" onchange="showMinValue(this.value)" />
+							<span id="range">0</span>
+					</section>
+					<section>
+						<h2>End Date</h2>
+	<!--TODO: value should reflect the most current year-->
+							<input type="range" id="date-range-end-selector" value=Array.max step="1" onchange="showMaxValue(this.value)"/>
+							<span id="range">0</span>
+					</section>
+					<!-- <footer>
+						<h2>footer</h2>
+						<p>footer</p>
+					</footer> -->
+				</article>
+			
+				<article>
+					<header>
+						<h1>Where</h1>
+						<p>this sections involves where I was</p>
+					</header>
+					<section>
+						<h2>Company</h2>
+						<p>companies</p>
+					</section>
+					<section>
+						<h2>Cities</h2>
+						<p>Selector</p>
+					</section>
+					<section>
+						<h2>States</h2>
+						<p>Selector</p>
+					</section>
+					<!-- <footer>
+						<h2>footer</h2>
+						<p>footer</p>
+					</footer> -->
+				</article>
+			
+				<article>
+					<header>
+						<h1>Why</h1>
+						<p>this sections involves why i created stuff</p>
+					</header>
+					<section>
+						<h2>Problems</h2>
+						<p>problem description</p>
+					</section>
+					<section>
+						<h2>Solutions</h2>
+						<p>solution description</p>
+					</section>
+					<!-- <footer>
+						<h2>footer</h2>
+						<p>footer</p>
+					</footer> -->
+				</article>
+			
+				<article>
+					<header>
+						<h1>How</h1>
+						<p>this sections involves how I did stuff</p>
+					</header>
+					<section>
+						<h2>Project</h2>
+						<p>Description</p>
+						
+						<p>
+							<ol>
+								<li>J1EE</li>
+								<li>Java</li>
+								<li>Maven</li>
+							</ol>
+						</p>
+					</section>
+					<!-- <footer>
+						<h2>footer</h2>
+						<p>footer</p>
+					</footer> -->
+				</article>
+			</aside>
+
+			<div class="generatedcontent">
+			<!-- <article> -->
+				<header>
+					<h1>Generated Content</h1>
+					<p>The generated Content Goes Here!</p>
+				</header>
+				<article class="first-page">
+					<table width="90%">
+						<tbody>
+							<tr>
+								<td width="70%">
+									<article class="approach">
+										<!-- <h1>Business Approach</h1> -->
+										<h2><b>ANALYSIS</b></h2>
+											<h3>I use a multitude of tools and experiences that bring a comprehensive approach to evaluate systems, processes, objects, and personnel.  I achieve this through a mix of initial communication with stakeholders and departments, and use this information to develop the framework for developing scope and planning resources to exceed &lt;client/project&gt; expectations.</h3>
+										<h2><b>COMMUNICATION</b></h2>
+											<h3>I ensure that our team develops time-sensitive seminars, conferences, and meetings designed to explicate the scope and complexities of deadlines in a unified environment for clients and team members. I develop daily business interactions to maintain a positive milieu, within a prescribed common creative atmosphere, vital to the team’s success in daily challenges, ultimately to the project, company, and client.</h3>
+										<h2><b>BUDGETING</b></h2>
+											<h3>Listening to the needs of the project’s stakeholders, I tailor a solution using a top down method for providing the needs of budget conscious clients, or a ground up design for customized turnkey solutions.  These hybrid approaches are weighted towards the common voice of the client, where detail oriented solutions are applied along the common tones throughout the client’s organization.</h3>
+										<h2><b>TEAMWORK</b></h2>
+											<h3>Limiting task oriented teams to no more than 7 persons, with a wide assortment of experience and a solid rubric for life cycle development of projects enables synergistic teamwork practices and enables succinct solutions with minimal interruptions.  When a group is given full control with the understanding of full accountability, time and time again the group as a whole is able to provide the necessary decisions to achieve positive progression.</h3>
+										<h2><b>INTELLIGENCE</b></h2>
+											<h3>With diverse hobbies, experiences, contacts, and interests, I bring a special perspective to providing successful solutions, on time, and above and beyond requirements.  I owe my successes to borrowed approaches in scouting, mentorship, and previous successes where developing a strong approach to looking through a problem to see its solution has allowed me to approach situations with objective clarity.</h3>
+										<h2><b>ENTHUSIASM</b></h2>
+											<h3>Understanding the importance of the products and services needed of the end users and clients, and forming an environment, which highlights those needs, allows me to convey a quick, calm, succinct product.  There is nothing more successful than a team with a common goal and the will to accomplish that goal as their own.</h3>
+										<h2><b>TIME</b></h2>
+											<h3>I operate on a business healthy approach of meeting the requirements of the project; both personnel/clients’ and planning/execution are balanced to achieve an overall positive relationship with the client, team members, and other staff in a warm and inviting manner.</h3>
+									</article>
+								</td>
+								<td width="30%">
+									<article class="design">
+										<h2 align="right"><b>DESIGN</b></h2>
+											<h3 align="right">heuristic evaluation</h3>
+											<h3 align="right">cognitive walkthrough</h3>
+											<h3 align="right">time and method engineering</h3>
+									</article>
+				
+									<article class="expertise">
+										<h2 align="right"><b>EXPERTISE</b></h2>
+											<h3 align="right">turnkey business solutions</h3>
+											<h3 align="right">systems analysis</h3>
+											<h3 align="right">change management</h3>
+											<h3 align="right">communication methodologies</h3>
+									</article>
+
+									<article class="skills">
+										<h2 align="right"><b>SKILLS</b></h2>
+											<h3 align="right">data visualization</h3>
+											<h3 align="right">workflow optimization</h3>
+											<h3 align="right">presentation</h3>
+											<h3 align="right">communication design</h3>
+											<h3 align="right">statistical analysis</h3>
+											<h3 align="right">sdlc methods</h3>
+											<h3 align="right">office suite</h3>
+									</article>
+
+									<article class="tools">
+										<h2 align="right"><b>TOOLS</b></h2>
+											<a href="http://bit.ly/KfLf14" target="_blank"><img align="right" src="_img/smile.png" width="66" height="18" alt="Smile"></a>
+											<h3 align="right"><a href="http://www.r-project.org/" target="_blank">R</a></h3>
+											<h3 align="right"><a href="http://office.microsoft.com/en-us/excel/" target="_blank">excel</a></h3>
+											<h3 align="right"><a href="http://codingbat.com/" target="_blank">codingbat</a></h3>
+											<h3 align="right"><a href="http://stackexchange.com/" target="_blank">stackexchange</a></h3>
+											<h3 align="right"><a href="http://macromates.com/" target="_blank">textmate</a></h3>
+									</article>
+
+									<article class="projects">
+										<h2 align="right"><b>PROJECTS</b></h2>
+											<h3 align="right">six sigma black belt</h3>
+											<h3 align="right">javascript</h3>
+											<h3 align="right">pedagogy methods</h3>
+									</article>
+				
+									<article class="community">
+										<h2 align="right"><b>COMMUNITY</b></h2>
+											<h3 align="right">inter/national disaster relief</h3>
+											<h3 align="right">habitat for humanity</h3>
+											<h3 align="right">small group leadership</h3>
+											<h3 align="right">logistics mgmt (NPO/NGOs)</h3>
+									</article>
+				
+									<article class="interests">
+										<h2 align="right"><b>INTERESTS</b></h2>
+											<h3 align="right">neon art bending</h3>
+											<h3 align="right">whitewater kayaking</h3>
+											<h3 align="right">large scale gourmet cooking</h3>
+											<h3 align="right">woodturning</h3>
+											<h3 align="right">hiking/camping</h3>
+									</article>
+								
+									<article class="testText">
+										<h2 align="right"><b>TEST</b></h2>
+											<h3 align="right">T</h3>
+											<h3 align="right">ST</h3>
+											<h3 align="right">EST</h3>
+											<h3 align="right">TEST</h3>
+									</article>
+								
+								</td>
+							</tr>
+						</tbody>
+					</table>
+				</article>
+				
+				<article class="company">
+					<h1>FedEx Ground <span class="startdate"><span class="startmonth">MAR</span> <span class="startyear">2006</span></span> - <span class="enddate"></span></h1>
+					<section>
+						<h2><span class="title">Freelancing - IT Development Projects</span>   <span class="startdate"><span class="startmonth">JUL</span> <span class="startyear">2010</span></span>  - <span class="enddate"></span></h2>
+							<ul>
+								<li>RDMS to J1EE development for optimizing data visuals highlighting revenue opportunities (inc SQL, Spring, Hibernate, Tomcat, Maven)</li>
+							</ul>
+					</section>
+					<section>
+						<h2><span class="title">Southern Regional Vision Implementation Manager</span>   <span class="startdate"><span class="startmonth">FEB</span> <span class="startyear">2010</span></span> - <span class="enddate"><span class="endmonth">DEC</span> <span class="endyear">2011</span></span></h2>
+    						<ul>
+    							<li>Train terminal management and employees on new processes, follow up with previous terminals, and prepare new rollouts</li>
+						    <li>Engineer new technologies while communicating between field, programmers, and corporate to exceed deadlines</li>
+						    <li>Project Manager for  10 terminals with a proprietary sorting technology, while exceeding process standards, increasing staffing, and reducing task oriented processes, effecting 11% of daily package volume in the company, all on or ahead of a 10 month schedule</li>
+    						<li>Restructure vendor IT infrastructure to streamline reporting, feedback, and decrease downtime by implementing self-efficacy processes</li>
+						    <li>Manage budget of employees (7 direct), interact with external customers and vendors to plan and execute projects on time</li>
+						    <li>Identify an SQL security hole in an outsourced employee information database, affecting +30% of FedEx Operations, saving +20M in liability</li>
+						</ul>
+					</section>
+					<section>
+						<h2><span class="title">Southern Divisional Preload Quality Initiative Manager 2</span>   <span class="startdate"><span class="startmonth">FEB</span> <span class="startyear">2009</span></span> - <span class="enddate"><span class="endmonth">JAN</span> <span class="endyear">2010</span></span></h2>
+						    <ul>
+						    	<li>Retrain terminal management and employees on current processes and improve on new opportunities</li>
+						    <li>SCADA process improvements using to reduce workflow of hourly workers by 50%, totaling a 5% increase across all productivity</li>
+						    <li>Support 116 terminals with 20+ different personal visits resulting in streamlined adjustments with $10K savings each</li>
+						    <li>FAST Team Manager - Peak Season 2009</li>
+						</ul>
+					</section>
+					<section>
+						<h2><span class="title">Dock Service Manager 2</span>   <span class="startdate"><span class="startmonth">JAN</span> <span class="startyear">2007</span></span> - <span class="enddate"><span class="endmonth">JAN</span> <span class="endyear">2009</span></span></h2>
+						    <ul>
+						    	<li>Encompass all aspects of customer service to ensure proper delivery of the customers’ package(s)</li>
+						    <li>Developed streamlined applications for inventory and daily workflows enabling users to visualize current and potential issues in real time</li>
+						</ul>
+					</section>
+					<section>
+						<h2><span class="title">P/T Service Manager</span>   <span class="startdate"><span class="startmonth">JUL</span> <span class="startyear">2006</span></span> - <span class="enddate"><span class="endmonth">DEC</span> <span class="endyear">2006</span></span></h2>
+					</section>
+					<section>
+						<h2><span class="title">P/T Package Handler</span>   <span class="startdate"><span class="startmonth">MAR</span> <span class="startyear">2006</span></span> - <span class="enddate"><span class="endmonth">JUN</span> <span class="endyear">2006</span></span></h2>
+						    <ul>
+						    	<li>Direct influence to the success of an independent contractor workforce and correctly load external facing customers’ packages</li>
+							</ul>
+					</section>
+				</article>
+				<article class="company">
+					<h1>Harris Teeter <span class="startdate"><span class="startmonth">JUN</span> <span class="startyear">2002</span></span> - <span class="enddate"><span class="endmonth">MAR</span> <span class="endyear">2006</span></span></h1>
+					<section>
+						<h2><span class="title">Grocery Manager</span>    <span class="startdate"><span class="startmonth">Dec</span> <span class="startyear">2003</span></span><span class="enddate"><span class="endmonth">MAR</span> <span class="endyear">2006</span></span></h2>
+					    	<ul>
+								<li>Lead a team of six clerks to ensure proper ordering, stocking, rotation, and appearance of the Grocery Department with a $15M+ inventory</li>
+					    		<li>Manage three adjacent stores and retrain employees on the proper procedures, methodologies, and system processes</li>
+							</ul>
+					</section>
+					<section>
+						<h2><span class="title">Customer Service Clerk</span>   <span class="startdate"><span class="startmonth">JUN</span> <span class="startyear">2002</span></span> - <span class="enddate"><span class="endmonth">NOV</span> <span class="endyear">2003</span></span></h2>
+					    	<ul>
+					    		<li>Assist a team of 10+ associates on the front line while ensuring the customers’ needs/wants are met and exceeded</li>
+							</ul>
+					</section>
+				</article>
+				<article class="company">
+					<h1>Winn-Dixie <span class="startdate"><span class="startmonth">JUN</span> <span class="startyear">2002</span></span> - <span class="enddate"><span class="endmonth">MAR</span> <span class="endyear">2003</span></span></h1>
+					<section>
+						<h2>Grocery Manager    <span class="startdate"><span class="startmonth"></h2>
+					    	<ul>
+								<li>Lead a team of six clerks to ensure proper ordering, stocking, rotation, and appearance of the Grocery Department with a $15M+ inventory</li>
+					    		<li>Manage three adjacent stores and retrain employees on the proper procedures, methodologies, and system processes</li>
+							</ul>
+					</section>
+					<section>
+						<h2>Customer Service Clerk</h2>
+					    	<ul>
+					    		<li>Assist a team of 10+ associates on the front line while ensuring the customers’ needs/wants are met and exceeded</li>
+							</ul>
+					</section>
+				</article>
+				<article class="technical">
+					<div id="technical-container">
+						<h1><span id="technology">Technologies</span> / <span id="compliance">Compliance</span> / <span id="certification">Certification</span></h1>
+						<table id="tech-table" cellspacing="0">
+							<colgroup>
+								<col>
+								<col id="type" class="type">
+								<col id="name">
+								<col id="startdate">
+								<col id="currentenddate">
+								<col id="elapsed">
+								<col id="version">
+								<col id="rating">
+								<col id="project">
+							</colgroup>
+							<tbody>
+								<tr>
+									<td>type</td>
+									<td>Name</td>
+									<td>Start Date</td>
+									<td>Current/End Date</td>
+									<td>Elapsed Time</td>
+									<td>Version(s)</td>
+									<td>Personal Rating</td>
+									<td>Project</td>
+								</tr>
+								<tr>
+									<td>technology</td>
+									<td>J2EE</td>
+									<td>November, 2011</td>
+									<td><span id="current"></span></td>
+									<td>TODO</td>
+									<td>1.5, 1.6, 1.7</td>
+									<td>2</td>
+									<td>Contractor Optimization</td>
+								</tr>
+								<tr>
+									<td>technology</td>
+									<td>JS</td>
+									<td>April, 2012</td>
+									<td><span id="current"></span></td>
+									<td>TODO</td>
+									<td>1.8.x</td>
+									<td>1</td>
+									<td>Resume Builder</td>
+								</tr>
+								<tr>
+									<td>compliance</td>
+									<td>CIP</td>
+									<td>May, 2008</td>
+									<td>August, 2011</td>
+									<td>TODO</td>
+									<td></td>
+									<td>2</td>
+									<td>Protection</td>
+								</tr>
+								<tr>
+									<td>certification</td>
+									<td>Red Cross</td>
+									<td>May, 2007</td>
+									<td>April, 2013</td>
+									<td>TODO</td>
+									<td>First Aid, CPR</td>
+									<td>3</td>
+									<td></td>
+								</tr>
+								<tr>
+									<td>compliance</td>
+									<td>ANSI</td>
+									<td>November, 2007</td>
+									<td>August, 2010</td>
+									<td>TODO</td>
+									<td></td>
+									<td>2</td>
+									<td></td>
+								</tr>
+								<tr>
+									<td>certification</td>
+									<td>ISO</td>
+									<td>May, 2007</td>
+									<td>August, 2010</td>
+									<td>TODO</td>
+									<td>9000, 9001</td>
+									<td>2</td>
+									<td></td>
+								</tr>
+								<tr>
+									<td>certification</td>
+									<td>DOT</td>
+									<td>June, 2006</td>
+									<td>April, 2013</td>
+									<td>TODO</td>
+									<td>USA, NC</td>
+									<td>3</td>
+									<td></td>
+								</tr>
+								<tr>
+									<td>compliance</td>
+									<td>OSHA</td>
+									<td>June, 2007</td>
+									<td>April, 2012</td>
+									<td>TODO</td>
+									<td>USA, NC, TN</td>
+									<td>2</td>
+									<td></td>
+								</tr>
+								<tr>
+									<td>compliance</td>
+									<td>NERC</td>
+									<td>April, 2006</td>
+									<td>April, 2012</td>
+									<td>TODO</td>
+									<td>USA, NC</td>
+									<td>2</td>
+									<td></td>
+								</tr>
+								<tr>
+									<td>certification</td>
+									<td>Leadership Principles</td>
+									<td>January, 2008</td>
+									<td></td>
+									<td>TODO</td>
+									<td></td>
+									<td>3</td>
+									<td></td>
+								</tr>
+								<tr>
+									<td>certification</td>
+									<td>Forklift</td>
+									<td>April, 2001</td>
+									<td></td>
+									<td>TODO</td>
+									<td></td>
+									<td>3</td>
+									<td></td>
+								</tr>
+								<tr>
+									<td>certification</td>
+									<td>Pallet Jack</td>
+									<td>April, 2001</td>
+									<td></td>
+									<td>TODO</td>
+									<td></td>
+									<td>3</td>
+									<td></td>
+								</tr>
+								<tr>
+									<td>certification</td>
+									<td>Tugger</td>
+									<td>April, 2006</td>
+									<td></td>
+									<td>TODO</td>
+									<td></td>
+									<td>3</td>
+									<td></td>
+								</tr>
+								<tr>
+									<td>technology</td>
+									<td>Excel</td>
+									<td>April, 1998</td>
+									<td></td>
+									<td>TODO</td>
+									<td>VBA</td>
+									<td>3</td>
+									<td>Numerous</td>
+								</tr>
+								<tr>
+									<td>technology</td>
+									<td>Microsoft suite</td>
+									<td>April, 1998</td>
+									<td></td>
+									<td>TODO</td>
+									<td></td>
+									<td>3</td>
+									<td>Numerous</td>
+								</tr>
+								<tr>
+									<td>technology</td>
+									<td>R</td>
+									<td>September, 2008</td>
+									<td></td>
+									<td>TODO</td>
+									<td>VBA</td>
+									<td>2</td>
+									<td>Statistical Analysis</td>
+								</tr>
+								<tr>
+									<td>technology</td>
+									<td>SQL</td>
+									<td>August, 2010</td>
+									<td></td>
+									<td>TODO</td>
+									<td>mySQL, server, msSQL/Sybase/tSQL</td>
+									<td>3</td>
+									<td>Numerous</td>
+								</tr>
+								<tr>
+									<td>technology</td>
+									<td>Eclipse</td>
+									<td>August, 2009</td>
+									<td></td>
+									<td>TODO</td>
+									<td>Helios and Indigo for Classic, Java, J2EE, JS</td>
+									<td>2</td>
+									<td>Numerous</td>
+								</tr>
+								<tr>
+									<td>technology</td>
+									<td>Maven</td>
+									<td>August, 2010</td>
+									<td></td>
+									<td>TODO</td>
+									<td>2, 3</td>
+									<td>2</td>
+									<td>Contractor Optimization</td>
+								</tr>
+								<tr>
+									<td>technology</td>
+									<td>XML</td>
+									<td>August, 2009</td>
+									<td></td>
+									<td>TODO</td>
+									<td>1.0, 1.1</td>
+									<td>2</td>
+									<td>Numerous</td>
+								</tr>
+								<tr>
+									<td>technology</td>
+									<td>Spring</td>
+									<td>August, 2010</td>
+									<td></td>
+									<td>TODO</td>
+									<td>2.5, 3.0, 3.1</td>
+									<td>2</td>
+									<td>Contractor Optimization</td>
+								</tr>
+								<tr>
+									<td>technology</td>
+									<td>Hibernate</td>
+									<td>August, 2010</td>
+									<td></td>
+									<td>TODO</td>
+									<td>3.x, 4.x</td>
+									<td>2</td>
+									<td>Contractor Optimization</td>
+								</tr>
+								<tr>
+									<td>technology</td>
+									<td>Tomcat</td>
+									<td>August, 2010</td>
+									<td></td>
+									<td>TODO</td>
+									<td>5.5, 6, 7</td>
+									<td>2</td>
+									<td>Numerous</td>
+								</tr>
+								<tr>
+									<td>technology</td>
+									<td>CSS</td>
+									<td>January, 1997</td>
+									<td></td>
+									<td>TODO</td>
+									<td>1, 2, 3</td>
+									<td>3</td>
+									<td>Numerous</td>
+								</tr>
+								<tr>
+									<td>technology</td>
+									<td>HTML</td>
+									<td>January, 1997</td>
+									<td></td>
+									<td>TODO</td>
+									<td>3, 4, 5</td>
+									<td>2</td>
+									<td>Numerous</td>
+								</tr>
+								<tr>
+									<td>technology</td>
+									<td>XHTML</td>
+									<td>January, 2010</td>
+									<td></td>
+									<td>TODO</td>
+									<td>1.0, 1.1, 5</td>
+									<td>2</td>
+									<td>Numerous</td>
+								</tr>
+								<tr>
+									<td>technology</td>
+									<td>SCADA</td>
+									<td>January, 2007</td>
+									<td></td>
+									<td>TODO</td>
+									<td>Distributed, Networked</td>
+									<td>2</td>
+									<td>Numerous</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</article>
+				
+				<article>
+					<div class="namefont">chris frisina</div>
+				</article>
+			<!-- </article> -->
+			</div>
+			
+		</div> <!-- #main -->
+	</div> <!-- #main-container -->
+
+	<div id="footer-container">
+		<footer class="wrapper">
+			<h2>Today's Date is <span id="today"></span>
+			<script type="text/javascript">
+			var date = new Date();
+			var month = new Array(7);
+			month[0] = "January";
+			month[1] = "February";
+			month[2] = "March";
+			month[3] = "April";
+			month[4] = "May";
+			month[5] = "June";
+			month[6] = "July";
+			month[7] = "August";
+			month[8] = "September";
+			month[9] = "October";
+			month[10] = "November";
+			month[11] = "December";
+			var year = date.getYear();
+			if (year < 2000) { year+=1900; }
+			document.write(month[date.getMonth()] + " " + date.getDate() + ", " + year);
+			</script>.  This page was last updated on <script type="text/javascript">
+			var yesterday= new Date();
+			yesterday.setDate(yesterday.getDate()-1)
+			var month = new Array(7);
+			month[0] = "January";
+			month[1] = "February";
+			month[2] = "March";
+			month[3] = "April";
+			month[4] = "May";
+			month[5] = "June";
+			month[6] = "July";
+			month[7] = "August";
+			month[8] = "September";
+			month[9] = "October";
+			month[10] = "November";
+			month[11] = "December";
+			var year = yesterday.getYear();
+			if (year < 2000) { year+=1900; }
+			document.write(month[yesterday.getMonth()] + " " + yesterday.getDate() + ", " + year);
+			</script>.</h2>
+			<h2>What do you call an alligator in a vest?</h2>
+			<h2 align="right">An Investigator!</h2>
+		</footer>
+	</div>
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+<script>window.jQuery || document.write('<script src="_js/libs/jquery-1.7.1.min.js"><\/script>')</script>
+
+<script src="_js/script.js"></script>
+
+</body>
+</html>

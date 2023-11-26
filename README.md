@@ -1,5 +1,3 @@
-## Ember Routing and Layout Example
+## Resume for Chris Frisina
 
-This is a sample application demonstrating the usage of routing and outlets in [Ember.js](http://emberjs.com).
-
-[See it live](http://ghempton.github.com/ember-router-example).
+Historical tracking using git
