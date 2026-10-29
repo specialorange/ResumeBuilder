@@ -4,7 +4,8 @@
 .view-toggle {
   position: fixed;
   top: 12px;
-  right: 12px;
+  left: 50%;
+  transform: translateX(-50%);
   z-index: 1000;
   display: inline-flex;
   border: 1px solid #c8c8c8;
