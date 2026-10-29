@@ -64,13 +64,30 @@
 
       <h2>Professional Experience</h2>
       <div class="entry">
+        <div class="when">Dec 2025&ndash;<br>Present</div>
+        <div class="what">
+          <p><strong>Founder &amp; Lead Engineer</strong>, <a href="https://myfleet.tech">MyFleet.tech</a>.</p>
+          <p>Multi-tenant SaaS platform that connects fleets with their maintenance shops: assets, inspections, preventive maintenance, work orders, estimates, and invoicing.</p>
+          <ul>
+            <li>Architected tenant isolation with a separate PostgreSQL schema per customer (django-tenants), subdomain routing, reserved names, and isolation tests on data and media.</li>
+            <li>White-label branding: each tenant sets its own logo, colors, and email branding across the app and notifications.</li>
+            <li>Built subscription billing with Stripe (plans, add-ons, usage metering, proration), plus QuickBooks and Motive telematics integrations.</li>
+            <li>Shipped DVIR inspections with QR codes, a shop kiosk, a vendor portal with API dispatch, SMS triage, VMRS coding, and an AI support assistant that escalates to staff.</li>
+            <li>1,600+ automated tests running in isolated Docker containers, with CI coverage reporting on every push.</li>
+            <li>Resettable environments: one-command database reset and seeding, demo tenants that reset automatically, and parallel per-branch dev stacks.</li>
+            <li>Blue-green Docker deploys to AWS and Hetzner through GitHub Actions; OpenBao secrets, MFA, and security headers.</li>
+            <li>Stack: Python, Django, DRF, React, PostgreSQL, Celery, Redis, Docker, Stripe, AWS SES, Twilio, OpenBao, GitHub Actions.</li>
+          </ul>
+        </div>
+      </div>
+      <div class="entry">
         <div class="when">Apr 2016&ndash;<br>Present</div>
         <div class="what">
           <p><strong>Full Stack Engineer</strong>, Master Specialists, Charlotte, NC.</p>
           <p>Fleet maintenance, inspection, and DOT compliance platform for delivery and logistics fleets. Django / React platform used daily by mechanics, dispatch, fleet managers, and billing.</p>
           <p class="muted">Recent work (2025&ndash;2026):</p>
           <ul>
-            <li>Led a multi-phase migration of jobs and service calls onto a new finite state machine status model with full transition logging; released the engine as open source (<a href="https://pypi.org/project/django-fsm-rx/">django-fsm-rx</a> on PyPI).</li>
+            <li>Designed and deployed a multi-phase migration of a new finite state machine status model with full transition logging; released the engine as open source (<a href="https://pypi.org/project/django-fsm-rx/">django-fsm-rx</a> on PyPI).</li>
             <li>Built zero-downtime blue-green deploys through GitHub Actions, a Docker deploy path, and uv-based dependency management.</li>
             <li>Moved all secrets into OpenBao (Vault) with transit encryption, a standby node, and rapid key rotation; made the media bucket private behind presigned URLs.</li>
             <li>Billing and finance: invoicing by fleet, invoice cancellation, NC sales tax filing wizard, ACH enrollment, Plaid-based expense reconciliation with receipt categorization and PO matching, part cost calculator.</li>
@@ -444,6 +461,30 @@
                   </h4>
                   <div class="card card-nested clearfix col-md-12">
                     <div class="row">
+                      <div class="col-sm-10 job-main">
+                        <p class="clear-margin-sm">
+                          <strong>Founder &amp; Lead Engineer</strong>,&nbsp;<a href="https://myfleet.tech" target="_blank">MyFleet.tech</a>
+                        </p>
+                        <p class="text-muted visible-xs visible-sm"><small>Dec, 2025 - Present</small></p>
+                        <p>Multi-tenant SaaS platform connecting fleets with their maintenance shops</p>
+                        <ul>
+                          <li>Tenant isolation with a separate PostgreSQL schema per customer (django-tenants) and subdomain routing</li>
+                          <li>White-label branding: per-tenant logo, colors, and email branding</li>
+                          <li>Stripe subscription billing, QuickBooks and Motive telematics integrations</li>
+                          <li>DVIR inspections with QR codes, shop kiosk, vendor portal, SMS triage, AI support assistant</li>
+                          <li>1,600+ automated tests in isolated Docker containers with CI coverage reporting</li>
+                          <li>Resettable environments: one-command reset and seed, auto-resetting demo tenants, per-branch dev stacks</li>
+                          <li>Blue-green Docker deploys to AWS and Hetzner via GitHub Actions</li>
+                        </ul>
+                      </div>
+                      <div class="col-md-2 hidden-xs hidden-sm sidebar text-center">
+                        <p><strong>Joined:</strong>&nbsp;Dec, 2025</p>
+                        <p><span class="label label-success">Currently Working</span></p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="card card-nested clearfix col-md-12">
+                    <div class="row">
                       <div class="col-sm-8 job-main">                      
                         <p class="clear-margin-sm">
                           <strong>Full Stack Engineer</strong>,&nbsp;Master Specialists
@@ -470,7 +511,7 @@
                             <div class="col-xs-9">
                               <ul>
                                   <li>Full Stack Developer</li>
-                                  <li>Led migration of jobs and service calls to a new finite state machine status model; released the engine as open source (<a href="https://pypi.org/project/django-fsm-rx/" target="_blank">django-fsm-rx</a>)</li>
+                                  <li>Designed and deployed a multi-phase migration of a new finite state machine status model with full transition logging; released the engine as open source (<a href="https://pypi.org/project/django-fsm-rx/" target="_blank">django-fsm-rx</a>)</li>
                                   <li>Built zero-downtime blue-green deploys (GitHub Actions), a Docker deploy path, and OpenBao secret management with key rotation</li>
                                   <li>Billing and finance: invoicing by fleet, NC sales tax wizard, ACH enrollment, Plaid expense reconciliation with receipt and PO matching</li>
                                   <li>Service call dispatch with role views, shareable status pages, parts-vendor email/SMS dispatch, and a truck kanban board</li>
