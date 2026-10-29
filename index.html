@@ -12,6 +12,17 @@
     <link rel="stylesheet" href="_css/solid.min.css">
     <link rel="stylesheet" href="_css/bootstrap.min.css">
     <link rel="stylesheet" href="_css/main.css">
+    <link rel="stylesheet" href="_css/text-view.css">
+    <script>
+      // Pick view before paint: ?view= / #classic wins, then saved choice, else text.
+      (function () {
+        var v = 'text';
+        try { v = localStorage.getItem('resumeView') || v; } catch (e) {}
+        var m = location.search.match(/[?&]view=(text|classic)/);
+        if (m) v = m[1];
+        document.documentElement.setAttribute('data-view', v);
+      })();
+    </script>
   </head>
 
 <!-- HELLO Prospective team member !  Kudos to you trying to get a better understanding of me :) -->
@@ -35,7 +46,156 @@
         $( '.js-floating-nav a' ).on( 'click', toggleFloatingMenu );
       }
     </script>
-    <div class="container-fluid">
+    <div class="view-toggle" role="group" aria-label="Resume view">
+      <button type="button" data-view="text" aria-pressed="true">Text</button>
+      <button type="button" data-view="classic" aria-pressed="false">Classic</button>
+    </div>
+
+    <!-- Plain-text view (default). Classic view is #view-classic below. -->
+    <main id="view-text">
+      <header>
+        <h1>Chris Frisina</h1>
+        <p class="contact">Charlotte, North Carolina &middot; (724) 426-5676 &middot; <a href="mailto:resume@specialorange.org">resume@specialorange.org</a></p>
+        <p class="contact"><a href="https://specialorange.org/resume">specialorange.org/resume</a> &middot; <a href="https://github.com/specialorange">github.com/specialorange</a></p>
+      </header>
+
+      <h2>Objective</h2>
+      <p>I build intuitive tools that improve highly complex systems for professional and organized communities, using usability, programming, and design, with a background in consulting and logistics.</p>
+
+      <h2>Professional Experience</h2>
+      <div class="entry">
+        <div class="when">Apr 2016&ndash;<br>Present</div>
+        <div class="what">
+          <p><strong>Full Stack Engineer</strong>, Master Specialists, Charlotte, NC.</p>
+          <p>Fleet maintenance, inspection, and DOT compliance platform for delivery and logistics fleets. Django / React platform used daily by mechanics, dispatch, fleet managers, and billing.</p>
+          <p class="muted">Recent work (2025&ndash;2026):</p>
+          <ul>
+            <li>Led a multi-phase migration of jobs and service calls onto a new finite state machine status model with full transition logging; released the engine as open source (<a href="https://pypi.org/project/django-fsm-rx/">django-fsm-rx</a> on PyPI).</li>
+            <li>Built zero-downtime blue-green deploys through GitHub Actions, a Docker deploy path, and uv-based dependency management.</li>
+            <li>Moved all secrets into OpenBao (Vault) with transit encryption, a standby node, and rapid key rotation; made the media bucket private behind presigned URLs.</li>
+            <li>Billing and finance: invoicing by fleet, invoice cancellation, NC sales tax filing wizard, ACH enrollment, Plaid-based expense reconciliation with receipt categorization and PO matching, part cost calculator.</li>
+            <li>Fixed large invoice emails failing in the queue by staging attachments and photos in S3 and sending images inline.</li>
+            <li>Service calls and dispatch: role-specific views, shareable status pages, parts-vendor dispatch by email/SMS (Twilio), truck kanban board.</li>
+            <li>Team operations: locked weekly payroll review, team roster and dashboards, meeting tools, and scheduled Google Sheets exports (Celery).</li>
+            <li>Partner API with MyFleet.tech, including outbound issue callbacks.</li>
+            <li>Run an AI-assisted workflow: Claude Code agents for parallel development, automated PR review, and tests.</li>
+          </ul>
+          <p class="muted">Earlier:</p>
+          <ul>
+            <li>Build API endpoints, mixins, workflows, and log reports across the full web platform.</li>
+            <li>Converted function-based views to class-based for reusable mixins; restructured services into maintainable processes.</li>
+            <li>Optimized SQL / ORM calls for high-traffic queries; wrote unit and integration tests to improve uptime and dev ops.</li>
+            <li>Design and automate procedural, regulatory, and cost-saving logistics processes; run client meetings for support and design.</li>
+            <li>Stack: Python, Django, DRF, React, TypeScript, PostgreSQL, Celery, RabbitMQ, Twilio, Square, Plaid, AWS (S3), OpenBao, Docker, GitHub Actions, Linux.</li>
+          </ul>
+        </div>
+      </div>
+      <div class="entry">
+        <div class="when">Jan 2013&ndash;<br>Present</div>
+        <div class="what">
+          <p><strong>Graduate Researcher, The Sound of Fractions</strong>, Virginia Tech, Blacksburg, VA.</p>
+          <p>Designed, built, and ran a study of a full stack web application and curriculum that lets students who struggle with fractions tap rhythms, which audio processing turns into graphical fraction representations. Built a data viewer for cross-discipline analysis of the results.</p>
+          <ul>
+            <li>Funded by a $25K student research grant. Featured on <a href="https://virginiapublicradio.org/2014/10/02/virginia-science-festival-a-party-where-science-is-the-guest-of-honor/">Virginia Public Radio</a>.</li>
+            <li>Stack: Node, Backbone, D3, HTML5 Audio, Parse, Bootstrap, Ubuntu.</li>
+          </ul>
+        </div>
+      </div>
+      <div class="entry">
+        <div class="when">Dec 2012&ndash;<br>Dec 2015</div>
+        <div class="what">
+          <p><strong>Graduate Researcher</strong>, Virginia Tech, Blacksburg, VA.</p>
+          <p>Researched how to help entering undergraduates succeed by making data meaningful to them; built a customizable learning-analytics dashboard for students, teachers, and administrators (<a href="https://www.developer.specialorange.org/vt/PD/dashboard/#/">proof of concept</a>).</p>
+        </div>
+      </div>
+      <div class="entry">
+        <div class="when">Feb 2006&ndash;<br>Dec 2014</div>
+        <div class="what">
+          <p><strong>Implementation Manager</strong>, FedEx Ground.</p>
+          <p>Helped develop and implement an automated sortation and dispatch system for final-stage package delivery. Reduced costs 5% and raised accuracy 4%; security and Six Sigma improvements saved more than $10M.</p>
+          <ul>
+            <li>Contractor Corporate Liaison, Jul 2010&ndash;Dec 2014.</li>
+            <li>Vision Implementation Manager, Feb 2010&ndash;Dec 2011.</li>
+            <li>Southern Division Quality Initiative Manager, Feb 2009&ndash;Jan 2011.</li>
+            <li>Senior Service Manager, Jan 2007&ndash;Jan 2009.</li>
+            <li>Service Manager, Apr 2006&ndash;Dec 2006. Package Handler, Mar 2006&ndash;May 2006.</li>
+          </ul>
+        </div>
+      </div>
+      <div class="entry">
+        <div class="when">May 2002&ndash;<br>Feb 2006</div>
+        <div class="what">
+          <p><strong>Grocery Manager</strong>, Harris Teeter.</p>
+          <p>Managed grocery departments for several area stores; designed an improved inventory system.</p>
+        </div>
+      </div>
+
+      <h2>Education</h2>
+      <div class="entry">
+        <div class="when">2013&ndash;2016</div>
+        <div class="what">
+          <p><strong>M.S., Computer Science (Human Computer Interaction)</strong>, Virginia Tech. GPA 3.7.</p>
+          <p class="muted">Thesis: <a href="https://specialorange.org/thesis">The Sound of Fractions</a>. Coursework: CSCW &amp; Social Networks, Human Centered Methods, Programming Languages, Digital Libraries, Usability Engineering, Computational Thinking, Research Methods.</p>
+        </div>
+      </div>
+      <div class="entry">
+        <div class="when">2003&ndash;2007</div>
+        <div class="what">
+          <p><strong>B.A., Communication (Female Gendered Communication)</strong>, University of North Carolina at Charlotte.</p>
+        </div>
+      </div>
+
+      <h2>Publications</h2>
+      <div class="entry">
+        <div class="when">Apr 2016</div>
+        <div class="what"><p><a href="https://specialorange.org/thesis">The Sound of Fractions</a>. Master&rsquo;s thesis, Virginia Tech. Teaching fractions through music with an online application and curriculum.</p></div>
+      </div>
+      <div class="entry">
+        <div class="when">May 2014</div>
+        <div class="what"><p><a href="https://vtechworks.lib.vt.edu/handle/10919/47913">Knowledge Building and Sharing: A meta-model for Guided Research, Learning, and Application</a>. VTechWorks.</p></div>
+      </div>
+      <div class="entry">
+        <div class="when">2014</div>
+        <div class="what"><p><a href="https://dl.acm.org/doi/10.1145/2593968.2610489">RaBit EscAPE: a board game for computational thinking</a>. Interaction Design and Children (IDC).</p></div>
+      </div>
+
+      <h2>Skills</h2>
+      <p class="list-line"><strong>Areas:</strong> Full stack web development, UI/UX, data visualization, big data, open data, systems analysis, heuristic evaluation, participatory and human centered design, time and method engineering, pedagogy.</p>
+      <p class="list-line"><strong>Languages &amp; tools:</strong> Python, Django, JavaScript, TypeScript, React, Node, D3, SQL / PostgreSQL, Celery, RabbitMQ, AWS, HTML/CSS, Bootstrap, R, Git, Linux.</p>
+      <p class="list-line"><strong>Certifications:</strong> Six Sigma, NERC, CIP, SCADA, OSHA, DOT, ISO.</p>
+      <p class="list-line"><strong>Spoken:</strong> English (native), Spanish (conversational), German (beginner).</p>
+
+      <h2>Awards</h2>
+      <div class="entry"><div class="when">Jan 2013</div><div class="what"><p>Student Research Grant ($25K), Virginia Tech.</p></div></div>
+      <div class="entry"><div class="when">Jun 2009</div><div class="what"><p>Most Improved Service Manager, FedEx.</p></div></div>
+      <div class="entry"><div class="when">Feb 2003</div><div class="what"><p>Eagle Scout, Boy Scouts of America.</p></div></div>
+
+      <h2>Volunteer Work</h2>
+      <div class="entry">
+        <div class="when">Apr 2016&ndash;<br>Present</div>
+        <div class="what"><p><strong>Planning Director</strong>, IUPUI Relief Housing. Housing for adults recovering from trauma.</p></div>
+      </div>
+      <div class="entry">
+        <div class="when">Aug 2014&ndash;<br>2016</div>
+        <div class="what"><p><strong>Social Chair</strong>, Virginia Tech Computer Science Grad Council.</p></div>
+      </div>
+      <div class="entry">
+        <div class="when">Feb 2012&ndash;<br>Feb 2013</div>
+        <div class="what"><p><strong>Committee Chair</strong>, Ecumenical Think Tank. Developed opportunities to grow young adult participation in community small groups; allocated $100K among them.</p></div>
+      </div>
+      <div class="entry">
+        <div class="when">Jan 2001&ndash;<br>Present</div>
+        <div class="what"><p><strong>Team Member</strong>, Habitat for Humanity. Framing and roofing; supply chain support for Bahamas Habitat (1000+ families); Gulf disaster relief.</p></div>
+      </div>
+
+      <h2>Interests</h2>
+      <p>Outdoors (camping, hiking, whitewater kayaking, mountain biking, snowboarding) &middot; Cooking (large scale 100+, fundraisers) &middot; Woodworking (carpentry, turning, rare woods) &middot; Neon and custom artistic signs.</p>
+
+      <h2>References</h2>
+      <p>Michael Stewart, <a href="mailto:tgm@vt.edu?Subject=Chris%20Frisina%20Resume%20Reference">tgm@vt.edu</a> &middot; Melissa Avery-Wier, <a href="mailto:averymd@irrsinn.net?Subject=Chris%20Frisina%20Resume%20Reference">averymd@irrsinn.net</a></p>
+    </main>
+
+    <div class="container-fluid" id="view-classic">
       <div class="row main clearfix">
         <a href="#" class="js-floating-nav-trigger floating-nav-trigger">
           <i class="fas fa-bars"></i>
@@ -310,6 +470,11 @@
                             <div class="col-xs-9">
                               <ul>
                                   <li>Full Stack Developer</li>
+                                  <li>Led migration of jobs and service calls to a new finite state machine status model; released the engine as open source (<a href="https://pypi.org/project/django-fsm-rx/" target="_blank">django-fsm-rx</a>)</li>
+                                  <li>Built zero-downtime blue-green deploys (GitHub Actions), a Docker deploy path, and OpenBao secret management with key rotation</li>
+                                  <li>Billing and finance: invoicing by fleet, NC sales tax wizard, ACH enrollment, Plaid expense reconciliation with receipt and PO matching</li>
+                                  <li>Service call dispatch with role views, shareable status pages, parts-vendor email/SMS dispatch, and a truck kanban board</li>
+                                  <li>Team payroll review, dashboards, and scheduled Google Sheets exports; partner API with MyFleet.tech</li>
                                   <li>Make API enpoints, mixins, workflows, and log reports</li>
                                   <li>Convert method/function based calls to Class based for optimal mixin servicability</li>
                                   <li>Write integration tests and unit tests for increased uptime, better development, and dev ops improvements</li>
@@ -1383,6 +1548,30 @@
     <link href='https://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.2.0/js/tooltip.js"></script>
+    <script>
+      (function () {
+        var root = document.documentElement;
+        var buttons = document.querySelectorAll('.view-toggle button');
+        function setView(v, save) {
+          root.setAttribute('data-view', v);
+          for (var i = 0; i < buttons.length; i++) {
+            buttons[i].setAttribute('aria-pressed', buttons[i].getAttribute('data-view') === v ? 'true' : 'false');
+          }
+          if (save) { try { localStorage.setItem('resumeView', v); } catch (e) {} }
+          // Classic view sizes its card from the screen; recompute when it becomes visible.
+          if (v === 'classic' && window.jQuery) {
+            jQuery('.background-card').css('min-height', window.screen.availHeight + 'px');
+          }
+        }
+        for (var i = 0; i < buttons.length; i++) {
+          buttons[i].addEventListener('click', function () {
+            setView(this.getAttribute('data-view'), true);
+            window.scrollTo(0, 0);
+          });
+        }
+        setView(root.getAttribute('data-view') || 'text', false);
+      })();
+    </script>
   </body>
   <script>
     $(document).ready(function() {

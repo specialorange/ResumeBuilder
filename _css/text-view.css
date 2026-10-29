@@ -1,0 +1,101 @@
+/* View toggle + plain-text resume view */
+
+/* Toggle (both views) */
+.view-toggle {
+  position: fixed;
+  top: 12px;
+  right: 12px;
+  z-index: 1000;
+  display: inline-flex;
+  border: 1px solid #c8c8c8;
+  border-radius: 999px;
+  background: #fff;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.15);
+  overflow: hidden;
+  font: 13px/1 "Lato", "Helvetica Neue", Arial, sans-serif;
+}
+.view-toggle button {
+  border: 0;
+  background: transparent;
+  padding: 8px 14px;
+  color: #555;
+  cursor: pointer;
+}
+.view-toggle button[aria-pressed="true"] {
+  background: #222;
+  color: #fff;
+}
+.view-toggle button:focus-visible {
+  outline: 2px solid #357ebd;
+  outline-offset: -2px;
+}
+
+/* Only one view shows at a time */
+html[data-view="text"] #view-classic,
+html[data-view="text"] .js-floating-nav-trigger,
+html[data-view="text"] .js-floating-nav { display: none !important; }
+html[data-view="classic"] #view-text { display: none; }
+
+html[data-view="text"] body { background: #fff; }
+
+/* Text resume */
+#view-text {
+  max-width: 8.5in;
+  margin: 0 auto;
+  padding: 64px 0.75in 48px;
+  color: #111;
+  font: 15px/1.45 Georgia, "Times New Roman", serif;
+}
+#view-text a { color: inherit; text-decoration: underline; text-decoration-color: #999; }
+#view-text a:hover { text-decoration-color: #111; }
+
+#view-text header { margin-bottom: 18px; }
+#view-text h1 {
+  margin: 0;
+  font-size: 22px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+#view-text .contact { margin: 2px 0 0; }
+
+#view-text h2 {
+  margin: 22px 0 8px;
+  padding-bottom: 2px;
+  border-bottom: 1px solid #111;
+  font-size: 14px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+#view-text .entry {
+  display: grid;
+  grid-template-columns: 1.35in 1fr;
+  column-gap: 18px;
+  margin-bottom: 12px;
+  break-inside: avoid;
+}
+#view-text .when {
+  font-size: 12px;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  padding-top: 2px;
+}
+#view-text .what p { margin: 0 0 4px; }
+#view-text .what ul { margin: 2px 0 0; padding-left: 18px; }
+#view-text .what li { margin-bottom: 2px; }
+#view-text .muted { color: #555; }
+#view-text .list-line { margin: 0 0 4px; }
+
+@media (max-width: 600px) {
+  #view-text { padding: 64px 16px 32px; font-size: 14px; }
+  #view-text .entry { grid-template-columns: 1fr; }
+  #view-text .when { padding-top: 0; }
+}
+
+@media print {
+  .view-toggle { display: none !important; }
+  #view-text { padding: 0; max-width: none; font-size: 11pt; }
+  #view-text a { text-decoration: none; }
+}
