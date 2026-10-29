@@ -41,9 +41,9 @@ html[data-view="text"] body { background: #fff; }
 
 /* Text resume */
 #view-text {
-  max-width: 8.5in;
-  margin: 0 auto;
-  padding: 64px 0.75in 48px;
+  max-width: none;
+  margin: 0;
+  padding: 64px 48px 48px;
   color: #111;
   font: 15px/1.45 Georgia, "Times New Roman", serif;
 }
