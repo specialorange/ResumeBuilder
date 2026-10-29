@@ -147,6 +147,43 @@
         </div>
       </div>
 
+      <h2>Security</h2>
+      <div class="entry">
+        <div class="when">2025&ndash;<br>Present</div>
+        <div class="what">
+          <p><strong>Red, blue, and purple team assessments</strong> of production at Master Specialists and MyFleet.tech.</p>
+          <ul>
+            <li>Ran full-stack assessments covering perimeter, auth, data, secrets, containers, host, supply chain, and CI/CD. Red team tested attack paths live, blue team hardened detection, purple team checked every claim against production.</li>
+            <li>Closed findings including a container-to-cloud-metadata privilege escalation path, a root secrets token replaced with a scoped one, and missing secrets audit logging.</li>
+            <li>Fixed authorization bypasses, enforced tenant scoping across views and APIs, and run a recurring tenant isolation audit against production.</li>
+          </ul>
+        </div>
+      </div>
+      <div class="entry">
+        <div class="when">Infrastructure</div>
+        <div class="what">
+          <ul>
+            <li>Secrets in OpenBao (Vault) with transit encryption, a standby node, rapid key rotation, and audit logging.</li>
+            <li>Private object storage behind presigned URLs; forced HTTPS, HSTS, CSP, MFA, rate limiting, Cloudflare Turnstile, and bot tarpits.</li>
+            <li>Email authentication with SPF, DKIM, DMARC, and MTA-STS.</li>
+            <li>Supply chain: secret scanning in pre-commit and CI, Dependabot alerts gated by a required test suite.</li>
+          </ul>
+        </div>
+      </div>
+
+      <h2>AI &amp; Agentic Engineering</h2>
+      <div class="entry">
+        <div class="when">2025&ndash;<br>Present</div>
+        <div class="what">
+          <ul>
+            <li>Run a multi-agent development workflow with Claude Code: parallel agents in isolated git worktrees, specialized agents for testing, migrations, security, and deployment, and a shared issue tracker the agents work from.</li>
+            <li>Built an always-on agent server (Hetzner) that keeps developing while my laptop is off, with synced issue tracking and phone notifications.</li>
+            <li>Automated AI pull request review in GitHub Actions; AI-driven red and blue team security reviews.</li>
+            <li>Shipped an in-app AI support assistant with semantic search that escalates to staff.</li>
+          </ul>
+        </div>
+      </div>
+
       <h2>Education</h2>
       <div class="entry">
         <div class="when">2013&ndash;2016</div>
@@ -516,6 +553,9 @@
                                   <li>Billing and finance: invoicing by fleet, NC sales tax wizard, ACH enrollment, Plaid expense reconciliation with receipt and PO matching</li>
                                   <li>Service call dispatch with role views, shareable status pages, parts-vendor email/SMS dispatch, and a truck kanban board</li>
                                   <li>Team payroll review, dashboards, and scheduled Google Sheets exports; partner API with MyFleet.tech</li>
+                                  <li>Red, blue, and purple team security assessments of production; closed a container privilege escalation path and scoped secrets access</li>
+                                  <li>Security infrastructure: OpenBao with audit logging, private storage, SPF/DKIM/DMARC, CI secret scanning</li>
+                                  <li>Multi-agent development with Claude Code: parallel agents in worktrees, an always-on agent server, AI PR review</li>
                                   <li>Make API enpoints, mixins, workflows, and log reports</li>
                                   <li>Convert method/function based calls to Class based for optimal mixin servicability</li>
                                   <li>Write integration tests and unit tests for increased uptime, better development, and dev ops improvements</li>
