@@ -59,8 +59,8 @@
         <p class="contact"><a href="https://specialorange.org/resume">specialorange.org/resume</a> &middot; <a href="https://github.com/specialorange">github.com/specialorange</a></p>
       </header>
 
-      <h2>Objective</h2>
-      <p>I build intuitive tools that improve highly complex systems for professional and organized communities, using usability, programming, and design, with a background in consulting and logistics.</p>
+      <h2>Summary</h2>
+      <p>Engineering leader and full-stack architect who has led teams of 3 to 30 people across logistics operations and software. I design secure multi-tenant platforms, run red, blue, and purple team security work, and build agentic development systems, grounded in human-centered design, consulting, and logistics.</p>
 
       <h2>Professional Experience</h2>
       <div class="entry">
@@ -69,14 +69,13 @@
           <p><strong>Founder &amp; Lead Engineer</strong>, <a href="https://myfleet.tech">MyFleet.tech</a>.</p>
           <p>Multi-tenant SaaS platform that connects fleets with their maintenance shops: assets, inspections, preventive maintenance, work orders, estimates, and invoicing.</p>
           <ul>
-            <li>Architected tenant isolation with a separate PostgreSQL schema per customer (django-tenants), subdomain routing, reserved names, and isolation tests on data and media.</li>
-            <li>White-label branding: each tenant sets its own logo, colors, and email branding across the app and notifications.</li>
-            <li>Built subscription billing with Stripe (plans, add-ons, usage metering, proration), plus QuickBooks and Motive telematics integrations.</li>
-            <li>Shipped DVIR inspections with QR codes, a shop kiosk, a vendor portal with API dispatch, SMS triage, VMRS coding, and an AI support assistant that escalates to staff.</li>
-            <li>16,000+ automated tests running in isolated Docker containers, with CI coverage reporting on every push.</li>
-            <li>Resettable environments: one-command database reset and seeding, demo tenants that reset automatically, and parallel per-branch dev stacks.</li>
-            <li>Blue-green Docker deploys to AWS and Hetzner through GitHub Actions; OpenBao secrets, MFA, and security headers.</li>
-            <li>Stack: Python, Django, DRF, React, PostgreSQL, Celery, Redis, Docker, Stripe, AWS SES, Twilio, OpenBao, GitHub Actions.</li>
+            <li>Architected a multi-tenant SaaS platform with per-customer data isolation, custom subdomains, and white-label branding.</li>
+            <li>Built subscription billing (plans, add-ons, usage metering, proration) and integrations with accounting and telematics providers.</li>
+            <li>Delivered inspection, kiosk, vendor portal, SMS, and AI support features for both field and office users.</li>
+            <li>Established a testing culture of 16,000+ automated tests running in isolated containers, with coverage reporting in CI.</li>
+            <li>Created reproducible, resettable environments: one-command reset and seeding, self-resetting demo accounts, and per-branch development stacks.</li>
+            <li>Automated zero-downtime deployments across two cloud providers, with centralized secrets management and security hardening.</li>
+            <li>Stack: Python, Django, DRF, React, PostgreSQL, Celery, Redis, Docker, Stripe, AWS, Twilio, OpenBao, GitHub Actions.</li>
           </ul>
         </div>
       </div>
@@ -85,25 +84,19 @@
         <div class="what">
           <p><strong>Full Stack Engineer</strong>, Master Specialists, Charlotte, NC.</p>
           <p>Fleet maintenance, inspection, and DOT compliance platform for delivery and logistics fleets. Django / React platform used daily by mechanics, dispatch, fleet managers, and billing.</p>
-          <p class="muted">Recent work (2025&ndash;2026):</p>
           <ul>
-            <li>Designed and deployed a multi-phase migration of a new finite state machine status model with full transition logging; released the engine as open source (<a href="https://pypi.org/project/django-fsm-rx/">django-fsm-rx</a> on PyPI).</li>
-            <li>Built zero-downtime blue-green deploys through GitHub Actions, a Docker deploy path, and uv-based dependency management.</li>
-            <li>Moved all secrets into OpenBao (Vault) with transit encryption, a standby node, and rapid key rotation; made the media bucket private behind presigned URLs.</li>
-            <li>Billing and finance: invoicing by fleet, invoice cancellation, NC sales tax filing wizard, ACH enrollment, Plaid-based expense reconciliation with receipt categorization and PO matching, part cost calculator.</li>
-            <li>Fixed large invoice emails failing in the queue by staging attachments and photos in S3 and sending images inline.</li>
-            <li>Service calls and dispatch: role-specific views, shareable status pages, parts-vendor dispatch by email/SMS (Twilio), truck kanban board.</li>
-            <li>Team operations: locked weekly payroll review, team roster and dashboards, meeting tools, and scheduled Google Sheets exports (Celery).</li>
-            <li>Partner API with MyFleet.tech, including outbound issue callbacks.</li>
-            <li>Run an AI-assisted workflow: Claude Code agents for parallel development, automated PR review, and tests.</li>
-          </ul>
-          <p class="muted">Earlier:</p>
-          <ul>
-            <li>Build API endpoints, mixins, workflows, and log reports across the full web platform.</li>
-            <li>Converted function-based views to class-based for reusable mixins; restructured services into maintainable processes.</li>
-            <li>Optimized SQL / ORM calls for high-traffic queries; wrote unit and integration tests to improve uptime and dev ops.</li>
-            <li>Design and automate procedural, regulatory, and cost-saving logistics processes; run client meetings for support and design.</li>
-            <li>Stack: Python, Django, DRF, React, TypeScript, PostgreSQL, Celery, RabbitMQ, Twilio, Square, Plaid, AWS (S3), OpenBao, Docker, GitHub Actions, Linux.</li>
+            <li>Designed and led a multi-phase migration to a finite state machine workflow engine with full audit history; released the engine as open source (<a href="https://pypi.org/project/django-fsm-rx/">django-fsm-rx</a> on PyPI).</li>
+            <li>Delivered zero-downtime blue-green deployments, containerization, and modern dependency management.</li>
+            <li>Centralized secrets management with encryption, failover, and key rotation; restricted file storage to time-limited access.</li>
+            <li>Automated billing and finance: invoicing, tax filing, ACH payments, and bank-feed expense reconciliation with receipt matching.</li>
+            <li>Integrated AWS S3 with the message queue to resolve email queue overflows and support asynchronous access to large files and attachments.</li>
+            <li>Built dispatch and service workflows with role-based views, customer-facing status pages, and automated vendor notifications.</li>
+            <li>Built internal operations tooling: payroll review, team dashboards, and scheduled reporting.</li>
+            <li>Designed partner APIs with event callbacks for cross-platform integrations.</li>
+            <li>Built APIs, reusable components, and reporting across the platform; refactored legacy code into maintainable services.</li>
+            <li>Optimized database queries on high-traffic paths and expanded unit and integration testing to improve uptime.</li>
+            <li>Automated regulatory, procedural, and cost-saving logistics processes; led client design and support meetings.</li>
+            <li>Stack: Python, Django, DRF, React, TypeScript, PostgreSQL, Celery, RabbitMQ, Twilio, Square, Plaid, AWS, OpenBao, Docker, GitHub Actions, Linux.</li>
           </ul>
         </div>
       </div>
@@ -131,6 +124,7 @@
           <p><strong>Implementation Manager</strong>, FedEx Ground.</p>
           <p>Helped develop and implement an automated sortation and dispatch system for final-stage package delivery. Reduced costs 5% and raised accuracy 4%; security and Six Sigma improvements saved more than $10M.</p>
           <ul>
+            <li>Led teams of 3 to 30 people across service, quality, and implementation roles.</li>
             <li>Contractor Corporate Liaison, Jul 2010&ndash;Dec 2014.</li>
             <li>Vision Implementation Manager, Feb 2010&ndash;Dec 2011.</li>
             <li>Southern Division Quality Initiative Manager, Feb 2009&ndash;Jan 2011.</li>
@@ -198,10 +192,10 @@
         <div class="what">
           <ul>
             <li>Designed a multi-agent development system with Claude Code: a planner hands each task to a fresh subagent, then reviews its work before the next task starts.</li>
-            <li>Built domain-specialist agents per codebase (tenancy, database, Celery, API, security, deployment, testing, templates, email) plus reusable skills such as red-team and blue-team security review and test-first development.</li>
+            <li>Built domain-specialist agents per codebase (data, background jobs, APIs, security, deployment, testing, front end, email) plus reusable skills such as red-team and blue-team review and test-first development.</li>
             <li>Parallel agents run in isolated git worktrees, each with its own Docker stack (containers, ports, database volume), so several features progress at once without collisions.</li>
-            <li>An always-on agent server on Hetzner with its own repo, Docker stack, and database copy keeps working while my laptop is off; reachable from phone, web, or SSH, with Telegram alerts.</li>
-            <li>Agents share a git-backed issue tracker (beads on Dolt) synced between machines by hooks, so work and memory carry across sessions and hosts.</li>
+            <li>An always-on agent server on Hetzner with its own repo, Docker stack, and database copy keeps working while my laptop is off; reachable from phone, web, or SSH, with mobile alerts.</li>
+            <li>Agents share a version-controlled issue tracker synced between machines, so work and context carry across sessions and hosts.</li>
             <li>Guardrails: agents commit but never push to production branches, are blocked from destructive database actions, and every pull request gets automated tests and AI code review in CI.</li>
             <li>Shipped an in-app AI support assistant with semantic search that escalates to staff.</li>
           </ul>
