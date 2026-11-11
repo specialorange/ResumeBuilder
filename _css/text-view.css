@@ -96,7 +96,7 @@ html[data-view="text"] body { background: #fff; }
 }
 
 @media print {
-  .view-toggle { display: none !important; }
+  .view-toggle, #view-text .downloads { display: none !important; }
   #view-text { padding: 0; max-width: none; font-size: 11pt; }
   #view-text a { text-decoration: none; }
 }
